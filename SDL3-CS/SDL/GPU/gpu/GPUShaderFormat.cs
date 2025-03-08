@@ -24,6 +24,8 @@
 namespace SDL3;
 
 public static partial class SDL
+{
+    public static partial class GPU
     {
         /// <summary>
         /// <para>Specifies the format of shader code.</para>
@@ -66,3 +68,4 @@ public static partial class SDL
             MetalLib = 1u << 5
         }
     }
+}

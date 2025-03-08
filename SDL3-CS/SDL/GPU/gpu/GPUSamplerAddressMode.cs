@@ -24,6 +24,8 @@
 namespace SDL3;
 
 public static partial class SDL
+{
+    public static partial class GPU
     {
         /// <summary>
         /// Specifies behavior of texture sampling when the coordinates exceed the 0-1
@@ -49,3 +51,4 @@ public static partial class SDL
             ClampToEdge
         }
     }
+}

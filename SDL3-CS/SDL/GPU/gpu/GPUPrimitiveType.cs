@@ -24,6 +24,8 @@
 namespace SDL3;
 
 public static partial class SDL
+{
+    public static partial class GPU
     {
         /// <summary>
         /// Specifies the primitive topology of a graphics pipeline.
@@ -71,3 +73,4 @@ public static partial class SDL
             PointList
         }
     }
+}

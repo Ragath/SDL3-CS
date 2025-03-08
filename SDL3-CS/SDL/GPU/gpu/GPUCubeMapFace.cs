@@ -24,6 +24,8 @@
 namespace SDL3;
 
 public static partial class SDL
+{
+    public static partial class GPU
     {
         /// <summary>
         /// <para>Specifies the face of a cube map.</para>
@@ -40,3 +42,4 @@ public static partial class SDL
             NegativeZ
         }
     }
+}

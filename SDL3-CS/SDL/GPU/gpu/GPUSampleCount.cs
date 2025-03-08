@@ -24,6 +24,8 @@
 namespace SDL3;
 
 public static partial class SDL
+{
+    public static partial class GPU
     {
         /// <summary>
         /// <para>Specifies the sample count of a texture.</para>
@@ -56,3 +58,4 @@ public static partial class SDL
             SampleCount8
         }
     }
+}

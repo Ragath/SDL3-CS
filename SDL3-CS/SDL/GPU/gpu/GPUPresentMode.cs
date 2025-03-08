@@ -24,6 +24,8 @@
 namespace SDL3;
 
 public static partial class SDL
+{
+    public static partial class GPU
     {
         /// <summary>
         /// <para>Specifies the timing that will be used to present swapchain textures to the
@@ -54,3 +56,4 @@ public static partial class SDL
             Mailbox
         }
     }
+}

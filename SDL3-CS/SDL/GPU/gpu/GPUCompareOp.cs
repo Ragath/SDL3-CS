@@ -24,6 +24,8 @@
 namespace SDL3;
 
 public static partial class SDL
+{
+    public static partial class GPU
     {
         /// <summary>
         /// Specifies a comparison operator for depth, stencil and sampler operations.
@@ -75,3 +77,4 @@ public static partial class SDL
             Always
         }
     }
+}

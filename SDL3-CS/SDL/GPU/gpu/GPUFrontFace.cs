@@ -24,6 +24,8 @@
 namespace SDL3;
 
 public static partial class SDL
+{
+    public static partial class GPU
     {
         /// <summary>
         /// <para>Specifies the vertex winding that will cause a triangle to be determined to
@@ -44,3 +46,4 @@ public static partial class SDL
             Clockwise
         }
     }
+}

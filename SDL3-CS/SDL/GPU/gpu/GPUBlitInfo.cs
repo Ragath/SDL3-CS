@@ -26,6 +26,8 @@ using System.Runtime.InteropServices;
 namespace SDL3;
 
 public static partial class SDL
+{
+    public static partial class GPU
     {
         /// <summary>
         /// A structure containing parameters for a blit command.
@@ -77,3 +79,4 @@ public static partial class SDL
             private Byte _padding3;
         }
     }
+}

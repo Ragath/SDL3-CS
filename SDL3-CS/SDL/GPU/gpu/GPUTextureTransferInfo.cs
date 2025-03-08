@@ -27,38 +27,41 @@ namespace SDL3;
 
 public static partial class SDL
 {
-    /// <summary>
-    /// A structure specifying parameters related to transferring data to or from a
-    /// texture.
-    /// <para>If either of <see cref="PixelsPerRow"/> or <see cref="RowsPerLayer"/> is zero, then width and
-    /// height of passed <see cref="GPUTextureRegion"/> to <see cref="UploadToGPUTexture"/></para>
-    /// <para><see cref="DownloadFromGPUTexture"/> are used as default values respectively and
-    /// data is considered to be tightly packed.</para>
-    /// </summary>
-    /// <since>This struct is available since SDL 3.2.0</since>
-    /// <seealso cref="UploadToGPUTexture"/>
-    /// <seealso cref="DownloadFromGPUTexture"/>
-    [StructLayout(LayoutKind.Sequential)]
-    public struct GPUTextureTransferInfo
+    public static partial class GPU
     {
         /// <summary>
-        /// The transfer buffer used in the transfer operation.
+        /// A structure specifying parameters related to transferring data to or from a
+        /// texture.
+        /// <para>If either of <see cref="PixelsPerRow"/> or <see cref="RowsPerLayer"/> is zero, then width and
+        /// height of passed <see cref="GPUTextureRegion"/> to <see cref="UploadToGPUTexture"/></para>
+        /// <para><see cref="DownloadFromGPUTexture"/> are used as default values respectively and
+        /// data is considered to be tightly packed.</para>
         /// </summary>
-        public IntPtr TransferBuffer;
+        /// <since>This struct is available since SDL 3.2.0</since>
+        /// <seealso cref="UploadToGPUTexture"/>
+        /// <seealso cref="DownloadFromGPUTexture"/>
+        [StructLayout(LayoutKind.Sequential)]
+        public struct GPUTextureTransferInfo
+        {
+            /// <summary>
+            /// The transfer buffer used in the transfer operation.
+            /// </summary>
+            public IntPtr TransferBuffer;
 
-        /// <summary>
-        /// The starting byte of the image data in the transfer buffer.
-        /// </summary>
-        public UInt32 Offset;
+            /// <summary>
+            /// The starting byte of the image data in the transfer buffer.
+            /// </summary>
+            public UInt32 Offset;
 
-        /// <summary>
-        /// The number of pixels from one row to the next.
-        /// </summary>
-        public UInt32 PixelsPerRow;
+            /// <summary>
+            /// The number of pixels from one row to the next.
+            /// </summary>
+            public UInt32 PixelsPerRow;
 
-        /// <summary>
-        /// The number of rows from one layer/depth-slice to the next.
-        /// </summary>
-        public UInt32 RowsPerLayer;
+            /// <summary>
+            /// The number of rows from one layer/depth-slice to the next.
+            /// </summary>
+            public UInt32 RowsPerLayer;
+        }
     }
 }
