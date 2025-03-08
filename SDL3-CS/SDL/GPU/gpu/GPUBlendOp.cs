@@ -24,6 +24,8 @@
 namespace SDL3;
 
 public static partial class SDL
+{
+    public static partial class GPU
     {
         /// <summary>
         /// <para>Specifies the operator to be used when pixels in a render target are
@@ -63,3 +65,4 @@ public static partial class SDL
             Max
         }
     }
+}

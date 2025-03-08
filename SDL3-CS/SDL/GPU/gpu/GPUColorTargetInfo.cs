@@ -26,6 +26,8 @@ using System.Runtime.InteropServices;
 namespace SDL3;
 
 public static partial class SDL
+{
+    public static partial class GPU
     {
         /// <summary>
         /// <para>A structure specifying the parameters of a color target used by a render
@@ -123,3 +125,4 @@ public static partial class SDL
             private Byte _padding2;
         }
     }
+}

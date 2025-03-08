@@ -24,6 +24,8 @@
 namespace SDL3;
 
 public static partial class SDL
+{
+    public static partial class GPU
     {
         /// <summary>
         /// Specifies which color components are written in a graphics pipeline.
@@ -54,3 +56,4 @@ public static partial class SDL
             A = 8
         }
     }
+}

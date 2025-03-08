@@ -24,6 +24,8 @@
 namespace SDL3;
 
 public static partial class SDL
+{
+    public static partial class GPU
     {
         /// <summary>
         /// Specifies the type of a texture.
@@ -58,3 +60,4 @@ public static partial class SDL
             TexturetypeCubeArray
         }
     }
+}

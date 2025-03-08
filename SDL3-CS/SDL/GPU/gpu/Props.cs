@@ -24,6 +24,8 @@
 namespace SDL3;
 
 public static partial class SDL
+{
+    public static partial class GPU
     {
         public static partial class Props
         {
@@ -52,3 +54,4 @@ public static partial class SDL
             public const string GPUTransferBufferCreateNameString = "SDL.gpu.transferbuffer.create.name";
         }
     }
+}

@@ -27,6 +27,8 @@ using System.Runtime.InteropServices;
 namespace SDL3;
 
 public partial class SDL
+{
+    public partial class GPU
     {
         /// <code>extern SDL_DECLSPEC bool SDLCALL SDL_GPUSupportsShaderFormats(SDL_GPUShaderFormat format_flags, const char *name);</code>
         /// <summary>
@@ -880,7 +882,7 @@ public partial class SDL
         [LibraryImport(SDLLibrary, EntryPoint = "SDL_SetGPUBlendConstants"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
         public static partial void SetGPUBlendConstants(IntPtr renderPass, in FColor blendConstants);
 
-    
+#if !WASM
     /// <code>extern SDL_DECLSPEC void SDLCALL SDL_SetGPUStencilReference(SDL_GPURenderPass *render_pass, Uint8 reference);</code>
     /// <summary>
     /// Sets the current stencil reference value on a command buffer.
@@ -890,7 +892,7 @@ public partial class SDL
     /// <since>This function is available since SDL 3.2.0</since>
     [LibraryImport(SDLLibrary, EntryPoint = "SDL_SetGPUBlendConstants"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     public static partial void SetGPUBlendConstants(IntPtr renderPass, byte reference);
-
+#endif
 
         /// <code>extern SDL_DECLSPEC void SDLCALL SDL_BindGPUVertexBuffers(SDL_GPURenderPass *render_pass, Uint32 first_slot, const SDL_GPUBufferBinding *bindings, Uint32 num_bindings);</code>
         /// <summary>
@@ -1921,3 +1923,4 @@ public partial class SDL
         [LibraryImport(SDLLibrary, EntryPoint = "SDL_GDKResumeGPU"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
         public static partial void GDKResumeGPU(IntPtr device);
     }
+}

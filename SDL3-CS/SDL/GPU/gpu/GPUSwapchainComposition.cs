@@ -24,6 +24,8 @@
 namespace SDL3;
 
 public static partial class SDL
+{
+    public static partial class GPU
     {
         /// <summary>
         /// <para>Specifies the texture format and colorspace of the swapchain textures.</para>
@@ -56,3 +58,4 @@ public static partial class SDL
             HDR10ST2084
         }
     }
+}

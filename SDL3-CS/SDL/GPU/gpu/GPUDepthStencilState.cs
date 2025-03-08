@@ -26,6 +26,8 @@ using System.Runtime.InteropServices;
 namespace SDL3;
 
 public static partial class SDL
+{
+    public static partial class GPU
     {
         /// <summary>
         /// A structure specifying the parameters of the graphics pipeline depth
@@ -83,3 +85,4 @@ public static partial class SDL
             private Byte _padding3;
         }
     }
+}

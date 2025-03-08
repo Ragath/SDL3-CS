@@ -24,6 +24,8 @@
 namespace SDL3;
 
 public static partial class SDL
+{
+    public static partial class GPU
     {
         /// <summary>
         /// <para>Specifies the pixel format of a texture.</para>
@@ -244,3 +246,4 @@ public static partial class SDL
             ASTC12X12Float
         }
     }
+}

@@ -24,6 +24,8 @@
 namespace SDL3;
 
 public static partial class SDL
+{
+    public static partial class GPU
     {
         /// <summary>
         /// Specifies the facing direction in which triangle faces will be culled.
@@ -48,3 +50,4 @@ public static partial class SDL
             Back
         }
     }
+}

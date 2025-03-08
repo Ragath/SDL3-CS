@@ -24,6 +24,8 @@
 namespace SDL3;
 
 public static partial class SDL
+{
+    public static partial class GPU
     {
         /// <summary>
         /// Specifies the size of elements in an index buffer.
@@ -43,3 +45,4 @@ public static partial class SDL
             IndexElementSize32Bit
         }
     }
+}

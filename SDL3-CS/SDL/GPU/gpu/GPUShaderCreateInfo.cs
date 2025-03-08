@@ -26,6 +26,8 @@ using System.Runtime.InteropServices;
 namespace SDL3;
 
 public static partial class SDL
+{
+    public static partial class GPU
     {
         /// <summary>
         /// <para>A structure specifying code and metadata for creating a shader object.</para>
@@ -86,3 +88,4 @@ public static partial class SDL
             public UInt32 Props;
         }
     }
+}
