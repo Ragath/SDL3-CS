@@ -26,28 +26,28 @@ using System.Runtime.InteropServices;
 namespace SDL3;
 
 public static partial class SDL
-{
-    /// <summary>
-    /// A structure specifying the parameters of an indexed dispatch command.
-    /// </summary>
-    /// <since>This struct is available since SDL 3.2.0</since>
-    /// <seealso cref="DispatchGPUComputeIndirect"/>
-    [StructLayout(LayoutKind.Sequential)]
-    public struct GPUIndirectDispatchCommand
     {
         /// <summary>
-        /// The number of local workgroups to dispatch in the X dimension.
+        /// A structure specifying the parameters of an indexed dispatch command.
         /// </summary>
-        public UInt32 GroupcountX;
-        
-        /// <summary>
-        /// The number of local workgroups to dispatch in the Y dimension.
-        /// </summary>
-        public UInt32 GroupcountY;
-        
-        /// <summary>
-        /// The number of local workgroups to dispatch in the Z dimension.
-        /// </summary>
-        public UInt32 GroupcountZ;
+        /// <since>This struct is available since SDL 3.2.0</since>
+        /// <seealso cref="DispatchGPUComputeIndirect"/>
+        [StructLayout(LayoutKind.Sequential)]
+        public struct GPUIndirectDispatchCommand
+        {
+            /// <summary>
+            /// The number of local workgroups to dispatch in the X dimension.
+            /// </summary>
+            public UInt32 GroupcountX;
+
+            /// <summary>
+            /// The number of local workgroups to dispatch in the Y dimension.
+            /// </summary>
+            public UInt32 GroupcountY;
+
+            /// <summary>
+            /// The number of local workgroups to dispatch in the Z dimension.
+            /// </summary>
+            public UInt32 GroupcountZ;
+        }
     }
-}

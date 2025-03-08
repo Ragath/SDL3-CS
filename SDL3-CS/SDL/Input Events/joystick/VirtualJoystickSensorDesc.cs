@@ -39,7 +39,7 @@ public static partial class SDL
         /// the type of this sensor
         /// </summary>
         public SensorType Type;
-        
+
         /// <summary>
         /// the update frequency of this sensor, may be 0.0f
         /// </summary>

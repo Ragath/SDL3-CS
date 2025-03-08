@@ -39,39 +39,39 @@ public static partial class SDL
         /// or <see cref="EventType.GamepadTouchpadUp"/>
         /// </summary>
         public EventType Type;
-        
+
         private UInt32 _reserved;
-        
+
         /// <summary>
         /// In nanoseconds, populated using <see cref="GetTicksNS"/>
         /// </summary>
         public UInt64 Timestamp;
-        
+
         /// <summary>
         /// The joystick instance id
         /// </summary>
         public UInt32 Which;
-        
+
         /// <summary>
         /// The index of the touchpad
         /// </summary>
         public Int32 Touchpad;
-        
+
         /// <summary>
         /// The index of the finger on the touchpad
         /// </summary>
         public Int32 Finger;
-        
+
         /// <summary>
         /// Normalized in the range 0...1 with 0 being on the left
         /// </summary>
         public float X;
-        
+
         /// <summary>
         /// Normalized in the range 0...1 with 0 being at the top
         /// </summary>
         public float Y;
-        
+
         /// <summary>
         /// Normalized in the range 0...1
         /// </summary>

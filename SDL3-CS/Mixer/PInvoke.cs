@@ -36,8 +36,8 @@ public partial class Mixer
     /// <since>This function is available since SDL_mixer 3.0.0.</since>
     [LibraryImport(MixerLibrary, EntryPoint = "Mix_Version"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     public static partial int Version();
-    
-    
+
+
     /// <code>extern SDL_DECLSPEC MIX_InitFlags SDLCALL Mix_Init(MIX_InitFlags flags);</code>
     /// <summary>
     /// <para>Initialize SDL_mixer.</para>
@@ -95,8 +95,8 @@ public partial class Mixer
     /// <seealso cref="Quit"/>
     [LibraryImport(MixerLibrary, EntryPoint = "Mix_Init"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     public static partial InitFlags Init(InitFlags flags);
-    
-    
+
+
     /// <code>extern SDL_DECLSPEC void SDLCALL Mix_Quit(void);</code>
     /// <summary>
     /// <para>Deinitialize SDL_mixer.</para>
@@ -117,8 +117,8 @@ public partial class Mixer
     /// <seealso cref="Init"/>
     [LibraryImport(MixerLibrary, EntryPoint = "Mix_Quit"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     public static partial void Quit();
-    
-    
+
+
     /// <code>extern SDL_DECLSPEC bool SDLCALL Mix_OpenAudio(SDL_AudioDeviceID devid, const SDL_AudioSpec *spec);</code>
     /// <summary>
     /// <para>Open an audio device for playback.</para>
@@ -166,8 +166,8 @@ public partial class Mixer
     [LibraryImport(MixerLibrary, EntryPoint = "Mix_OpenAudio"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     [return: MarshalAs(UnmanagedType.I1)]
     public static partial bool OpenAudio(uint devid, IntPtr spec);
-    
-    
+
+
     /// <code>extern SDL_DECLSPEC bool SDLCALL Mix_OpenAudio(SDL_AudioDeviceID devid, const SDL_AudioSpec *spec);</code>
     /// <summary>
     /// <para>Open an audio device for playback.</para>
@@ -215,8 +215,8 @@ public partial class Mixer
     [LibraryImport(MixerLibrary, EntryPoint = "Mix_OpenAudio"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     [return: MarshalAs(UnmanagedType.I1)]
     public static partial bool OpenAudio(uint devid, in SDL.AudioSpec spec);
-    
-    
+
+
     /// <code>extern SDL_DECLSPEC void SDLCALL Mix_PauseAudio(int pause_on);</code>
     /// <summary>
     /// Suspend or resume the whole audio output.
@@ -225,8 +225,8 @@ public partial class Mixer
     /// <since>This function is available since SDL_mixer 3.0.0.</since>
     [LibraryImport(MixerLibrary, EntryPoint = "Mix_PauseAudio"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     public static partial void PauseAudio(int pauseOn);
-    
-    
+
+
     /// <code>extern SDL_DECLSPEC bool SDLCALL Mix_QuerySpec(int *frequency, SDL_AudioFormat *format, int *channels);</code>
     /// <summary>
     /// <para>Find out what the actual audio device parameters are.</para>
@@ -245,8 +245,8 @@ public partial class Mixer
     [LibraryImport(MixerLibrary, EntryPoint = "Mix_QuerySpec"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     [return: MarshalAs(UnmanagedType.I1)]
     public static partial bool QuerySpec(out int frequency, out SDL.AudioFormat format, out int channels);
-    
-    
+
+
     /// <code>extern SDL_DECLSPEC int SDLCALL Mix_AllocateChannels(int numchans);</code>
     /// <summary>
     /// <para>Dynamically change the number of channels managed by the mixer.</para>
@@ -273,8 +273,8 @@ public partial class Mixer
     /// <since>This function is available since SDL_mixer 3.0.0.</since>
     [LibraryImport(MixerLibrary, EntryPoint = "Mix_AllocateChannels"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     public static partial int AllocateChannels(int numchans);
-    
-    
+
+
     /// <code>extern SDL_DECLSPEC Mix_Chunk * SDLCALL Mix_LoadWAV_IO(SDL_IOStream *src, bool closeio);</code>
     /// <summary>
     /// <para>Load a supported audio format into a chunk.</para>
@@ -310,8 +310,8 @@ public partial class Mixer
     /// <seealso cref="FreeChunk"/>
     [LibraryImport(MixerLibrary, EntryPoint = "Mix_LoadWAV_IO"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     public static partial IntPtr LoadWAVIO(IntPtr src, [MarshalAs(UnmanagedType.I1)] bool closeio);
-    
-    
+
+
     /// <code>extern SDL_DECLSPEC Mix_Chunk * SDLCALL Mix_LoadWAV(const char *file);</code>
     /// <summary>
     /// <para>Load a supported audio format into a chunk.</para>
@@ -346,8 +346,8 @@ public partial class Mixer
     /// <seealso cref="FreeChunk"/>
     [LibraryImport(MixerLibrary, EntryPoint = "Mix_LoadWAV"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     public static partial IntPtr LoadWAV([MarshalAs(UnmanagedType.LPUTF8Str)] string file);
-    
-    
+
+
     /// <code>extern SDL_DECLSPEC Mix_Music * SDLCALL Mix_LoadMUS(const char *file);</code>
     /// <summary>
     /// <para>Load a supported audio format into a music object.</para>
@@ -373,8 +373,8 @@ public partial class Mixer
     /// <seealso cref="FreeMusic"/>
     [LibraryImport(MixerLibrary, EntryPoint = "Mix_LoadMUS"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     public static partial IntPtr LoadMUS([MarshalAs(UnmanagedType.LPUTF8Str)] string file);
-    
-    
+
+
     /// <code>extern SDL_DECLSPEC Mix_Music * SDLCALL Mix_LoadMUS_IO(SDL_IOStream *src, bool closeio);</code>
     /// <summary>
     /// <para>Load a supported audio format into a music object.</para>
@@ -411,8 +411,8 @@ public partial class Mixer
     /// <seealso cref="FreeMusic"/>
     [LibraryImport(MixerLibrary, EntryPoint = "Mix_LoadMUS_IO"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     public static partial IntPtr LoadMUSIO(IntPtr src, [MarshalAs(UnmanagedType.I1)] bool closeio);
-    
-    
+
+
     /// <code>extern SDL_DECLSPEC Mix_Music * SDLCALL Mix_LoadMUSType_IO(SDL_IOStream *src, Mix_MusicType type, bool closeio);</code>
     /// <summary>
     /// <para>Load an audio format into a music object, assuming a specific format.</para>
@@ -462,8 +462,8 @@ public partial class Mixer
     /// <seealso cref="FreeMusic"/>
     [LibraryImport(MixerLibrary, EntryPoint = "Mix_LoadMUSType_IO"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     public static partial IntPtr LoadMUSTypeIO(IntPtr src, MusicType type, [MarshalAs(UnmanagedType.I1)] bool closeio);
-    
-    
+
+
     /// <code>extern SDL_DECLSPEC Mix_Chunk * SDLCALL Mix_QuickLoad_WAV(Uint8 *mem);</code>
     /// <summary>
     /// <para>Load a WAV file from memory as quickly as possible.</para>
@@ -494,8 +494,8 @@ public partial class Mixer
     /// <seealso cref="FreeChunk"/>
     [LibraryImport(MixerLibrary, EntryPoint = "Mix_QuickLoad_WAV"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     public static partial IntPtr QuickLoadWAV(IntPtr mem);
-    
-    
+
+
     /// <code>extern SDL_DECLSPEC Mix_Chunk * SDLCALL Mix_QuickLoad_RAW(Uint8 *mem, Uint32 len);</code>
     /// <summary>
     /// <para>Load a raw audio data from memory as quickly as possible.</para>
@@ -512,8 +512,8 @@ public partial class Mixer
     /// <seealso cref="FreeChunk"/>
     [LibraryImport(MixerLibrary, EntryPoint = "Mix_QuickLoad_RAW"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     public static partial IntPtr QuickLoadRAW(IntPtr mem, uint len);
-    
-    
+
+
     /// <code>extern SDL_DECLSPEC void SDLCALL Mix_FreeChunk(Mix_Chunk *chunk);</code>
     /// <summary>
     /// <para>Free an audio chunk.</para>
@@ -531,8 +531,8 @@ public partial class Mixer
     /// <seealso cref="QuickLoadRAW"/>
     [LibraryImport(MixerLibrary, EntryPoint = "Mix_FreeChunk"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     public static partial void FreeChunk(IntPtr chunk);
-    
-    
+
+
     /// <code>extern SDL_DECLSPEC void SDLCALL Mix_FreeMusic(Mix_Music *music);</code>
     /// <summary>
     /// <para>Free a music object.</para>
@@ -548,8 +548,8 @@ public partial class Mixer
     /// <seealso cref="LoadMUSTypeIO"/>
     [LibraryImport(MixerLibrary, EntryPoint = "Mix_FreeMusic"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     public static partial void FreeMusic(IntPtr music);
-    
-    
+
+
     /// <code>extern SDL_DECLSPEC int SDLCALL Mix_GetNumChunkDecoders(void);</code>
     /// <summary>
     /// <para>Get a list of chunk decoders that this build of SDL_mixer provides.</para>
@@ -569,8 +569,8 @@ public partial class Mixer
     /// <seealso cref="HasChunkDecoder"/>
     [LibraryImport(MixerLibrary, EntryPoint = "Mix_GetNumChunkDecoders"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     public static partial int GetNumChunkDecoders();
-    
-    
+
+
     [LibraryImport(MixerLibrary, EntryPoint = "Mix_GetChunkDecoder"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial IntPtr Mix_GetChunkDecoder(int index);
     /// <code>extern SDL_DECLSPEC const char * SDLCALL Mix_GetChunkDecoder(int index);</code>
@@ -590,11 +590,11 @@ public partial class Mixer
     /// <seealso cref="GetNumChunkDecoders"/>
     public static string GetChunkDecoder(int index)
     {
-        var value = Mix_GetChunkDecoder(index); 
+        var value = Mix_GetChunkDecoder(index);
         return value == IntPtr.Zero ? "" : Marshal.PtrToStringUTF8(value)!;
     }
-    
-    
+
+
     /// <code>extern SDL_DECLSPEC bool SDLCALL Mix_HasChunkDecoder(const char *name);</code>
     /// <summary>
     /// <para>Check if a chunk decoder is available by name.</para>
@@ -614,8 +614,8 @@ public partial class Mixer
     [LibraryImport(MixerLibrary, EntryPoint = "Mix_HasChunkDecoder"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     [return: MarshalAs(UnmanagedType.I1)]
     public static partial bool HasChunkDecoder([MarshalAs(UnmanagedType.LPUTF8Str)] string name);
-    
-    
+
+
     /// <code>extern SDL_DECLSPEC int SDLCALL Mix_GetNumMusicDecoders(void);</code>
     /// <summary>
     /// <para>Get a list of music decoders that this build of SDL_mixer provides.</para>
@@ -635,8 +635,8 @@ public partial class Mixer
     /// <seealso cref="HasMusicDecoder"/>
     [LibraryImport(MixerLibrary, EntryPoint = "Mix_HasChunkDecoder"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     public static partial int GetNumMusicDecoders();
-    
-    
+
+
     [LibraryImport(MixerLibrary, EntryPoint = "Mix_GetMusicDecoder"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial IntPtr Mix_GetMusicDecoder(int index);
     /// <code>extern SDL_DECLSPEC const char * SDLCALL Mix_GetMusicDecoder(int index);</code>
@@ -656,11 +656,11 @@ public partial class Mixer
     /// <seealso cref="GetNumMusicDecoders"/>
     public static string GetMusicDecoder(int index)
     {
-        var value = Mix_GetMusicDecoder(index); 
+        var value = Mix_GetMusicDecoder(index);
         return value == IntPtr.Zero ? "" : Marshal.PtrToStringUTF8(value)!;
     }
-    
-    
+
+
     /// <code>extern SDL_DECLSPEC bool SDLCALL Mix_HasMusicDecoder(const char *name);</code>
     /// <summary>
     /// <para>Check if a music decoder is available by name.</para>
@@ -680,8 +680,8 @@ public partial class Mixer
     [LibraryImport(MixerLibrary, EntryPoint = "Mix_HasMusicDecoder"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     [return: MarshalAs(UnmanagedType.I1)]
     public static partial bool HasMusicDecoder([MarshalAs(UnmanagedType.LPUTF8Str)] string name);
-    
-    
+
+
     /// <code>extern SDL_DECLSPEC Mix_MusicType SDLCALL Mix_GetMusicType(const Mix_Music *music);</code>
     /// <summary>
     /// <para>Find out the format of a mixer music.</para>
@@ -694,8 +694,8 @@ public partial class Mixer
     /// <since>This function is available since SDL_mixer 3.0.0</since>
     [LibraryImport(MixerLibrary, EntryPoint = "Mix_GetMusicType"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     public static partial MusicType GetMusicType(IntPtr music);
-    
-    
+
+
     [LibraryImport(MixerLibrary, EntryPoint = "Mix_GetMusicTitle"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial IntPtr Mix_GetMusicTitle(IntPtr music);
     /// <code>extern SDL_DECLSPEC const char *SDLCALL Mix_GetMusicTitle(const Mix_Music *music);</code>
@@ -719,11 +719,11 @@ public partial class Mixer
     /// <seealso cref="GetMusicCopyrightTag"/>
     public static string GetMusicTitle(IntPtr music)
     {
-        var value = Mix_GetMusicTitle(music); 
+        var value = Mix_GetMusicTitle(music);
         return value == IntPtr.Zero ? "" : Marshal.PtrToStringUTF8(value)!;
     }
-    
-    
+
+
     [LibraryImport(MixerLibrary, EntryPoint = "Mix_GetMusicTitleTag"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial IntPtr Mix_GetMusicTitleTag(IntPtr music);
     /// <code>extern SDL_DECLSPEC const char *SDLCALL Mix_GetMusicTitleTag(const Mix_Music *music);</code>
@@ -747,11 +747,11 @@ public partial class Mixer
     /// <seealso cref="GetMusicCopyrightTag"/>
     public static string GetMusicTitleTag(IntPtr music)
     {
-        var value = Mix_GetMusicTitleTag(music); 
+        var value = Mix_GetMusicTitleTag(music);
         return value == IntPtr.Zero ? "" : Marshal.PtrToStringUTF8(value)!;
     }
-    
-    
+
+
     [LibraryImport(MixerLibrary, EntryPoint = "Mix_GetMusicArtistTag"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial IntPtr Mix_GetMusicArtistTag(IntPtr music);
     /// <code>extern SDL_DECLSPEC const char *SDLCALL Mix_GetMusicArtistTag(const Mix_Music *music);</code>
@@ -771,11 +771,11 @@ public partial class Mixer
     /// <seealso cref="GetMusicCopyrightTag"/>
     public static string GetMusicArtistTag(IntPtr music)
     {
-        var value = Mix_GetMusicArtistTag(music); 
+        var value = Mix_GetMusicArtistTag(music);
         return value == IntPtr.Zero ? "" : Marshal.PtrToStringUTF8(value)!;
     }
-    
-    
+
+
     [LibraryImport(MixerLibrary, EntryPoint = "Mix_GetMusicAlbumTag"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial IntPtr Mix_GetMusicAlbumTag(IntPtr music);
     /// <code>extern SDL_DECLSPEC const char *SDLCALL Mix_GetMusicAlbumTag(const Mix_Music *music);</code>
@@ -795,11 +795,11 @@ public partial class Mixer
     /// <seealso cref="GetMusicCopyrightTag"/>
     public static string GetMusicAlbumTag(IntPtr music)
     {
-        var value = Mix_GetMusicAlbumTag(music); 
+        var value = Mix_GetMusicAlbumTag(music);
         return value == IntPtr.Zero ? "" : Marshal.PtrToStringUTF8(value)!;
     }
-    
-    
+
+
     [LibraryImport(MixerLibrary, EntryPoint = "Mix_GetMusicCopyrightTag"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial IntPtr Mix_GetMusicCopyrightTag(IntPtr music);
     /// <code>extern SDL_DECLSPEC const char *SDLCALL Mix_GetMusicCopyrightTag(const Mix_Music *music);</code>
@@ -819,11 +819,11 @@ public partial class Mixer
     /// <seealso cref="GetMusicAlbumTag"/>
     public static string GetMusicCopyrightTag(IntPtr music)
     {
-        var value = Mix_GetMusicCopyrightTag(music); 
+        var value = Mix_GetMusicCopyrightTag(music);
         return value == IntPtr.Zero ? "" : Marshal.PtrToStringUTF8(value)!;
     }
-    
-    
+
+
     /// <code>extern SDL_DECLSPEC void SDLCALL Mix_SetPostMix(Mix_MixCallback mix_func, void *arg);</code>
     /// <summary>
     /// <para>Set a function that is called after all mixing is performed.</para>
@@ -854,8 +854,8 @@ public partial class Mixer
     /// <seealso cref="HookMusic"/>
     [LibraryImport(MixerLibrary, EntryPoint = "Mix_SetPostMix"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     public static partial void SetPostMix(MixCallback mixFunc, IntPtr arg);
-    
-    
+
+
     /// <code>extern SDL_DECLSPEC void SDLCALL Mix_HookMusic(Mix_MixCallback mix_func, void *arg);</code>
     /// <summary>
     /// <para>Add your own music player or additional mixer function.</para>
@@ -893,8 +893,8 @@ public partial class Mixer
     /// <seealso cref="SetPostMix"/>
     [LibraryImport(MixerLibrary, EntryPoint = "Mix_HookMusic"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     public static partial void HookMusic(MixCallback mixFunc, IntPtr arg);
-    
-    
+
+
     /// <code>extern SDL_DECLSPEC void SDLCALL Mix_HookMusicFinished(Mix_MusicFinishedCallback music_finished);</code>
     /// <summary>
     /// <para>Set a callback that runs when a music object has stopped playing.</para>
@@ -912,8 +912,8 @@ public partial class Mixer
     /// <since>This function is available since SDL_mixer 3.0.0.</since>
     [LibraryImport(MixerLibrary, EntryPoint = "Mix_HookMusicFinished"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     public static partial void HookMusicFinished(MusicFinishedCallback musicFinished);
-    
-    
+
+
     /// <code>extern SDL_DECLSPEC void * SDLCALL Mix_GetMusicHookData(void);</code>
     /// <summary>
     /// <para>Get a pointer to the user data for the current music hook.</para>
@@ -924,8 +924,8 @@ public partial class Mixer
     /// <since>This function is available since SDL_mixer 3.0.0.</since>
     [LibraryImport(MixerLibrary, EntryPoint = "Mix_GetMusicHookData"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     public static partial IntPtr GetMusicHookData();
-    
-    
+
+
     /// <code>extern SDL_DECLSPEC void SDLCALL Mix_ChannelFinished(Mix_ChannelFinishedCallback channel_finished);</code>
     /// <summary>
     /// <para>Set a callback that runs when a channel has finished playing.</para>
@@ -940,8 +940,8 @@ public partial class Mixer
     /// <since>This function is available since SDL_mixer 3.0.0.</since>
     [LibraryImport(MixerLibrary, EntryPoint = "Mix_ChannelFinished"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     public static partial void ChannelFinished(ChannelFinishedCallback channelFinished);
-    
-    
+
+
     /// <code>extern SDL_DECLSPEC bool SDLCALL Mix_RegisterEffect(int chan, Mix_EffectFunc_t f, Mix_EffectDone_t d, void *arg);</code>
     /// <summary>
     /// <para>Register a special effect function.</para>
@@ -995,8 +995,8 @@ public partial class Mixer
     [LibraryImport(MixerLibrary, EntryPoint = "Mix_RegisterEffect"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     [return: MarshalAs(UnmanagedType.I1)]
     public static partial bool RegisterEffect(int chan, EffectFuncT f, EffectDoneT d, IntPtr arg);
-    
-    
+
+
     /// <code>extern SDL_DECLSPEC bool SDLCALL Mix_UnregisterEffect(int channel, Mix_EffectFunc_t f);</code>
     /// <summary>
     /// <para>Explicitly unregister a special effect function.</para>
@@ -1015,8 +1015,8 @@ public partial class Mixer
     [LibraryImport(MixerLibrary, EntryPoint = "Mix_UnregisterEffect"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     [return: MarshalAs(UnmanagedType.I1)]
     public static partial bool UnregisterEffect(int channel, EffectFuncT f);
-    
-    
+
+
     /// <code>extern SDL_DECLSPEC bool SDLCALL Mix_UnregisterAllEffects(int channel);</code>
     /// <summary>
     /// <para>Explicitly unregister all special effect functions.</para>
@@ -1037,8 +1037,8 @@ public partial class Mixer
     [LibraryImport(MixerLibrary, EntryPoint = "Mix_UnregisterAllEffects"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     [return: MarshalAs(UnmanagedType.I1)]
     public static partial bool UnregisterAllEffects(int channel);
-    
-    
+
+
     /// <code>extern SDL_DECLSPEC bool SDLCALL Mix_SetPanning(int channel, Uint8 left, Uint8 right);</code>
     /// <summary>
     /// <para>Set the panning of a channel.</para>
@@ -1072,8 +1072,8 @@ public partial class Mixer
     [LibraryImport(MixerLibrary, EntryPoint = "Mix_SetPanning"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     [return: MarshalAs(UnmanagedType.I1)]
     public static partial bool SetPanning(int channel, byte left, byte right);
-    
-    
+
+
     /// <code>extern SDL_DECLSPEC bool SDLCALL Mix_SetPosition(int channel, Sint16 angle, Uint8 distance);</code>
     /// <summary>
     /// <para>Set the position of a channel.</para>
@@ -1114,8 +1114,8 @@ public partial class Mixer
     [LibraryImport(MixerLibrary, EntryPoint = "Mix_SetPosition"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     [return: MarshalAs(UnmanagedType.I1)]
     public static partial bool SetPosition(int channel, short angle, byte distance);
-    
-    
+
+
     /// <code>extern SDL_DECLSPEC bool SDLCALL Mix_SetDistance(int channel, Uint8 distance);</code>
     /// <summary>
     /// <para>Set the "distance" of a channel.</para>
@@ -1145,8 +1145,8 @@ public partial class Mixer
     [LibraryImport(MixerLibrary, EntryPoint = "Mix_SetDistance"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     [return: MarshalAs(UnmanagedType.I1)]
     public static partial bool SetDistance(int channel, byte distance);
-    
-    
+
+
     /// <code>extern SDL_DECLSPEC bool SDLCALL Mix_SetReverseStereo(int channel, int flip);</code>
     /// <summary>
     /// <para>Cause a channel to reverse its stereo.</para>
@@ -1171,8 +1171,8 @@ public partial class Mixer
     [LibraryImport(MixerLibrary, EntryPoint = "Mix_SetReverseStereo"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     [return: MarshalAs(UnmanagedType.I1)]
     public static partial bool SetReverseStereo(int channel, int flip);
-    
-    
+
+
     /// <c>extern SDL_DECLSPEC int SDLCALL Mix_ReserveChannels(int num);</c>
     /// <summary>
     /// <para>Reserve the first channels for the application.</para>
@@ -1193,8 +1193,8 @@ public partial class Mixer
     /// <returns>This function is available since SDL_mixer 3.0.0.</returns>
     [LibraryImport(MixerLibrary, EntryPoint = "Mix_ReserveChannels"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     public static partial int ReserveChannels(int channel, int flip);
-    
-    
+
+
     /// <code>extern SDL_DECLSPEC bool SDLCALL Mix_GroupChannel(int which, int tag);</code>
     /// <summary>
     /// <para>Assign a tag to a channel.</para>
@@ -1214,8 +1214,8 @@ public partial class Mixer
     [LibraryImport(MixerLibrary, EntryPoint = "Mix_GroupChannel"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     [return: MarshalAs(UnmanagedType.I1)]
     public static partial bool GroupChannel(int which, int tag);
-    
-    
+
+
     /// <code>extern SDL_DECLSPEC bool SDLCALL Mix_GroupChannels(int from, int to, int tag);</code>
     /// <summary>
     /// <para>Assign several consecutive channels to the same tag.</para>
@@ -1238,8 +1238,8 @@ public partial class Mixer
     [LibraryImport(MixerLibrary, EntryPoint = "Mix_GroupChannels"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     [return: MarshalAs(UnmanagedType.I1)]
     public static partial bool GroupChannels(int from, int to, int tag);
-    
-    
+
+
     /// <code>extern SDL_DECLSPEC int SDLCALL Mix_GroupAvailable(int tag);</code>
     /// <summary>
     /// <para>Finds the first available channel in a group of channels.</para>
@@ -1254,8 +1254,8 @@ public partial class Mixer
     /// <since>This function is available since SDL_mixer 3.0.0.</since>
     [LibraryImport(MixerLibrary, EntryPoint = "Mix_GroupAvailable"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     public static partial int GroupAvailable(int tag);
-    
-    
+
+
     /// <code>extern SDL_DECLSPEC int SDLCALL Mix_GroupCount(int tag);</code>
     /// <summary>
     /// <para>Returns the number of channels in a group.</para>
@@ -1267,8 +1267,8 @@ public partial class Mixer
     /// <since>This function is available since SDL_mixer 3.0.0.</since>
     [LibraryImport(MixerLibrary, EntryPoint = "Mix_GroupCount"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     public static partial int GroupCount(int tag);
-    
-    
+
+
     /// <code>extern SDL_DECLSPEC int SDLCALL Mix_GroupOldest(int tag);</code>
     /// <summary>
     /// <para>Find the "oldest" sample playing in a group of channels.</para>
@@ -1283,8 +1283,8 @@ public partial class Mixer
     /// <seealso cref="GroupNewer"/>
     [LibraryImport(MixerLibrary, EntryPoint = "Mix_GroupOldest"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     public static partial int GroupOldest(int tag);
-    
-    
+
+
     /// <code>extern SDL_DECLSPEC int SDLCALL Mix_GroupNewer(int tag);</code>
     /// <summary>
     /// <para>Find the "most recent" sample playing in a group of channels.</para>
@@ -1299,8 +1299,8 @@ public partial class Mixer
     /// <seealso cref="GroupOldest"/>
     [LibraryImport(MixerLibrary, EntryPoint = "Mix_GroupNewer"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     public static partial int GroupNewer(int tag);
-    
-    
+
+
     /// <code>extern SDL_DECLSPEC int SDLCALL Mix_PlayChannel(int channel, Mix_Chunk *chunk, int loops);</code>
     /// <summary>
     /// <para>Play an audio chunk on a specific channel.</para>
@@ -1326,8 +1326,8 @@ public partial class Mixer
     /// <since>This function is available since SDL_mixer 3.0.0</since>
     [LibraryImport(MixerLibrary, EntryPoint = "Mix_PlayChannel"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     public static partial int PlayChannel(int channel, IntPtr chunk, int loops);
-    
-    
+
+
     /// <code>extern SDL_DECLSPEC int SDLCALL Mix_PlayChannelTimed(int channel, Mix_Chunk *chunk, int loops, int ticks);</code>
     /// <summary>
     /// <para>Play an audio chunk on a specific channel for a maximum time.</para>
@@ -1355,8 +1355,8 @@ public partial class Mixer
     /// <since>This function is available since SDL_mixer 3.0.0.</since>
     [LibraryImport(MixerLibrary, EntryPoint = "Mix_PlayChannelTimed"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     public static partial int PlayChannelTimed(int channel, IntPtr chunk, int loops, int ticks);
-    
-    
+
+
     /// <code>extern SDL_DECLSPEC bool SDLCALL Mix_PlayMusic(Mix_Music *music, int loops);</code>
     /// <summary>
     /// <para>Play a new music object.</para>
@@ -1378,8 +1378,8 @@ public partial class Mixer
     [LibraryImport(MixerLibrary, EntryPoint = "Mix_PlayMusic"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     [return: MarshalAs(UnmanagedType.I1)]
     public static partial bool PlayMusic(IntPtr music, int loops);
-    
-    
+
+
     /// <code>extern SDL_DECLSPEC bool SDLCALL Mix_FadeInMusic(Mix_Music *music, int loops, int ms);</code>
     /// <summary>
     /// <para>Play a new music object, fading in the audio.</para>
@@ -1404,8 +1404,8 @@ public partial class Mixer
     [LibraryImport(MixerLibrary, EntryPoint = "Mix_FadeInMusic"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     [return: MarshalAs(UnmanagedType.I1)]
     public static partial bool FadeInMusic(IntPtr music, int loops, int ms);
-    
-    
+
+
     /// <code>extern SDL_DECLSPEC bool SDLCALL Mix_FadeInMusicPos(Mix_Music *music, int loops, int ms, double position);</code>
     /// <summary>
     /// <para>Play a new music object, fading in the audio, from a starting position.</para>
@@ -1439,8 +1439,8 @@ public partial class Mixer
     [LibraryImport(MixerLibrary, EntryPoint = "Mix_FadeInMusicPos"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     [return: MarshalAs(UnmanagedType.I1)]
     public static partial bool FadeInMusicPos(IntPtr music, int loops, int ms, double position);
-    
-    
+
+
     /// <code>extern SDL_DECLSPEC int SDLCALL Mix_FadeInChannel(int channel, Mix_Chunk *chunk, int loops, int ms);</code>
     /// <summary>
     /// <para>Play an audio chunk on a specific channel, fading in the audio.</para>
@@ -1473,8 +1473,8 @@ public partial class Mixer
     /// be played.</returns>
     [LibraryImport(MixerLibrary, EntryPoint = "Mix_FadeInChannel"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     public static partial int FadeInChannel(int channel, IntPtr chunk, int loops, int ms);
-    
-    
+
+
     /// <code>extern SDL_DECLSPEC int SDLCALL Mix_FadeInChannelTimed(int channel, Mix_Chunk *chunk, int loops, int ms, int ticks);</code>
     /// <summary>
     /// <para>Play an audio chunk on a specific channel, fading in the audio, for a
@@ -1511,8 +1511,8 @@ public partial class Mixer
     /// <since>This function is available since SDL_mixer 3.0.0.</since>
     [LibraryImport(MixerLibrary, EntryPoint = "Mix_FadeInChannelTimed"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     public static partial int FadeInChannelTimed(int channel, IntPtr chunk, int loops, int ms, int ticks);
-    
-    
+
+
     /// <code>extern SDL_DECLSPEC int SDLCALL Mix_Volume(int channel, int volume);</code>
     /// <summary>
     /// <para>Set the volume for a specific channel.</para>
@@ -1536,8 +1536,8 @@ public partial class Mixer
     /// <since>This function is available since SDL_mixer 3.0.0.</since>
     [LibraryImport(MixerLibrary, EntryPoint = "Mix_Volume"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     public static partial int Volume(int channel, int volume);
-    
-    
+
+
     /// <code>extern SDL_DECLSPEC int SDLCALL Mix_VolumeChunk(Mix_Chunk *chunk, int volume);</code>
     /// <summary>
     /// <para>Set the volume for a specific chunk.</para>
@@ -1561,8 +1561,8 @@ public partial class Mixer
     /// <since>This function is available since SDL_mixer 3.0.0.</since>
     [LibraryImport(MixerLibrary, EntryPoint = "Mix_VolumeChunk"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     public static partial int VolumeChunk(IntPtr chunk, int volume);
-    
-    
+
+
     /// <code>extern SDL_DECLSPEC int SDLCALL Mix_VolumeMusic(int volume);</code>
     /// <summary>
     /// <para>Set the volume for the music channel.</para>
@@ -1580,8 +1580,8 @@ public partial class Mixer
     /// <since>This function is available since SDL_mixer 3.0.0.</since>
     [LibraryImport(MixerLibrary, EntryPoint = "Mix_VolumeMusic"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     public static partial int VolumeMusic(int volume);
-    
-    
+
+
     /// <code>extern SDL_DECLSPEC int SDLCALL Mix_GetMusicVolume(Mix_Music *music);</code>
     /// <summary>
     /// Query the current volume value for a music object.
@@ -1591,8 +1591,8 @@ public partial class Mixer
     /// <since>This function is available since SDL_mixer 3.0.0.</since>
     [LibraryImport(MixerLibrary, EntryPoint = "Mix_GetMusicVolume"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     public static partial int GetMusicVolume(IntPtr music);
-    
-    
+
+
     /// <code>extern SDL_DECLSPEC int SDLCALL Mix_MasterVolume(int volume);</code>
     /// <summary>
     /// <para>Set the master volume for all channels.</para>
@@ -1613,8 +1613,8 @@ public partial class Mixer
     /// the current volume.</returns>
     [LibraryImport(MixerLibrary, EntryPoint = "Mix_MasterVolume"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     public static partial int MasterVolume(int volume);
-    
-    
+
+
     /// <code>extern SDL_DECLSPEC void SDLCALL Mix_HaltChannel(int channel);</code>
     /// <summary>
     /// <para>Halt playing of a particular channel.</para>
@@ -1631,8 +1631,8 @@ public partial class Mixer
     /// <since>This function is available since SDL_mixer 3.0.0.</since>
     [LibraryImport(MixerLibrary, EntryPoint = "Mix_HaltChannel"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     public static partial void HaltChannel(int channel);
-    
-    
+
+
     /// <code>extern SDL_DECLSPEC void SDLCALL Mix_HaltGroup(int tag);</code>
     /// <summary>
     /// <para>Halt playing of a group of channels by arbitrary tag.</para>
@@ -1649,8 +1649,8 @@ public partial class Mixer
     /// <since>This function is available since SDL_mixer 3.0.0.</since>
     [LibraryImport(MixerLibrary, EntryPoint = "Mix_HaltGroup"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     public static partial void HaltGroup(int tag);
-    
-    
+
+
     /// <code>extern SDL_DECLSPEC void SDLCALL Mix_HaltMusic(void);</code>
     /// <summary>
     /// <para>Halt playing of the music stream.</para>
@@ -1662,8 +1662,8 @@ public partial class Mixer
     /// <since>This function is available since SDL_mixer 3.0.0.</since>
     [LibraryImport(MixerLibrary, EntryPoint = "Mix_HaltMusic"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     public static partial void HaltMusic();
-    
-    
+
+
     /// <code>extern SDL_DECLSPEC int SDLCALL Mix_ExpireChannel(int channel, int ticks);</code>
     /// <summary>
     /// <para>Change the expiration delay for a particular channel.</para>
@@ -1686,8 +1686,8 @@ public partial class Mixer
     /// <since>This function is available since SDL_mixer 3.0.0.</since>
     [LibraryImport(MixerLibrary, EntryPoint = "Mix_HaltMusic"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     public static partial int ExpireChannel(int channel, int ticks);
-    
-    
+
+
     /// <code>extern SDL_DECLSPEC int SDLCALL Mix_FadeOutChannel(int which, int ms);</code>
     /// <summary>
     /// <para>Halt a channel after fading it out for a specified time.</para>
@@ -1709,8 +1709,8 @@ public partial class Mixer
     /// <since>This function is available since SDL_mixer 3.0.0.</since>
     [LibraryImport(MixerLibrary, EntryPoint = "Mix_FadeOutChannel"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     public static partial int FadeOutChannel(int which, int ms);
-    
-    
+
+
     /// <code>extern SDL_DECLSPEC int SDLCALL Mix_FadeOutGroup(int tag, int ms);</code>
     /// <summary>
     /// <para>Halt a playing group of channels by arbitrary tag, after fading them out
@@ -1737,8 +1737,8 @@ public partial class Mixer
     /// <since>This function is available since SDL_mixer 3.0.0.</since>
     [LibraryImport(MixerLibrary, EntryPoint = "Mix_FadeOutGroup"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     public static partial int FadeOutGroup(int tag, int ms);
-    
-    
+
+
     /// <code>extern SDL_DECLSPEC bool SDLCALL Mix_FadeOutMusic(int ms);</code>
     /// <summary>
     /// <para>Halt the music stream after fading it out for a specified time.</para>
@@ -1760,8 +1760,8 @@ public partial class Mixer
     [LibraryImport(MixerLibrary, EntryPoint = "Mix_FadeOutMusic"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     [return: MarshalAs(UnmanagedType.I1)]
     public static partial bool FadeOutMusic(int ms);
-    
-    
+
+
     /// <code>extern SDL_DECLSPEC Mix_Fading SDLCALL Mix_FadingMusic(void);</code>
     /// <summary>
     /// <para>Query the fading status of the music stream.</para>
@@ -1777,8 +1777,8 @@ public partial class Mixer
     /// <since>This function is available since SDL_mixer 3.0.0.</since>
     [LibraryImport(MixerLibrary, EntryPoint = "Mix_FadingMusic"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     public static partial Fading FadingMusic();
-    
-    
+
+
     /// <code>extern SDL_DECLSPEC Mix_Fading SDLCALL Mix_FadingChannel(int which);</code>
     /// <summary>
     /// <para>Query the fading status of a channel.</para>
@@ -1799,8 +1799,8 @@ public partial class Mixer
     /// <since>This function is available since SDL_mixer 3.0.0.</since>
     [LibraryImport(MixerLibrary, EntryPoint = "Mix_FadingChannel"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     public static partial Fading FadingChannel(int which);
-    
-    
+
+
     /// <code>extern SDL_DECLSPEC void SDLCALL Mix_Pause(int channel);</code>
     /// <summary>
     /// <para>Pause a particular channel.</para>
@@ -1820,8 +1820,8 @@ public partial class Mixer
     /// <since>This function is available since SDL_mixer 3.0.0.</since>
     [LibraryImport(MixerLibrary, EntryPoint = "Mix_Pause"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     public static partial void Pause(int channel);
-    
-    
+
+
     /// <code>extern SDL_DECLSPEC void SDLCALL Mix_PauseGroup(int tag);</code>
     /// <summary>
     /// <para>Pause playing of a group of channels by arbitrary tag.</para>
@@ -1840,8 +1840,8 @@ public partial class Mixer
     /// <since>This function is available since SDL_mixer 3.0.0.</since>
     [LibraryImport(MixerLibrary, EntryPoint = "Mix_PauseGroup"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     public static partial void PauseGroup(int tag);
-    
-    
+
+
     /// <code>extern SDL_DECLSPEC void SDLCALL Mix_Resume(int channel);</code>
     /// <summary>
     /// <para>Resume a particular channel.</para>
@@ -1856,8 +1856,8 @@ public partial class Mixer
     /// <since>This function is available since SDL_mixer 3.0.0.</since>
     [LibraryImport(MixerLibrary, EntryPoint = "Mix_Resume"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     public static partial void Resume(int channel);
-    
-    
+
+
     /// <code>extern SDL_DECLSPEC void SDLCALL Mix_ResumeGroup(int tag);</code>
     /// <summary>
     /// <para>Resume playing of a group of channels by arbitrary tag.</para>
@@ -1873,8 +1873,8 @@ public partial class Mixer
     /// <since>This function is available since SDL_mixer 3.0.0.</since>
     [LibraryImport(MixerLibrary, EntryPoint = "Mix_ResumeGroup"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     public static partial void ResumeGroup(int tag);
-    
-    
+
+
     /// <code>extern SDL_DECLSPEC int SDLCALL Mix_Paused(int channel);</code>
     /// <summary>
     /// <para>Query whether a particular channel is paused.</para>
@@ -1886,8 +1886,8 @@ public partial class Mixer
     /// <since>This function is available since SDL_mixer 3.0.0.</since>
     [LibraryImport(MixerLibrary, EntryPoint = "Mix_Paused"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     public static partial int Paused(int channel);
-    
-    
+
+
     /// <code>extern SDL_DECLSPEC void SDLCALL Mix_PauseMusic(void);</code>
     /// <summary>
     /// <para>Pause the music stream.</para>
@@ -1901,8 +1901,8 @@ public partial class Mixer
     /// <since>This function is available since SDL_mixer 3.0.0.</since>
     [LibraryImport(MixerLibrary, EntryPoint = "Mix_PauseMusic"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     public static partial void PauseMusic();
-    
-    
+
+
     /// <code>extern SDL_DECLSPEC void SDLCALL Mix_ResumeMusic(void);</code>
     /// <summary>
     /// <para>Resume the music stream.</para>
@@ -1912,8 +1912,8 @@ public partial class Mixer
     /// <since>This function is available since SDL_mixer 3.0.0.</since>
     [LibraryImport(MixerLibrary, EntryPoint = "Mix_ResumeMusic"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     public static partial void ResumeMusic();
-    
-    
+
+
     /// <code>extern SDL_DECLSPEC void SDLCALL Mix_RewindMusic(void);</code>
     /// <summary>
     /// <para>Rewind the music stream.</para>
@@ -1924,8 +1924,8 @@ public partial class Mixer
     /// <since>This function is available since SDL_mixer 3.0.0.</since>
     [LibraryImport(MixerLibrary, EntryPoint = "Mix_RewindMusic"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     public static partial void RewindMusic();
-    
-    
+
+
     /// <code>extern SDL_DECLSPEC bool SDLCALL Mix_PausedMusic(void);</code>
     /// <summary>
     /// Query whether the music stream is paused.
@@ -1937,8 +1937,8 @@ public partial class Mixer
     [LibraryImport(MixerLibrary, EntryPoint = "Mix_PausedMusic"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     [return: MarshalAs(UnmanagedType.I1)]
     public static partial bool PausedMusic();
-    
-    
+
+
     /// <code>extern SDL_DECLSPEC bool SDLCALL Mix_ModMusicJumpToOrder(int order);</code>
     /// <summary>
     /// <para>Jump to a given order in mod music.</para>
@@ -1951,8 +1951,8 @@ public partial class Mixer
     [LibraryImport(MixerLibrary, EntryPoint = "Mix_ModMusicJumpToOrder"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     [return: MarshalAs(UnmanagedType.I1)]
     public static partial bool ModMusicJumpToOrder(int order);
-    
-    
+
+
     /// <code>extern SDL_DECLSPEC bool SDLCALL Mix_StartTrack(Mix_Music *music, int track);</code>
     /// <summary>
     /// <para>Start a track in music object.</para>
@@ -1966,8 +1966,8 @@ public partial class Mixer
     [LibraryImport(MixerLibrary, EntryPoint = "Mix_StartTrack"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     [return: MarshalAs(UnmanagedType.I1)]
     public static partial bool StartTrack(IntPtr music, int track);
-    
-    
+
+
     /// <code>extern SDL_DECLSPEC int SDLCALL Mix_GetNumTracks(Mix_Music *music);</code>
     /// <summary>
     /// <para>Get number of tracks in music object.</para>
@@ -1979,8 +1979,8 @@ public partial class Mixer
     /// <since>This function is available since SDL_mixer 3.0.0.</since>
     [LibraryImport(MixerLibrary, EntryPoint = "Mix_GetNumTracks"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     public static partial int GetNumTracks(IntPtr music);
-    
-    
+
+
     /// <code>extern SDL_DECLSPEC bool SDLCALL Mix_SetMusicPosition(double position);</code>
     /// <summary>
     /// <para>Set the current position in the music stream, in seconds.</para>
@@ -1995,8 +1995,8 @@ public partial class Mixer
     [LibraryImport(MixerLibrary, EntryPoint = "Mix_SetMusicPosition"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     [return: MarshalAs(UnmanagedType.I1)]
     public static partial bool SetMusicPosition(double position);
-    
-    
+
+
     /// <code>extern SDL_DECLSPEC double SDLCALL Mix_GetMusicPosition(Mix_Music *music);</code>
     /// <summary>
     /// <para>Get the time current position of music stream, in seconds.</para>
@@ -2007,8 +2007,8 @@ public partial class Mixer
     /// <since>This function is available since SDL_mixer 3.0.0.</since>
     [LibraryImport(MixerLibrary, EntryPoint = "Mix_GetMusicPosition"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     public static partial double GetMusicPosition(IntPtr music);
-    
-    
+
+
     /// <code>extern SDL_DECLSPEC double SDLCALL Mix_MusicDuration(Mix_Music *music);</code>
     /// <summary>
     /// <para>Get a music object's duration, in seconds.</para>
@@ -2019,8 +2019,8 @@ public partial class Mixer
     /// <returns>music duration in seconds, or -1.0 on error.</returns>
     [LibraryImport(MixerLibrary, EntryPoint = "Mix_MusicDuration"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     public static partial double MusicDuration(IntPtr music);
-    
-    
+
+
     /// <code>extern SDL_DECLSPEC double SDLCALL Mix_GetMusicLoopStartTime(Mix_Music *music);</code>
     /// <summary>
     /// <para>Get the loop start time position of music stream, in seconds.</para>
@@ -2033,8 +2033,8 @@ public partial class Mixer
     /// <since>This function is available since SDL_mixer 3.0.0.</since>
     [LibraryImport(MixerLibrary, EntryPoint = "Mix_GetMusicLoopStartTime"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     public static partial double GetMusicLoopStartTime(IntPtr music);
-    
-    
+
+
     /// <code>extern SDL_DECLSPEC double SDLCALL Mix_GetMusicLoopEndTime(Mix_Music *music);</code>
     /// <summary>
     /// <para>Get the loop end time position of music stream, in seconds.</para>
@@ -2047,8 +2047,8 @@ public partial class Mixer
     /// <since>This function is available since SDL_mixer 3.0.0.</since>
     [LibraryImport(MixerLibrary, EntryPoint = "Mix_GetMusicLoopEndTime"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     public static partial double GetMusicLoopEndTime(IntPtr music);
-    
-    
+
+
     /// <code>extern SDL_DECLSPEC double SDLCALL Mix_GetMusicLoopLengthTime(Mix_Music *music);</code>
     /// <summary>
     /// <para>Get the loop time length of music stream, in seconds.</para>
@@ -2061,8 +2061,8 @@ public partial class Mixer
     /// <since>This function is available since SDL_mixer 3.0.0.</since>
     [LibraryImport(MixerLibrary, EntryPoint = "Mix_GetMusicLoopLengthTime"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     public static partial double GetMusicLoopLengthTime(IntPtr music);
-    
-    
+
+
     /// <code>extern SDL_DECLSPEC int SDLCALL Mix_Playing(int channel);</code>
     /// <summary>
     /// <para>Check the playing status of a specific channel.</para>
@@ -2080,8 +2080,8 @@ public partial class Mixer
     /// <since>This function is available since SDL_mixer 3.0.0.</since>
     [LibraryImport(MixerLibrary, EntryPoint = "Mix_Playing"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     public static partial int Playing(int channel);
-    
-    
+
+
     /// <code>extern SDL_DECLSPEC bool SDLCALL Mix_PlayingMusic(void);</code>
     /// <summary>
     /// <para>Check the playing status of the music stream.</para>
@@ -2095,8 +2095,8 @@ public partial class Mixer
     [LibraryImport(MixerLibrary, EntryPoint = "Mix_PlayingMusic"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     [return: MarshalAs(UnmanagedType.I1)]
     public static partial bool PlayingMusic();
-    
-    
+
+
     /// <code>extern SDL_DECLSPEC bool SDLCALL Mix_SetSoundFonts(const char *paths);</code>
     /// <summary>
     /// <para>Set SoundFonts paths to use by supported MIDI backends.</para>
@@ -2116,8 +2116,8 @@ public partial class Mixer
     [LibraryImport(MixerLibrary, EntryPoint = "Mix_SetSoundFonts"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     [return: MarshalAs(UnmanagedType.I1)]
     public static partial bool SetSoundFonts([MarshalAs(UnmanagedType.LPUTF8Str)] string paths);
-    
-    
+
+
     [LibraryImport(MixerLibrary, EntryPoint = "Mix_GetSoundFonts"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial IntPtr Mix_GetSoundFonts();
     /// <code>extern SDL_DECLSPEC const char* SDLCALL Mix_GetSoundFonts(void);</code>
@@ -2145,11 +2145,11 @@ public partial class Mixer
     /// <since>This function is available since SDL_mixer 3.0.0.</since>
     public static string GetSoundFonts()
     {
-        var value = Mix_GetSoundFonts(); 
+        var value = Mix_GetSoundFonts();
         return value == IntPtr.Zero ? "" : Marshal.PtrToStringUTF8(value)!;
     }
-    
-    
+
+
     /// <code>extern SDL_DECLSPEC bool SDLCALL Mix_EachSoundFont(Mix_EachSoundFontCallback function, void *data);</code>
     /// <summary>
     /// <para>Iterate SoundFonts paths to use by supported MIDI backends.</para>
@@ -2172,8 +2172,8 @@ public partial class Mixer
     [LibraryImport(MixerLibrary, EntryPoint = "Mix_EachSoundFont"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     [return: MarshalAs(UnmanagedType.I1)]
     public static partial bool EachSoundFont(EachSoundFontCallback function, IntPtr data);
-    
-    
+
+
     /// <code>extern SDL_DECLSPEC bool SDLCALL Mix_SetTimidityCfg(const char *path);</code>
     /// <summary>
     /// <para>Set full path of the Timidity config file.</para>
@@ -2188,8 +2188,8 @@ public partial class Mixer
     [LibraryImport(MixerLibrary, EntryPoint = "Mix_SetTimidityCfg"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     [return: MarshalAs(UnmanagedType.I1)]
     public static partial bool SetTimidityCfg([MarshalAs(UnmanagedType.LPUTF8Str)] string path);
-    
-    
+
+
     [LibraryImport(MixerLibrary, EntryPoint = "Mix_GetTimidityCfg"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial IntPtr Mix_GetTimidityCfg();
     /// <code>extern SDL_DECLSPEC const char* SDLCALL Mix_GetTimidityCfg(void);</code>
@@ -2205,11 +2205,11 @@ public partial class Mixer
     /// <seealso cref="SetTimidityCfg"/>
     public static string? GetTimidityCfg()
     {
-        var value = Mix_GetTimidityCfg(); 
+        var value = Mix_GetTimidityCfg();
         return value == IntPtr.Zero ? null : Marshal.PtrToStringUTF8(value);
     }
-    
-    
+
+
     /// <code>extern SDL_DECLSPEC Mix_Chunk * SDLCALL Mix_GetChunk(int channel);</code>
     /// <summary>
     /// <para>Get the Mix_Chunk currently associated with a mixer channel.</para>
@@ -2220,8 +2220,8 @@ public partial class Mixer
     /// <since>This function is available since SDL_mixer 3.0.0.</since>
     [LibraryImport(MixerLibrary, EntryPoint = "Mix_GetChunk"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     public static partial IntPtr GetChunk(int channel);
-    
-    
+
+
     /// <code>extern SDL_DECLSPEC void SDLCALL Mix_CloseAudio(void);</code>
     /// <summary>
     /// <para>Close the mixer, halting all playing audio.</para>

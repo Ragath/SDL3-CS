@@ -37,50 +37,50 @@ public static partial class SDL
         /// Region is normal. No special properties.
         /// </summary>
         Normal,
-        
+
         /// <summary>
         /// Region can drag entire window.
         /// </summary>
         Draggable,
-        
+
         /// <summary>
         /// Region is the resizable top-left corner border.
         /// </summary>
         ResizeTopLeft,
-        
+
         /// <summary>
         /// Region is the resizable top border.
         /// </summary>
         ResizeTop,
-        
+
         /// <summary>
         /// Region is the resizable top-right corner border.
         /// </summary>
         ResizeTopRight,
-        
+
         /// <summary>
         /// Region is the resizable right border.
         /// </summary>
         ResizeRight,
-        
+
         /// <summary>
         /// Region is the resizable bottom-right corner border.
         /// </summary>
         ResizeBottomRight,
-        
+
         /// <summary>
         /// Region is the resizable bottom border.
         /// </summary>
         ResizeBottom,
-        
+
         /// <summary>
         /// Region is the resizable bottom-left corner border.
         /// </summary>
         ResizeBottomLeft,
-        
+
         /// <summary>
         /// Region is the resizable left border.
         /// </summary>
-        ResizeLeft 
+        ResizeLeft
     }
 }

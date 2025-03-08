@@ -26,36 +26,36 @@ using System.Runtime.InteropServices;
 namespace SDL3;
 
 public static partial class SDL
-{
-    /// <summary>
-    /// <para>A structure specifying the parameters of a graphics pipeline vertex input
-    /// state.</para>
-    /// </summary>
-    /// <since>This struct is available since SDL 3.2.0</since>
-    /// <seealso cref="GPUGraphicsPipelineCreateInfo"/>
-    /// <seealso cref="GPUVertexBufferDescription"/>
-    /// <seealso cref="GPUVertexAttribute"/>
-    [StructLayout(LayoutKind.Sequential)]
-    public struct GPUVertexInputState
     {
         /// <summary>
-        /// A pointer to an array of vertex buffer descriptions.
+        /// <para>A structure specifying the parameters of a graphics pipeline vertex input
+        /// state.</para>
         /// </summary>
-        public IntPtr VertexBufferDescriptions;
-        
-        /// <summary>
-        /// The number of vertex buffer descriptions in the above array.
-        /// </summary>
-        public UInt32 NumVertexBuffers;
-        
-        /// <summary>
-        /// A pointer to an array of vertex attribute descriptions.
-        /// </summary>
-        public IntPtr VertexAttributes;
-        
-        /// <summary>
-        /// The number of vertex attribute descriptions in the above array.
-        /// </summary>
-        public UInt32 NumVertexAttributes;
+        /// <since>This struct is available since SDL 3.2.0</since>
+        /// <seealso cref="GPUGraphicsPipelineCreateInfo"/>
+        /// <seealso cref="GPUVertexBufferDescription"/>
+        /// <seealso cref="GPUVertexAttribute"/>
+        [StructLayout(LayoutKind.Sequential)]
+        public struct GPUVertexInputState
+        {
+            /// <summary>
+            /// A pointer to an array of vertex buffer descriptions.
+            /// </summary>
+            public IntPtr VertexBufferDescriptions;
+
+            /// <summary>
+            /// The number of vertex buffer descriptions in the above array.
+            /// </summary>
+            public UInt32 NumVertexBuffers;
+
+            /// <summary>
+            /// A pointer to an array of vertex attribute descriptions.
+            /// </summary>
+            public IntPtr VertexAttributes;
+
+            /// <summary>
+            /// The number of vertex attribute descriptions in the above array.
+            /// </summary>
+            public UInt32 NumVertexAttributes;
+        }
     }
-}

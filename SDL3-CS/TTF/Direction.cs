@@ -35,22 +35,22 @@ public static partial class TTF
     public enum Direction
     {
         Invalid = 0,
-        
+
         /// <summary>
         /// Left to Right
         /// </summary>
         LTR = 4,
-        
+
         /// <summary>
         /// Right to Left
         /// </summary>
         RTL,
-        
+
         /// <summary>
         /// Top to Bottom
         /// </summary>
         TTB,
-        
+
         /// <summary>
         /// Bottom to Top
         /// </summary>

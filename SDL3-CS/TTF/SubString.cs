@@ -49,7 +49,7 @@ public static partial class TTF
         /// The byte offset from the beginning of the text
         /// </summary>
         public int Offset;
-        
+
         /// <summary>
         /// The byte length starting at the offset
         /// </summary>

@@ -42,8 +42,8 @@ public static partial class SDL
     /// <since>This function is available since SDL 3.2.0</since>
     [LibraryImport(SDLLibrary, EntryPoint = "SDL_ReportAssertion"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     public static partial AssertState ReportAssertion(IntPtr data, [MarshalAs(UnmanagedType.LPUTF8Str)] string func, [MarshalAs(UnmanagedType.LPUTF8Str)] string file, int line);
-    
-    
+
+
     /// <code>extern SDL_DECLSPEC void SDLCALL SDL_SetAssertionHandler(SDL_AssertionHandler handler, void *userdata);</code>
     /// <summary>
     /// <para>Set an application-defined assertion handler.</para>
@@ -63,8 +63,8 @@ public static partial class SDL
     /// <seealso cref="GetAssertionHandler"/>
     [LibraryImport(SDLLibrary, EntryPoint = "SDL_SetAssertionHandler"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     public static partial void SetAssertionHandler(AssertionHandler handler, IntPtr userdata);
-    
-    
+
+
     /// <code>extern SDL_DECLSPEC SDL_AssertionHandler SDLCALL SDL_GetDefaultAssertionHandler(void);</code>
     /// <summary>
     /// <para>Get the default assertion handler.</para>
@@ -80,8 +80,8 @@ public static partial class SDL
     /// <seealso cref="GetAssertionHandler"/>
     [LibraryImport(SDLLibrary, EntryPoint = "SDL_GetDefaultAssertionHandler"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     public static partial AssertionHandler GetDefaultAssertionHandler();
-    
-    
+
+
     /// <code>extern SDL_DECLSPEC SDL_AssertionHandler SDLCALL SDL_GetAssertionHandler(void **puserdata);</code>
     /// <summary>
     /// <para>Get the current assertion handler.</para>
@@ -102,8 +102,8 @@ public static partial class SDL
     /// <seealso cref="SetAssertionHandler"/>
     [LibraryImport(SDLLibrary, EntryPoint = "SDL_GetAssertionHandler"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     public static partial AssertionHandler GetAssertionHandler(IntPtr puserdata);
-    
-    
+
+
     /// <code>extern SDL_DECLSPEC const SDL_AssertData * SDLCALL SDL_GetAssertionReport(void);</code>
     /// <summary>
     /// <para>Get a list of all assertion failures.</para>
@@ -129,8 +129,8 @@ public static partial class SDL
     /// <seealso cref="ResetAssertionReport"/>
     [LibraryImport(SDLLibrary, EntryPoint = "SDL_GetAssertionReport"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     public static partial IntPtr GetAssertionReport();
-    
-    
+
+
     /// <code>extern SDL_DECLSPEC void SDLCALL SDL_ResetAssertionReport(void);</code>
     /// <summary>
     /// <para>Clear the list of all assertion failures.</para>

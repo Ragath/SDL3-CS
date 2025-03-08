@@ -36,8 +36,8 @@ public partial class SDL
     /// <since>This macro is available since SDL 3.2.0</since>
     [Macro]
     public static int VersionNum(int major, int minor, int patch) => ((major) * 1000000 + (minor) * 1000 + (patch));
-    
-    
+
+
     /// <code>#define SDL_VERSIONNUM_MAJOR(version) ((version) / 1000000)</code>
     /// <summary>
     /// <para>This macro extracts the major version from a version number</para>

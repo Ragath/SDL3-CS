@@ -45,49 +45,49 @@ public static partial class SDL
         /// <see cref="EventType.KeyDown"/> or <see cref="EventType.KeyUp"/>
         /// </summary>
         public EventType Type;
-        
+
         private uint _reserved;
-        
+
         /// <summary>
         /// In nanoseconds, populated using <see cref="GetTicksNS"/>
         /// </summary>
         public ulong Timestamp;
-        
+
         /// <summary>
         /// The window with keyboard focus, if any
         /// </summary>
         public uint WindowID;
-        
+
         /// <summary>
         /// The keyboard instance id, or 0 if unknown or virtual
         /// </summary>
         public uint Which;
-        
+
         /// <summary>
         /// SDL physical key code
         /// </summary>
         public Scancode Scancode;
-        
+
         /// <summary>
         /// SDL virtual key code
         /// </summary>
         public Keycode Key;
-        
+
         /// <summary>
         /// current key modifiers
         /// </summary>
         public Keymod Mod;
-        
+
         /// <summary>
         /// The platform dependent scancode for this event
         /// </summary>
         public ushort Raw;
-        
+
         /// <summary>
         /// true if the key is pressed
         /// </summary>
         [MarshalAs(UnmanagedType.I1)] public bool Down;
-        
+
         /// <summary>
         /// true if this is a key repeat
         /// </summary>

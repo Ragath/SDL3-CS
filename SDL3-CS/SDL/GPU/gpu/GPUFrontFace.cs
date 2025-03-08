@@ -24,23 +24,23 @@
 namespace SDL3;
 
 public static partial class SDL
-{ 
-    /// <summary>
-    /// <para>Specifies the vertex winding that will cause a triangle to be determined to
-    /// be front-facing.</para>
-    /// </summary>
-    /// <since>This enum is available since SDL 3.2.0</since>
-    /// <seealso cref="CreateGPUGraphicsPipeline"/>
-    public enum GPUFrontFace
     {
         /// <summary>
-        /// A triangle with counter-clockwise vertex winding will be considered front-facing.
+        /// <para>Specifies the vertex winding that will cause a triangle to be determined to
+        /// be front-facing.</para>
         /// </summary>
-        CounterClockwise,
-        
-        /// <summary>
-        /// A triangle with clockwise vertex winding will be considered front-facing.
-        /// </summary>
-        Clockwise
+        /// <since>This enum is available since SDL 3.2.0</since>
+        /// <seealso cref="CreateGPUGraphicsPipeline"/>
+        public enum GPUFrontFace
+        {
+            /// <summary>
+            /// A triangle with counter-clockwise vertex winding will be considered front-facing.
+            /// </summary>
+            CounterClockwise,
+
+            /// <summary>
+            /// A triangle with clockwise vertex winding will be considered front-facing.
+            /// </summary>
+            Clockwise
+        }
     }
-}

@@ -35,13 +35,13 @@ public partial class Image
     public struct Animation
     {
         public int W;
-        
+
         public int H;
 
         public int Count;
 
         public IntPtr Framse;
-        
+
         public IntPtr Delays;
     }
 }

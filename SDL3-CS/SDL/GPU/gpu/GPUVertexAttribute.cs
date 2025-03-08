@@ -43,17 +43,17 @@ public static partial class SDL
         /// The shader input location index.
         /// </summary>
         public UInt32 Location;
-        
+
         /// <summary>
         /// The binding slot of the associated vertex buffer.
         /// </summary>
         public UInt32 BufferSlot;
-        
+
         /// <summary>
         /// The size and type of the attribute data.
         /// </summary>
         public GPUVertexElementFormat Format;
-        
+
         /// <summary>
         /// The byte offset of this attribute relative to the start of the vertex element.
         /// </summary>

@@ -38,29 +38,29 @@ public static partial class SDL
         /// <see cref="EventType.GamepadSensorUpdate"/>
         /// </summary>
         public EventType Type;
-        
+
         private UInt32 _reserved;
-        
+
         /// <summary>
         /// In nanoseconds, populated using <see cref="GetTicksNS"/>
         /// </summary>
         public UInt64 Timestamp;
-        
+
         /// <summary>
         /// The joystick instance id
         /// </summary>
         public UInt32 Which;
-        
+
         /// <summary>
         /// The type of the sensor, one of the values of <see cref="SensorType"/>
         /// </summary>
         public Int32 Sensor;
-        
+
         /// <summary>
         /// Up to 3 values from the sensor, as defined in SDL_sensor.h
         /// </summary>
         public unsafe fixed float Data[3];
-        
+
         /// <summary>
         /// The timestamp of the sensor reading in nanoseconds, not necessarily synchronized with the system clock
         /// </summary>

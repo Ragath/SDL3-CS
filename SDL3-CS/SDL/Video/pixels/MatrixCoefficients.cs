@@ -33,60 +33,60 @@ public static partial class SDL
     public enum MatrixCoefficients
     {
         Identity = 0,
-        
+
         /// <summary>
         /// ITU-R BT.709-6
         /// </summary>
         BT709 = 1,
-        
+
         Unspecified = 2,
-        
+
         /// <summary>
         /// US FCC Title 47
         /// </summary>
         FCC = 4,
-        
+
         /// <summary>
         /// ITU-R BT.470-6 System B, G / ITU-R BT.601-7 625, functionally the same as <see cref="BT601"/>
         /// </summary>
         BT470BG = 5,
-        
+
         /// <summary>
         /// ITU-R BT.601-7 525
         /// </summary>
         BT601 = 6,
-        
+
         /// <summary>
         /// SMPTE 240M
         /// </summary>
         SMPTE240 = 7,
-        
+
         YCGCO = 8,
-        
+
         /// <summary>
         /// ITU-R BT.2020-2 non-constant luminance
         /// </summary>
         BT2020NCL = 9,
-        
+
         /// <summary>
         /// ITU-R BT.2020-2 constant luminance
         /// </summary>
         BT2020CL = 10,
-        
+
         /// <summary>
         /// SMPTE ST 2085
         /// </summary>
         SMPTE2085 = 11,
-        
+
         ChromaDerivedNCL = 12,
-        
+
         ChromaDerivedCL = 13,
-        
+
         /// <summary>
         /// ITU-R BT.2100-0 ICTCP
         /// </summary>
         ICTCP = 14,
-        
+
         Custom = 31
     }
 }

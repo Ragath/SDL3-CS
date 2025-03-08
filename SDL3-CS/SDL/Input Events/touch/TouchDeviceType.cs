@@ -28,17 +28,17 @@ public static partial class SDL
     public enum TouchDeviceType
     {
         Invalid = -1,
-        
+
         /// <summary>
         /// touch screen with window-relative coordinates
         /// </summary>
         Direct,
-        
+
         /// <summary>
         /// trackpad with absolute device coordinates
         /// </summary>
         IndirectAbsolute,
-        
+
         /// <summary>
         /// trackpad with screen cursor-relative coordinates
         /// </summary>

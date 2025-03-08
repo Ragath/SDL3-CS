@@ -41,10 +41,10 @@ public static partial class SDL
     /// <seealso cref="GetStorageFileSize"/>
     /// <seealso cref="OpenUserStorage"/>
     /// <seealso cref="ReadStorageFile"/>
-    [LibraryImport(SDLLibrary, EntryPoint = "SDL_OpenTitleStorage"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])] 
-    public static partial IntPtr OpenTitleStorage([MarshalAs(UnmanagedType.LPUTF8Str)] string? @override, uint props); 
+    [LibraryImport(SDLLibrary, EntryPoint = "SDL_OpenTitleStorage"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
+    public static partial IntPtr OpenTitleStorage([MarshalAs(UnmanagedType.LPUTF8Str)] string? @override, uint props);
 
-    
+
     /// <code>extern SDL_DECLSPEC SDL_Storage * SDLCALL SDL_OpenUserStorage(const char *org, const char *app, SDL_PropertiesID props);</code>
     /// <summary>
     /// <para>Opens up a container for a user's unique read/write filesystem.</para>
@@ -69,7 +69,7 @@ public static partial class SDL
     [LibraryImport(SDLLibrary, EntryPoint = "SDL_OpenUserStorage"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     public static partial IntPtr OpenUserStorage([MarshalAs(UnmanagedType.LPUTF8Str)] string org, [MarshalAs(UnmanagedType.LPUTF8Str)] string app, uint props);
 
-    
+
     /// <code>extern SDL_DECLSPEC SDL_Storage * SDLCALL SDL_OpenFileStorage(const char *path);</code>
     /// <summary>
     /// <para>Opens up a container for local filesystem storage.</para>
@@ -92,7 +92,7 @@ public static partial class SDL
     [LibraryImport(SDLLibrary, EntryPoint = "SDL_OpenFileStorage"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     public static partial IntPtr OpenFileStorage([MarshalAs(UnmanagedType.LPUTF8Str)] string? path);
 
-    
+
     /// <code>extern SDL_DECLSPEC SDL_Storage * SDLCALL SDL_OpenStorage(const SDL_StorageInterface *iface, void *userdata);</code>
     /// <summary>
     /// <para>Opens up a container using a client-provided storage interface.</para>
@@ -119,7 +119,7 @@ public static partial class SDL
     [DllImport(SDLLibrary, EntryPoint = "SDL_OpenStorage"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     public static extern IntPtr OpenStorage(in StorageInterface iface, IntPtr userdata);
 
-    
+
     /// <code>extern SDL_DECLSPEC bool SDLCALL SDL_CloseStorage(SDL_Storage *storage);</code>
     /// <summary>
     /// <para>Closes and frees a storage container.</para>
@@ -137,8 +137,8 @@ public static partial class SDL
     [LibraryImport(SDLLibrary, EntryPoint = "SDL_CloseStorage"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     [return: MarshalAs(UnmanagedType.I1)]
     public static partial bool CloseStorage(IntPtr storage);
-    
-    
+
+
     /// <code>extern SDL_DECLSPEC bool SDLCALL SDL_StorageReady(SDL_Storage *storage);</code>
     /// <summary>
     /// <para>Checks if the storage container is ready to use.</para>
@@ -153,8 +153,8 @@ public static partial class SDL
     [LibraryImport(SDLLibrary, EntryPoint = "SDL_StorageReady"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     [return: MarshalAs(UnmanagedType.I1)]
     public static partial bool StorageReady(IntPtr storage);
-    
-    
+
+
     /// <code>extern SDL_DECLSPEC bool SDLCALL SDL_GetStorageFileSize(SDL_Storage *storage, const char *path, Uint64 *length);</code>
     /// <summary>
     /// Query the size of a file within a storage container.
@@ -194,7 +194,7 @@ public static partial class SDL
     [return: MarshalAs(UnmanagedType.I1)]
     public static partial bool ReadStorageFile(IntPtr storage, [MarshalAs(UnmanagedType.LPUTF8Str)] string path, IntPtr destination, ulong length);
 
-    
+
     /// <code>extern SDL_DECLSPEC bool SDLCALL SDL_WriteStorageFile(SDL_Storage *storage, const char *path, const void *source, Uint64 length);</code>
     /// <summary>
     /// <para>Synchronously write a file from client memory into a storage container.</para>
@@ -213,7 +213,7 @@ public static partial class SDL
     [return: MarshalAs(UnmanagedType.I1)]
     public static partial bool WriteStorageFile(IntPtr storage, [MarshalAs(UnmanagedType.LPUTF8Str)] string path, IntPtr source, ulong length);
 
-    
+
     /// <code>extern SDL_DECLSPEC bool SDLCALL SDL_CreateStorageDirectory(SDL_Storage *storage, const char *path);</code>
     /// <summary>
     /// Create a directory in a writable storage container.
@@ -227,8 +227,8 @@ public static partial class SDL
     [LibraryImport(SDLLibrary, EntryPoint = "SDL_CreateStorageDirectory"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     [return: MarshalAs(UnmanagedType.I1)]
     public static partial bool CreateStorageDirectory(IntPtr storage, [MarshalAs(UnmanagedType.LPUTF8Str)] string path);
-    
-    
+
+
     /// <code>extern SDL_DECLSPEC bool SDLCALL SDL_EnumerateStorageDirectory(SDL_Storage *storage, const char *path, SDL_EnumerateDirectoryCallback callback, void *userdata);</code>
     /// <summary>
     /// <para>Enumerate a directory in a storage container through a callback function.</para>
@@ -254,8 +254,8 @@ public static partial class SDL
     [LibraryImport(SDLLibrary, EntryPoint = "SDL_EnumerateStorageDirectory"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     [return: MarshalAs(UnmanagedType.I1)]
     public static partial bool EnumerateStorageDirectory(IntPtr storage, [MarshalAs(UnmanagedType.LPUTF8Str)] string path, EnumerateDirectoryCallback callback, IntPtr userdata);
-    
-    
+
+
     /// <code>extern SDL_DECLSPEC bool SDLCALL SDL_RemoveStoragePath(SDL_Storage *storage, const char *path);</code>
     /// <summary>
     /// Remove a file or an empty directory in a writable storage container.
@@ -270,7 +270,7 @@ public static partial class SDL
     [return: MarshalAs(UnmanagedType.I1)]
     public static partial bool RemoveStoragePath(IntPtr storage, [MarshalAs(UnmanagedType.LPUTF8Str)] string path);
 
-    
+
     /// <code>extern SDL_DECLSPEC bool SDLCALL SDL_RenameStoragePath(SDL_Storage *storage, const char *oldpath, const char *newpath);</code>
     /// <summary>
     /// Rename a file or directory in a writable storage container.
@@ -286,7 +286,7 @@ public static partial class SDL
     [return: MarshalAs(UnmanagedType.I1)]
     public static partial bool RenameStoragePath(IntPtr storage, [MarshalAs(UnmanagedType.LPUTF8Str)] string oldpath, [MarshalAs(UnmanagedType.LPUTF8Str)] string newpath);
 
-    
+
     /// <code><code>extern SDL_DECLSPEC bool SDLCALL SDL_CopyStorageFile(SDL_Storage *storage, const char *oldpath, const char *newpath);</code></code>
     /// <summary>
     /// Copy a file in a writable storage container.
@@ -301,8 +301,8 @@ public static partial class SDL
     [LibraryImport(SDLLibrary, EntryPoint = "SDL_CopyStorageFile"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     [return: MarshalAs(UnmanagedType.I1)]
     public static partial bool CopyStorageFile(IntPtr storage, [MarshalAs(UnmanagedType.LPUTF8Str)] string oldpath, [MarshalAs(UnmanagedType.LPUTF8Str)] string newpath);
-    
-    
+
+
     /// <code>extern SDL_DECLSPEC bool SDLCALL SDL_GetStoragePathInfo(SDL_Storage *storage, const char *path, SDL_PathInfo *info);</code>
     /// <summary>
     /// Get information about a filesystem path in a storage container.
@@ -319,7 +319,7 @@ public static partial class SDL
     [return: MarshalAs(UnmanagedType.I1)]
     public static partial bool GetStoragePathInfo(IntPtr storage, [MarshalAs(UnmanagedType.LPUTF8Str)] string path, out PathInfo info);
 
-    
+
     /// <code>extern SDL_DECLSPEC Uint64 SDLCALL SDL_GetStorageSpaceRemaining(SDL_Storage *storage);</code>
     /// <summary>
     /// Queries the remaining space in a storage container.
@@ -332,7 +332,7 @@ public static partial class SDL
     [LibraryImport(SDLLibrary, EntryPoint = "SDL_GetStorageSpaceRemaining"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     public static partial ulong GetStorageSpaceRemaining(IntPtr storage);
 
-    
+
     [LibraryImport(SDLLibrary, EntryPoint = "SDL_GlobStorageDirectory"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial IntPtr SDL_GlobStorageDirectory(IntPtr storage, [MarshalAs(UnmanagedType.LPUTF8Str)] string path, [MarshalAs(UnmanagedType.LPUTF8Str)] string? pattern, GlobFlags flags, out int count);
     /// <code>extern SDL_DECLSPEC char ** SDLCALL SDL_GlobStorageDirectory(SDL_Storage *storage, const char *path, const char *pattern, SDL_GlobFlags flags, int *count);</code>
@@ -377,7 +377,7 @@ public static partial class SDL
         }
         finally
         {
-            if(ptr != IntPtr.Zero) Free(ptr);
+            if (ptr != IntPtr.Zero) Free(ptr);
         }
     }
 }

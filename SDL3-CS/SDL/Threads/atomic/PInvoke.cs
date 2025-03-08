@@ -43,8 +43,8 @@ public static partial class SDL
     [LibraryImport(SDLLibrary, EntryPoint = "SDL_TryLockSpinlock"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     [return: MarshalAs(UnmanagedType.I1)]
     public static partial bool TryLockSpinlock(ref int @lock);
-    
-    
+
+
     /// <code>extern SDL_DECLSPEC void SDLCALL SDL_LockSpinlock(SDL_SpinLock *lock);</code>
     /// <summary>
     /// <para>Lock a spin lock by setting it to a non-zero value.</para>
@@ -58,8 +58,8 @@ public static partial class SDL
     /// <seealso cref="UnlockSpinlock"/>
     [LibraryImport(SDLLibrary, EntryPoint = "SDL_LockSpinlock"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     public static partial void LockSpinlock(ref int @lock);
-    
-    
+
+
     /// <code>extern SDL_DECLSPEC void SDLCALL SDL_UnlockSpinlock(SDL_SpinLock *lock);</code>
     /// <summary>
     /// <para>Unlock a spin lock by setting it to 0.</para>
@@ -74,8 +74,8 @@ public static partial class SDL
     /// <seealso cref="TryLockSpinlock"/>
     [LibraryImport(SDLLibrary, EntryPoint = "SDL_UnlockSpinlock"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     public static partial void UnlockSpinlock(ref int @lock);
-    
-    
+
+
     /// <code>extern SDL_DECLSPEC void SDLCALL SDL_MemoryBarrierReleaseFunction(void);</code>
     /// <summary>
     /// <para>Insert a memory release barrier (function version).</para>
@@ -93,8 +93,8 @@ public static partial class SDL
     /// <seealso cref="MemoryBarrierRelease"/>
     [LibraryImport(SDLLibrary, EntryPoint = "SDL_MemoryBarrierReleaseFunction"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     public static partial void MemoryBarrierReleaseFunction();
-    
-    
+
+
     /// <code>extern SDL_DECLSPEC void SDLCALL SDL_MemoryBarrierAcquireFunction(void);</code>
     /// <summary>
     /// <para>Insert a memory acquire barrier (function version).</para>
@@ -112,8 +112,8 @@ public static partial class SDL
     /// <seealso cref="MemoryBarrierAcquire"/>
     [LibraryImport(SDLLibrary, EntryPoint = "SDL_MemoryBarrierAcquireFunction"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     public static partial void MemoryBarrierAcquireFunction();
-    
-    
+
+
     /// <code>extern SDL_DECLSPEC bool SDLCALL SDL_CompareAndSwapAtomicInt(SDL_AtomicInt *a, int oldval, int newval);</code>
     /// <summary>
     /// <para>Set an atomic variable to a new value if it is currently an old value.</para>
@@ -131,8 +131,8 @@ public static partial class SDL
     [LibraryImport(SDLLibrary, EntryPoint = "SDL_CompareAndSwapAtomicInt"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     [return: MarshalAs(UnmanagedType.I1)]
     public static partial bool CompareAndSwapAtomicInt(ref AtomicInt a, int oldval, int newval);
-    
-    
+
+
     /// <code>extern SDL_DECLSPEC int SDLCALL SDL_SetAtomicInt(SDL_AtomicInt *a, int v);</code>
     /// <summary>
     /// <para>Get the value of an atomic variable.</para>
@@ -147,8 +147,8 @@ public static partial class SDL
     /// <seealso cref="SetAtomicInt"/>
     [LibraryImport(SDLLibrary, EntryPoint = "SDL_SetAtomicInt"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     public static partial int SetAtomicInt(ref AtomicInt a, int v);
-    
-    
+
+
     /// <code>extern SDL_DECLSPEC int SDLCALL SDL_GetAtomicInt(SDL_AtomicInt *a);</code>
     /// <summary>
     /// <para>Get the value of an atomic variable.</para>
@@ -162,8 +162,8 @@ public static partial class SDL
     /// <seealso cref="SetAtomicInt"/>
     [LibraryImport(SDLLibrary, EntryPoint = "SDL_GetAtomicInt"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     public static partial int GetAtomicInt(ref AtomicInt a);
-    
-    
+
+
     /// <code>extern SDL_DECLSPEC int SDLCALL SDL_AddAtomicInt(SDL_AtomicInt *a, int v);</code>
     /// <summary>
     /// <para>Add to an atomic variable.</para>
@@ -180,8 +180,8 @@ public static partial class SDL
     /// <seealso cref="AtomicIncRef"/>
     [LibraryImport(SDLLibrary, EntryPoint = "SDL_AddAtomicInt"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     public static partial int AddAtomicInt(ref AtomicInt a, int v);
-    
-    
+
+
     /// <code>extern SDL_DECLSPEC bool SDLCALL SDL_CompareAndSwapAtomicU32(SDL_AtomicU32 *a, Uint32 oldval, Uint32 newval);</code>
     /// <summary>
     /// <para>Set an atomic variable to a new value if it is currently an old value.</para>
@@ -199,8 +199,8 @@ public static partial class SDL
     [LibraryImport(SDLLibrary, EntryPoint = "SDL_CompareAndSwapAtomicU32"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     [return: MarshalAs(UnmanagedType.I1)]
     public static partial bool CompareAndSwapAtomicU32(ref AtomicU32 a, uint oldval, uint newval);
-    
-    
+
+
     /// <code>extern SDL_DECLSPEC Uint32 SDLCALL SDL_SetAtomicU32(SDL_AtomicU32 *a, Uint32 v);</code>
     /// <summary>
     /// <para>Set an atomic variable to a value.</para>
@@ -216,8 +216,8 @@ public static partial class SDL
     /// <seealso cref="GetAtomicU32"/>
     [LibraryImport(SDLLibrary, EntryPoint = "SDL_SetAtomicU32"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     public static partial uint SetAtomicU32(ref AtomicU32 a, uint v);
-    
-    
+
+
     /// <code>extern SDL_DECLSPEC Uint32 SDLCALL SDL_GetAtomicU32(SDL_AtomicU32 *a);</code>
     /// <summary>
     /// <para>Get the value of an atomic variable.</para>
@@ -231,8 +231,8 @@ public static partial class SDL
     /// <seealso cref="SetAtomicU32"/>
     [LibraryImport(SDLLibrary, EntryPoint = "SDL_GetAtomicU32"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     public static partial uint GetAtomicU32(ref AtomicU32 a);
-    
-    
+
+
     /// <code>extern SDL_DECLSPEC bool SDLCALL SDL_CompareAndSwapAtomicPointer(void **a, void *oldval, void *newval);</code>
     /// <summary>
     /// <para>Set a pointer to a new value if it is currently an old value.</para>
@@ -251,8 +251,8 @@ public static partial class SDL
     [LibraryImport(SDLLibrary, EntryPoint = "SDL_CompareAndSwapAtomicPointer"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     [return: MarshalAs(UnmanagedType.I1)]
     public static partial bool CompareAndSwapAtomicPointer(ref IntPtr a, IntPtr oldval, IntPtr newval);
-    
-    
+
+
     /// <code>extern SDL_DECLSPEC void * SDLCALL SDL_SetAtomicPointer(void **a, void *v);</code>
     /// <summary>
     /// <para>Set a pointer to a value atomically.</para>
@@ -268,8 +268,8 @@ public static partial class SDL
     /// <seealso cref="GetAtomicPointer"/>
     [LibraryImport(SDLLibrary, EntryPoint = "SDL_SetAtomicPointer"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     public static partial IntPtr SetAtomicPointer(ref IntPtr a, IntPtr v);
-    
-    
+
+
     /// <code>extern SDL_DECLSPEC void * SDLCALL SDL_GetAtomicPointer(void **a);</code>
     /// <summary>
     /// <para>Get the value of a pointer atomically.</para>

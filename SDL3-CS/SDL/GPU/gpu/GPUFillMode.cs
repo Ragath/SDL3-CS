@@ -24,22 +24,22 @@
 namespace SDL3;
 
 public static partial class SDL
-{
-    /// <summary>
-    /// Specifies the fill mode of the graphics pipeline.
-    /// </summary>
-    /// <since>This enum is available since SDL 3.2.0</since>
-    /// <seealso cref="CreateGPUGraphicsPipeline"/>
-    public enum GPUFillMode
     {
         /// <summary>
-        /// Polygons will be rendered via rasterization.
+        /// Specifies the fill mode of the graphics pipeline.
         /// </summary>
-        Fill,
-        
-        /// <summary>
-        /// Polygon edges will be drawn as line segments.
-        /// </summary>
-        Line
+        /// <since>This enum is available since SDL 3.2.0</since>
+        /// <seealso cref="CreateGPUGraphicsPipeline"/>
+        public enum GPUFillMode
+        {
+            /// <summary>
+            /// Polygons will be rendered via rasterization.
+            /// </summary>
+            Fill,
+
+            /// <summary>
+            /// Polygon edges will be drawn as line segments.
+            /// </summary>
+            Line
+        }
     }
-}

@@ -35,14 +35,14 @@ public static partial class SDL
         /// Unknown bus type
         /// </summary>
         Unknown = 0x00,
-        
+
         /// <summary>
         /// USB bus
         /// Specifications:
         /// https://usb.org/hid
         /// </summary>
         USB = 0x01,
-        
+
         /// <summary>
         /// Bluetooth or Bluetooth LE bus
         /// Specifications:
@@ -51,14 +51,14 @@ public static partial class SDL
         /// https://www.bluetooth.com/specifications/specs/hid-over-gatt-profile-1-0/
         /// </summary>
         Bluetooth = 0x02,
-        
+
         /// <summary>
         /// I2C bus
         /// Specifications:
         /// https://docs.microsoft.com/previous-versions/windows/hardware/design/dn642101(v=vs.85)
         /// </summary>
         I2C = 0x03,
-        
+
         /// <summary>
         /// SPI bus
         /// Specifications:

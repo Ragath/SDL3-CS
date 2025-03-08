@@ -36,22 +36,22 @@ public static partial class SDL
         /// dst + src: supported by all renderers
         /// </summary>
         Add = 0x1,
-        
+
         /// <summary>
         /// src - dst : supported by D3D, OpenGL, OpenGLES, and Vulkan
         /// </summary>
         Subtract = 0x2,
-        
+
         /// <summary>
         /// dst - src : supported by D3D, OpenGL, OpenGLES, and Vulkan
         /// </summary>
         RevSubtract = 0x3,
-        
+
         /// <summary>
         /// min(dst, src) : supported by D3D, OpenGL, OpenGLES, and Vulkan
         /// </summary>
         Minimum = 0x4,
-        
+
         /// <summary>
         /// max(dst, src) : supported by D3D, OpenGL, OpenGLES, and Vulkan
         /// </summary>

@@ -43,7 +43,7 @@ public static partial class SDL
         /// Device Vendor ID
         /// </summary>
         public ushort VendorID;
-        
+
         /// <summary>
         /// Device Product ID
         /// </summary>
@@ -53,29 +53,29 @@ public static partial class SDL
         /// Serial Number
         /// </summary>
         [MarshalAs(UnmanagedType.LPUTF8Str)] public string SerialNumber;
-        
+
         /// <summary>
         /// Device Release Number in binary-coded decimal,
         /// also known as Device Version Number
         /// </summary>
         public ushort ReleaseNumber;
-        
+
         /// <summary>
         /// Manufacturer String
         /// </summary>
         [MarshalAs(UnmanagedType.LPUTF8Str)] public string ManufacturerString;
-        
+
         /// <summary>
         /// Product string
         /// </summary>
         [MarshalAs(UnmanagedType.LPUTF8Str)] public string ProductString;
-        
+
         /// <summary>
         /// Usage Page for this Device/Interface
         /// (Windows/Mac/hidraw only)
         /// </summary>
         public ushort UsagePage;
-        
+
         /// <summary>
         /// Usage for this Device/Interface
         /// (Windows/Mac/hidraw only)
@@ -90,15 +90,15 @@ public static partial class SDL
         /// Set to -1 in all other cases.
         /// </summary>
         public int InterfaceNumber;
-        
+
         /// <summary>
         /// Additional information about the USB interface.
         /// Valid on libusb and Android implementations.
         /// </summary>
         public int InterfaceClass;
-        
+
         public int InterfaceSubclass;
-        
+
         public int InterfaceProtocol;
 
         /// <summary>

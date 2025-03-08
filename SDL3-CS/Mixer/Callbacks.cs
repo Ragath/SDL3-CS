@@ -30,18 +30,18 @@ public partial class Mixer
     /// <code>typedef void (SDLCALL *Mix_MixCallback)(void *udata, Uint8 *stream, int len);</code>
     [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
     public delegate void MixCallback(IntPtr udata, IntPtr stream, int len);
-    
-    
+
+
     /// <code>typedef void (SDLCALL *Mix_MusicFinishedCallback)(void);</code>
     [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
     public delegate void MusicFinishedCallback();
-    
-    
+
+
     /// <code>typedef void (SDLCALL *Mix_ChannelFinishedCallback)(int channel);</code>
     [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
     public delegate void ChannelFinishedCallback(int channel);
-    
-    
+
+
     /// <code>typedef void (SDLCALL *Mix_EffectFunc_t)(int chan, void *stream, int len, void *udata);</code>
     /// <summary>
     /// <para>This is the format of a special effect callback:</para>
@@ -58,8 +58,8 @@ public partial class Mixer
     /// </summary>
     [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
     public delegate void EffectFuncT(int chan, IntPtr stream, int len, IntPtr udata);
-    
-    
+
+
     /// <code>typedef void (SDLCALL *Mix_EffectDone_t)(int chan, void *udata);</code>
     /// <summary>
     /// <para>This is a callback that signifies that a channel has finished all its loops
@@ -70,8 +70,8 @@ public partial class Mixer
     /// </summary>
     [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
     public delegate void EffectDoneT(int chan, IntPtr udata);
-    
-    
+
+
     /// <code>typedef bool (SDLCALL *Mix_EachSoundFontCallback)(const char*, void*);</code>
     [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
     public delegate bool EachSoundFontCallback(string s, IntPtr d);

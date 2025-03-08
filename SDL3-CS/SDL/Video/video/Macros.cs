@@ -35,7 +35,7 @@ public static partial class SDL
     [Macro]
     public static uint WindowPosUndefinedDisplay(int x) => WindowposUndefinedMask | (uint)x;
 
-    
+
     /// <summary>
     /// <para>Used to indicate that you don't care what the window position/display is.</para>
     /// <para>This always uses the primary display.</para>
@@ -43,8 +43,8 @@ public static partial class SDL
     /// <since>This macro is available since SDL 3.2.0</since>
     [Macro]
     public static uint WindowPosUndefined() => WindowPosUndefinedDisplay(0);
-    
-    
+
+
     /// <summary>
     /// <para> Used to indicate that you don't care what the window position/display is.</para>
     /// <para>This always uses the primary display.</para>
@@ -52,8 +52,8 @@ public static partial class SDL
     /// <since>This macro is available since SDL 3.2.0</since>
     [Macro]
     public static bool WindowPosIsUndefined(uint x) => (x & 0xFFFF0000u) == WindowposUndefinedMask;
-    
-    
+
+
     /// <summary>
     /// <para>Used to indicate that the window position should be centered.</para>
     /// <para><see cref="WindowPosCentered"/> is the same, but always uses the primary display
@@ -63,8 +63,8 @@ public static partial class SDL
     /// <since>This macro is available since SDL 3.2.0</since>
     [Macro]
     public static uint WindowPosCenteredDisplay(int x) => WindowposCenteredMask | (uint)x;
-    
-    
+
+
     /// <summary>
     /// <para>Used to indicate that the window position should be centered.</para>
     /// <para>This always uses the primary display.</para>
@@ -72,8 +72,8 @@ public static partial class SDL
     /// <since>This macro is available since SDL 3.2.0</since>
     [Macro]
     public static uint WindowPosCentered() => WindowPosCenteredDisplay(0);
-    
-    
+
+
     /// <summary>
     /// A macro to test if the window position is marked as "centered."
     /// </summary>
@@ -81,7 +81,7 @@ public static partial class SDL
     /// <since>This macro is available since SDL 3.2.0</since>
     [Macro]
     public static bool WindowPosIsCentered(uint x) => (x & 0xFFFF0000u) == WindowposCenteredMask;
-    
-    
-    
+
+
+
 }

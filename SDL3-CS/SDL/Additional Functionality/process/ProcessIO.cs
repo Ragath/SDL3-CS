@@ -66,17 +66,17 @@ public static partial class SDL
         /// The I/O stream is inherited from the application.
         /// </summary>
         Inherited,
-        
+
         /// <summary>
         /// The I/O stream is ignored.
         /// </summary>
         Null,
-        
+
         /// <summary>
         /// The I/O stream is connected to a new SDL_IOStream that the application can read or write
         /// </summary>
         App,
-        
+
         /// <summary>
         /// The I/O stream is redirected to an existing SDL_IOStream.
         /// </summary>

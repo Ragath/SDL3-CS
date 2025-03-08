@@ -43,8 +43,8 @@ public static partial class SDL
     /// <seealso cref="GetRenderDriver"/>
     [LibraryImport(SDLLibrary, EntryPoint = "SDL_GetNumRenderDrivers"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     public static partial int GetNumRenderDrivers();
-    
-    
+
+
     [LibraryImport(SDLLibrary, EntryPoint = "SDL_GetRenderDriver"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial IntPtr SDL_GetRenderDriver(int index);
     /// <code>extern SDL_DECLSPEC const char * SDLCALL SDL_GetRenderDriver(int index);</code>
@@ -66,11 +66,11 @@ public static partial class SDL
     /// <seealso cref="GetNumRenderDrivers"/>
     public static string? GetRenderDriver(int index)
     {
-        var value = SDL_GetRenderDriver(index); 
+        var value = SDL_GetRenderDriver(index);
         return value == IntPtr.Zero ? null : Marshal.PtrToStringUTF8(value);
     }
-    
-    
+
+
     /// <code>extern SDL_DECLSPEC bool SDLCALL SDL_CreateWindowAndRenderer(const char *title, int width, int height, SDL_WindowFlags window_flags, SDL_Window **window, SDL_Renderer **renderer);</code>
     /// <summary>
     /// Create a window and default renderer.
@@ -92,8 +92,8 @@ public static partial class SDL
     [return: MarshalAs(UnmanagedType.I1)]
     public static partial bool CreateWindowAndRenderer([MarshalAs(UnmanagedType.LPUTF8Str)] string title, int width, int height, WindowFlags windowFlags,
         out IntPtr window, out IntPtr renderer);
-    
-    
+
+
     /// <code>extern SDL_DECLSPEC SDL_Renderer * SDLCALL SDL_CreateRenderer(SDL_Window *window, const char *name);</code>
     /// <summary>
     /// <para>Create a 2D rendering context for a window.</para>
@@ -123,8 +123,8 @@ public static partial class SDL
     /// <seealso cref="GetRendererName"/>
     [LibraryImport(SDLLibrary, EntryPoint = "SDL_CreateRenderer"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     public static partial IntPtr CreateRenderer(IntPtr window, [MarshalAs(UnmanagedType.LPUTF8Str)] string? name);
-    
-    
+
+
     /// <code>extern SDL_DECLSPEC SDL_Renderer * SDLCALL SDL_CreateRendererWithProperties(SDL_PropertiesID props);</code>
     /// <summary>
     /// <para>Create a 2D rendering context for a window, with the specified properties.</para>
@@ -175,8 +175,8 @@ public static partial class SDL
     /// <seealso cref="GetRendererName"/>
     [LibraryImport(SDLLibrary, EntryPoint = "SDL_CreateRendererWithProperties"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     public static partial IntPtr CreateRendererWithProperties(uint props);
-    
-    
+
+
     /// <code>extern SDL_DECLSPEC SDL_Renderer * SDLCALL SDL_CreateSoftwareRenderer(SDL_Surface *surface);</code>
     /// <summary>
     /// <para>Create a 2D software rendering context for a surface.</para>
@@ -194,8 +194,8 @@ public static partial class SDL
     /// <seealso cref="DestroyRenderer"/>
     [LibraryImport(SDLLibrary, EntryPoint = "SDL_CreateSoftwareRenderer"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     public static partial IntPtr CreateSoftwareRenderer(IntPtr surface);
-    
-    
+
+
     /// <code>extern SDL_DECLSPEC SDL_Renderer * SDLCALL SDL_GetRenderer(SDL_Window *window);</code>
     /// <summary>
     /// Get the renderer associated with a window.
@@ -207,8 +207,8 @@ public static partial class SDL
     /// <since>This function is available since SDL 3.2.0</since>
     [LibraryImport(SDLLibrary, EntryPoint = "SDL_GetRenderer"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     public static partial IntPtr GetRenderer(IntPtr window);
-    
-    
+
+
     /// <code>extern SDL_DECLSPEC SDL_Window * SDLCALL SDL_GetRenderWindow(SDL_Renderer *renderer);</code>
     /// <summary>
     /// Get the window associated with a renderer.
@@ -220,8 +220,8 @@ public static partial class SDL
     /// <since>This function is available since SDL 3.2.0</since>
     [LibraryImport(SDLLibrary, EntryPoint = "SDL_GetRenderWindow"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     public static partial IntPtr GetRenderWindow(IntPtr renderer);
-    
-    
+
+
     [LibraryImport(SDLLibrary, EntryPoint = "SDL_GetRendererName"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial IntPtr SDL_GetRendererName(IntPtr renderer);
     /// <code>extern SDL_DECLSPEC const char * SDLCALL SDL_GetRendererName(SDL_Renderer *renderer);</code>
@@ -237,11 +237,11 @@ public static partial class SDL
     /// <seealso cref="CreateRendererWithProperties"/>
     public static string? GetRendererName(IntPtr renderer)
     {
-        var value = SDL_GetRendererName(renderer); 
+        var value = SDL_GetRendererName(renderer);
         return value == IntPtr.Zero ? null : Marshal.PtrToStringUTF8(value);
     }
-    
-    
+
+
     /// <code>extern SDL_DECLSPEC SDL_PropertiesID SDLCALL SDL_GetRendererProperties(SDL_Renderer *renderer);</code>
     /// <summary>
     /// <para>Get the properties associated with a renderer.</para>
@@ -326,8 +326,8 @@ public static partial class SDL
     /// <since>This function is available since SDL 3.2.0</since>
     [LibraryImport(SDLLibrary, EntryPoint = "SDL_GetRendererProperties"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     public static partial uint GetRendererProperties(IntPtr renderer);
-    
-    
+
+
     /// <code>extern SDL_DECLSPEC bool SDLCALL SDL_GetRenderOutputSize(SDL_Renderer *renderer, int *w, int *h);</code>
     /// <summary>
     /// <para>Get the output size in pixels of a rendering context.</para>
@@ -347,8 +347,8 @@ public static partial class SDL
     [LibraryImport(SDLLibrary, EntryPoint = "SDL_GetRenderOutputSize"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     [return: MarshalAs(UnmanagedType.I1)]
     public static partial bool GetRenderOutputSize(IntPtr renderer, out int w, out int h);
-    
-    
+
+
     /// <code>extern SDL_DECLSPEC bool SDLCALL SDL_GetCurrentRenderOutputSize(SDL_Renderer *renderer, int *w, int *h);</code>
     /// <summary>
     /// <para>Get the current output size in pixels of a rendering context.</para>
@@ -368,7 +368,7 @@ public static partial class SDL
     [LibraryImport(SDLLibrary, EntryPoint = "SDL_GetCurrentRenderOutputSize"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     [return: MarshalAs(UnmanagedType.I1)]
     public static partial bool GetCurrentRenderOutputSize(IntPtr renderer, out int w, out int h);
-    
+
 
     /// <code>extern SDL_DECLSPEC SDL_Texture * SDLCALL SDL_CreateTexture(SDL_Renderer *renderer, SDL_PixelFormat format, SDL_TextureAccess access, int w, int h);</code>
     /// <summary>
@@ -391,8 +391,8 @@ public static partial class SDL
     /// <seealso cref="UpdateTexture(IntPtr, IntPtr, IntPtr, int)"/>
     [LibraryImport(SDLLibrary, EntryPoint = "SDL_CreateTexture"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     public static partial IntPtr CreateTexture(IntPtr renderer, PixelFormat format, TextureAccess access, int w, int h);
-    
-    
+
+
     /// <code>extern SDL_DECLSPEC SDL_Texture * SDLCALL SDL_CreateTextureFromSurface(SDL_Renderer *renderer, SDL_Surface *surface);</code>
     /// <summary>
     /// <para>Create a texture from an existing surface.</para>
@@ -415,8 +415,8 @@ public static partial class SDL
     /// <seealso cref="DestroyTexture"/>
     [LibraryImport(SDLLibrary, EntryPoint = "SDL_CreateTextureFromSurface"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     public static partial IntPtr CreateTextureFromSurface(IntPtr renderer, IntPtr surface);
-    
-    
+
+
     /// <code>extern SDL_DECLSPEC SDL_Texture * SDLCALL SDL_CreateTextureWithProperties(SDL_Renderer *renderer, SDL_PropertiesID props);</code>
     /// <summary>
     /// <para>Create a texture for a rendering context with the specified properties.</para>
@@ -526,8 +526,8 @@ public static partial class SDL
     /// <seealso cref="UpdateTexture(IntPtr, IntPtr, IntPtr, int)"/>
     [LibraryImport(SDLLibrary, EntryPoint = "SDL_CreateTextureWithProperties"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     public static partial IntPtr CreateTextureWithProperties(IntPtr renderer, uint props);
-    
-    
+
+
     /// <code>extern SDL_DECLSPEC SDL_PropertiesID SDLCALL SDL_GetTextureProperties(SDL_Texture *texture);</code>
     /// <summary>
     /// <para>Get the properties associated with a texture.</para>
@@ -614,8 +614,8 @@ public static partial class SDL
     /// <since>This function is available since SDL 3.2.0</since>
     [LibraryImport(SDLLibrary, EntryPoint = "SDL_GetTextureProperties"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     public static partial uint GetTextureProperties(IntPtr texture);
-    
-    
+
+
     /// <code>extern SDL_DECLSPEC SDL_Renderer * SDLCALL SDL_GetRendererFromTexture(SDL_Texture *texture);</code>
     /// <summary>
     /// Get the renderer that created an SDL_Texture.
@@ -628,7 +628,7 @@ public static partial class SDL
     [LibraryImport(SDLLibrary, EntryPoint = "SDL_GetRendererFromTexture"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     public static partial IntPtr GetRendererFromTexture(IntPtr texture);
 
-    
+
     /// <code>extern SDL_DECLSPEC bool SDLCALL SDL_GetTextureSize(SDL_Texture *texture, float *w, float *h);</code>
     /// <summary>
     /// Get the size of a texture, as floating point values.
@@ -645,8 +645,8 @@ public static partial class SDL
     [LibraryImport(SDLLibrary, EntryPoint = "SDL_GetTextureSize"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     [return: MarshalAs(UnmanagedType.I1)]
     public static partial bool GetTextureSize(IntPtr texture, out float w, out float h);
-    
-    
+
+
     /// <code>extern SDL_DECLSPEC bool SDLCALL SDL_SetTextureColorMod(SDL_Texture *texture, Uint8 r, Uint8 g, Uint8 b);</code>
     /// <summary>
     /// <para>Set an additional color value multiplied into render copy operations.</para>
@@ -671,8 +671,8 @@ public static partial class SDL
     [LibraryImport(SDLLibrary, EntryPoint = "SDL_SetTextureColorMod"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     [return: MarshalAs(UnmanagedType.I1)]
     public static partial bool SetTextureColorMod(IntPtr texture, byte r, byte g, byte b);
-    
-    
+
+
     /// <code>extern SDL_DECLSPEC bool SDLCALL SDL_SetTextureColorModFloat(SDL_Texture *texture, float r, float g, float b);</code>
     /// <summary>
     /// <para>Set an additional color value multiplied into render copy operations.</para>
@@ -697,8 +697,8 @@ public static partial class SDL
     [LibraryImport(SDLLibrary, EntryPoint = "SDL_SetTextureColorModFloat"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     [return: MarshalAs(UnmanagedType.I1)]
     public static partial bool SetTextureColorModFloat(IntPtr texture, float r, float g, float b);
-    
-    
+
+
     /// <code>extern SDL_DECLSPEC bool SDLCALL SDL_GetTextureColorMod(SDL_Texture *texture, Uint8 *r, Uint8 *g, Uint8 *b);</code>
     /// <summary>
     /// Get the additional color value multiplied into render copy operations.
@@ -717,8 +717,8 @@ public static partial class SDL
     [LibraryImport(SDLLibrary, EntryPoint = "SDL_GetTextureColorMod"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     [return: MarshalAs(UnmanagedType.I1)]
     public static partial bool GetTextureColorMod(IntPtr texture, out byte r, out byte g, out byte b);
-    
-    
+
+
     /// <code>extern SDL_DECLSPEC bool SDLCALL SDL_GetTextureColorModFloat(SDL_Texture *texture, float *r, float *g, float *b);</code>
     /// <summary>
     /// Get the additional color value multiplied into render copy operations.
@@ -737,8 +737,8 @@ public static partial class SDL
     [LibraryImport(SDLLibrary, EntryPoint = "SDL_GetTextureColorModFloat"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     [return: MarshalAs(UnmanagedType.I1)]
     public static partial bool GetTextureColorModFloat(IntPtr texture, out float r, out float g, out float b);
-    
-    
+
+
     /// <code>extern SDL_DECLSPEC bool SDLCALL SDL_SetTextureAlphaMod(SDL_Texture *texture, Uint8 alpha);</code>
     /// <summary>
     /// <para>Set an additional alpha value multiplied into render copy operations.</para>
@@ -760,8 +760,8 @@ public static partial class SDL
     [LibraryImport(SDLLibrary, EntryPoint = "SDL_SetTextureAlphaMod"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     [return: MarshalAs(UnmanagedType.I1)]
     public static partial bool SetTextureAlphaMod(IntPtr texture, byte alpha);
-    
-    
+
+
     /// <code>extern SDL_DECLSPEC bool SDLCALL SDL_SetTextureAlphaModFloat(SDL_Texture *texture, float alpha);</code>
     /// <summary>
     /// <para>Set an additional alpha value multiplied into render copy operations.</para>
@@ -783,8 +783,8 @@ public static partial class SDL
     [LibraryImport(SDLLibrary, EntryPoint = "SDL_SetTextureAlphaModFloat"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     [return: MarshalAs(UnmanagedType.I1)]
     public static partial bool SetTextureAlphaModFloat(IntPtr texture, float alpha);
-    
-    
+
+
     /// <code>extern SDL_DECLSPEC bool SDLCALL SDL_GetTextureAlphaMod(SDL_Texture *texture, Uint8 *alpha);</code>
     /// <summary>
     /// Get the additional alpha value multiplied into render copy operations.
@@ -801,8 +801,8 @@ public static partial class SDL
     [LibraryImport(SDLLibrary, EntryPoint = "SDL_GetTextureAlphaMod"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     [return: MarshalAs(UnmanagedType.I1)]
     public static partial bool GetTextureAlphaMod(IntPtr texture, out byte alpha);
-    
-    
+
+
     /// <code>extern SDL_DECLSPEC bool SDLCALL SDL_GetTextureAlphaModFloat(SDL_Texture *texture, float *alpha);</code>
     /// <summary>
     /// Get the additional alpha value multiplied into render copy operations.
@@ -819,8 +819,8 @@ public static partial class SDL
     [LibraryImport(SDLLibrary, EntryPoint = "SDL_GetTextureAlphaModFloat"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     [return: MarshalAs(UnmanagedType.I1)]
     public static partial bool GetTextureAlphaModFloat(IntPtr texture, out float alpha);
-    
-    
+
+
     /// <code>extern SDL_DECLSPEC bool SDLCALL SDL_SetTextureBlendMode(SDL_Texture *texture, SDL_BlendMode blendMode);</code>
     /// <summary>
     /// <para>Set the blend mode for a texture, used by <see cref="RenderTexture(nint, nint, nint, nint)"/>.</para>
@@ -837,8 +837,8 @@ public static partial class SDL
     [LibraryImport(SDLLibrary, EntryPoint = "SDL_SetTextureBlendMode"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     [return: MarshalAs(UnmanagedType.I1)]
     public static partial bool SetTextureBlendMode(IntPtr texture, BlendMode blendMode);
-    
-    
+
+
     /// <code>extern SDL_DECLSPEC bool SDLCALL SDL_GetTextureBlendMode(SDL_Texture *texture, SDL_BlendMode *blendMode);</code>
     /// <summary>
     /// Get the blend mode used for texture copy operations.
@@ -853,8 +853,8 @@ public static partial class SDL
     [LibraryImport(SDLLibrary, EntryPoint = "SDL_GetTextureBlendMode"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     [return: MarshalAs(UnmanagedType.I1)]
     public static partial bool GetTextureBlendMode(IntPtr texture, out BlendMode blendMode);
-    
-    
+
+
     /// <code>extern SDL_DECLSPEC bool SDLCALL SDL_SetTextureScaleMode(SDL_Texture *texture, SDL_ScaleMode scaleMode);</code>
     /// <summary>
     /// <para>Set the scale mode used for texture scale operations.</para>
@@ -871,8 +871,8 @@ public static partial class SDL
     [LibraryImport(SDLLibrary, EntryPoint = "SDL_SetTextureScaleMode"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     [return: MarshalAs(UnmanagedType.I1)]
     public static partial bool SetTextureScaleMode(IntPtr texture, ScaleMode scaleMode);
-    
-    
+
+
     /// <code>extern SDL_DECLSPEC bool SDLCALL SDL_GetTextureScaleMode(SDL_Texture *texture, SDL_ScaleMode *scaleMode);</code>
     /// <summary>
     /// Get the scale mode used for texture scale operations.
@@ -890,7 +890,7 @@ public static partial class SDL
 
 
     #region UpdateTexture
-    
+
     /// <code>extern SDL_DECLSPEC bool SDLCALL SDL_UpdateTexture(SDL_Texture *texture, const SDL_Rect *rect, const void *pixels, int pitch);</code>
     /// <summary>
     /// <para>Update the given texture rectangle with new pixel data.</para>
@@ -920,8 +920,8 @@ public static partial class SDL
     [LibraryImport(SDLLibrary, EntryPoint = "SDL_UpdateTexture"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     [return: MarshalAs(UnmanagedType.I1)]
     public static partial bool UpdateTexture(IntPtr texture, IntPtr rect, IntPtr pixels, int pitch);
-    
-    
+
+
     /// <code>extern SDL_DECLSPEC bool SDLCALL SDL_UpdateTexture(SDL_Texture *texture, const SDL_Rect *rect, const void *pixels, int pitch);</code>
     /// <summary>
     /// <para>Update the given texture rectangle with new pixel data.</para>
@@ -986,8 +986,8 @@ public static partial class SDL
             return UpdateTexture(texture, rect, (nint)p, pitch);
         }
     }
-    
-    
+
+
     /// <code>extern SDL_DECLSPEC bool SDLCALL SDL_UpdateTexture(SDL_Texture *texture, const SDL_Rect *rect, const void *pixels, int pitch);</code>
     /// <summary>
     /// <para>Update the given texture rectangle with new pixel data.</para>
@@ -1017,8 +1017,8 @@ public static partial class SDL
     [LibraryImport(SDLLibrary, EntryPoint = "SDL_UpdateTexture"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     [return: MarshalAs(UnmanagedType.I1)]
     public static partial bool UpdateTexture(IntPtr texture, in Rect rect, IntPtr pixels, int pitch);
-    
-    
+
+
     /// <code>extern SDL_DECLSPEC bool SDLCALL SDL_UpdateTexture(SDL_Texture *texture, const SDL_Rect *rect, const void *pixels, int pitch);</code>
     /// <summary>
     /// <para>Update the given texture rectangle with new pixel data.</para>
@@ -1048,8 +1048,8 @@ public static partial class SDL
     [LibraryImport(SDLLibrary, EntryPoint = "SDL_UpdateTexture"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     [return: MarshalAs(UnmanagedType.I1)]
     public static partial bool UpdateTexture(IntPtr texture, in Rect rect, [MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 3)] byte[] pixels, int pitch);
-    
-    
+
+
     /// <code>extern SDL_DECLSPEC bool SDLCALL SDL_UpdateTexture(SDL_Texture *texture, const SDL_Rect *rect, const void *pixels, int pitch);</code>
     /// <summary>
     /// <para>Update the given texture rectangle with new pixel data.</para>
@@ -1083,10 +1083,10 @@ public static partial class SDL
             return UpdateTexture(texture, rect, (nint)p, pitch);
         }
     }
-    
+
     #endregion
-    
-    
+
+
     /// <code>extern SDL_DECLSPEC bool SDLCALL SDL_UpdateYUVTexture(SDL_Texture *texture, const SDL_Rect *rect, const Uint8 *Yplane, int Ypitch, const Uint8 *Uplane, int Upitch, const Uint8 *Vplane, int Vpitch);</code>
     /// <summary>
     /// <para>Update a rectangle within a planar YV12 or IYUV texture with new pixel
@@ -1116,8 +1116,8 @@ public static partial class SDL
     [LibraryImport(SDLLibrary, EntryPoint = "SDL_UpdateYUVTexture"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     [return: MarshalAs(UnmanagedType.I1)]
     public static partial bool UpdateYUVTexture(IntPtr texture, IntPtr rect, IntPtr yplane, int ypitch, IntPtr uplane, int upitch, IntPtr vplane, int vpitch);
-    
-    
+
+
     /// <code>extern SDL_DECLSPEC bool SDLCALL SDL_UpdateYUVTexture(SDL_Texture *texture, const SDL_Rect *rect, const Uint8 *Yplane, int Ypitch, const Uint8 *Uplane, int Upitch, const Uint8 *Vplane, int Vpitch);</code>
     /// <summary>
     /// <para>Update a rectangle within a planar YV12 or IYUV texture with new pixel
@@ -1147,8 +1147,8 @@ public static partial class SDL
     [LibraryImport(SDLLibrary, EntryPoint = "SDL_UpdateYUVTexture"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     [return: MarshalAs(UnmanagedType.I1)]
     public static partial bool UpdateYUVTexture(IntPtr texture, in Rect rect, IntPtr yplane, int ypitch, IntPtr uplane, int upitch, IntPtr vplane, int vpitch);
-    
-    
+
+
     /// <code>extern SDL_DECLSPEC bool SDLCALL SDL_UpdateNVTexture(SDL_Texture *texture, const SDL_Rect *rect, const Uint8 *Yplane, int Ypitch, const Uint8 *UVplane, int UVpitch);</code>
     /// <summary>
     /// <para>Update a rectangle within a planar NV12 or NV21 texture with new pixels.</para>
@@ -1174,8 +1174,8 @@ public static partial class SDL
     [LibraryImport(SDLLibrary, EntryPoint = "SDL_UpdateNVTexture"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     [return: MarshalAs(UnmanagedType.I1)]
     public static partial bool UpdateNVTexture(IntPtr texture, IntPtr rect, IntPtr yplane, int ypitch, IntPtr uvplane, int uvpitch);
-    
-    
+
+
     /// <code>extern SDL_DECLSPEC bool SDLCALL SDL_UpdateNVTexture(SDL_Texture *texture, const SDL_Rect *rect, const Uint8 *Yplane, int Ypitch, const Uint8 *UVplane, int UVpitch);</code>
     /// <summary>
     /// <para>Update a rectangle within a planar NV12 or NV21 texture with new pixels.</para>
@@ -1200,9 +1200,9 @@ public static partial class SDL
     /// <seealso cref="UpdateYUVTexture(IntPtr, IntPtr, IntPtr, int, IntPtr, int, IntPtr, int)"/>
     [LibraryImport(SDLLibrary, EntryPoint = "SDL_UpdateNVTexture"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     [return: MarshalAs(UnmanagedType.I1)]
-    public static partial bool UpdateNVTexture(IntPtr texture, in Rect rect, IntPtr yplane, int ypitch, IntPtr  uvplane, int uvpitch);
-    
-    
+    public static partial bool UpdateNVTexture(IntPtr texture, in Rect rect, IntPtr yplane, int ypitch, IntPtr uvplane, int uvpitch);
+
+
     //extern SDL_DECLSPEC bool SDLCALL SDL_LockTexture(SDL_Texture *texture, const SDL_Rect *rect, void **pixels, int *pitch);
     /// <summary>
     /// <para>Lock a portion of the texture for <b>write-only</b> pixel access.</para>
@@ -1231,8 +1231,8 @@ public static partial class SDL
     [LibraryImport(SDLLibrary, EntryPoint = "SDL_LockTexture"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     [return: MarshalAs(UnmanagedType.I1)]
     public static partial bool LockTexture(IntPtr texture, IntPtr rect, out IntPtr pixels, out int pitch);
-    
-    
+
+
     //extern SDL_DECLSPEC bool SDLCALL SDL_LockTexture(SDL_Texture *texture, const SDL_Rect *rect, void **pixels, int *pitch);
     /// <summary>
     /// <para>Lock a portion of the texture for <b>write-only</b> pixel access.</para>
@@ -1261,8 +1261,8 @@ public static partial class SDL
     [LibraryImport(SDLLibrary, EntryPoint = "SDL_LockTexture"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     [return: MarshalAs(UnmanagedType.I1)]
     public static partial bool LockTexture(IntPtr texture, in Rect rect, out IntPtr pixels, out int pitch);
-    
-    
+
+
     /// <code>extern SDL_DECLSPEC bool SDLCALL SDL_LockTextureToSurface(SDL_Texture *texture, const SDL_Rect *rect, SDL_Surface **surface);</code>
     /// <summary>
     /// <para>Lock a portion of the texture for <b>write-only</b> pixel access, and expose
@@ -1293,8 +1293,8 @@ public static partial class SDL
     [LibraryImport(SDLLibrary, EntryPoint = "SDL_LockTextureToSurface"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     [return: MarshalAs(UnmanagedType.I1)]
     public static partial bool LockTextureToSurface(IntPtr texture, IntPtr rect, out IntPtr surface);
-    
-    
+
+
     /// <code>extern SDL_DECLSPEC bool SDLCALL SDL_LockTextureToSurface(SDL_Texture *texture, const SDL_Rect *rect, SDL_Surface **surface);</code>
     /// <summary>
     /// <para>Lock a portion of the texture for <b>write-only</b> pixel access, and expose
@@ -1325,7 +1325,7 @@ public static partial class SDL
     [LibraryImport(SDLLibrary, EntryPoint = "SDL_LockTextureToSurface"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     [return: MarshalAs(UnmanagedType.I1)]
     public static partial bool LockTextureToSurface(IntPtr texture, in Rect rect, out IntPtr surface);
-    
+
 
     /// <code>extern SDL_DECLSPEC void SDLCALL SDL_UnlockTexture(SDL_Texture *texture);</code>
     /// <summary>
@@ -1343,8 +1343,8 @@ public static partial class SDL
     /// <seealso cref="LockTexture(nint, nint, out nint, out int)"/>
     [LibraryImport(SDLLibrary, EntryPoint = "SDL_UnlockTexture"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     public static partial void UnlockTexture(IntPtr texture);
-    
-    
+
+
     /// <code>extern SDL_DECLSPEC bool SDLCALL SDL_SetRenderTarget(SDL_Renderer *renderer, SDL_Texture *texture);</code>
     /// <summary>
     /// <para>Set a texture as the current rendering target.</para>
@@ -1368,8 +1368,8 @@ public static partial class SDL
     [LibraryImport(SDLLibrary, EntryPoint = "SDL_SetRenderTarget"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     [return: MarshalAs(UnmanagedType.I1)]
     public static partial bool SetRenderTarget(IntPtr renderer, IntPtr texture);
-    
-    
+
+
     /// <code>extern SDL_DECLSPEC SDL_Texture * SDLCALL SDL_GetRenderTarget(SDL_Renderer *renderer);</code>
     /// <summary>
     /// <para>Get the current render target.</para>
@@ -1383,8 +1383,8 @@ public static partial class SDL
     /// <seealso cref="SetRenderTarget"/>
     [LibraryImport(SDLLibrary, EntryPoint = "SDL_GetRenderTarget"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     public static partial IntPtr GetRenderTarget(IntPtr renderer);
-    
-    
+
+
     /// <code>extern SDL_DECLSPEC bool SDLCALL SDL_SetRenderLogicalPresentation(SDL_Renderer *renderer, int w, int h, SDL_RendererLogicalPresentation mode);</code>
     /// <summary>
     /// <para>Set a device-independent resolution and presentation mode for rendering.</para>
@@ -1432,8 +1432,8 @@ public static partial class SDL
     [LibraryImport(SDLLibrary, EntryPoint = "SDL_SetRenderLogicalPresentation"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     [return: MarshalAs(UnmanagedType.I1)]
     public static partial bool SetRenderLogicalPresentation(IntPtr renderer, int w, int h, RendererLogicalPresentation mode);
-    
-    
+
+
     /// <code>extern SDL_DECLSPEC bool SDLCALL SDL_GetRenderLogicalPresentation(SDL_Renderer *renderer, int *w, int *h, SDL_RendererLogicalPresentation *mode);</code>
     /// <summary>
     /// <para>Get device independent resolution and presentation mode for rendering.</para>
@@ -1454,8 +1454,8 @@ public static partial class SDL
     [LibraryImport(SDLLibrary, EntryPoint = "SDL_GetRenderLogicalPresentation"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     [return: MarshalAs(UnmanagedType.I1)]
     public static partial bool GetRenderLogicalPresentation(IntPtr renderer, out int w, out int h, out RendererLogicalPresentation mode);
-    
-    
+
+
     /// <code>extern SDL_DECLSPEC bool SDLCALL SDL_GetRenderLogicalPresentationRect(SDL_Renderer *renderer, SDL_FRect *rect);</code>
     /// <summary>
     /// <para>Get the final presentation rectangle for rendering.</para>
@@ -1477,8 +1477,8 @@ public static partial class SDL
     [LibraryImport(SDLLibrary, EntryPoint = "SDL_GetRenderLogicalPresentationRect"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     [return: MarshalAs(UnmanagedType.I1)]
     public static partial bool GetRenderLogicalPresentationRect(IntPtr renderer, out FRect rect);
-    
-    
+
+
     /// <code>extern SDL_DECLSPEC bool SDLCALL SDL_RenderCoordinatesFromWindow(SDL_Renderer *renderer, float window_x, float window_y, float *x, float *y);</code>
     /// <summary>
     /// <para>Get a point in render coordinates when given a point in window coordinates.</para>
@@ -1504,8 +1504,8 @@ public static partial class SDL
     [LibraryImport(SDLLibrary, EntryPoint = "SDL_RenderCoordinatesFromWindow"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     [return: MarshalAs(UnmanagedType.I1)]
     public static partial bool RenderCoordinatesFromWindow(IntPtr renderer, float windowx, float windowy, out float x, out float y);
-    
-    
+
+
     /// <code>extern SDL_DECLSPEC bool SDLCALL SDL_RenderCoordinatesToWindow(SDL_Renderer *renderer, float x, float y, float *window_x, float *window_y);</code>
     /// <summary>
     /// <para>Get a point in window coordinates when given a point in render coordinates.</para>
@@ -1534,8 +1534,8 @@ public static partial class SDL
     [LibraryImport(SDLLibrary, EntryPoint = "SDL_RenderCoordinatesToWindow"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     [return: MarshalAs(UnmanagedType.I1)]
     public static partial bool RenderCoordinatesToWindow(IntPtr renderer, float x, float y, out float windowx, out float windowy);
-    
-    
+
+
     /// <code>extern SDL_DECLSPEC bool SDLCALL SDL_ConvertEventToRenderCoordinates(SDL_Renderer *renderer, SDL_Event *event);</code>
     /// <summary>
     /// <para>Convert the coordinates in an event to render coordinates.</para>
@@ -1566,8 +1566,8 @@ public static partial class SDL
     [DllImport(SDLLibrary, EntryPoint = "SDL_ConvertEventToRenderCoordinates"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     [return: MarshalAs(UnmanagedType.I1)]
     public static extern bool ConvertEventToRenderCoordinates(IntPtr renderer, ref Event @event);
-    
-    
+
+
     /// <code>extern SDL_DECLSPEC bool SDLCALL SDL_SetRenderViewport(SDL_Renderer *renderer, const SDL_Rect *rect);</code>
     /// <summary>
     /// <para>Set the drawing area for rendering on the current target.</para>
@@ -1590,8 +1590,8 @@ public static partial class SDL
     [LibraryImport(SDLLibrary, EntryPoint = "SDL_SetRenderViewport"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     [return: MarshalAs(UnmanagedType.I1)]
     public static partial bool SetRenderViewport(IntPtr renderer, IntPtr rect);
-    
-    
+
+
     /// <code>extern SDL_DECLSPEC bool SDLCALL SDL_SetRenderViewport(SDL_Renderer *renderer, const SDL_Rect *rect);</code>
     /// <summary>
     /// <para>Set the drawing area for rendering on the current target.</para>
@@ -1612,8 +1612,8 @@ public static partial class SDL
     [LibraryImport(SDLLibrary, EntryPoint = "SDL_SetRenderViewport"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     [return: MarshalAs(UnmanagedType.I1)]
     public static partial bool SetRenderViewport(IntPtr renderer, Rect rect);
-    
-    
+
+
     /// <code>extern SDL_DECLSPEC bool SDLCALL SDL_GetRenderViewport(SDL_Renderer *renderer, SDL_Rect *rect);</code>
     /// <summary>
     /// Get the drawing area for the current target.
@@ -1631,8 +1631,8 @@ public static partial class SDL
     [LibraryImport(SDLLibrary, EntryPoint = "SDL_GetRenderViewport"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     [return: MarshalAs(UnmanagedType.I1)]
     public static partial bool GetRenderViewport(IntPtr renderer, out Rect rect);
-    
-    
+
+
     /// <code>extern SDL_DECLSPEC bool SDLCALL SDL_RenderViewportSet(SDL_Renderer *renderer);</code>
     /// <summary>
     /// <para>Return whether an explicit rectangle was set as the viewport.</para>
@@ -1652,8 +1652,8 @@ public static partial class SDL
     [LibraryImport(SDLLibrary, EntryPoint = "SDL_RenderViewportSet"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     [return: MarshalAs(UnmanagedType.I1)]
     public static partial bool RenderViewportSet(IntPtr renderer);
-    
-    
+
+
     /// <code>extern SDL_DECLSPEC bool SDLCALL SDL_GetRenderSafeArea(SDL_Renderer *renderer, SDL_Rect *rect);</code>
     /// <summary>
     /// <para>Get the safe area for rendering within the current viewport.</para>
@@ -1674,8 +1674,8 @@ public static partial class SDL
     [LibraryImport(SDLLibrary, EntryPoint = "SDL_GetRenderSafeArea"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     [return: MarshalAs(UnmanagedType.I1)]
     public static partial bool GetRenderSafeArea(IntPtr renderer, out Rect rect);
-    
-    
+
+
     /// <code>extern SDL_DECLSPEC bool SDLCALL SDL_SetRenderClipRect(SDL_Renderer *renderer, const SDL_Rect *rect);</code>
     /// <summary>
     /// Set the clip rectangle for rendering on the specified target.
@@ -1694,8 +1694,8 @@ public static partial class SDL
     [LibraryImport(SDLLibrary, EntryPoint = "SDL_SetRenderClipRect"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     [return: MarshalAs(UnmanagedType.I1)]
     public static partial bool SetRenderClipRect(IntPtr renderer, IntPtr rect);
-    
-    
+
+
     /// <code>extern SDL_DECLSPEC bool SDLCALL SDL_SetRenderClipRect(SDL_Renderer *renderer, const SDL_Rect *rect);</code>
     /// <summary>
     /// Set the clip rectangle for rendering on the specified target.
@@ -1734,8 +1734,8 @@ public static partial class SDL
     [LibraryImport(SDLLibrary, EntryPoint = "SDL_GetRenderClipRect"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     [return: MarshalAs(UnmanagedType.I1)]
     public static partial bool GetRenderClipRect(IntPtr renderer, out Rect rect);
-    
-    
+
+
     /// <code>extern SDL_DECLSPEC bool SDLCALL SDL_RenderClipEnabled(SDL_Renderer *renderer);</code>
     /// <summary>
     /// <para>Get whether clipping is enabled on the given render target.</para>
@@ -1752,8 +1752,8 @@ public static partial class SDL
     [LibraryImport(SDLLibrary, EntryPoint = "SDL_RenderClipEnabled"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     [return: MarshalAs(UnmanagedType.I1)]
     public static partial bool RenderClipEnabled(IntPtr renderer);
-    
-    
+
+
     /// <code>extern SDL_DECLSPEC bool SDLCALL SDL_SetRenderScale(SDL_Renderer *renderer, float scaleX, float scaleY);</code>
     /// <summary>
     /// <para>Set the drawing scale for rendering on the current target.</para>
@@ -1777,8 +1777,8 @@ public static partial class SDL
     [LibraryImport(SDLLibrary, EntryPoint = "SDL_SetRenderScale"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     [return: MarshalAs(UnmanagedType.I1)]
     public static partial bool SetRenderScale(IntPtr renderer, float scalex, float scaley);
-    
-    
+
+
     /// <code>extern SDL_DECLSPEC bool SDLCALL SDL_GetRenderScale(SDL_Renderer *renderer, float *scaleX, float *scaleY);</code>
     /// <summary>
     /// Get the drawing scale for the current target.
@@ -1796,8 +1796,8 @@ public static partial class SDL
     [LibraryImport(SDLLibrary, EntryPoint = "SDL_GetRenderScale"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     [return: MarshalAs(UnmanagedType.I1)]
     public static partial bool GetRenderScale(IntPtr renderer, out float scalex, out float scaley);
-    
-    
+
+
     /// <code>extern SDL_DECLSPEC bool SDLCALL SDL_SetRenderDrawColor(SDL_Renderer *renderer, Uint8 r, Uint8 g, Uint8 b, Uint8 a);</code>
     /// <summary>
     /// <para>Set the color used for drawing operations.</para>
@@ -1820,8 +1820,8 @@ public static partial class SDL
     [LibraryImport(SDLLibrary, EntryPoint = "SDL_SetRenderDrawColor"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     [return: MarshalAs(UnmanagedType.I1)]
     public static partial bool SetRenderDrawColor(IntPtr renderer, byte r, byte g, byte b, byte a);
-    
-    
+
+
     /// <code>extern SDL_DECLSPEC bool SDLCALL SDL_SetRenderDrawColorFloat(SDL_Renderer *renderer, float r, float g, float b, float a);</code>
     /// <summary>
     /// <para>Set the color used for drawing operations (Rect, Line and Clear).</para>
@@ -1844,8 +1844,8 @@ public static partial class SDL
     [LibraryImport(SDLLibrary, EntryPoint = "SDL_SetRenderDrawColorFloat"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     [return: MarshalAs(UnmanagedType.I1)]
     public static partial bool SetRenderDrawColorFloat(IntPtr renderer, float r, float g, float b, float a);
-    
-    
+
+
     /// <code>extern SDL_DECLSPEC bool SDLCALL SDL_GetRenderDrawColor(SDL_Renderer *renderer, Uint8 *r, Uint8 *g, Uint8 *b, Uint8 *a);</code>
     /// <summary>
     /// Get the color used for drawing operations (Rect, Line and Clear).
@@ -1868,8 +1868,8 @@ public static partial class SDL
     [LibraryImport(SDLLibrary, EntryPoint = "SDL_GetRenderDrawColor"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     [return: MarshalAs(UnmanagedType.I1)]
     public static partial bool GetRenderDrawColor(IntPtr renderer, out byte r, out byte g, out byte b, out byte a);
-    
-    
+
+
     /// <code>extern SDL_DECLSPEC bool SDLCALL SDL_GetRenderDrawColorFloat(SDL_Renderer *renderer, float *r, float *g, float *b, float *a);</code>
     /// <summary>
     /// Get the color used for drawing operations (Rect, Line and Clear).
@@ -1892,8 +1892,8 @@ public static partial class SDL
     [LibraryImport(SDLLibrary, EntryPoint = "SDL_GetRenderDrawColorFloat"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     [return: MarshalAs(UnmanagedType.I1)]
     public static partial bool GetRenderDrawColorFloat(IntPtr renderer, out float r, out float g, out float b, out float a);
-    
-    
+
+
     /// <code>extern SDL_DECLSPEC bool SDLCALL SDL_SetRenderColorScale(SDL_Renderer *renderer, float scale);</code>
     /// <summary>
     /// <para>Set the color scale used for render operations.</para>
@@ -1914,8 +1914,8 @@ public static partial class SDL
     [LibraryImport(SDLLibrary, EntryPoint = "SDL_SetRenderColorScale"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     [return: MarshalAs(UnmanagedType.I1)]
     public static partial bool SetRenderColorScale(IntPtr renderer, float scale);
-    
-    
+
+
     /// <code>extern SDL_DECLSPEC bool SDLCALL SDL_GetRenderColorScale(SDL_Renderer *renderer, float *scale);</code>
     /// <summary>
     /// Get the color scale used for render operations.
@@ -1930,8 +1930,8 @@ public static partial class SDL
     [LibraryImport(SDLLibrary, EntryPoint = "SDL_GetRenderColorScale"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     [return: MarshalAs(UnmanagedType.I1)]
     public static partial bool GetRenderColorScale(IntPtr renderer, out float scale);
-    
-    
+
+
     /// <code>extern SDL_DECLSPEC bool SDLCALL SDL_SetRenderDrawBlendMode(SDL_Renderer *renderer, SDL_BlendMode blendMode);</code>
     /// <summary>
     /// <para>Set the blend mode used for drawing operations (Fill and Line).</para>
@@ -1947,8 +1947,8 @@ public static partial class SDL
     [LibraryImport(SDLLibrary, EntryPoint = "SDL_SetRenderDrawBlendMode"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     [return: MarshalAs(UnmanagedType.I1)]
     public static partial bool SetRenderDrawBlendMode(IntPtr renderer, BlendMode blendMode);
-    
-    
+
+
     /// <code>extern SDL_DECLSPEC bool SDLCALL SDL_GetRenderDrawBlendMode(SDL_Renderer *renderer, SDL_BlendMode *blendMode);</code>
     /// <summary>
     /// Get the blend mode used for drawing operations.
@@ -1963,8 +1963,8 @@ public static partial class SDL
     [LibraryImport(SDLLibrary, EntryPoint = "SDL_GetRenderDrawBlendMode"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     [return: MarshalAs(UnmanagedType.I1)]
     public static partial bool GetRenderDrawBlendMode(IntPtr renderer, out BlendMode blendMode);
-    
-    
+
+
     /// <code>extern SDL_DECLSPEC bool SDLCALL SDL_RenderClear(SDL_Renderer *renderer);</code>
     /// <summary>
     /// <para>Clear the current rendering target with the drawing color.</para>
@@ -1982,8 +1982,8 @@ public static partial class SDL
     [LibraryImport(SDLLibrary, EntryPoint = "SDL_RenderClear"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     [return: MarshalAs(UnmanagedType.I1)]
     public static partial bool RenderClear(IntPtr renderer);
-    
-    
+
+
     /// <code>extern SDL_DECLSPEC bool SDLCALL SDL_RenderPoint(SDL_Renderer *renderer, float x, float y);</code>
     /// <summary>
     /// Draw a point on the current rendering target at subpixel precision.
@@ -1999,8 +1999,8 @@ public static partial class SDL
     [LibraryImport(SDLLibrary, EntryPoint = "SDL_RenderPoint"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     [return: MarshalAs(UnmanagedType.I1)]
     public static partial bool RenderPoint(IntPtr renderer, float x, float y);
-    
-    
+
+
     /// <code>extern SDL_DECLSPEC bool SDLCALL SDL_RenderPoints(SDL_Renderer *renderer, const SDL_FPoint *points, int count);</code>
     /// <summary>
     /// Draw multiple points on the current rendering target at subpixel precision.
@@ -2016,8 +2016,8 @@ public static partial class SDL
     [LibraryImport(SDLLibrary, EntryPoint = "SDL_RenderPoints"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     [return: MarshalAs(UnmanagedType.I1)]
     public static partial bool RenderPoints(IntPtr renderer, FPoint[] points, int count);
-    
-    
+
+
     /// <code>extern SDL_DECLSPEC bool SDLCALL SDL_RenderLine(SDL_Renderer *renderer, float x1, float y1, float x2, float y2);</code>
     /// <summary>
     /// Draw a line on the current rendering target at subpixel precision.
@@ -2035,8 +2035,8 @@ public static partial class SDL
     [LibraryImport(SDLLibrary, EntryPoint = "SDL_RenderLine"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     [return: MarshalAs(UnmanagedType.I1)]
     public static partial bool RenderLine(IntPtr renderer, float x1, float y1, float x2, float y2);
-    
-    
+
+
     /// <code>extern SDL_DECLSPEC bool SDLCALL SDL_RenderLines(SDL_Renderer *renderer, const SDL_FPoint *points, int count);</code>
     /// <summary>
     /// Draw a series of connected lines on the current rendering target at
@@ -2053,8 +2053,8 @@ public static partial class SDL
     [LibraryImport(SDLLibrary, EntryPoint = "SDL_RenderLines"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     [return: MarshalAs(UnmanagedType.I1)]
     public static partial bool RenderLines(IntPtr renderer, FPoint[] points, int count);
-    
-    
+
+
     /// <code>extern SDL_DECLSPEC bool SDLCALL SDL_RenderRect(SDL_Renderer *renderer, const SDL_FRect *rect);</code>
     /// <summary>
     /// Draw a rectangle on the current rendering target at subpixel precision.
@@ -2070,8 +2070,8 @@ public static partial class SDL
     [LibraryImport(SDLLibrary, EntryPoint = "SDL_RenderRect"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     [return: MarshalAs(UnmanagedType.I1)]
     public static partial bool RenderRect(IntPtr renderer, IntPtr rect);
-    
-    
+
+
     /// <code>extern SDL_DECLSPEC bool SDLCALL SDL_RenderRect(SDL_Renderer *renderer, const SDL_FRect *rect);</code>
     /// <summary>
     /// Draw a rectangle on the current rendering target at subpixel precision.
@@ -2087,8 +2087,8 @@ public static partial class SDL
     [LibraryImport(SDLLibrary, EntryPoint = "SDL_RenderRect"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     [return: MarshalAs(UnmanagedType.I1)]
     public static partial bool RenderRect(IntPtr renderer, FRect rect);
-    
-    
+
+
     /// <code>extern SDL_DECLSPEC bool SDLCALL SDL_RenderRects(SDL_Renderer *renderer, const SDL_FRect *rects, int count);</code>
     /// <summary>
     /// Draw some number of rectangles on the current rendering target at subpixel
@@ -2105,8 +2105,8 @@ public static partial class SDL
     [LibraryImport(SDLLibrary, EntryPoint = "SDL_RenderRects"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     [return: MarshalAs(UnmanagedType.I1)]
     public static partial bool RenderRects(IntPtr renderer, FRect[] rects, int count);
-    
-    
+
+
     /// <code>extern SDL_DECLSPEC bool SDLCALL SDL_RenderFillRect(SDL_Renderer *renderer, const SDL_FRect *rect);</code>
     /// <summary>
     /// Fill a rectangle on the current rendering target with the drawing color at
@@ -2123,8 +2123,8 @@ public static partial class SDL
     [LibraryImport(SDLLibrary, EntryPoint = "SDL_RenderFillRect"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     [return: MarshalAs(UnmanagedType.I1)]
     public static partial bool RenderFillRect(IntPtr renderer, IntPtr rect);
-    
-    
+
+
     /// <code>extern SDL_DECLSPEC bool SDLCALL SDL_RenderFillRect(SDL_Renderer *renderer, const SDL_FRect *rect);</code>
     /// <summary>
     /// Fill a rectangle on the current rendering target with the drawing color at
@@ -2141,8 +2141,8 @@ public static partial class SDL
     [LibraryImport(SDLLibrary, EntryPoint = "SDL_RenderFillRect"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     [return: MarshalAs(UnmanagedType.I1)]
     public static partial bool RenderFillRect(IntPtr renderer, FRect rect);
-    
-    
+
+
     /// <code>extern SDL_DECLSPEC bool SDLCALL SDL_RenderFillRects(SDL_Renderer *renderer, const SDL_FRect *rects, int count);</code>
     /// <summary>
     /// Fill some number of rectangles on the current rendering target with the
@@ -2160,7 +2160,7 @@ public static partial class SDL
     [return: MarshalAs(UnmanagedType.I1)]
     public static partial bool RenderFillRects(IntPtr renderer, FRect[] rect, int count);
 
-    
+
     #region RenderTexture
     /// <code>extern SDL_DECLSPEC bool SDLCALL SDL_RenderTexture(SDL_Renderer *renderer, SDL_Texture *texture, const SDL_FRect *srcrect, const SDL_FRect *dstrect);</code>
     /// <summary>
@@ -2182,8 +2182,8 @@ public static partial class SDL
     [LibraryImport(SDLLibrary, EntryPoint = "SDL_RenderTexture"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     [return: MarshalAs(UnmanagedType.I1)]
     public static partial bool RenderTexture(IntPtr renderer, IntPtr texture, IntPtr srcrect, IntPtr dstrect);
-    
-    
+
+
     /// <code>extern SDL_DECLSPEC bool SDLCALL SDL_RenderTexture(SDL_Renderer *renderer, SDL_Texture *texture, const SDL_FRect *srcrect, const SDL_FRect *dstrect);</code>
     /// <summary>
     /// Copy a portion of the texture to the current rendering target at subpixel
@@ -2249,8 +2249,8 @@ public static partial class SDL
     [return: MarshalAs(UnmanagedType.I1)]
     public static partial bool RenderTexture(IntPtr renderer, IntPtr texture, in FRect srcrect, in FRect dstrect);
     #endregion
-    
-    
+
+
     #region RenderTextureRotated
     /// <code>extern SDL_DECLSPEC bool SDLCALL SDL_RenderTextureRotated(SDL_Renderer *renderer, SDL_Texture *texture, const SDL_FRect *srcrect, const SDL_FRect *dstrect, double angle, const SDL_FPoint *center, SDL_FlipMode flip);</code>
     /// <summary>
@@ -2278,8 +2278,8 @@ public static partial class SDL
     [LibraryImport(SDLLibrary, EntryPoint = "SDL_RenderTextureRotated"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     [return: MarshalAs(UnmanagedType.I1)]
     public static partial bool RenderTextureRotated(IntPtr renderer, IntPtr texture, IntPtr srcrect, IntPtr dstrect, double angle, IntPtr center, FlipMode flip);
-    
-    
+
+
     /// <code>extern SDL_DECLSPEC bool SDLCALL SDL_RenderTextureRotated(SDL_Renderer *renderer, SDL_Texture *texture, const SDL_FRect *srcrect, const SDL_FRect *dstrect, double angle, const SDL_FPoint *center, SDL_FlipMode flip);</code>
     /// <summary>
     /// Copy a portion of the source texture to the current rendering target, with
@@ -2306,8 +2306,8 @@ public static partial class SDL
     [LibraryImport(SDLLibrary, EntryPoint = "SDL_RenderTextureRotated"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     [return: MarshalAs(UnmanagedType.I1)]
     public static partial bool RenderTextureRotated(IntPtr renderer, IntPtr texture, in FRect srcrect, IntPtr dstrect, double angle, IntPtr center, FlipMode flip);
-    
-    
+
+
     /// <code>extern SDL_DECLSPEC bool SDLCALL SDL_RenderTextureRotated(SDL_Renderer *renderer, SDL_Texture *texture, const SDL_FRect *srcrect, const SDL_FRect *dstrect, double angle, const SDL_FPoint *center, SDL_FlipMode flip);</code>
     /// <summary>
     /// Copy a portion of the source texture to the current rendering target, with
@@ -2334,8 +2334,8 @@ public static partial class SDL
     [LibraryImport(SDLLibrary, EntryPoint = "SDL_RenderTextureRotated"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     [return: MarshalAs(UnmanagedType.I1)]
     public static partial bool RenderTextureRotated(IntPtr renderer, IntPtr texture, IntPtr srcrect, in FRect dstrect, double angle, IntPtr center, FlipMode flip);
-    
-    
+
+
     /// <code>extern SDL_DECLSPEC bool SDLCALL SDL_RenderTextureRotated(SDL_Renderer *renderer, SDL_Texture *texture, const SDL_FRect *srcrect, const SDL_FRect *dstrect, double angle, const SDL_FPoint *center, SDL_FlipMode flip);</code>
     /// <summary>
     /// Copy a portion of the source texture to the current rendering target, with
@@ -2362,8 +2362,8 @@ public static partial class SDL
     [LibraryImport(SDLLibrary, EntryPoint = "SDL_RenderTextureRotated"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     [return: MarshalAs(UnmanagedType.I1)]
     public static partial bool RenderTextureRotated(IntPtr renderer, IntPtr texture, IntPtr srcrect, IntPtr dstrect, double angle, in FRect center, FlipMode flip);
-    
-    
+
+
     /// <code>extern SDL_DECLSPEC bool SDLCALL SDL_RenderTextureRotated(SDL_Renderer *renderer, SDL_Texture *texture, const SDL_FRect *srcrect, const SDL_FRect *dstrect, double angle, const SDL_FPoint *center, SDL_FlipMode flip);</code>
     /// <summary>
     /// Copy a portion of the source texture to the current rendering target, with
@@ -2390,8 +2390,8 @@ public static partial class SDL
     [LibraryImport(SDLLibrary, EntryPoint = "SDL_RenderTextureRotated"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     [return: MarshalAs(UnmanagedType.I1)]
     public static partial bool RenderTextureRotated(IntPtr renderer, IntPtr texture, in FRect srcrect, in FRect dstrect, double angle, IntPtr center, FlipMode flip);
-    
-    
+
+
     /// <code>extern SDL_DECLSPEC bool SDLCALL SDL_RenderTextureRotated(SDL_Renderer *renderer, SDL_Texture *texture, const SDL_FRect *srcrect, const SDL_FRect *dstrect, double angle, const SDL_FPoint *center, SDL_FlipMode flip);</code>
     /// <summary>
     /// Copy a portion of the source texture to the current rendering target, with
@@ -2418,8 +2418,8 @@ public static partial class SDL
     [LibraryImport(SDLLibrary, EntryPoint = "SDL_RenderTextureRotated"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     [return: MarshalAs(UnmanagedType.I1)]
     public static partial bool RenderTextureRotated(IntPtr renderer, IntPtr texture, IntPtr srcrect, in FRect dstrect, double angle, in FRect center, FlipMode flip);
-    
-    
+
+
     /// <code>extern SDL_DECLSPEC bool SDLCALL SDL_RenderTextureRotated(SDL_Renderer *renderer, SDL_Texture *texture, const SDL_FRect *srcrect, const SDL_FRect *dstrect, double angle, const SDL_FPoint *center, SDL_FlipMode flip);</code>
     /// <summary>
     /// Copy a portion of the source texture to the current rendering target, with
@@ -2446,8 +2446,8 @@ public static partial class SDL
     [LibraryImport(SDLLibrary, EntryPoint = "SDL_RenderTextureRotated"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     [return: MarshalAs(UnmanagedType.I1)]
     public static partial bool RenderTextureRotated(IntPtr renderer, IntPtr texture, in FRect srcrect, IntPtr dstrect, double angle, in FRect center, FlipMode flip);
-    
-    
+
+
     /// <code>extern SDL_DECLSPEC bool SDLCALL SDL_RenderTextureRotated(SDL_Renderer *renderer, SDL_Texture *texture, const SDL_FRect *srcrect, const SDL_FRect *dstrect, double angle, const SDL_FPoint *center, SDL_FlipMode flip);</code>
     /// <summary>
     /// Copy a portion of the source texture to the current rendering target, with
@@ -2475,8 +2475,8 @@ public static partial class SDL
     [return: MarshalAs(UnmanagedType.I1)]
     public static partial bool RenderTextureRotated(IntPtr renderer, IntPtr texture, in FRect srcrect, in FRect dstrect, double angle, in FPoint center, FlipMode flip);
     #endregion
-    
-    
+
+
     /// <code>extern SDL_DECLSPEC bool SDLCALL SDL_RenderTextureAffine(SDL_Renderer *renderer, SDL_Texture *texture, const SDL_FRect *srcrect, const SDL_FPoint *origin, const SDL_FPoint *right, const SDL_FPoint *down);</code>
     /// <summary>
     /// <para>Copy a portion of the source texture to the current rendering target, with
@@ -2503,8 +2503,8 @@ public static partial class SDL
     [LibraryImport(SDLLibrary, EntryPoint = "SDL_RenderTextureAffine"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     [return: MarshalAs(UnmanagedType.I1)]
     public static partial bool RenderTextureAffine(IntPtr renderer, IntPtr texture, IntPtr srcrect, IntPtr origin, IntPtr right, IntPtr down);
-    
-    
+
+
     /// <code>extern SDL_DECLSPEC bool SDLCALL SDL_RenderTextureAffine(SDL_Renderer *renderer, SDL_Texture *texture, const SDL_FRect *srcrect, const SDL_FPoint *origin, const SDL_FPoint *right, const SDL_FPoint *down);</code>
     /// <summary>
     /// <para>Copy a portion of the source texture to the current rendering target, with
@@ -2531,8 +2531,8 @@ public static partial class SDL
     [LibraryImport(SDLLibrary, EntryPoint = "SDL_RenderTextureAffine"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     [return: MarshalAs(UnmanagedType.I1)]
     public static partial bool RenderTextureAffine(IntPtr renderer, IntPtr texture, IntPtr srcrect, IntPtr origin, IntPtr right, in FRect down);
-    
-    
+
+
     /// <code>extern SDL_DECLSPEC bool SDLCALL SDL_RenderTextureAffine(SDL_Renderer *renderer, SDL_Texture *texture, const SDL_FRect *srcrect, const SDL_FPoint *origin, const SDL_FPoint *right, const SDL_FPoint *down);</code>
     /// <summary>
     /// <para>Copy a portion of the source texture to the current rendering target, with
@@ -2559,8 +2559,8 @@ public static partial class SDL
     [LibraryImport(SDLLibrary, EntryPoint = "SDL_RenderTextureAffine"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     [return: MarshalAs(UnmanagedType.I1)]
     public static partial bool RenderTextureAffine(IntPtr renderer, IntPtr texture, IntPtr srcrect, IntPtr origin, in FRect right, IntPtr down);
-    
-    
+
+
     /// <code>extern SDL_DECLSPEC bool SDLCALL SDL_RenderTextureAffine(SDL_Renderer *renderer, SDL_Texture *texture, const SDL_FRect *srcrect, const SDL_FPoint *origin, const SDL_FPoint *right, const SDL_FPoint *down);</code>
     /// <summary>
     /// <para>Copy a portion of the source texture to the current rendering target, with
@@ -2587,8 +2587,8 @@ public static partial class SDL
     [LibraryImport(SDLLibrary, EntryPoint = "SDL_RenderTextureAffine"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     [return: MarshalAs(UnmanagedType.I1)]
     public static partial bool RenderTextureAffine(IntPtr renderer, IntPtr texture, IntPtr srcrect, IntPtr origin, in FRect right, in FRect down);
-    
-    
+
+
     /// <code>extern SDL_DECLSPEC bool SDLCALL SDL_RenderTextureAffine(SDL_Renderer *renderer, SDL_Texture *texture, const SDL_FRect *srcrect, const SDL_FPoint *origin, const SDL_FPoint *right, const SDL_FPoint *down);</code>
     /// <summary>
     /// <para>Copy a portion of the source texture to the current rendering target, with
@@ -2615,8 +2615,8 @@ public static partial class SDL
     [LibraryImport(SDLLibrary, EntryPoint = "SDL_RenderTextureAffine"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     [return: MarshalAs(UnmanagedType.I1)]
     public static partial bool RenderTextureAffine(IntPtr renderer, IntPtr texture, IntPtr srcrect, in FRect origin, IntPtr right, IntPtr down);
-    
-    
+
+
     /// <code>extern SDL_DECLSPEC bool SDLCALL SDL_RenderTextureAffine(SDL_Renderer *renderer, SDL_Texture *texture, const SDL_FRect *srcrect, const SDL_FPoint *origin, const SDL_FPoint *right, const SDL_FPoint *down);</code>
     /// <summary>
     /// <para>Copy a portion of the source texture to the current rendering target, with
@@ -2643,8 +2643,8 @@ public static partial class SDL
     [LibraryImport(SDLLibrary, EntryPoint = "SDL_RenderTextureAffine"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     [return: MarshalAs(UnmanagedType.I1)]
     public static partial bool RenderTextureAffine(IntPtr renderer, IntPtr texture, IntPtr srcrect, in FRect origin, IntPtr right, in FRect down);
-    
-    
+
+
     /// <code>extern SDL_DECLSPEC bool SDLCALL SDL_RenderTextureAffine(SDL_Renderer *renderer, SDL_Texture *texture, const SDL_FRect *srcrect, const SDL_FPoint *origin, const SDL_FPoint *right, const SDL_FPoint *down);</code>
     /// <summary>
     /// <para>Copy a portion of the source texture to the current rendering target, with
@@ -2671,8 +2671,8 @@ public static partial class SDL
     [LibraryImport(SDLLibrary, EntryPoint = "SDL_RenderTextureAffine"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     [return: MarshalAs(UnmanagedType.I1)]
     public static partial bool RenderTextureAffine(IntPtr renderer, IntPtr texture, IntPtr srcrect, in FRect origin, in FRect right, IntPtr down);
-    
-    
+
+
     /// <code>extern SDL_DECLSPEC bool SDLCALL SDL_RenderTextureAffine(SDL_Renderer *renderer, SDL_Texture *texture, const SDL_FRect *srcrect, const SDL_FPoint *origin, const SDL_FPoint *right, const SDL_FPoint *down);</code>
     /// <summary>
     /// <para>Copy a portion of the source texture to the current rendering target, with
@@ -2699,8 +2699,8 @@ public static partial class SDL
     [LibraryImport(SDLLibrary, EntryPoint = "SDL_RenderTextureAffine"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     [return: MarshalAs(UnmanagedType.I1)]
     public static partial bool RenderTextureAffine(IntPtr renderer, IntPtr texture, IntPtr srcrect, in FRect origin, in FRect right, in FRect down);
-    
-    
+
+
     /// <code>extern SDL_DECLSPEC bool SDLCALL SDL_RenderTextureAffine(SDL_Renderer *renderer, SDL_Texture *texture, const SDL_FRect *srcrect, const SDL_FPoint *origin, const SDL_FPoint *right, const SDL_FPoint *down);</code>
     /// <summary>
     /// <para>Copy a portion of the source texture to the current rendering target, with
@@ -2727,8 +2727,8 @@ public static partial class SDL
     [LibraryImport(SDLLibrary, EntryPoint = "SDL_RenderTextureAffine"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     [return: MarshalAs(UnmanagedType.I1)]
     public static partial bool RenderTextureAffine(IntPtr renderer, IntPtr texture, in FRect srcrect, IntPtr origin, IntPtr right, IntPtr down);
-    
-    
+
+
     /// <code>extern SDL_DECLSPEC bool SDLCALL SDL_RenderTextureAffine(SDL_Renderer *renderer, SDL_Texture *texture, const SDL_FRect *srcrect, const SDL_FPoint *origin, const SDL_FPoint *right, const SDL_FPoint *down);</code>
     /// <summary>
     /// <para>Copy a portion of the source texture to the current rendering target, with
@@ -2755,8 +2755,8 @@ public static partial class SDL
     [LibraryImport(SDLLibrary, EntryPoint = "SDL_RenderTextureAffine"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     [return: MarshalAs(UnmanagedType.I1)]
     public static partial bool RenderTextureAffine(IntPtr renderer, IntPtr texture, in FRect srcrect, IntPtr origin, IntPtr right, in FRect down);
-    
-    
+
+
     /// <code>extern SDL_DECLSPEC bool SDLCALL SDL_RenderTextureAffine(SDL_Renderer *renderer, SDL_Texture *texture, const SDL_FRect *srcrect, const SDL_FPoint *origin, const SDL_FPoint *right, const SDL_FPoint *down);</code>
     /// <summary>
     /// <para>Copy a portion of the source texture to the current rendering target, with
@@ -2783,8 +2783,8 @@ public static partial class SDL
     [LibraryImport(SDLLibrary, EntryPoint = "SDL_RenderTextureAffine"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     [return: MarshalAs(UnmanagedType.I1)]
     public static partial bool RenderTextureAffine(IntPtr renderer, IntPtr texture, in FRect srcrect, IntPtr origin, in FRect right, IntPtr down);
-    
-    
+
+
     /// <code>extern SDL_DECLSPEC bool SDLCALL SDL_RenderTextureAffine(SDL_Renderer *renderer, SDL_Texture *texture, const SDL_FRect *srcrect, const SDL_FPoint *origin, const SDL_FPoint *right, const SDL_FPoint *down);</code>
     /// <summary>
     /// <para>Copy a portion of the source texture to the current rendering target, with
@@ -2811,8 +2811,8 @@ public static partial class SDL
     [LibraryImport(SDLLibrary, EntryPoint = "SDL_RenderTextureAffine"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     [return: MarshalAs(UnmanagedType.I1)]
     public static partial bool RenderTextureAffine(IntPtr renderer, IntPtr texture, in FRect srcrect, IntPtr origin, in FRect right, in FRect down);
-    
-    
+
+
     /// <code>extern SDL_DECLSPEC bool SDLCALL SDL_RenderTextureAffine(SDL_Renderer *renderer, SDL_Texture *texture, const SDL_FRect *srcrect, const SDL_FPoint *origin, const SDL_FPoint *right, const SDL_FPoint *down);</code>
     /// <summary>
     /// <para>Copy a portion of the source texture to the current rendering target, with
@@ -2839,8 +2839,8 @@ public static partial class SDL
     [LibraryImport(SDLLibrary, EntryPoint = "SDL_RenderTextureAffine"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     [return: MarshalAs(UnmanagedType.I1)]
     public static partial bool RenderTextureAffine(IntPtr renderer, IntPtr texture, in FRect srcrect, in FRect origin, IntPtr right, IntPtr down);
-    
-    
+
+
     /// <code>extern SDL_DECLSPEC bool SDLCALL SDL_RenderTextureAffine(SDL_Renderer *renderer, SDL_Texture *texture, const SDL_FRect *srcrect, const SDL_FPoint *origin, const SDL_FPoint *right, const SDL_FPoint *down);</code>
     /// <summary>
     /// <para>Copy a portion of the source texture to the current rendering target, with
@@ -2867,8 +2867,8 @@ public static partial class SDL
     [LibraryImport(SDLLibrary, EntryPoint = "SDL_RenderTextureAffine"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     [return: MarshalAs(UnmanagedType.I1)]
     public static partial bool RenderTextureAffine(IntPtr renderer, IntPtr texture, in FRect srcrect, in FRect origin, IntPtr right, in FRect down);
-    
-    
+
+
     /// <code>extern SDL_DECLSPEC bool SDLCALL SDL_RenderTextureAffine(SDL_Renderer *renderer, SDL_Texture *texture, const SDL_FRect *srcrect, const SDL_FPoint *origin, const SDL_FPoint *right, const SDL_FPoint *down);</code>
     /// <summary>
     /// <para>Copy a portion of the source texture to the current rendering target, with
@@ -2895,8 +2895,8 @@ public static partial class SDL
     [LibraryImport(SDLLibrary, EntryPoint = "SDL_RenderTextureAffine"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     [return: MarshalAs(UnmanagedType.I1)]
     public static partial bool RenderTextureAffine(IntPtr renderer, IntPtr texture, in FRect srcrect, in FRect origin, in FRect right, IntPtr down);
-    
-    
+
+
     /// <code>extern SDL_DECLSPEC bool SDLCALL SDL_RenderTextureAffine(SDL_Renderer *renderer, SDL_Texture *texture, const SDL_FRect *srcrect, const SDL_FPoint *origin, const SDL_FPoint *right, const SDL_FPoint *down);</code>
     /// <summary>
     /// <para>Copy a portion of the source texture to the current rendering target, with
@@ -2923,8 +2923,8 @@ public static partial class SDL
     [LibraryImport(SDLLibrary, EntryPoint = "SDL_RenderTextureAffine"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     [return: MarshalAs(UnmanagedType.I1)]
     public static partial bool RenderTextureAffine(IntPtr renderer, IntPtr texture, in FRect srcrect, in FRect origin, in FRect right, in FRect down);
-    
-    
+
+
     #region RenderTextureTiled
     /// <code>extern SDL_DECLSPEC bool SDLCALL SDL_RenderTextureTiled(SDL_Renderer *renderer, SDL_Texture *texture, const SDL_FRect *srcrect, float scale, const SDL_FRect *dstrect);</code>
     /// <summary>
@@ -2950,8 +2950,8 @@ public static partial class SDL
     [LibraryImport(SDLLibrary, EntryPoint = "SDL_RenderTextureTiled"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     [return: MarshalAs(UnmanagedType.I1)]
     public static partial bool RenderTextureTiled(IntPtr renderer, IntPtr texture, IntPtr srcrect, float scale, IntPtr dstrect);
-    
-    
+
+
     /// <code>extern SDL_DECLSPEC bool SDLCALL SDL_RenderTextureTiled(SDL_Renderer *renderer, SDL_Texture *texture, const SDL_FRect *srcrect, float scale, const SDL_FRect *dstrect);</code>
     /// <summary>
     /// <para>Tile a portion of the texture to the current rendering target at subpixel
@@ -2976,8 +2976,8 @@ public static partial class SDL
     [LibraryImport(SDLLibrary, EntryPoint = "SDL_RenderTextureTiled"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     [return: MarshalAs(UnmanagedType.I1)]
     public static partial bool RenderTextureTiled(IntPtr renderer, IntPtr texture, FRect srcrect, float scale, IntPtr dstrect);
-    
-    
+
+
     /// <code>extern SDL_DECLSPEC bool SDLCALL SDL_RenderTextureTiled(SDL_Renderer *renderer, SDL_Texture *texture, const SDL_FRect *srcrect, float scale, const SDL_FRect *dstrect);</code>
     /// <summary>
     /// <para>Tile a portion of the texture to the current rendering target at subpixel
@@ -3002,8 +3002,8 @@ public static partial class SDL
     [LibraryImport(SDLLibrary, EntryPoint = "SDL_RenderTextureTiled"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     [return: MarshalAs(UnmanagedType.I1)]
     public static partial bool RenderTextureTiled(IntPtr renderer, IntPtr texture, IntPtr srcrect, float scale, FRect dstrect);
-    
-    
+
+
     /// <code>extern SDL_DECLSPEC bool SDLCALL SDL_RenderTextureTiled(SDL_Renderer *renderer, SDL_Texture *texture, const SDL_FRect *srcrect, float scale, const SDL_FRect *dstrect);</code>
     /// <summary>
     /// <para>Tile a portion of the texture to the current rendering target at subpixel
@@ -3029,8 +3029,8 @@ public static partial class SDL
     [return: MarshalAs(UnmanagedType.I1)]
     public static partial bool RenderTextureTiled(IntPtr renderer, IntPtr texture, FRect srcrect, float scale, FRect dstrect);
     #endregion
-    
-    
+
+
     #region RenderTexture9Grid 
     //extern SDL_DECLSPEC bool SDLCALL SDL_RenderTexture9Grid(SDL_Renderer *renderer, SDL_Texture *texture, const SDL_FRect *srcrect, float left_width, float right_width, float top_height, float bottom_height, float scale, const SDL_FRect *dstrect);
     /// <summary>
@@ -3063,8 +3063,8 @@ public static partial class SDL
     [LibraryImport(SDLLibrary, EntryPoint = "SDL_RenderTexture9Grid"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     [return: MarshalAs(UnmanagedType.I1)]
     public static partial bool RenderTexture9Grid(IntPtr renderer, IntPtr texture, IntPtr srcrect, float leftWidth, float rightWidth, float topHeight, float bottomHeight, float sacel, IntPtr dstrect);
-    
-    
+
+
     //extern SDL_DECLSPEC bool SDLCALL SDL_RenderTexture9Grid(SDL_Renderer *renderer, SDL_Texture *texture, const SDL_FRect *srcrect, float left_width, float right_width, float top_height, float bottom_height, float scale, const SDL_FRect *dstrect);
     /// <summary>
     /// <para>erform a scaled copy using the 9-grid algorithm to the current rendering
@@ -3096,8 +3096,8 @@ public static partial class SDL
     [LibraryImport(SDLLibrary, EntryPoint = "SDL_RenderTexture9Grid"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     [return: MarshalAs(UnmanagedType.I1)]
     public static partial bool RenderTexture9Grid(IntPtr renderer, IntPtr texture, FRect srcrect, float leftWidth, float rightWidth, float topHeight, float bottomHeight, float sacel, IntPtr dstrect);
-    
-    
+
+
     //extern SDL_DECLSPEC bool SDLCALL SDL_RenderTexture9Grid(SDL_Renderer *renderer, SDL_Texture *texture, const SDL_FRect *srcrect, float left_width, float right_width, float top_height, float bottom_height, float scale, const SDL_FRect *dstrect);
     /// <summary>
     /// <para>erform a scaled copy using the 9-grid algorithm to the current rendering
@@ -3129,8 +3129,8 @@ public static partial class SDL
     [LibraryImport(SDLLibrary, EntryPoint = "SDL_RenderTexture9Grid"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     [return: MarshalAs(UnmanagedType.I1)]
     public static partial bool RenderTexture9Grid(IntPtr renderer, IntPtr texture, IntPtr srcrect, float leftWidth, float rightWidth, float topHeight, float bottomHeight, float sacel, FRect dstrect);
-    
-    
+
+
     //extern SDL_DECLSPEC bool SDLCALL SDL_RenderTexture9Grid(SDL_Renderer *renderer, SDL_Texture *texture, const SDL_FRect *srcrect, float left_width, float right_width, float top_height, float bottom_height, float scale, const SDL_FRect *dstrect);
     /// <summary>
     /// <para>erform a scaled copy using the 9-grid algorithm to the current rendering
@@ -3163,9 +3163,9 @@ public static partial class SDL
     [return: MarshalAs(UnmanagedType.I1)]
     public static partial bool RenderTexture9Grid(IntPtr renderer, IntPtr texture, FRect srcrect, float leftWidth, float rightWidth, float topHeight, float bottomHeight, float sacel, FRect dstrect);
     #endregion
-    
+
     #region RenderTexture9GridTiled
-    
+
     /// <code>extern SDL_DECLSPEC bool SDLCALL SDL_RenderTexture9GridTiled(SDL_Renderer *renderer, SDL_Texture *texture, const SDL_FRect *srcrect, float left_width, float right_width, float top_height, float bottom_height, float scale, const SDL_FRect *dstrect, float tileScale);</code>
     /// <summary>
     /// <para>Perform a scaled copy using the 9-grid algorithm to the current rendering
@@ -3200,8 +3200,8 @@ public static partial class SDL
     [LibraryImport(SDLLibrary, EntryPoint = "SDL_RenderTexture9GridTiled"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     [return: MarshalAs(UnmanagedType.I1)]
     public static partial bool RenderTexture9GridTiled(IntPtr renderer, IntPtr texture, IntPtr srcrect, float leftWidth, float rightWidth, float topHeight, float bottomHeight, float scale, IntPtr dstrect, float tileScale);
-    
-    
+
+
     /// <code>extern SDL_DECLSPEC bool SDLCALL SDL_RenderTexture9GridTiled(SDL_Renderer *renderer, SDL_Texture *texture, const SDL_FRect *srcrect, float left_width, float right_width, float top_height, float bottom_height, float scale, const SDL_FRect *dstrect, float tileScale);</code>
     /// <summary>
     /// <para>Perform a scaled copy using the 9-grid algorithm to the current rendering
@@ -3236,8 +3236,8 @@ public static partial class SDL
     [LibraryImport(SDLLibrary, EntryPoint = "SDL_RenderTexture9GridTiled"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     [return: MarshalAs(UnmanagedType.I1)]
     public static partial bool RenderTexture9GridTiled(IntPtr renderer, IntPtr texture, in FRect srcrect, float leftWidth, float rightWidth, float topHeight, float bottomHeight, float scale, IntPtr dstrect, float tileScale);
-    
-    
+
+
     /// <code>extern SDL_DECLSPEC bool SDLCALL SDL_RenderTexture9GridTiled(SDL_Renderer *renderer, SDL_Texture *texture, const SDL_FRect *srcrect, float left_width, float right_width, float top_height, float bottom_height, float scale, const SDL_FRect *dstrect, float tileScale);</code>
     /// <summary>
     /// <para>Perform a scaled copy using the 9-grid algorithm to the current rendering
@@ -3272,8 +3272,8 @@ public static partial class SDL
     [LibraryImport(SDLLibrary, EntryPoint = "SDL_RenderTexture9GridTiled"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     [return: MarshalAs(UnmanagedType.I1)]
     public static partial bool RenderTexture9GridTiled(IntPtr renderer, IntPtr texture, IntPtr srcrect, float leftWidth, float rightWidth, float topHeight, float bottomHeight, float scale, in FRect dstrect, float tileScale);
-    
-    
+
+
     /// <code>extern SDL_DECLSPEC bool SDLCALL SDL_RenderTexture9GridTiled(SDL_Renderer *renderer, SDL_Texture *texture, const SDL_FRect *srcrect, float left_width, float right_width, float top_height, float bottom_height, float scale, const SDL_FRect *dstrect, float tileScale);</code>
     /// <summary>
     /// <para>Perform a scaled copy using the 9-grid algorithm to the current rendering
@@ -3308,9 +3308,9 @@ public static partial class SDL
     [LibraryImport(SDLLibrary, EntryPoint = "SDL_RenderTexture9GridTiled"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     [return: MarshalAs(UnmanagedType.I1)]
     public static partial bool RenderTexture9GridTiled(IntPtr renderer, IntPtr texture, in FRect srcrect, float leftWidth, float rightWidth, float topHeight, float bottomHeight, float scale, in FRect dstrect, float tileScale);
-    
+
     #endregion
-    
+
     /// <code>extern SDL_DECLSPEC bool SDLCALL SDL_RenderGeometry(SDL_Renderer *renderer, SDL_Texture *texture, const SDL_Vertex *vertices, int num_vertices, const int *indices, int num_indices);</code>
     /// <summary>
     /// Render a list of triangles, optionally using a texture and indices into the
@@ -3333,8 +3333,8 @@ public static partial class SDL
     [LibraryImport(SDLLibrary, EntryPoint = "SDL_RenderGeometry"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     [return: MarshalAs(UnmanagedType.I1)]
     public static partial bool RenderGeometry(IntPtr renderer, IntPtr texture, Vertex[] vertices, int numVertices, IntPtr indices, int numIndices);
-    
-    
+
+
     /// <code>extern SDL_DECLSPEC bool SDLCALL SDL_RenderGeometry(SDL_Renderer *renderer, SDL_Texture *texture, const SDL_Vertex *vertices, int num_vertices, const int *indices, int num_indices);</code>
     /// <summary>
     /// Render a list of triangles, optionally using a texture and indices into the
@@ -3358,9 +3358,9 @@ public static partial class SDL
     [return: MarshalAs(UnmanagedType.I1)]
     public static partial bool RenderGeometry(IntPtr renderer, IntPtr texture, Vertex[] vertices, int numVertices, int[] indices, int numIndices);
 
-    
+
     #region RenderGeometryRaw
-    
+
     /// <code>extern SDL_DECLSPEC bool SDLCALL SDL_RenderGeometryRaw(SDL_Renderer *renderer, SDL_Texture *texture, const float *xy, int xy_stride, const SDL_FColor *color, int color_stride, const float *uv, int uv_stride, int num_vertices, const void *indices, int num_indices, int size_indices);</code>
     /// <summary>
     /// Render a list of triangles, optionally using a texture and indices into the
@@ -3387,10 +3387,10 @@ public static partial class SDL
     /// <seealso cref="RenderGeometry(IntPtr, IntPtr, Vertex[], int, IntPtr, int)"/>
     [LibraryImport(SDLLibrary, EntryPoint = "SDL_RenderGeometryRaw"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     [return: MarshalAs(UnmanagedType.I1)]
-    public static partial bool RenderGeometryRaw(IntPtr renderer, IntPtr texture, IntPtr xy, int xyStride, IntPtr color, 
+    public static partial bool RenderGeometryRaw(IntPtr renderer, IntPtr texture, IntPtr xy, int xyStride, IntPtr color,
         int colorStride, IntPtr uv, int uvStride, int numVertices, IntPtr indices, int numIndices, int sizeIndices);
-    
-    
+
+
     /// <code>extern SDL_DECLSPEC bool SDLCALL SDL_RenderGeometryRaw(SDL_Renderer *renderer, SDL_Texture *texture, const float *xy, int xy_stride, const SDL_FColor *color, int color_stride, const float *uv, int uv_stride, int num_vertices, const void *indices, int num_indices, int size_indices);</code>
     /// <summary>
     /// Render a list of triangles, optionally using a texture and indices into the
@@ -3418,8 +3418,8 @@ public static partial class SDL
     [LibraryImport(SDLLibrary, EntryPoint = "SDL_RenderGeometryRaw"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     [return: MarshalAs(UnmanagedType.I1)]
     public static partial bool RenderGeometryRaw(IntPtr renderer, IntPtr texture, float[] xy, int xyStride, FColor[] color, int colorStride, float[] uv, int uvStride, int numVertices, IntPtr indices, int numIndices, int sizeIndices);
-    
-    
+
+
     /// <code>extern SDL_DECLSPEC bool SDLCALL SDL_RenderGeometryRaw(SDL_Renderer *renderer, SDL_Texture *texture, const float *xy, int xy_stride, const SDL_FColor *color, int color_stride, const float *uv, int uv_stride, int num_vertices, const void *indices, int num_indices, int size_indices);</code>
     /// <summary>
     /// Render a list of triangles, optionally using a texture and indices into the
@@ -3447,8 +3447,8 @@ public static partial class SDL
     [LibraryImport(SDLLibrary, EntryPoint = "SDL_RenderGeometryRaw"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     [return: MarshalAs(UnmanagedType.I1)]
     public static partial bool RenderGeometryRaw(IntPtr renderer, IntPtr texture, float[] xy, int xyStride, FColor[] color, int colorStride, float[] uv, int uvStride, int numVertices, byte[] indices, int numIndices, int sizeIndices);
-    
-    
+
+
     /// <code>extern SDL_DECLSPEC bool SDLCALL SDL_RenderGeometryRaw(SDL_Renderer *renderer, SDL_Texture *texture, const float *xy, int xy_stride, const SDL_FColor *color, int color_stride, const float *uv, int uv_stride, int num_vertices, const void *indices, int num_indices, int size_indices);</code>
     /// <summary>
     /// Render a list of triangles, optionally using a texture and indices into the
@@ -3473,7 +3473,7 @@ public static partial class SDL
     /// <threadsafety>This function should only be called on the main thread.</threadsafety>
     /// <since>This function is available since SDL 3.2.0</since>
     /// <seealso cref="RenderGeometry(IntPtr, IntPtr, Vertex[], int, IntPtr, int)"/>
-    public static unsafe bool RenderGeometryRaw<TIndex>(IntPtr renderer, IntPtr texture, Span<float> xy, 
+    public static unsafe bool RenderGeometryRaw<TIndex>(IntPtr renderer, IntPtr texture, Span<float> xy,
         int xyStride, Span<FColor> color, int colorStride, Span<float> uv, int uvStride,
         int numVertices, Span<TIndex> indices, int numIndices, int sizeIndices) where TIndex : unmanaged
     {
@@ -3497,8 +3497,8 @@ public static partial class SDL
         }
     }
     #endregion
-    
-    
+
+
     [LibraryImport(SDLLibrary, EntryPoint = "SDL_RenderReadPixels"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial IntPtr SDL_RenderReadPixels(IntPtr renderer, IntPtr rect);
     /// <code>extern SDL_DECLSPEC SDL_Surface * SDLCALL SDL_RenderReadPixels(SDL_Renderer *renderer, const SDL_Rect *rect);</code>
@@ -3524,7 +3524,7 @@ public static partial class SDL
     public static IntPtr RenderReadPixels(IntPtr renderer, Rect? rect)
     {
         var rectPtr = IntPtr.Zero;
-        
+
         try
         {
             rectPtr = StructureToPointer(rect);
@@ -3532,12 +3532,12 @@ public static partial class SDL
         }
         finally
         {
-            if(rectPtr != IntPtr.Zero) 
+            if (rectPtr != IntPtr.Zero)
                 Marshal.FreeHGlobal(rectPtr);
         }
     }
-    
-    
+
+
     /// <code>extern SDL_DECLSPEC bool SDLCALL SDL_RenderPresent(SDL_Renderer *renderer);</code>
     /// <summary>
     /// <para>Update the screen with any rendering performed since the previous call.</para>
@@ -3582,8 +3582,8 @@ public static partial class SDL
     [LibraryImport(SDLLibrary, EntryPoint = "SDL_RenderPresent"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     [return: MarshalAs(UnmanagedType.I1)]
     public static partial bool RenderPresent(IntPtr renderer);
-    
-    
+
+
     /// <code>extern SDL_DECLSPEC void SDLCALL SDL_DestroyTexture(SDL_Texture *texture);</code>
     /// <summary>
     /// <para>Destroy the specified texture.</para>
@@ -3597,8 +3597,8 @@ public static partial class SDL
     /// <seealso cref="CreateTextureFromSurface"/>
     [LibraryImport(SDLLibrary, EntryPoint = "SDL_DestroyTexture"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     public static partial void DestroyTexture(IntPtr texture);
-    
-    
+
+
     /// <code>extern SDL_DECLSPEC void SDLCALL SDL_DestroyRenderer(SDL_Renderer *renderer);</code>
     /// <summary>
     /// Destroy the rendering context for a window and free all associated
@@ -3611,8 +3611,8 @@ public static partial class SDL
     /// <seealso cref="CreateRenderer"/>
     [LibraryImport(SDLLibrary, EntryPoint = "SDL_DestroyRenderer"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     public static partial void DestroyRenderer(IntPtr renderer);
-    
-    
+
+
     /// <code>extern SDL_DECLSPEC bool SDLCALL SDL_FlushRenderer(SDL_Renderer *renderer);</code>
     /// <summary>
     /// <para>Force the rendering context to flush any pending commands and state.</para>
@@ -3640,8 +3640,8 @@ public static partial class SDL
     [LibraryImport(SDLLibrary, EntryPoint = "SDL_FlushRenderer"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     [return: MarshalAs(UnmanagedType.I1)]
     public static partial bool FlushRenderer(IntPtr renderer);
-    
-    
+
+
     /// <code>extern SDL_DECLSPEC void * SDLCALL SDL_GetRenderMetalLayer(SDL_Renderer *renderer);</code>
     /// <summary>
     /// <para>Get the CAMetalLayer associated with the given Metal renderer.</para>
@@ -3656,8 +3656,8 @@ public static partial class SDL
     /// <seealso cref="GetRenderMetalCommandEncoder"/>
     [LibraryImport(SDLLibrary, EntryPoint = "SDL_GetRenderMetalLayer"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     public static partial IntPtr GetRenderMetalLayer(IntPtr renderer);
-    
-    
+
+
     /// <code>extern SDL_DECLSPEC void * SDLCALL SDL_GetRenderMetalCommandEncoder(SDL_Renderer *renderer);</code>
     /// <summary>
     /// <para>Get the Metal command encoder for the current frame.</para>
@@ -3676,8 +3676,8 @@ public static partial class SDL
     /// <seealso cref="GetRenderMetalLayer"/>
     [LibraryImport(SDLLibrary, EntryPoint = "SDL_GetRenderMetalCommandEncoder"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     public static partial IntPtr GetRenderMetalCommandEncoder(IntPtr renderer);
-    
-    
+
+
     /// <code>extern SDL_DECLSPEC bool SDLCALL SDL_AddVulkanRenderSemaphores(SDL_Renderer *renderer, Uint32 wait_stage_mask, Sint64 wait_semaphore, Sint64 signal_semaphore);</code>
     /// <summary>
     /// <para>Add a set of synchronization semaphores for the current frame.</para>
@@ -3705,8 +3705,8 @@ public static partial class SDL
     [LibraryImport(SDLLibrary, EntryPoint = "SDL_AddVulkanRenderSemaphores"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     [return: MarshalAs(UnmanagedType.I1)]
     public static partial bool AddVulkanRenderSemaphores(IntPtr renderer, uint waitStageMasl, long waitSemaphore, long signalSemaphore);
-    
-    
+
+
     /// <code>extern SDL_DECLSPEC bool SDLCALL SDL_SetRenderVSync(SDL_Renderer *renderer, int vsync);</code>
     /// <summary>
     /// <para>Toggle VSync of the given renderer.</para>
@@ -3729,7 +3729,7 @@ public static partial class SDL
     [return: MarshalAs(UnmanagedType.I1)]
     public static partial bool SetRenderVSync(IntPtr renderer, int vsync);
 
-    
+
     /// <code>extern SDL_DECLSPEC bool SDLCALL SDL_GetRenderVSync(SDL_Renderer *renderer, int *vsync);</code>
     /// <summary>
     /// Get VSync of the given renderer.
@@ -3745,8 +3745,8 @@ public static partial class SDL
     [LibraryImport(SDLLibrary, EntryPoint = "SDL_GetRenderVSync"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     [return: MarshalAs(UnmanagedType.I1)]
     public static partial bool GetRenderVSync(IntPtr renderer, out int vsync);
-    
-    
+
+
     /// <code>extern SDL_DECLSPEC bool SDLCALL SDL_RenderDebugText(SDL_Renderer *renderer, float x, float y, const char *str);</code>
     /// <summary>
     /// <para>Draw debug text to an SDL_Renderer.</para>
@@ -3782,8 +3782,8 @@ public static partial class SDL
     [LibraryImport(SDLLibrary, EntryPoint = "SDL_RenderDebugText"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     [return: MarshalAs(UnmanagedType.I1)]
     public static partial bool RenderDebugText(IntPtr renderer, float x, float y, [MarshalAs(UnmanagedType.LPUTF8Str)] string str);
-    
-    
+
+
     /// <code>extern SDL_DECLSPEC bool SDLCALL SDL_RenderDebugTextFormat(SDL_Renderer *renderer, float x, float y, SDL_PRINTF_FORMAT_STRING const char *fmt, ...) SDL_PRINTF_VARARG_FUNC(4);</code>
     /// <summary>
     /// <para>Draw debug text to an SDL_Renderer.</para>
@@ -3805,9 +3805,9 @@ public static partial class SDL
     /// <seealso cref="DebugTextFontCharacterSize"/>
     [LibraryImport(SDLLibrary, EntryPoint = "SDL_RenderDebugTextFormat"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     [return: MarshalAs(UnmanagedType.I1)]
-    public static partial bool RenderDebugTextFormat(IntPtr renderer, float x, float y, [MarshalAs(UnmanagedType.LPUTF8Str)] string fmt); 
-    
-    
+    public static partial bool RenderDebugTextFormat(IntPtr renderer, float x, float y, [MarshalAs(UnmanagedType.LPUTF8Str)] string fmt);
+
+
     /// <code>extern SDL_DECLSPEC bool SDLCALL SDL_SetDefaultTextureScaleMode(SDL_Renderer *renderer, SDL_ScaleMode scale_mode);</code>
     /// <summary>
     /// <para>Set default scale mode for new textures for given renderer.</para>
@@ -3822,9 +3822,9 @@ public static partial class SDL
     /// <seealso cref="GetDefaultTextureScaleMode"/>
     [LibraryImport(SDLLibrary, EntryPoint = "SDL_SetDefaultTextureScaleMode"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     [return: MarshalAs(UnmanagedType.I1)]
-    public static partial bool SetDefaultTextureScaleMode(IntPtr renderer, ScaleMode scaleMode); 
-    
-    
+    public static partial bool SetDefaultTextureScaleMode(IntPtr renderer, ScaleMode scaleMode);
+
+
     /// <code>extern SDL_DECLSPEC bool SDLCALL SDL_GetDefaultTextureScaleMode(SDL_Renderer *renderer, SDL_ScaleMode *scale_mode);</code>
     /// <summary>
     /// Get default texture scale mode of the given renderer.
@@ -3840,5 +3840,5 @@ public static partial class SDL
     /// <seealso cref="SetDefaultTextureScaleMode"/>
     [LibraryImport(SDLLibrary, EntryPoint = "SDL_GetDefaultTextureScaleMode"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     [return: MarshalAs(UnmanagedType.I1)]
-    public static partial bool GetDefaultTextureScaleMode(IntPtr renderer, out ScaleMode scaleMode); 
+    public static partial bool GetDefaultTextureScaleMode(IntPtr renderer, out ScaleMode scaleMode);
 }

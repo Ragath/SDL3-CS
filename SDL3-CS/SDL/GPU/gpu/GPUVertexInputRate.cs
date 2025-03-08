@@ -24,22 +24,22 @@
 namespace SDL3;
 
 public static partial class SDL
-{
-    /// <summary>
-    /// Specifies the rate at which vertex attributes are pulled from buffers.
-    /// </summary>
-    /// <since>This enum is available since SDL 3.2.0</since>
-    /// <seealso cref="CreateGPUGraphicsPipeline"/>
-    public enum GPUVertexInputRate
     {
         /// <summary>
-        /// Attribute addressing is a function of the vertex index.
+        /// Specifies the rate at which vertex attributes are pulled from buffers.
         /// </summary>
-        Vertex,
-        
-        /// <summary>
-        /// Attribute addressing is a function of the instance index.
-        /// </summary>
-        Instance
+        /// <since>This enum is available since SDL 3.2.0</since>
+        /// <seealso cref="CreateGPUGraphicsPipeline"/>
+        public enum GPUVertexInputRate
+        {
+            /// <summary>
+            /// Attribute addressing is a function of the vertex index.
+            /// </summary>
+            Vertex,
+
+            /// <summary>
+            /// Attribute addressing is a function of the instance index.
+            /// </summary>
+            Instance
+        }
     }
-}

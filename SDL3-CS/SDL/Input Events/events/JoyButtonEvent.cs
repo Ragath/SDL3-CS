@@ -38,19 +38,19 @@ public static partial class SDL
         /// <seealso cref="EventType.JoystickButtonDown"/> or <see cref="EventType.JoystickButtonUp"/>
         /// </summary>
         public EventType Type;
-        
+
         private UInt32 _reserved;
-        
+
         /// <summary>
         /// In nanoseconds, populated using <see cref="GetTicksNS"/>
         /// </summary>
         public UInt64 Timestamp;
-        
+
         /// <summary>
         /// The joystick instance id
         /// </summary>
-        public UInt32 Which; 
-        
+        public UInt32 Which;
+
         /// <summary>
         /// The joystick button index
         /// </summary>
@@ -60,9 +60,9 @@ public static partial class SDL
         /// true if the button is pressed
         /// </summary>
         [MarshalAs(UnmanagedType.I1)] public bool Down;
-        
+
         private Byte _padding1;
-        
+
         private Byte _padding2;
     }
 }

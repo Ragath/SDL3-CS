@@ -46,7 +46,7 @@ public static partial class SDL
     /// </summary>
     /// <since>This struct is available since SDL 3.2.0</since>
     [StructLayout(LayoutKind.Sequential)]
-    public struct GUID 
+    public struct GUID
     {
         public unsafe fixed byte Data[16];
     }

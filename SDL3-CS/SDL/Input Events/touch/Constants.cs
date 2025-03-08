@@ -36,8 +36,8 @@ public static partial class SDL
     /// </summary>
     /// <since>This macro is available since SDL 3.2.0</since>
     public const uint TouchMouseID = unchecked((uint)-1);
-    
-    
+
+
     /// <code>#define SDL_MOUSE_TOUCHID ((SDL_TouchID)-1)</code>
     /// <summary>
     /// The SDL_TouchID for touch events simulated with mouse input.

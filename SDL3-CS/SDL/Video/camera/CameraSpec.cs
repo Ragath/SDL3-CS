@@ -42,27 +42,27 @@ public static partial class SDL
         /// Frame format
         /// </summary>
         public PixelFormat PixelFormat;
-        
+
         /// <summary>
         /// Frame colorspace
         /// </summary>
         public Colorspace Colorspace;
-        
+
         /// <summary>
         /// Frame width
         /// </summary>
         public int Width;
-        
+
         /// <summary>
         /// Frame height
         /// </summary>
         public int Height;
-        
+
         /// <summary>
         /// Frame rate numerator ((num / denom) == FPS, (denom / num) == duration in seconds)
         /// </summary>
         public int FramerateNumerator;  // Frame rate numerator
-        
+
         /// <summary>
         /// Frame rate demoninator ((num / denom) == FPS, (denom / num) == duration in seconds)
         /// </summary>

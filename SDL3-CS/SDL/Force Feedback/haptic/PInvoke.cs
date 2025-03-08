@@ -44,7 +44,7 @@ public static partial class SDL
     public static int[]? GetHaptics(out int count)
     {
         var ptr = SDL_GetHaptics(out count);
-        
+
         try
         {
             return PointerToStructureArray<int>(ptr, count);
@@ -54,8 +54,8 @@ public static partial class SDL
             Free(ptr);
         }
     }
-    
-    
+
+
     [LibraryImport(SDLLibrary, EntryPoint = "SDL_GetHapticNameForID"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial IntPtr SDL_GetHapticNameForID(int instanceId);
     /// <code>extern SDL_DECLSPEC const char * SDLCALL SDL_GetHapticNameForID(SDL_HapticID instance_id);</code>
@@ -72,11 +72,11 @@ public static partial class SDL
     /// <seealso cref="OpenHaptic"/>
     public static string? GetHapticNameForID(int instanceId)
     {
-        var value = SDL_GetHapticNameForID(instanceId); 
+        var value = SDL_GetHapticNameForID(instanceId);
         return value == IntPtr.Zero ? null : Marshal.PtrToStringUTF8(value);
     }
-    
-    
+
+
     /// <code>extern SDL_DECLSPEC SDL_Haptic * SDLCALL SDL_OpenHaptic(SDL_HapticID instance_id);</code>
     /// <summary>
     /// <para>Open a haptic device for use.</para>
@@ -98,8 +98,8 @@ public static partial class SDL
     /// <seealso cref="SetHapticGain"/>
     [LibraryImport(SDLLibrary, EntryPoint = "SDL_OpenHaptic"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     public static partial IntPtr OpenHaptic(int instanceId);
-    
-    
+
+
     /// <code>extern SDL_DECLSPEC SDL_Haptic * SDLCALL SDL_GetHapticFromID(SDL_HapticID instance_id);</code>
     /// <summary>
     /// Get the SDL_Haptic associated with an instance ID, if it has been opened.
@@ -110,8 +110,8 @@ public static partial class SDL
     /// <since>This function is available since SDL 3.2.0</since>
     [LibraryImport(SDLLibrary, EntryPoint = "SDL_GetHapticFromID"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     public static partial IntPtr GetHapticFromID(int instanceId);
-    
-    
+
+
     /// <code>extern SDL_DECLSPEC SDL_HapticID SDLCALL SDL_GetHapticID(SDL_Haptic *haptic);</code>
     /// <summary>
     /// Get the instance ID of an opened haptic device.
@@ -122,8 +122,8 @@ public static partial class SDL
     /// <since>This function is available since SDL 3.2.0</since>
     [LibraryImport(SDLLibrary, EntryPoint = "SDL_GetHapticID"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     public static partial int GetHapticID(IntPtr haptic);
-    
-    
+
+
     [LibraryImport(SDLLibrary, EntryPoint = "SDL_GetHapticName"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial IntPtr SDL_GetHapticName(IntPtr haptic);
     /// <code>extern SDL_DECLSPEC const char * SDLCALL SDL_GetHapticName(SDL_Haptic *haptic);</code>
@@ -138,11 +138,11 @@ public static partial class SDL
     /// <seealso cref="GetHapticNameForID"/>
     public static string? GetHapticName(IntPtr haptic)
     {
-        var value = SDL_GetHapticName(haptic); 
+        var value = SDL_GetHapticName(haptic);
         return value == IntPtr.Zero ? null : Marshal.PtrToStringUTF8(value);
     }
-    
-    
+
+
     /// <code>extern SDL_DECLSPEC bool SDLCALL SDL_IsMouseHaptic(void);</code>
     /// <summary>
     /// Query whether or not the current mouse has haptic capabilities.
@@ -153,8 +153,8 @@ public static partial class SDL
     [LibraryImport(SDLLibrary, EntryPoint = "SDL_IsMouseHaptic"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     [return: MarshalAs(UnmanagedType.I1)]
     public static partial bool IsMouseHaptic();
-    
-    
+
+
     /// <code>extern SDL_DECLSPEC SDL_Haptic * SDLCALL SDL_OpenHapticFromMouse(void);</code>
     /// <summary>
     /// Try to open a haptic device from the current mouse.
@@ -166,8 +166,8 @@ public static partial class SDL
     /// <seealso cref="IsMouseHaptic"/>
     [LibraryImport(SDLLibrary, EntryPoint = "SDL_OpenHapticFromMouse"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     public static partial IntPtr OpenHapticFromMouse();
-    
-    
+
+
     /// <code>extern SDL_DECLSPEC bool SDLCALL SDL_IsJoystickHaptic(SDL_Joystick *joystick);</code>
     /// <summary>
     /// Query if a joystick has haptic features.
@@ -179,8 +179,8 @@ public static partial class SDL
     [LibraryImport(SDLLibrary, EntryPoint = "SDL_IsJoystickHaptic"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     [return: MarshalAs(UnmanagedType.I1)]
     public static partial bool IsJoystickHaptic(IntPtr joystick);
-    
-    
+
+
     /// <code>extern SDL_DECLSPEC SDL_Haptic * SDLCALL SDL_OpenHapticFromJoystick(SDL_Joystick *joystick);</code>
     /// <summary>
     /// <para>Open a haptic device for use from a joystick device.</para>
@@ -199,8 +199,8 @@ public static partial class SDL
     /// <seealso cref="IsJoystickHaptic"/>
     [LibraryImport(SDLLibrary, EntryPoint = "SDL_OpenHapticFromJoystick"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     public static partial IntPtr OpenHapticFromJoystick(IntPtr joystick);
-    
-    
+
+
     /// <code>extern SDL_DECLSPEC void SDLCALL SDL_CloseHaptic(SDL_Haptic *haptic);</code>
     /// <summary>
     /// Close a haptic device previously opened with <see cref="OpenHaptic"/>.
@@ -210,8 +210,8 @@ public static partial class SDL
     /// <seealso cref="OpenHaptic"/>
     [LibraryImport(SDLLibrary, EntryPoint = "SDL_CloseHaptic"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     public static partial void CloseHaptic(IntPtr haptic);
-    
-    
+
+
     /// <code>extern SDL_DECLSPEC int SDLCALL SDL_GetMaxHapticEffects(SDL_Haptic *haptic);</code>
     /// <summary>
     /// <para>Get the number of effects a haptic device can store.</para>
@@ -227,8 +227,8 @@ public static partial class SDL
     /// <seealso cref="GetHapticFeatures"/>
     [LibraryImport(SDLLibrary, EntryPoint = "SDL_GetMaxHapticEffects"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     public static partial int GetMaxHapticEffects(IntPtr haptic);
-    
-    
+
+
     /// <code>extern SDL_DECLSPEC int SDLCALL SDL_GetMaxHapticEffectsPlaying(SDL_Haptic *haptic);</code>
     /// <summary>
     /// <para>Get the number of effects a haptic device can play at the same time.</para>
@@ -242,8 +242,8 @@ public static partial class SDL
     /// <seealso cref="GetHapticFeatures"/>
     [LibraryImport(SDLLibrary, EntryPoint = "SDL_GetMaxHapticEffectsPlaying"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     public static partial int GetMaxHapticEffectsPlaying(IntPtr haptic);
-    
-    
+
+
     /// <code>extern SDL_DECLSPEC Uint32 SDLCALL SDL_GetHapticFeatures(SDL_Haptic *haptic);</code>
     /// <summary>
     /// Get the haptic device's supported features in bitwise manner.
@@ -256,8 +256,8 @@ public static partial class SDL
     /// <seealso cref="GetMaxHapticEffects"/>
     [LibraryImport(SDLLibrary, EntryPoint = "SDL_GetHapticFeatures"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     public static partial uint GetHapticFeatures(IntPtr haptic);
-    
-    
+
+
     /// <code>extern SDL_DECLSPEC int SDLCALL SDL_GetNumHapticAxes(SDL_Haptic *haptic);</code>
     /// <summary>
     /// <para>Get the number of haptic axes the device has.</para>
@@ -270,8 +270,8 @@ public static partial class SDL
     /// <since>This function is available since SDL 3.2.0</since>
     [LibraryImport(SDLLibrary, EntryPoint = "SDL_GetNumHapticAxes"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     public static partial int GetNumHapticAxes(IntPtr haptic);
-    
-    
+
+
     /// <code>extern SDL_DECLSPEC bool SDLCALL SDL_HapticEffectSupported(SDL_Haptic *haptic, const SDL_HapticEffect *effect);</code>
     /// <summary>
     /// Check to see if an effect is supported by a haptic device.
@@ -285,8 +285,8 @@ public static partial class SDL
     [DllImport(SDLLibrary, EntryPoint = "SDL_HapticEffectSupported"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     [return: MarshalAs(UnmanagedType.I1)]
     public static extern bool HapticEffectSupported(IntPtr haptic, in HapticEffect effect);
-    
-    
+
+
     /// <code>extern SDL_DECLSPEC int SDLCALL SDL_CreateHapticEffect(SDL_Haptic *haptic, const SDL_HapticEffect *effect);</code>
     /// <summary>
     /// Create a new haptic effect on a specified device.
@@ -302,8 +302,8 @@ public static partial class SDL
     /// <seealso cref="UpdateHapticEffect"/>
     [DllImport(SDLLibrary, EntryPoint = "SDL_CreateHapticEffect"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     public static extern int CreateHapticEffect(IntPtr haptic, in HapticEffect effect);
-    
-    
+
+
     /// <code>extern SDL_DECLSPEC bool SDLCALL SDL_UpdateHapticEffect(SDL_Haptic *haptic, int effect, const SDL_HapticEffect *data);</code>
     /// <summary>
     /// <para>Update the properties of an effect.</para>
@@ -325,8 +325,8 @@ public static partial class SDL
     [DllImport(SDLLibrary, EntryPoint = "SDL_UpdateHapticEffect"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     [return: MarshalAs(UnmanagedType.I1)]
     public static extern bool UpdateHapticEffect(IntPtr haptic, int effect, in HapticEffect data);
-    
-    
+
+
     /// <code>extern SDL_DECLSPEC bool SDLCALL SDL_RunHapticEffect(SDL_Haptic *haptic, int effect, Uint32 iterations);</code>
     /// <summary>
     /// <para>Run the haptic effect on its associated haptic device.</para>
@@ -349,8 +349,8 @@ public static partial class SDL
     [LibraryImport(SDLLibrary, EntryPoint = "SDL_RunHapticEffect"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     [return: MarshalAs(UnmanagedType.I1)]
     public static partial bool RunHapticEffect(IntPtr haptic, int effect, uint iterations);
-    
-    
+
+
     /// <code>extern SDL_DECLSPEC bool SDLCALL SDL_StopHapticEffect(SDL_Haptic *haptic, int effect);</code>
     /// <summary>
     /// Stop the haptic effect on its associated haptic device.
@@ -365,8 +365,8 @@ public static partial class SDL
     [LibraryImport(SDLLibrary, EntryPoint = "SDL_StopHapticEffect"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     [return: MarshalAs(UnmanagedType.I1)]
     public static partial bool StopHapticEffect(IntPtr haptic, int effect);
-    
-    
+
+
     /// <code>extern SDL_DECLSPEC void SDLCALL SDL_DestroyHapticEffect(SDL_Haptic *haptic, int effect);</code>
     /// <summary>
     /// <para>Destroy a haptic effect on the device.</para>
@@ -379,8 +379,8 @@ public static partial class SDL
     /// <seealso cref="CreateHapticEffect"/>
     [LibraryImport(SDLLibrary, EntryPoint = "SDL_DestroyHapticEffect"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     public static partial void DestroyHapticEffect(IntPtr haptic, int effect);
-    
-    
+
+
     /// <code>extern SDL_DECLSPEC bool SDLCALL SDL_GetHapticEffectStatus(SDL_Haptic *haptic, int effect);</code>
     /// <summary>
     /// <para>Get the status of the current effect on the specified haptic device.</para>
@@ -395,8 +395,8 @@ public static partial class SDL
     [LibraryImport(SDLLibrary, EntryPoint = "SDL_GetHapticEffectStatus"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     [return: MarshalAs(UnmanagedType.I1)]
     public static partial bool GetHapticEffectStatus(IntPtr haptic, int effect);
-    
-    
+
+
     /// <code>extern SDL_DECLSPEC bool SDLCALL SDL_SetHapticGain(SDL_Haptic *haptic, int gain);</code>
     /// <summary>
     /// <para>Set the global gain of the specified haptic device.</para>
@@ -416,8 +416,8 @@ public static partial class SDL
     [LibraryImport(SDLLibrary, EntryPoint = "SDL_SetHapticGain"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     [return: MarshalAs(UnmanagedType.I1)]
     public static partial bool SetHapticGain(IntPtr haptic, int gain);
-    
-    
+
+
     /// <code>extern SDL_DECLSPEC bool SDLCALL SDL_SetHapticAutocenter(SDL_Haptic *haptic, int autocenter);</code>
     /// <summary>
     /// <para>Set the global autocenter of the device.</para>
@@ -434,8 +434,8 @@ public static partial class SDL
     [LibraryImport(SDLLibrary, EntryPoint = "SDL_SetHapticAutocenter"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     [return: MarshalAs(UnmanagedType.I1)]
     public static partial bool SetHapticAutocenter(IntPtr haptic, int autocenter);
-    
-    
+
+
     /// <code>extern SDL_DECLSPEC bool SDLCALL SDL_PauseHaptic(SDL_Haptic *haptic);</code>
     /// <summary>
     /// <para>Pause a haptic device.</para>
@@ -452,8 +452,8 @@ public static partial class SDL
     [LibraryImport(SDLLibrary, EntryPoint = "SDL_PauseHaptic"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     [return: MarshalAs(UnmanagedType.I1)]
     public static partial bool PauseHaptic(IntPtr haptic);
-    
-    
+
+
     /// <code>extern SDL_DECLSPEC bool SDLCALL SDL_ResumeHaptic(SDL_Haptic *haptic);</code>
     /// <summary>
     /// <para>Resume a haptic device.</para>
@@ -467,8 +467,8 @@ public static partial class SDL
     [LibraryImport(SDLLibrary, EntryPoint = "SDL_ResumeHaptic"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     [return: MarshalAs(UnmanagedType.I1)]
     public static partial bool ResumeHaptic(IntPtr haptic);
-    
-    
+
+
     /// <code>extern SDL_DECLSPEC bool SDLCALL SDL_StopHapticEffects(SDL_Haptic *haptic);</code>
     /// <summary>
     /// Stop all the currently playing effects on a haptic device.
@@ -482,8 +482,8 @@ public static partial class SDL
     [LibraryImport(SDLLibrary, EntryPoint = "SDL_StopHapticEffects"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     [return: MarshalAs(UnmanagedType.I1)]
     public static partial bool StopHapticEffects(IntPtr haptic);
-    
-    
+
+
     /// <code>extern SDL_DECLSPEC bool SDLCALL SDL_HapticRumbleSupported(SDL_Haptic *haptic);</code>
     /// <summary>
     /// Check whether rumble is supported on a haptic device.
@@ -495,8 +495,8 @@ public static partial class SDL
     [LibraryImport(SDLLibrary, EntryPoint = "SDL_HapticRumbleSupported"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     [return: MarshalAs(UnmanagedType.I1)]
     public static partial bool HapticRumbleSupported(IntPtr haptic);
-    
-    
+
+
     /// <code>extern SDL_DECLSPEC bool SDLCALL SDL_InitHapticRumble(SDL_Haptic *haptic);</code>
     /// <summary>
     /// Initialize a haptic device for simple rumble playback.
@@ -511,8 +511,8 @@ public static partial class SDL
     [LibraryImport(SDLLibrary, EntryPoint = "SDL_InitHapticRumble"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     [return: MarshalAs(UnmanagedType.I1)]
     public static partial bool InitHapticRumble(IntPtr haptic);
-    
-    
+
+
     /// <code>extern SDL_DECLSPEC bool SDLCALL SDL_PlayHapticRumble(SDL_Haptic *haptic, float strength, Uint32 length);</code>
     /// <summary>
     /// Run a simple rumble effect on a haptic device.
@@ -528,8 +528,8 @@ public static partial class SDL
     [LibraryImport(SDLLibrary, EntryPoint = "SDL_PlayHapticRumble"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     [return: MarshalAs(UnmanagedType.I1)]
     public static partial bool PlayHapticRumble(IntPtr haptic, float strength, uint length);
-    
-    
+
+
     /// <code>extern SDL_DECLSPEC bool SDLCALL SDL_StopHapticRumble(SDL_Haptic *haptic);</code>
     /// <summary>
     /// Stop the simple rumble on a haptic device.

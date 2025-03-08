@@ -38,44 +38,44 @@ public static partial class SDL
         /// <see cref="EventType.MouseMotion"/>
         /// </summary>
         public EventType Type;
-        
+
         private UInt32 _reserved;
-        
+
         /// <summary>
         /// In nanoseconds, populated using <see cref="GetTicksNS"/>
         /// </summary>
         public UInt64 Timestamp;
-        
+
         /// <summary>
         /// The window with mouse focus, if any
         /// </summary>
         public UInt32 WindowID;
-        
+
         /// <summary>
         /// The mouse instance id in relative mode, <see cref="TouchMouseID"/> for touch events, or 0
         /// </summary>
         public UInt32 Which;
-        
+
         /// <summary>
         /// The current button state
         /// </summary>
         public MouseButtonFlags State;
-        
+
         /// <summary>
         /// X coordinate, relative to window
         /// </summary>
         public float X;
-        
+
         /// <summary>
         /// Y coordinate, relative to window
         /// </summary>
         public float Y;
-        
+
         /// <summary>
         /// The relative motion in the X direction
         /// </summary>
         public float XRel;
-        
+
         //The relative motion in the Y direction
         public float YRel;
     }

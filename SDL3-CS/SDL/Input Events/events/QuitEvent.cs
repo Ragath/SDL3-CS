@@ -38,9 +38,9 @@ public static partial class SDL
         /// <see cref="EventType.Quit"/>
         /// </summary>
         public EventType Type;
-        
+
         private UInt32 _reserved;
-        
+
         /// <summary>
         /// In nanoseconds, populated using <see cref="GetTicksNS"/>
         /// </summary>

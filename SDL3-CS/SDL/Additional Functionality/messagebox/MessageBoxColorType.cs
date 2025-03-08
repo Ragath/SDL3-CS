@@ -36,7 +36,7 @@ public static partial class SDL
         ButtonBorder,
         ButtonBackground,
         ButtonSelected,
-        
+
         /// <summary>
         /// Size of the colors array of <see cref="MessageBoxColorScheme"/>.
         /// </summary>

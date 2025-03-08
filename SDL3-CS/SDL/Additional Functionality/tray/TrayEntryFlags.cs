@@ -35,27 +35,27 @@ public partial class SDL
     /// <seealso cref="InsertTrayEntryAt"/>
     [Flags]
     public enum TrayEntryFlags : uint
-    { 
+    {
         /// <summary>
         /// Make the entry a simple button. Required.
         /// </summary>
         Button = 0x00000001u,
-        
+
         /// <summary>
         /// Make the entry a checkbox. Required.
         /// </summary>
         CheckBox = 0x00000002u,
-        
+
         /// <summary>
         /// Prepare the entry to have a submenu. Required
         /// </summary>
         SubMenu = 0x00000004u,
-        
+
         /// <summary>
         /// Make the entry disabled. Optional.
         /// </summary>
         Disabled = 0x80000000u,
-        
+
         /// <summary>
         /// Make the entry checked. This is valid only for checkboxes. Optional.
         /// </summary>

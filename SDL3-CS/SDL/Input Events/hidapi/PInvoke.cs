@@ -44,8 +44,8 @@ public static partial class SDL
     /// <seealso cref="HIDExit"/>
     [LibraryImport(SDLLibrary, EntryPoint = "SDL_hid_init"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     public static partial int HIDInit();
-    
-    
+
+
     /// <code>extern SDL_DECLSPEC int SDLCALL SDL_hid_exit(void);</code>
     /// <summary>
     /// <para>Finalize the HIDAPI library.</para>
@@ -58,8 +58,8 @@ public static partial class SDL
     /// <see cref="HIDInit"/>
     [LibraryImport(SDLLibrary, EntryPoint = "SDL_hid_exit"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     public static partial int HIDExit();
-    
-    
+
+
     /// <code>extern SDL_DECLSPEC Uint32 SDLCALL SDL_hid_device_change_count(void);</code>
     /// <summary>
     /// <para>Check to see if devices may have been added or removed.</para>
@@ -77,8 +77,8 @@ public static partial class SDL
     /// <seealso cref="HIDEnumerate"/>
     [LibraryImport(SDLLibrary, EntryPoint = "SDL_hid_device_change_count"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     public static partial uint HIDDeviceChangeCount();
-    
-    
+
+
     /// <code>extern SDL_DECLSPEC SDL_hid_device_info * SDLCALL SDL_hid_enumerate(unsigned short vendor_id, unsigned short product_id);</code>
     /// <summary>
     /// <para>Enumerate the HID Devices.</para>
@@ -101,8 +101,8 @@ public static partial class SDL
     /// <see cref="HIDFreeEnumeration"/>.</returns>
     [LibraryImport(SDLLibrary, EntryPoint = "SDL_hid_enumerate"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     public static partial IntPtr HIDEnumerate(ushort vendorId, ushort productId);
-    
-    
+
+
     /// <code>extern SDL_DECLSPEC void SDLCALL SDL_hid_free_enumeration(SDL_hid_device_info *devs);</code>
     /// <summary>
     /// <para>Free an enumeration linked list.</para>
@@ -112,8 +112,8 @@ public static partial class SDL
     /// <see cref="HIDEnumerate"/>.</param>
     [LibraryImport(SDLLibrary, EntryPoint = "SDL_hid_free_enumeration"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     public static partial void HIDFreeEnumeration(IntPtr devs);
-    
-    
+
+
     /// <code>extern SDL_DECLSPEC SDL_hid_device * SDLCALL SDL_hid_open(unsigned short vendor_id, unsigned short product_id, const wchar_t *serial_number);</code>
     /// <summary>
     /// <para>Open a HID device using a Vendor ID (VID), Product ID (PID) and optionally
@@ -130,8 +130,8 @@ public static partial class SDL
     /// <since>This function is available since SDL 3.2.0</since>
     [LibraryImport(SDLLibrary, EntryPoint = "SDL_hid_open"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     public static partial IntPtr HIDOpen(ushort vendorId, ushort productId, [MarshalAs(UnmanagedType.LPUTF8Str)] string? serialNumber);
-    
-    
+
+
     /// <code>extern SDL_DECLSPEC SDL_hid_device * SDLCALL SDL_hid_open_path(const char *path);</code>
     /// <summary>
     /// <para>Open a HID device by its path name.</para>
@@ -145,7 +145,7 @@ public static partial class SDL
     [LibraryImport(SDLLibrary, EntryPoint = "SDL_hid_open_path"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     public static partial IntPtr HIDOpenPath([MarshalAs(UnmanagedType.LPUTF8Str)] string path);
 
-    
+
     /// <code>extern SDL_DECLSPEC int SDLCALL SDL_hid_write(SDL_hid_device *dev, const unsigned char *data, size_t length);</code>
     /// <summary>
     /// <para>Write an Output report to a HID device.</para>
@@ -170,8 +170,8 @@ public static partial class SDL
     /// <since>This function is available since SDL 3.2.0</since>
     [LibraryImport(SDLLibrary, EntryPoint = "SDL_hid_write"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     public static partial int HIDWrite(IntPtr dev, [MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 2)] byte[] data, ulong length);
-    
-    
+
+
     /// <code>extern SDL_DECLSPEC int SDLCALL SDL_hid_read_timeout(SDL_hid_device *dev, unsigned char *data, size_t length, int milliseconds);</code>
     /// <summary>
     /// <para>Read an Input report from a HID device with timeout.</para>
@@ -191,8 +191,8 @@ public static partial class SDL
     /// <since>This function is available since SDL 3.2.0</since>
     [LibraryImport(SDLLibrary, EntryPoint = "SDL_hid_read_timeout"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     public static partial int HIDReadTimeout(IntPtr dev, [MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 2)] out byte[] data, ulong length, int milliseconds);
-    
-    
+
+
     /// <code>extern SDL_DECLSPEC int SDLCALL SDL_hid_read(SDL_hid_device *dev, unsigned char *data, size_t length);</code>
     /// <summary>
     /// <para>Read an Input report from a HID device.</para>
@@ -212,8 +212,8 @@ public static partial class SDL
     /// <since>This function is available since SDL 3.2.0</since>
     [LibraryImport(SDLLibrary, EntryPoint = "SDL_hid_read"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     public static partial int HIDRead(IntPtr dev, [MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 2)] out byte[] data, ulong length);
-    
-    
+
+
     /// <code>extern SDL_DECLSPEC int SDLCALL SDL_hid_set_nonblocking(SDL_hid_device *dev, int nonblock);</code>
     /// <summary>
     /// <para>Set the device handle to be non-blocking.</para>
@@ -229,7 +229,7 @@ public static partial class SDL
     /// <see cref="GetError"/> for more information.</returns>
     [LibraryImport(SDLLibrary, EntryPoint = "SDL_hid_set_nonblocking"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     public static partial int HIDSetNonBlocking(IntPtr dev, int nonblock);
-    
+
 
     /// <code>extern SDL_DECLSPEC int SDLCALL SDL_hid_send_feature_report(SDL_hid_device *dev, const unsigned char *data, size_t length);</code>
     /// <summary>
@@ -254,8 +254,8 @@ public static partial class SDL
     /// <since>This function is available since SDL 3.2.0</since>
     [LibraryImport(SDLLibrary, EntryPoint = "SDL_hid_send_feature_report"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     public static partial int HIDSendFeatureReport(IntPtr dev, [MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 2)] byte[] data, ulong length);
-    
-    
+
+
     /// <code>extern SDL_DECLSPEC int SDLCALL SDL_hid_get_feature_report(SDL_hid_device *dev, unsigned char *data, size_t length);</code>
     /// <summary>
     /// <para>Get a feature report from a HID device.</para>
@@ -277,8 +277,8 @@ public static partial class SDL
     /// <since>This function is available since SDL 3.2.0</since>
     [LibraryImport(SDLLibrary, EntryPoint = "SDL_hid_get_feature_report"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     public static partial int HIDGetFeatureReport(IntPtr dev, [MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 2)] out byte[] data, ulong length);
-    
-    
+
+
     /// <code>extern SDL_DECLSPEC int SDLCALL SDL_hid_get_input_report(SDL_hid_device *dev, unsigned char *data, size_t length);</code>
     /// <summary>
     /// <para>Get an input report from a HID device.</para>
@@ -300,8 +300,8 @@ public static partial class SDL
     /// <since>This function is available since SDL 3.2.0</since>
     [LibraryImport(SDLLibrary, EntryPoint = "SDL_hid_get_input_report"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     public static partial int HidGetInputReport(IntPtr dev, [MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 2)] out byte[] data, ulong length);
-    
-    
+
+
     /// <code>extern SDL_DECLSPEC int SDLCALL SDL_hid_close(SDL_hid_device *dev);</code>
     /// <summary>
     /// Close a HID device.
@@ -312,8 +312,8 @@ public static partial class SDL
     /// <since>This function is available since SDL 3.2.0</since>
     [LibraryImport(SDLLibrary, EntryPoint = "SDL_hid_close"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     public static partial int HIDClose(IntPtr dev);
-    
-    
+
+
     /// <code>extern SDL_DECLSPEC int SDLCALL SDL_hid_get_manufacturer_string(SDL_hid_device *dev, wchar_t *string, size_t maxlen);</code>
     /// <summary>
     /// Get The Manufacturer String from a HID device.
@@ -326,8 +326,8 @@ public static partial class SDL
     /// <since>This function is available since SDL 3.2.0</since>
     [LibraryImport(SDLLibrary, EntryPoint = "SDL_hid_get_manufacturer_string"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     public static partial int HIDGetManufacturerString(IntPtr dev, [MarshalAs(UnmanagedType.LPUTF8Str)] out string @string, ulong maxlen);
-    
-    
+
+
     /// <code>extern SDL_DECLSPEC int SDLCALL SDL_hid_get_product_string(SDL_hid_device *dev, wchar_t *string, size_t maxlen);</code>
     /// <summary>
     /// Get The Product String from a HID device.
@@ -339,8 +339,8 @@ public static partial class SDL
     /// <see cref="GetError"/> for more information.</returns>
     [LibraryImport(SDLLibrary, EntryPoint = "SDL_hid_get_product_string"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     public static partial int HIDGetProductString(IntPtr dev, [MarshalAs(UnmanagedType.LPUTF8Str)] out string @string, ulong maxlen);
-    
-    
+
+
     /// <code>extern SDL_DECLSPEC int SDLCALL SDL_hid_get_serial_number_string(SDL_hid_device *dev, wchar_t *string, size_t maxlen);</code>
     /// <summary>
     /// Get The Serial Number String from a HID device.
@@ -353,8 +353,8 @@ public static partial class SDL
     /// <since>This function is available since SDL 3.2.0</since>
     [LibraryImport(SDLLibrary, EntryPoint = "SDL_hid_get_serial_number_string"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     public static partial int HIDGetSerialNumberString(IntPtr dev, [MarshalAs(UnmanagedType.LPUTF8Str)] out string @string, ulong maxlen);
-    
-    
+
+
     /// <code>extern SDL_DECLSPEC int SDLCALL SDL_hid_get_indexed_string(SDL_hid_device *dev, int string_index, wchar_t *string, size_t maxlen);</code>
     /// <summary>
     /// Get a string from a HID device, based on its string index.
@@ -368,8 +368,8 @@ public static partial class SDL
     /// <since>This function is available since SDL 3.2.0</since>
     [LibraryImport(SDLLibrary, EntryPoint = "SDL_hid_get_indexed_string"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     public static partial int HIDGetIndexedString(IntPtr dev, int stringIndex, [MarshalAs(UnmanagedType.LPUTF8Str)] out string @string, ulong maxlen);
-    
-    
+
+
     /// <code>extern SDL_DECLSPEC SDL_hid_device_info * SDLCALL SDL_hid_get_device_info(SDL_hid_device *dev);</code>
     /// <summary>
     /// Get the device info from a HID device.
@@ -381,8 +381,8 @@ public static partial class SDL
     /// <since>This function is available since SDL 3.2.0</since>
     [LibraryImport(SDLLibrary, EntryPoint = "SDL_hid_get_device_info"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     public static partial IntPtr HIDGetDeviceInfo(IntPtr dev);
-    
-    
+
+
     /// <code>extern SDL_DECLSPEC int SDLCALL SDL_hid_get_report_descriptor(SDL_hid_device *dev, unsigned char *buf, size_t buf_size);</code>
     /// <summary>
     /// Get a report descriptor from a HID device.

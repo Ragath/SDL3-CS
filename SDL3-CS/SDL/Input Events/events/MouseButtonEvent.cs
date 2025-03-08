@@ -38,24 +38,24 @@ public static partial class SDL
         /// <see cref="EventType.GamepadButtonDown"/> or <see cref="EventType.MouseButtonUp"/>
         /// </summary>
         public EventType Type;
-        
+
         private UInt32 _reserved;
-        
+
         /// <summary>
         /// In nanoseconds, populated using <see cref="GetTicksNS"/>
         /// </summary>
         public UInt64 Timestamp;
-        
+
         /// <summary>
         /// The window with mouse focus, if any
         /// </summary>
         public UInt32 WindowID;
-        
+
         /// <summary>
         /// The mouse instance id in relative mode, <see cref="TouchMouseID"/> for touch events, or 0
         /// </summary>
         public UInt32 Which;
-        
+
         /// <summary>
         /// The mouse button index
         /// </summary>

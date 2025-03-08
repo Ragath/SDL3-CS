@@ -42,83 +42,83 @@ public static partial class SDL
         /// The version of this interface
         /// </summary>
         public UInt32 Version;
-        
+
         /// <summary>
         /// Called when the storage is closed
         /// </summary>
         public CloseDelegate Close;
-        
+
         /// <summary>
         /// Optional, returns whether the storage is currently ready for access
         /// </summary>
         public ReadyDelegate Ready;
-        
+
         /// <summary>
         /// Enumerate a directory, optional for write-only storage
         /// </summary>
         public EnumerateDelegate Enumerate;
-        
+
         /// <summary>
         /// Get path information, optional for write-only storage
         /// </summary>
         public InfoDelegate Info;
-        
+
         /// <summary>
         /// Read a file from storage, optional for write-only storage
         /// </summary>
         public ReadFileDelegate ReadFile;
-        
+
         /// <summary>
         /// Write a file to storage, optional for read-only storage
         /// </summary>
         public WriteFileDelegate WriteFile;
-        
+
         /// <summary>
         /// Create a directory, optional for read-only storage
         /// </summary>
         public MkdirDelegate Mkdir;
-        
+
         /// <summary>
         /// Remove a file or empty directory, optional for read-only storage
         /// </summary>
         public RemoveDelegate Remove;
-        
+
         /// <summary>
         /// Rename a path, optional for read-only storage
         /// </summary>
         public RenameDelegate Rename;
-        
+
         /// <summary>
         /// Copy a file, optional for read-only storage
         /// </summary>
         public CopyDelegate Copy;
-        
+
         /// <summary>
         /// Get the space remaining, optional for read-only storage
         /// </summary>
         public SpaceRemainingDelegate SpaceRemaining;
-        
-        
+
+
         public delegate bool CloseDelegate(IntPtr userdata);
-        
+
         public delegate bool ReadyDelegate(IntPtr userdata);
-        
+
         public delegate bool EnumerateDelegate(IntPtr userdata, string path, EnumerateDirectoryCallback callback, IntPtr callbackUserdata);
-        
+
         public delegate bool InfoDelegate(IntPtr userdata, string path, out PathInfo info);
-        
+
         public delegate bool ReadFileDelegate(IntPtr userdata, string path, IntPtr destination, ulong length);
-        
+
         public delegate bool WriteFileDelegate(IntPtr userdata, string path, IntPtr source, ulong length);
-        
+
         public delegate bool MkdirDelegate(IntPtr userdata, string path);
-        
+
         public delegate bool RemoveDelegate(IntPtr userdata, string path);
-        
+
         public delegate bool RenameDelegate(IntPtr userdata, string oldpath, string newpath);
-        
+
         public delegate bool CopyDelegate(IntPtr userdata, string oldpath, string newpath);
-        
+
         public delegate ulong SpaceRemainingDelegate(IntPtr userdata);
     }
 }

@@ -47,7 +47,7 @@ public static partial class SDL
     /// <since>This function is available since SDL 3.2.0</since>
     public static string GetPlatform()
     {
-        var value = SDL_GetPlatform(); 
+        var value = SDL_GetPlatform();
         return value == IntPtr.Zero ? "" : Marshal.PtrToStringUTF8(value)!;
     }
 }

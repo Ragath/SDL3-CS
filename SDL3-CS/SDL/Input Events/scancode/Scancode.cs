@@ -87,7 +87,7 @@ public static partial class SDL
         Equals = 46,
         Leftbracket = 47,
         Rightbracket = 48,
-        
+
         /// <summary>
         /// Located at the lower left of the return
         /// key on ISO keyboards and at the right end
@@ -104,7 +104,7 @@ public static partial class SDL
         /// French Windows layout.
         /// </summary>
         Backslash = 49,
-        
+
         /// <summary>
         /// ISO USB keyboards actually use this code
         /// instead of 49 for the same key, but all
@@ -121,7 +121,7 @@ public static partial class SDL
         NonUshash = 50,
         Semicolon = 51,
         Apostrophe = 52,
-        
+
         /// <summary>
         /// Located in the top left corner (on both ANSI
         /// and ISO keyboards). Produces GRAVE ACCENT and
@@ -163,7 +163,7 @@ public static partial class SDL
         Printscreen = 70,
         Scrolllock = 71,
         Pause = 72,
-        
+
         /// <summary>
         /// insert on PC, help on some Mac keyboards (but
         /// does send code 73, not 117)
@@ -213,12 +213,12 @@ public static partial class SDL
         /// layout.
         /// </summary>
         NonUsbackslash = 100,
-        
+
         /// <summary>
         /// windows contextual menu, compose
         /// </summary>
         Application = 101,
-        
+
         /// <summary>
         /// The USB document says this is a status flag,
         /// not a physical key - but some Mac keyboards
@@ -239,48 +239,48 @@ public static partial class SDL
         F23 = 114,
         F24 = 115,
         Execute = 116,
-        
+
         /// <summary>
         /// AL Integrated Help Center
         /// </summary>
         Help = 117,
-        
+
         /// <summary>
         /// Menu (show menu)
         /// </summary>
         Menu = 118,
         Select = 119,
-        
+
         /// <summary>
         /// AC Stop
         /// </summary>
         Stop = 120,
-        
+
         /// <summary>
         /// AC Redo/Repeat
         /// </summary>
         Again = 121,
-        
+
         /// <summary>
         /// AC Undo
         /// </summary>
         Undo = 122,
-        
+
         /// <summary>
         /// AC Cut
         /// </summary>
         Cut = 123,
-        
+
         /// <summary>
         /// AC Copy
         /// </summary>
         Copy = 124,
-        
+
         /// <summary>
         /// AC Paste
         /// </summary>
         Paste = 125,
-        
+
         /// <summary>
         /// AC Find
         /// </summary>
@@ -288,15 +288,15 @@ public static partial class SDL
         Mute = 127,
         VolumeUp = 128,
         VolumeDown = 129,
-        
-        
-         /*
-          not sure whether there's a reason to enable these
-          LOCKINGCAPSLOCK = 130,
-          LOCKINGNUMLOCK = 131,
-          LOCKINGSCROLLLOCK = 132, 
-         */
-         
+
+
+        /*
+         not sure whether there's a reason to enable these
+         LOCKINGCAPSLOCK = 130,
+         LOCKINGNUMLOCK = 131,
+         LOCKINGSCROLLLOCK = 132, 
+        */
+
         KpComma = 133,
         KpEqualsAs400 = 134,
 
@@ -306,7 +306,7 @@ public static partial class SDL
         /// </summary>
         International1 = 135,
         International2 = 136,
-        
+
         /// <summary>
         /// Yen
         /// </summary>
@@ -317,47 +317,47 @@ public static partial class SDL
         International7 = 141,
         International8 = 142,
         International9 = 143,
-        
+
         /// <summary>
         /// Hangul/English toggle
         /// </summary>
         Lang1 = 144,
-        
+
         /// <summary>
         /// Hanja conversion
         /// </summary>
         Lang2 = 145,
-        
+
         /// <summary>
         /// Katakana
         /// </summary>
         Lang3 = 146,
-        
+
         /// <summary>
         /// Hiragana
         /// </summary>
         Lang4 = 147,
-        
+
         /// <summary>
         /// Zenkaku/Hankaku
         /// </summary>
         Lang5 = 148,
-        
+
         /// <summary>
         /// reserved
         /// </summary>
         Lang6 = 149,
-        
+
         /// <summary>
         /// reserved
         /// </summary>
         Lang7 = 150,
-        
+
         /// <summary>
         /// reserved
         /// </summary>
         Lang8 = 151,
-        
+
         /// <summary>
         /// reserved
         /// </summary>
@@ -368,7 +368,7 @@ public static partial class SDL
         /// </summary>
         AltErase = 153,
         SysReq = 154,
-        
+
         /// <summary>
         /// AC Cancel
         /// </summary>
@@ -432,24 +432,24 @@ public static partial class SDL
 
         LCtrl = 224,
         LShift = 225,
-        
+
         /// <summary>
         /// alt, option
         /// </summary>
         LAlt = 226,
-        
+
         /// <summary>
         /// windows, command (apple), meta
         /// </summary>
         LGUI = 227,
         RCtrl = 228,
         RShift = 229,
-        
+
         /// <summary>
         /// alt gr, option
         /// </summary>
         RAlt = 230,
-        
+
         /// <summary>
         /// windows, command (apple), meta
         /// </summary>
@@ -466,7 +466,7 @@ public static partial class SDL
         /// Sleep
         /// </summary>
         Sleep = 258,
-        
+
         /// <summary>
         /// Wake
         /// </summary>
@@ -476,7 +476,7 @@ public static partial class SDL
         /// Channel Increment
         /// </summary>
         ChannelIncrement = 260,
-        
+
         /// <summary>
         /// Channel Decrement
         /// </summary>
@@ -486,87 +486,87 @@ public static partial class SDL
         /// Play
         /// </summary>
         MediaPlay = 262,
-        
+
         /// <summary>
         /// Pause
         /// </summary>
         MediaPause = 263,
-        
+
         /// <summary>
         /// Record
         /// </summary>
         MediaRecord = 264,
-        
+
         /// <summary>
         /// Fast Forward
         /// </summary>
         MediaFastForward = 265,
-        
+
         /// <summary>
         /// Rewind
         /// </summary>
         MediaRewind = 266,
-        
+
         /// <summary>
         /// Next Track
         /// </summary>
         MediaNextTrack = 267,
-        
+
         /// <summary>
         /// Previous Track
         /// </summary>
         MediaPreviousTrack = 268,
-        
+
         /// <summary>
         /// Stop
         /// </summary>
         MediaStop = 269,
-        
+
         /// <summary>
         /// Eject
         /// </summary>
         MediaEject = 270,
-        
+
         /// <summary>
         /// Play / Pause
         /// </summary>
         MediaPlayPause = 271,
-        
+
         /// <summary>
         /// Media Select
         /// </summary>
         MediaSelect = 272,
-        
+
         /// <summary>
         /// AC New
         /// </summary>
         ACNew = 273,
-        
+
         /// <summary>
         /// AC Open
         /// </summary>
         ACOpen = 274,
-        
+
         /// <summary>
         /// AC Close
         /// </summary>
         ACClose = 275,
-        
+
         /// <summary>
         /// AC Exit
         /// </summary>
         ACExit = 276,
-        
+
         /// <summary>
         /// AC Save
         /// </summary>
         ACSave = 277,
-        
+
         /// <summary>
         /// AC Print
         /// </summary>
         ACPrint = 278,
-        
+
         /// <summary>
         /// AC Properties
         /// </summary>
@@ -576,37 +576,37 @@ public static partial class SDL
         /// AC Search
         /// </summary>
         ACSearch = 280,
-        
+
         /// <summary>
         /// AC Home
         /// </summary>
         ACHome = 281,
-        
+
         /// <summary>
         /// AC Back
         /// </summary>
         ACBack = 282,
-        
+
         /// <summary>
         /// AC Forward
         /// </summary>
         ACForward = 283,
-        
+
         /// <summary>
         /// AC Stop
         /// </summary>
         ACStop = 284,
-        
+
         /// <summary>
         /// AC Refresh
         /// </summary>
         ACRefresh = 285,
-        
+
         /// <summary>
         /// AC Bookmarks
         /// </summary>
         ACBookmarks = 286,
-        
+
 
         /// <summary>
         /// Usually situated below the display on phones and
@@ -615,7 +615,7 @@ public static partial class SDL
         /// of the display.
         /// </summary>
         SoftLeft = 287,
-        
+
         /// <summary>
         /// Usually situated below the display on phones and
         /// used as a multi-function feature key for selecting
@@ -623,12 +623,12 @@ public static partial class SDL
         /// of the display.
         /// </summary>
         SoftRight = 288,
-        
+
         /// <summary>
         /// Used for accepting phone calls.
         /// </summary>
         Call = 289,
-        
+
         /// <summary>
         /// Used for rejecting phone calls.
         /// </summary>

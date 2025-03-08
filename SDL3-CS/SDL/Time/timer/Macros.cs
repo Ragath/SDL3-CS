@@ -35,8 +35,8 @@ public static partial class SDL
     /// <threadsafety>It is safe to call this macro from any thread.</threadsafety>
     [Macro]
     public static ulong SecondsToNs(ulong s) => s * NsPerSecond;
-    
-    
+
+
     /// <code>#define SDL_NS_TO_SECONDS(NS)   ((NS) / SDL_NS_PER_SECOND)</code>
     /// <summary>
     /// <para>Convert nanoseconds to seconds.</para>
@@ -49,8 +49,8 @@ public static partial class SDL
     /// <since>This macro is available since SDL 3.2.0</since>
     [Macro]
     public static ulong NsToSeconds(ulong ns) => ns / NsPerSecond;
-    
-    
+
+
     /// <code>#define SDL_MS_TO_NS(MS)        (((Uint64)(MS)) * SDL_NS_PER_MS)</code>
     /// <summary>
     /// <para>Convert milliseconds to nanoseconds.</para>
@@ -62,8 +62,8 @@ public static partial class SDL
     /// <since>This macro is available since SDL 3.2.0</since>
     [Macro]
     public static ulong MsToNs(ulong ms) => ms * NsPerMs;
-    
-    
+
+
     /// <code>#define SDL_NS_TO_MS(NS)        ((NS) / SDL_NS_PER_MS)</code>
     /// <summary>
     /// <para>Convert nanoseconds to milliseconds.</para>
@@ -76,8 +76,8 @@ public static partial class SDL
     /// <since>This macro is available since SDL 3.2.0</since>
     [Macro]
     public static ulong NsToMs(ulong ns) => ns / NsPerMs;
-    
-    
+
+
     /// <code>#define SDL_US_TO_NS(US)        (((Uint64)(US)) * SDL_NS_PER_US)</code>
     /// <summary>
     /// <para>Convert microseconds to nanoseconds.</para>
@@ -89,8 +89,8 @@ public static partial class SDL
     /// <since>This macro is available since SDL 3.2.0</since>
     [Macro]
     public static ulong UsToNs(ulong us) => us * NsPerUs;
-    
-    
+
+
     /// <code>#define SDL_NS_TO_US(NS)        ((NS) / SDL_NS_PER_US)</code>
     /// <summary>
     /// <para>Convert nanoseconds to microseconds.</para>

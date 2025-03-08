@@ -26,25 +26,25 @@ using System.Runtime.InteropServices;
 namespace SDL3;
 
 public static partial class SDL
-{
-    /// <summary>
-    /// <para>A structure specifying a location in a transfer buffer.</para>
-    /// <para>Used when transferring buffer data to or from a transfer buffer.</para>
-    /// </summary>
-    /// <since>This struct is available since SDL 3.2.0</since>
-    /// <seealso cref="UploadToGPUBuffer"/>
-    /// <seealso cref="DownloadFromGPUBuffer"/>
-    [StructLayout(LayoutKind.Sequential)]
-    public struct GPUTransferBufferLocation
     {
         /// <summary>
-        /// The transfer buffer used in the transfer operation.
+        /// <para>A structure specifying a location in a transfer buffer.</para>
+        /// <para>Used when transferring buffer data to or from a transfer buffer.</para>
         /// </summary>
-        public IntPtr TransferBuffer;
+        /// <since>This struct is available since SDL 3.2.0</since>
+        /// <seealso cref="UploadToGPUBuffer"/>
+        /// <seealso cref="DownloadFromGPUBuffer"/>
+        [StructLayout(LayoutKind.Sequential)]
+        public struct GPUTransferBufferLocation
+        {
+            /// <summary>
+            /// The transfer buffer used in the transfer operation.
+            /// </summary>
+            public IntPtr TransferBuffer;
 
-        /// <summary>
-        /// The starting byte of the buffer data in the transfer buffer.
-        /// </summary>
-        public UInt32 Offset;
+            /// <summary>
+            /// The starting byte of the buffer data in the transfer buffer.
+            /// </summary>
+            public UInt32 Offset;
+        }
     }
-}

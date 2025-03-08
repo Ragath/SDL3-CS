@@ -26,24 +26,24 @@ using System.Runtime.InteropServices;
 namespace SDL3;
 
 public static partial class SDL
-{
-    /// <summary>
-    /// <para>A structure specifying a location in a buffer.</para>
-    /// <para>Used when copying data between buffers.</para>
-    /// </summary>
-    /// <since>This struct is available since SDL 3.2.0</since>
-    /// <seealso cref="CopyGPUBufferToBuffer"/>
-    [StructLayout(LayoutKind.Sequential)]
-    public struct GPUBufferLocation
     {
         /// <summary>
-        /// The buffer.
+        /// <para>A structure specifying a location in a buffer.</para>
+        /// <para>Used when copying data between buffers.</para>
         /// </summary>
-        public IntPtr Buffer;
+        /// <since>This struct is available since SDL 3.2.0</since>
+        /// <seealso cref="CopyGPUBufferToBuffer"/>
+        [StructLayout(LayoutKind.Sequential)]
+        public struct GPUBufferLocation
+        {
+            /// <summary>
+            /// The buffer.
+            /// </summary>
+            public IntPtr Buffer;
 
-        /// <summary>
-        /// The starting byte within the buffer.
-        /// </summary>
-        public UInt32 Offset;
+            /// <summary>
+            /// The starting byte within the buffer.
+            /// </summary>
+            public UInt32 Offset;
+        }
     }
-}

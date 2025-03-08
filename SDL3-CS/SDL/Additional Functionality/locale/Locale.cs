@@ -43,7 +43,7 @@ public static partial class SDL
         /// A language name, like "en" for English.
         /// </summary>
         [MarshalAs(UnmanagedType.LPUTF8Str)] public string Language;
-        
+
         /// <summary>
         /// A country, like "US" for America. Can be <c>null</c>.
         /// </summary>

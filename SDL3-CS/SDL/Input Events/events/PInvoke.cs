@@ -271,8 +271,8 @@ public static partial class SDL
     [DllImport(SDLLibrary, EntryPoint = "SDL_WaitEvent"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     [return: MarshalAs(UnmanagedType.I1)]
     public static extern bool WaitEvent(out Event @event);
-    
-    
+
+
     /// <code>extern SDL_DECLSPEC bool SDLCALL SDL_WaitEventTimeout(SDL_Event *event, Sint32 timeoutMS);</code>
     /// <summary>
     /// <para>Wait until the specified timeout (in milliseconds) for the next available
@@ -298,8 +298,8 @@ public static partial class SDL
     [DllImport(SDLLibrary, EntryPoint = "SDL_WaitEventTimeout"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     [return: MarshalAs(UnmanagedType.I1)]
     public static extern bool WaitEventTimeout(out Event @event, int timeoutMs);
-    
-    
+
+
     /// <code>extern SDL_DECLSPEC bool SDLCALL SDL_PushEvent(SDL_Event *event);</code>
     /// <summary>
     /// <para>Add an event to the event queue.</para>
@@ -328,8 +328,8 @@ public static partial class SDL
     [DllImport(SDLLibrary, EntryPoint = "SDL_PushEvent"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     [return: MarshalAs(UnmanagedType.I1)]
     public static extern bool PushEvent(ref Event @event);
-    
-    
+
+
     /// <code>extern SDL_DECLSPEC void SDLCALL SDL_SetEventFilter(SDL_EventFilter filter, void *userdata);</code>
     /// <summary>
     /// <para>Set up a filter to process all events before they are added to the internal
@@ -368,8 +368,8 @@ public static partial class SDL
     /// <seealso cref="PushEvent"/>
     [LibraryImport(SDLLibrary, EntryPoint = "SDL_SetEventFilter"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     public static partial void SetEventFilter(EventFilter filter, IntPtr userdata);
-    
-    
+
+
     /// <code>extern SDL_DECLSPEC bool SDLCALL SDL_GetEventFilter(SDL_EventFilter *filter, void **userdata);</code>
     /// <summary>
     /// <para>Query the current event filter.</para>
@@ -386,8 +386,8 @@ public static partial class SDL
     [LibraryImport(SDLLibrary, EntryPoint = "SDL_GetEventFilter"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     [return: MarshalAs(UnmanagedType.I1)]
     public static partial bool GetEventFilter(out EventFilter filter, out IntPtr userdata);
-    
-    
+
+
     /// <code>extern SDL_DECLSPEC bool SDLCALL SDL_AddEventWatch(SDL_EventFilter filter, void *userdata);</code>
     /// <summary>
     /// <para>Add a callback to be triggered when an event is added to the event queue.</para>
@@ -414,8 +414,8 @@ public static partial class SDL
     [LibraryImport(SDLLibrary, EntryPoint = "SDL_AddEventWatch"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     [return: MarshalAs(UnmanagedType.I1)]
     public static partial bool AddEventWatch(EventFilter filter, IntPtr userdata);
-    
-    
+
+
     /// <code>extern SDL_DECLSPEC void SDLCALL SDL_RemoveEventWatch(SDL_EventFilter filter, void *userdata);</code>
     /// <summary>
     /// <para>Remove an event watch callback added with <see cref="AddEventWatch"/>.</para>
@@ -429,8 +429,8 @@ public static partial class SDL
     /// <seealso cref="AddEventWatch"/>
     [LibraryImport(SDLLibrary, EntryPoint = "SDL_RemoveEventWatch"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     public static partial void RemoveEventWatch(EventFilter filter, IntPtr userdata);
-    
-    
+
+
     /// <code>extern SDL_DECLSPEC void SDLCALL SDL_FilterEvents(SDL_EventFilter filter, void *userdata);</code>
     /// <summary>
     /// <para>Run a specific filter function on the current event queue, removing any
@@ -447,8 +447,8 @@ public static partial class SDL
     /// <seealso cref="SetEventFilter"/>
     [LibraryImport(SDLLibrary, EntryPoint = "SDL_FilterEvents"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     public static partial void FilterEvents(EventFilter filter, IntPtr userdata);
-    
-    
+
+
     /// <code>extern SDL_DECLSPEC void SDLCALL SDL_SetEventEnabled(Uint32 type, bool enabled);</code>
     /// <summary>
     /// Set the state of processing events by type.
@@ -460,8 +460,8 @@ public static partial class SDL
     /// <seealso cref="EventEnabled"/>
     [LibraryImport(SDLLibrary, EntryPoint = "SDL_SetEventEnabled"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     public static partial void SetEventEnabled(uint type, [MarshalAs(UnmanagedType.I1)] bool enabled);
-    
-    
+
+
     /// <code>extern SDL_DECLSPEC bool SDLCALL SDL_EventEnabled(Uint32 type);</code>
     /// <summary>
     /// Query the state of processing events by type.
@@ -474,8 +474,8 @@ public static partial class SDL
     [LibraryImport(SDLLibrary, EntryPoint = "SDL_EventEnabled"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     [return: MarshalAs(UnmanagedType.I1)]
     public static partial bool EventEnabled(uint type);
-    
-    
+
+
     /// <code>extern SDL_DECLSPEC Uint32 SDLCALL SDL_RegisterEvents(int numevents);</code>
     /// <summary>
     /// Allocate a set of user-defined events, and return the beginning event
@@ -489,8 +489,8 @@ public static partial class SDL
     /// <seealso cref="PushEvent"/>
     [LibraryImport(SDLLibrary, EntryPoint = "SDL_RegisterEvents"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     public static partial uint RegisterEvents(int numevents);
-    
-    
+
+
     /// <code>extern SDL_DECLSPEC SDL_Window * SDLCALL SDL_GetWindowFromEvent(const SDL_Event *event);</code>
     /// <summary>
     /// Get window associated with an event.

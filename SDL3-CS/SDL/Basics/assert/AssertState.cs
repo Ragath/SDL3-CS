@@ -41,22 +41,22 @@ public static partial class SDL
         /// Retry the assert immediately.
         /// </summary>
         Retry,
-        
+
         /// <summary>
         /// Make the debugger trigger a breakpoint.
         /// </summary>
         Break,
-        
+
         /// <summary>
         /// Terminate the program.
         /// </summary>
         Abort,
-        
+
         /// <summary>
         /// Ignore the assert.
         /// </summary>
         Ignore,
-        
+
         /// <summary>
         /// Ignore the assert from now on.
         /// </summary>

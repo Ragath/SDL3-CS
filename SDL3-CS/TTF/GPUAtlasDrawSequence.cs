@@ -39,27 +39,27 @@ public static partial class TTF
         /// Texture atlas that stores the glyphs
         /// </summary>
         public IntPtr AtlasTexture;
-        
+
         /// <summary>
         /// An array of vertex positions
         /// </summary>
         public IntPtr XY;
-        
+
         /// <summary>
         /// An array of normalized texture coordinates for each vertex
         /// </summary>
         public IntPtr UV;
-        
+
         /// <summary>
         /// Number of vertices
         /// </summary>
         public int NumVertices;
-        
+
         /// <summary>
         /// An array of indices into the 'vertices' arrays
         /// </summary>
         public IntPtr Indices;
-        
+
         /// <summary>
         /// Number of indices
         /// </summary>

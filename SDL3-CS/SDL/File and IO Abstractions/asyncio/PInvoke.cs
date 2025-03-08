@@ -62,8 +62,8 @@ public static partial class SDL
     /// <seealso cref="WriteAsyncIO"/>
     [LibraryImport(SDLLibrary, EntryPoint = "SDL_AsyncIOFromFile"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     public static partial IntPtr AsyncIOFromFile([MarshalAs(UnmanagedType.LPUTF8Str)] string file, [MarshalAs(UnmanagedType.LPUTF8Str)] string mode);
-    
-    
+
+
     /// <code>extern SDL_DECLSPEC Sint64 SDLCALL SDL_GetAsyncIOSize(SDL_AsyncIO *asyncio);</code>
     /// <summary>
     /// <para>Use this function to get the size of the data stream in an SDL_AsyncIO.</para>
@@ -78,8 +78,8 @@ public static partial class SDL
     /// <since>This function is available since SDL 3.1.8.</since>
     [LibraryImport(SDLLibrary, EntryPoint = "SDL_GetAsyncIOSize"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     public static partial long GetAsyncIOSize(IntPtr asyncio);
-    
-    
+
+
     /// <code>extern SDL_DECLSPEC bool SDLCALL SDL_ReadAsyncIO(SDL_AsyncIO *asyncio, void *ptr, Uint64 offset, Uint64 size, SDL_AsyncIOQueue *queue, void *userdata);</code>
     /// <summary>
     /// <para>Start an async read.</para>
@@ -112,8 +112,8 @@ public static partial class SDL
     [LibraryImport(SDLLibrary, EntryPoint = "SDL_ReadAsyncIO"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     [return: MarshalAs(UnmanagedType.I1)]
     public static partial bool ReadAsyncIO(IntPtr asyncio, IntPtr ptr, ulong offset, ulong size, IntPtr queue, IntPtr userdata);
-    
-    
+
+
     /// <code>extern SDL_DECLSPEC bool SDLCALL SDL_WriteAsyncIO(SDL_AsyncIO *asyncio, void *ptr, Uint64 offset, Uint64 size, SDL_AsyncIOQueue *queue, void *userdata);</code>
     /// <summary>
     /// <para>Start an async write.</para>
@@ -145,8 +145,8 @@ public static partial class SDL
     [LibraryImport(SDLLibrary, EntryPoint = "SDL_WriteAsyncIO"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     [return: MarshalAs(UnmanagedType.I1)]
     public static partial bool WriteAsyncIO(IntPtr asyncio, IntPtr ptr, ulong offset, ulong size, IntPtr queue, IntPtr userdata);
-    
-    
+
+
     /// <code>extern SDL_DECLSPEC bool SDLCALL SDL_CloseAsyncIO(SDL_AsyncIO *asyncio, bool flush, SDL_AsyncIOQueue *queue, void *userdata);</code>
     /// <summary>
     /// <para>Close and free any allocated resources for an async I/O object.</para>
@@ -189,8 +189,8 @@ public static partial class SDL
     [LibraryImport(SDLLibrary, EntryPoint = "SDL_CloseAsyncIO"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     [return: MarshalAs(UnmanagedType.I1)]
     public static partial bool CloseAsyncIO(IntPtr asyncio, [MarshalAs(UnmanagedType.I1)] bool flush, IntPtr queue, IntPtr userdata);
-    
-    
+
+
     /// <code>extern SDL_DECLSPEC SDL_AsyncIOQueue * SDLCALL SDL_CreateAsyncIOQueue(void);</code>
     /// <summary>
     /// <para>Create a task queue for tracking multiple I/O operations.</para>
@@ -206,8 +206,8 @@ public static partial class SDL
     /// <seealso cref="WaitAsyncIOResult"/>
     [LibraryImport(SDLLibrary, EntryPoint = "SDL_CreateAsyncIOQueue"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     public static partial IntPtr CreateAsyncIOQueue();
-    
-    
+
+
     /// <code>extern SDL_DECLSPEC void SDLCALL SDL_DestroyAsyncIOQueue(SDL_AsyncIOQueue *queue);</code>
     /// <summary>
     /// <para>Destroy a previously-created async I/O task queue.</para>
@@ -232,8 +232,8 @@ public static partial class SDL
     /// <since>This function is available since SDL 3.1.8.</since>
     [LibraryImport(SDLLibrary, EntryPoint = "SDL_DestroyAsyncIOQueue"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     public static partial void DestroyAsyncIOQueue(IntPtr queue);
-    
-    
+
+
     /// <code>extern SDL_DECLSPEC bool SDLCALL SDL_GetAsyncIOResult(SDL_AsyncIOQueue *queue, SDL_AsyncIOOutcome *outcome);</code>
     /// <summary>
     /// <para>Query an async I/O task queue for completed tasks.</para>
@@ -255,8 +255,8 @@ public static partial class SDL
     [LibraryImport(SDLLibrary, EntryPoint = "SDL_GetAsyncIOResult"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     [return: MarshalAs(UnmanagedType.I1)]
     public static partial bool GetAsyncIOResult(IntPtr queue, out AsyncIOOutcome outcome);
-    
-    
+
+
     /// <code>extern SDL_DECLSPEC bool SDLCALL SDL_WaitAsyncIOResult(SDL_AsyncIOQueue *queue, SDL_AsyncIOOutcome *outcome, Sint32 timeoutMS);</code>
     /// <summary>
     /// <para>Block until an async I/O task queue has a completed task.</para>
@@ -292,8 +292,8 @@ public static partial class SDL
     [LibraryImport(SDLLibrary, EntryPoint = "SDL_WaitAsyncIOResult"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     [return: MarshalAs(UnmanagedType.I1)]
     public static partial bool WaitAsyncIOResult(IntPtr queue, out AsyncIOOutcome outcome, int timeoutMS);
-    
-    
+
+
     /// <code>extern SDL_DECLSPEC void SDLCALL SDL_SignalAsyncIOQueue(SDL_AsyncIOQueue *queue);</code>
     /// <summary>
     /// <para>Wake up any threads that are blocking in <see cref="WaitAsyncIOResult"/>.</para>
@@ -313,8 +313,8 @@ public static partial class SDL
     /// <seealso cref="WaitAsyncIOResult"/>
     [LibraryImport(SDLLibrary, EntryPoint = "SDL_SignalAsyncIOQueue"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     public static partial void SignalAsyncIOQueue(IntPtr queue);
-    
-    
+
+
     /// <code>extern SDL_DECLSPEC bool SDLCALL SDL_LoadFileAsync(const char *file, SDL_AsyncIOQueue *queue, void *userdata);</code>
     /// <summary>
     /// <para>Load all the data from a file path, asynchronously.</para>

@@ -24,45 +24,45 @@
 namespace SDL3;
 
 public static partial class SDL
-{
-    /// <summary>
-    /// <para>Specifies the format of shader code.</para>
-    /// <para>Each format corresponds to a specific backend that accepts it.</para>
-    /// </summary>
-    /// <since>This datatype is available since SDL 3.2.0</since>
-    /// <seealso cref="CreateGPUShader"/>
-    public enum GPUShaderFormat : uint
     {
-        Invalid = 0,
-        
         /// <summary>
-        /// Shaders for NDA'd platforms.
+        /// <para>Specifies the format of shader code.</para>
+        /// <para>Each format corresponds to a specific backend that accepts it.</para>
         /// </summary>
-        Private = 1u << 0,
-        
-        /// <summary>
-        /// SPIR-V shaders for Vulkan.
-        /// </summary>
-        SPIRV = 1u << 1,
-        
-        /// <summary>
-        /// DXBC SM5_1 shaders for D3D12.
-        /// </summary>
-        DXBC = 1u << 2,
-        
-        /// <summary>
-        /// DXIL SM6_0 shaders for D3D12.
-        /// </summary>
-        DXIL = 1u << 3,
-        
-        /// <summary>
-        /// MSL shaders for Metal.
-        /// </summary>
-        MSL = 1u << 4,
-        
-        /// <summary>
-        /// Precompiled metallib shaders for Metal.
-        /// </summary>
-        MetalLib = 1u << 5
+        /// <since>This datatype is available since SDL 3.2.0</since>
+        /// <seealso cref="CreateGPUShader"/>
+        public enum GPUShaderFormat : uint
+        {
+            Invalid = 0,
+
+            /// <summary>
+            /// Shaders for NDA'd platforms.
+            /// </summary>
+            Private = 1u << 0,
+
+            /// <summary>
+            /// SPIR-V shaders for Vulkan.
+            /// </summary>
+            SPIRV = 1u << 1,
+
+            /// <summary>
+            /// DXBC SM5_1 shaders for D3D12.
+            /// </summary>
+            DXBC = 1u << 2,
+
+            /// <summary>
+            /// DXIL SM6_0 shaders for D3D12.
+            /// </summary>
+            DXIL = 1u << 3,
+
+            /// <summary>
+            /// MSL shaders for Metal.
+            /// </summary>
+            MSL = 1u << 4,
+
+            /// <summary>
+            /// Precompiled metallib shaders for Metal.
+            /// </summary>
+            MetalLib = 1u << 5
+        }
     }
-}

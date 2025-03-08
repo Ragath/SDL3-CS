@@ -26,35 +26,35 @@ using System.Runtime.InteropServices;
 namespace SDL3;
 
 public static partial class SDL
-{
-    /// <summary>
-    /// A structure specifying the parameters of the graphics pipeline multisample
-    /// state.
-    /// </summary>
-    /// <since>This struct is available since SDL 3.2.0</since>
-    /// <seealso cref="GPUGraphicsPipelineCreateInfo"/>
-    [StructLayout(LayoutKind.Sequential)]
-    public struct GPUMultisampleState
     {
         /// <summary>
-        /// The number of samples to be used in rasterization.
+        /// A structure specifying the parameters of the graphics pipeline multisample
+        /// state.
         /// </summary>
-        public GPUSampleCount SampleCount;
-        
-        /// <summary>
-        /// eserved for future use. Must be set to 0.
-        /// </summary>
-        public UInt32 SampleMask;
-        
-        /// <summary>
-        /// Reserved for future use. Must be set to false.
-        /// </summary>
-        public byte EnableMask;
-        
-        private Byte _padding1;
-        
-        private Byte _padding2;
-        
-        private Byte _padding3;
+        /// <since>This struct is available since SDL 3.2.0</since>
+        /// <seealso cref="GPUGraphicsPipelineCreateInfo"/>
+        [StructLayout(LayoutKind.Sequential)]
+        public struct GPUMultisampleState
+        {
+            /// <summary>
+            /// The number of samples to be used in rasterization.
+            /// </summary>
+            public GPUSampleCount SampleCount;
+
+            /// <summary>
+            /// eserved for future use. Must be set to 0.
+            /// </summary>
+            public UInt32 SampleMask;
+
+            /// <summary>
+            /// Reserved for future use. Must be set to false.
+            /// </summary>
+            public byte EnableMask;
+
+            private Byte _padding1;
+
+            private Byte _padding2;
+
+            private Byte _padding3;
+        }
     }
-}

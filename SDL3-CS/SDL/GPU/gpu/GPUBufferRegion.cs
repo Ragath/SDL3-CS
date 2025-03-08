@@ -26,30 +26,30 @@ using System.Runtime.InteropServices;
 namespace SDL3;
 
 public static partial class SDL
-{
-    /// <summary>
-    /// <para>A structure specifying a region of a buffer.</para>
-    /// <para>Used when transferring data to or from buffers.</para>
-    /// </summary>
-    /// <since>This struct is available since SDL 3.2.0</since>
-    /// <seealso cref="UploadToGPUBuffer"/>
-    /// <seealso cref="DownloadFromGPUBuffer"/>
-    [StructLayout(LayoutKind.Sequential)]
-    public struct GPUBufferRegion
     {
         /// <summary>
-        /// The buffer.
+        /// <para>A structure specifying a region of a buffer.</para>
+        /// <para>Used when transferring data to or from buffers.</para>
         /// </summary>
-        public IntPtr Buffer;
+        /// <since>This struct is available since SDL 3.2.0</since>
+        /// <seealso cref="UploadToGPUBuffer"/>
+        /// <seealso cref="DownloadFromGPUBuffer"/>
+        [StructLayout(LayoutKind.Sequential)]
+        public struct GPUBufferRegion
+        {
+            /// <summary>
+            /// The buffer.
+            /// </summary>
+            public IntPtr Buffer;
 
-        /// <summary>
-        /// The starting byte within the buffer.
-        /// </summary>
-        public UInt32 Offset;
+            /// <summary>
+            /// The starting byte within the buffer.
+            /// </summary>
+            public UInt32 Offset;
 
-        /// <summary>
-        /// The size in bytes of the region.
-        /// </summary>
-        public UInt32 Size;
+            /// <summary>
+            /// The size in bytes of the region.
+            /// </summary>
+            public UInt32 Size;
+        }
     }
-}

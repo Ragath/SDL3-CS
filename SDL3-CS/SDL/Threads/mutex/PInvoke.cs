@@ -45,8 +45,8 @@ public static partial class SDL
     /// <seealso cref="UnlockMutex"/>
     [LibraryImport(SDLLibrary, EntryPoint = "SDL_CreateMutex"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     public static partial IntPtr CreateMutex();
-    
-    
+
+
     /// <code>extern SDL_DECLSPEC void SDLCALL SDL_LockMutex(SDL_Mutex *mutex) SDL_ACQUIRE(mutex);</code>
     /// <summary>
     /// <para>Lock the mutex.</para>
@@ -66,8 +66,8 @@ public static partial class SDL
     /// <seealso cref="UnlockMutex"/>
     [LibraryImport(SDLLibrary, EntryPoint = "SDL_LockMutex"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     public static partial void LockMutex(IntPtr mutex);
-    
-    
+
+
     /// <code>extern SDL_DECLSPEC bool SDLCALL SDL_TryLockMutex(SDL_Mutex *mutex) SDL_TRY_ACQUIRE(0, mutex);</code>
     /// <summary>
     /// <para>Try to lock a mutex without blocking.</para>
@@ -85,8 +85,8 @@ public static partial class SDL
     [LibraryImport(SDLLibrary, EntryPoint = "SDL_TryLockMutex"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     [return: MarshalAs(UnmanagedType.I1)]
     public static partial bool TryLockMutex(IntPtr mutex);
-    
-    
+
+
     /// <code>extern SDL_DECLSPEC void SDLCALL SDL_UnlockMutex(SDL_Mutex *mutex) SDL_RELEASE(mutex);</code>
     /// <summary>
     /// <para>Unlock the mutex.</para>
@@ -102,8 +102,8 @@ public static partial class SDL
     /// <seealso cref="TryLockMutex"/>
     [LibraryImport(SDLLibrary, EntryPoint = "SDL_UnlockMutex"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     public static partial void UnlockMutex(IntPtr mutex);
-    
-    
+
+
     /// <code>extern SDL_DECLSPEC void SDLCALL SDL_DestroyMutex(SDL_Mutex *mutex);</code>
     /// <summary>
     /// <para>Destroy a mutex created with <see cref="CreateMutex"/>.</para>
@@ -118,8 +118,8 @@ public static partial class SDL
     /// <seealso cref="CreateMutex"/>
     [LibraryImport(SDLLibrary, EntryPoint = "SDL_DestroyMutex"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     public static partial void DestroyMutex(IntPtr mutex);
-    
-    
+
+
     /// <code>extern SDL_DECLSPEC SDL_RWLock * SDLCALL SDL_CreateRWLock(void);</code>
     /// <summary>
     /// <para>Create a new read/write lock.</para>
@@ -155,8 +155,8 @@ public static partial class SDL
     /// <seealso cref="UnlockRWLock"/>
     [LibraryImport(SDLLibrary, EntryPoint = "SDL_CreateRWLock"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     public static partial IntPtr CreateRWLock();
-    
-    
+
+
     /// <code>extern SDL_DECLSPEC void SDLCALL SDL_LockRWLockForReading(SDL_RWLock *rwlock) SDL_ACQUIRE_SHARED(rwlock);</code>
     /// <summary>
     /// <para>Lock the read/write lock for _read only_ operations.</para>
@@ -187,8 +187,8 @@ public static partial class SDL
     /// <seealso cref="UnlockRWLock"/>
     [LibraryImport(SDLLibrary, EntryPoint = "SDL_LockRWLockForReading"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     public static partial void LockRWLockForReading(IntPtr rwlock);
-    
-    
+
+
     /// <code>extern SDL_DECLSPEC void SDLCALL SDL_LockRWLockForWriting(SDL_RWLock *rwlock) SDL_ACQUIRE(rwlock);</code>
     /// <summary>
     /// <para>Lock the read/write lock for _write_ operations.</para>
@@ -214,8 +214,8 @@ public static partial class SDL
     /// <seealso cref="UnlockRWLock"/>
     [LibraryImport(SDLLibrary, EntryPoint = "SDL_LockRWLockForWriting"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     public static partial void LockRWLockForWriting(IntPtr rwlock);
-    
-    
+
+
     /// <code>extern SDL_DECLSPEC bool SDLCALL SDL_TryLockRWLockForReading(SDL_RWLock *rwlock) SDL_TRY_ACQUIRE_SHARED(0, rwlock);</code>
     /// <summary>
     /// <para>Try to lock a read/write lock _for reading_ without blocking.</para>
@@ -236,8 +236,8 @@ public static partial class SDL
     [LibraryImport(SDLLibrary, EntryPoint = "SDL_TryLockRWLockForReading"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     [return: MarshalAs(UnmanagedType.I1)]
     public static partial bool TryLockRWLockForReading(IntPtr rwlock);
-    
-    
+
+
     /// <code>extern SDL_DECLSPEC bool SDLCALL SDL_TryLockRWLockForWriting(SDL_RWLock *rwlock) SDL_TRY_ACQUIRE(0, rwlock);</code>
     /// <summary>
     /// <para>Try to lock a read/write lock _for writing_ without blocking.</para>
@@ -262,8 +262,8 @@ public static partial class SDL
     [LibraryImport(SDLLibrary, EntryPoint = "SDL_TryLockRWLockForWriting"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     [return: MarshalAs(UnmanagedType.I1)]
     public static partial bool TryLockRWLockForWriting(IntPtr rwlock);
-    
-    
+
+
     /// <code>extern SDL_DECLSPEC void SDLCALL SDL_UnlockRWLock(SDL_RWLock *rwlock) SDL_RELEASE_GENERIC(rwlock);</code>
     /// <summary>
     /// <para>Unlock the read/write lock.</para>
@@ -284,8 +284,8 @@ public static partial class SDL
     /// <seealso cref="TryLockRWLockForWriting"/>
     [LibraryImport(SDLLibrary, EntryPoint = "SDL_UnlockRWLock"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     public static partial void UnlockRWLock(IntPtr rwlock);
-    
-    
+
+
     /// <code>extern SDL_DECLSPEC void SDLCALL SDL_DestroyRWLock(SDL_RWLock *rwlock);</code>
     /// <summary>
     /// <para>Destroy a read/write lock created with <see cref="CreateRWLock"/>.</para>
@@ -300,8 +300,8 @@ public static partial class SDL
     /// <seealso cref="CreateRWLock"/>
     [LibraryImport(SDLLibrary, EntryPoint = "SDL_DestroyRWLock"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     public static partial void DestroyRWLock(IntPtr rwlock);
-    
-    
+
+
     /// <code>extern SDL_DECLSPEC SDL_Semaphore * SDLCALL SDL_CreateSemaphore(Uint32 initial_value);</code>
     /// <summary>
     /// <para>Create a semaphore.</para>
@@ -323,8 +323,8 @@ public static partial class SDL
     /// <seealso cref="WaitSemaphoreTimeout"/>
     [LibraryImport(SDLLibrary, EntryPoint = "SDL_CreateSemaphore"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     public static partial IntPtr CreateSemaphore(uint initialValue);
-    
-    
+
+
     /// <code>extern SDL_DECLSPEC void SDLCALL SDL_DestroySemaphore(SDL_Semaphore *sem);</code>
     /// <summary>
     /// <para>Destroy a semaphore.</para>
@@ -336,8 +336,8 @@ public static partial class SDL
     /// <seealso cref="CreateSemaphore"/>
     [LibraryImport(SDLLibrary, EntryPoint = "SDL_DestroySemaphore"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     public static partial void DestroySemaphore(IntPtr sem);
-    
-    
+
+
     /// <code>extern SDL_DECLSPEC void SDLCALL SDL_WaitSemaphore(SDL_Semaphore *sem);</code>
     /// <summary>
     /// <para>Wait until a semaphore has a positive value and then decrements it.</para>
@@ -354,8 +354,8 @@ public static partial class SDL
     /// <seealso cref="WaitSemaphoreTimeout"/>
     [LibraryImport(SDLLibrary, EntryPoint = "SDL_WaitSemaphore"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     public static partial void WaitSemaphore(IntPtr sem);
-    
-    
+
+
     /// <code>extern SDL_DECLSPEC bool SDLCALL SDL_TryWaitSemaphore(SDL_Semaphore *sem);</code>
     /// <summary>
     /// <para>See if a semaphore has a positive value and decrement it if it does.</para>
@@ -373,8 +373,8 @@ public static partial class SDL
     [LibraryImport(SDLLibrary, EntryPoint = "SDL_TryWaitSemaphore"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     [return: MarshalAs(UnmanagedType.I1)]
     public static partial bool TryWaitSemaphore(IntPtr sem);
-    
-    
+
+
     /// <code>extern SDL_DECLSPEC bool SDLCALL SDL_WaitSemaphoreTimeout(SDL_Semaphore *sem, Sint32 timeoutMS);</code>
     /// <summary>
     /// <para>Wait until a semaphore has a positive value and then decrements it.</para>
@@ -393,8 +393,8 @@ public static partial class SDL
     [LibraryImport(SDLLibrary, EntryPoint = "SDL_WaitSemaphoreTimeout"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     [return: MarshalAs(UnmanagedType.I1)]
     public static partial bool WaitSemaphoreTimeout(IntPtr sem, int timeoutMS);
-    
-    
+
+
     /// <code>extern SDL_DECLSPEC void SDLCALL SDL_SignalSemaphore(SDL_Semaphore *sem);</code>
     /// <summary>
     /// Atomically increment a semaphore's value and wake waiting threads.
@@ -406,8 +406,8 @@ public static partial class SDL
     /// <seealso cref="WaitSemaphoreTimeout"/>
     [LibraryImport(SDLLibrary, EntryPoint = "SDL_SignalSemaphore"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     public static partial void SignalSemaphore(IntPtr sem);
-    
-    
+
+
     /// <code>extern SDL_DECLSPEC Uint32 SDLCALL SDL_GetSemaphoreValue(SDL_Semaphore *sem);</code>
     /// <summary>
     /// Get the current value of a semaphore.
@@ -417,8 +417,8 @@ public static partial class SDL
     /// <since>This function is available since SDL 3.2.0</since>
     [LibraryImport(SDLLibrary, EntryPoint = "SDL_GetSemaphoreValue"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     public static partial uint GetSemaphoreValue(IntPtr sem);
-    
-    
+
+
     /// <code>extern SDL_DECLSPEC SDL_Condition * SDLCALL SDL_CreateCondition(void);</code>
     /// <summary>
     /// Create a condition variable.
@@ -433,8 +433,8 @@ public static partial class SDL
     /// <seealso cref="DestroyCondition"/>
     [LibraryImport(SDLLibrary, EntryPoint = "SDL_CreateCondition"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     public static partial IntPtr CreateCondition();
-    
-    
+
+
     /// <code>extern SDL_DECLSPEC void SDLCALL SDL_DestroyCondition(SDL_Condition *cond);</code>
     /// <summary>
     /// <para>Destroy a condition variable.</para>
@@ -444,8 +444,8 @@ public static partial class SDL
     /// <seealso cref="CreateCondition"/>
     [LibraryImport(SDLLibrary, EntryPoint = "SDL_DestroyCondition"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     public static partial void DestroyCondition(IntPtr cond);
-    
-    
+
+
     /// <code>extern SDL_DECLSPEC void SDLCALL SDL_SignalCondition(SDL_Condition *cond);</code>
     /// <summary>
     /// Restart one of the threads that are waiting on the condition variable.
@@ -458,8 +458,8 @@ public static partial class SDL
     /// <seealso cref="WaitConditionTimeout"/>
     [LibraryImport(SDLLibrary, EntryPoint = "SDL_SignalCondition"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     public static partial void SignalCondition(IntPtr cond);
-    
-    
+
+
     /// <code>extern SDL_DECLSPEC void SDLCALL SDL_BroadcastCondition(SDL_Condition *cond);</code>
     /// <summary>
     /// Restart all threads that are waiting on the condition variable.
@@ -472,8 +472,8 @@ public static partial class SDL
     /// <seealso cref="WaitConditionTimeout"/>
     [LibraryImport(SDLLibrary, EntryPoint = "SDL_BroadcastCondition"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     public static partial void BroadcastCondition(IntPtr cond);
-    
-    
+
+
     /// <code>extern SDL_DECLSPEC void SDLCALL SDL_WaitCondition(SDL_Condition *cond, SDL_Mutex *mutex);</code>
     /// <summary>
     /// <para>Wait until a condition variable is signaled.</para>
@@ -495,8 +495,8 @@ public static partial class SDL
     /// <seealso cref="WaitConditionTimeout"/>
     [LibraryImport(SDLLibrary, EntryPoint = "SDL_WaitCondition"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     public static partial void WaitCondition(IntPtr cond, IntPtr mutex);
-    
-    
+
+
     /// <code>extern SDL_DECLSPEC bool SDLCALL SDL_WaitConditionTimeout(SDL_Condition *cond, SDL_Mutex *mutex, Sint32 timeoutMS);</code>
     /// <summary>
     /// <para>Wait until a condition variable is signaled or a certain time has passed.</para>
@@ -523,8 +523,8 @@ public static partial class SDL
     [LibraryImport(SDLLibrary, EntryPoint = "SDL_WaitConditionTimeout"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     [return: MarshalAs(UnmanagedType.I1)]
     public static partial bool WaitConditionTimeout(IntPtr cond, IntPtr mutex, int timeoutMS);
-    
-    
+
+
     /// <code>extern SDL_DECLSPEC bool SDLCALL SDL_ShouldInit(SDL_InitState *state);</code>
     /// <summary>
     /// <para>Return whether initialization should be done.</para>
@@ -544,8 +544,8 @@ public static partial class SDL
     [LibraryImport(SDLLibrary, EntryPoint = "SDL_ShouldInit"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     [return: MarshalAs(UnmanagedType.I1)]
     public static partial bool ShouldInit(ref InitState state);
-    
-    
+
+
     /// <code>extern SDL_DECLSPEC bool SDLCALL SDL_ShouldQuit(SDL_InitState *state);</code>
     /// <summary>
     /// <para>Return whether cleanup should be done.</para>
@@ -563,8 +563,8 @@ public static partial class SDL
     [LibraryImport(SDLLibrary, EntryPoint = "SDL_ShouldQuit"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     [return: MarshalAs(UnmanagedType.I1)]
     public static partial bool ShouldQuit(ref InitState state);
-    
-    
+
+
     /// <code>extern SDL_DECLSPEC void SDLCALL SDL_SetInitialized(SDL_InitState *state, bool initialized);</code>
     /// <summary>
     /// <para>Finish an initialization state transition.</para>

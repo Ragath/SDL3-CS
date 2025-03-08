@@ -35,12 +35,12 @@ public static partial class SDL
         /// A read operation.
         /// </summary>
         Read,
-        
+
         /// <summary>
         /// A write operation.
         /// </summary>
         Write,
-        
+
         /// <summary>
         /// A close operation.
         /// </summary>

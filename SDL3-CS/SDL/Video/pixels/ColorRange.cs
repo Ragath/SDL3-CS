@@ -33,12 +33,12 @@ public static partial class SDL
     public enum ColorRange
     {
         Unknown = 0,
-        
+
         /// <summary>
         /// Narrow range, e.g. 16-235 for 8-bit RGB and luma, and 16-240 for 8-bit chroma
         /// </summary>
         Limited = 1,
-        
+
         /// <summary>
         /// Full range, e.g. 0-255 for 8-bit RGB and luma, and 1-255 for 8-bit chroma
         /// </summary>

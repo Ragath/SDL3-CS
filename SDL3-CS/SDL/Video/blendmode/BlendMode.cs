@@ -38,36 +38,36 @@ public static partial class SDL
         /// no blending: dstRGBA = srcRGBA
         /// </summary>
         None = 0x00000000u,
-        
+
         /// <summary>
         /// alpha blending: dstRGB = (srcRGB * srcA) + (dstRGB * (1-srcA)), dstA = srcA + (dstA * (1-srcA))
         /// </summary>
         Blend = 0x00000001u,
-        
+
         /// <summary>
         /// pre-multiplied alpha blending: dstRGBA = srcRGBA + (dstRGBA * (1-srcA))
         /// </summary>
         BlendPremultiplied = 0x00000010u,
-        
+
         /// <summary>
         /// additive blending: dstRGB = (srcRGB * srcA) + dstRGB, dstA = dstA
         /// </summary>
-        Add =                   0x00000002u,
-        
+        Add = 0x00000002u,
+
         /// <summary>
         /// pre-multiplied additive blending: dstRGB = srcRGB + dstRGB, dstA = dstA
         /// </summary>
-        AddPremultiplied =     0x00000020u,
-        
+        AddPremultiplied = 0x00000020u,
+
         /// <summary>
         /// color modulate: dstRGB = srcRGB * dstRGB, dstA = dstA
         /// </summary>
-        Mod =                   0x00000004u,
-        
+        Mod = 0x00000004u,
+
         /// <summary>
         /// color multiply: dstRGB = (srcRGB * dstRGB) + (dstRGB * (1-srcA)), dstA = dstA
         /// </summary>
-        Mul =                   0x00000008u,
-        Invalid =               0x7FFFFFFFu,
+        Mul = 0x00000008u,
+        Invalid = 0x7FFFFFFFu,
     }
 }

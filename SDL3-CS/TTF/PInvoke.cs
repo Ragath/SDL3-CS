@@ -37,8 +37,8 @@ public static partial class TTF
     /// <since>This function is available since SDL_ttf 3.0.0.</since>
     [LibraryImport(FontLibrary, EntryPoint = "TTF_Version"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     public static partial int Version();
-    
-    
+
+
     /// <code>extern SDL_DECLSPEC void SDLCALL TTF_GetFreeTypeVersion(int *major, int *minor, int *patch);</code>
     /// <summary>
     /// <para>Query the version of the FreeType library in use.</para>
@@ -52,8 +52,8 @@ public static partial class TTF
     /// <seealso cref="Init"/>
     [LibraryImport(FontLibrary, EntryPoint = "TTF_GetFreeTypeVersion"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     public static partial void GetFreeTypeVersion(out int major, out int minor, out int patch);
-    
-    
+
+
     /// <code>extern SDL_DECLSPEC void SDLCALL TTF_GetHarfBuzzVersion(int *major, int *minor, int *patch);</code>
     /// <summary>
     /// <para>Query the version of the HarfBuzz library in use.</para>
@@ -66,8 +66,8 @@ public static partial class TTF
     /// <since>This function is available since SDL_ttf 3.0.0.</since>
     [LibraryImport(FontLibrary, EntryPoint = "TTF_GetHarfBuzzVersion"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     public static partial void GetHarfBuzzVersion(out int major, out int minor, out int patch);
-    
-    
+
+
     /// <code>extern SDL_DECLSPEC bool SDLCALL TTF_Init(void);</code>
     /// <summary>
     /// <para>Initialize SDL_ttf.</para>
@@ -83,8 +83,8 @@ public static partial class TTF
     [LibraryImport(FontLibrary, EntryPoint = "TTF_Init"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     [return: MarshalAs(UnmanagedType.I1)]
     public static partial bool Init();
-    
-    
+
+
     /// <code>extern SDL_DECLSPEC TTF_Font * SDLCALL TTF_OpenFont(const char *file, float ptsize);</code>
     /// <summary>
     /// <para>Create a font from a file, using a specified point size.</para>
@@ -102,8 +102,8 @@ public static partial class TTF
     /// <seealso cref="CloseFont"/>
     [LibraryImport(FontLibrary, EntryPoint = "TTF_OpenFont"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     public static partial IntPtr OpenFont([MarshalAs(UnmanagedType.LPUTF8Str)] string file, float ptsize);
-    
-    
+
+
     /// <code>extern SDL_DECLSPEC TTF_Font * SDLCALL TTF_OpenFontIO(SDL_IOStream *src, bool closeio, float ptsize);</code>
     /// <summary>
     /// <para>Create a font from an SDL_IOStream, using a specified point size.</para>
@@ -125,8 +125,8 @@ public static partial class TTF
     /// <seealso cref="CloseFont"/>
     [LibraryImport(FontLibrary, EntryPoint = "TTF_OpenFontIO"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     public static partial IntPtr OpenFontIO(IntPtr src, [MarshalAs(UnmanagedType.I1)] bool closeio, float ptsize);
-    
-    
+
+
     /// <code>extern SDL_DECLSPEC TTF_Font * SDLCALL TTF_OpenFontWithProperties(SDL_PropertiesID props);</code>
     /// <summary>
     /// <para>Create a font with the specified properties.</para>
@@ -169,8 +169,8 @@ public static partial class TTF
     /// <seealso cref="CloseFont"/>
     [LibraryImport(FontLibrary, EntryPoint = "TTF_OpenFontWithProperties"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     public static partial IntPtr OpenFontWithProperties(uint props);
-    
-    
+
+
     /// <code>extern SDL_DECLSPEC TTF_Font * SDLCALL TTF_CopyFont(TTF_Font *existing_font);</code>
     /// <summary>
     /// <para>Create a copy of an existing font.</para>
@@ -187,8 +187,8 @@ public static partial class TTF
     /// <seealso cref="CloseFont"/>
     [LibraryImport(FontLibrary, EntryPoint = "TTF_CopyFont"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     public static partial IntPtr CopyFont(IntPtr existingFont);
-    
-    
+
+
     /// <code>extern SDL_DECLSPEC SDL_PropertiesID SDLCALL TTF_GetFontProperties(TTF_Font *font);</code>
     /// <summary>
     /// <para>Get the properties associated with a font.</para>
@@ -211,8 +211,8 @@ public static partial class TTF
     /// <since>This function is available since SDL_ttf 3.0.0.</since>
     [LibraryImport(FontLibrary, EntryPoint = "TTF_GetFontProperties"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     public static partial uint GetFontProperties(IntPtr font);
-    
-    
+
+
     /// <code>extern SDL_DECLSPEC Uint32 SDLCALL TTF_GetFontGeneration(TTF_Font *font);</code>
     /// <summary>
     /// <para>Get the font generation.</para>
@@ -227,8 +227,8 @@ public static partial class TTF
     /// <since>This function is available since SDL_ttf 3.0.0.</since>
     [LibraryImport(FontLibrary, EntryPoint = "TTF_GetFontGeneration"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     public static partial uint GetFontGeneration(IntPtr font);
-    
-    
+
+
     /// <code>extern SDL_DECLSPEC bool SDLCALL TTF_AddFallbackFont(TTF_Font *font, TTF_Font *fallback);</code>
     /// <summary>
     /// <para>Add a fallback font.</para>
@@ -249,8 +249,8 @@ public static partial class TTF
     [LibraryImport(FontLibrary, EntryPoint = "TTF_AddFallbackFont"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     [return: MarshalAs(UnmanagedType.I1)]
     public static partial bool AddFallbackFont(IntPtr font, IntPtr fallback);
-    
-    
+
+
     /// <code>extern SDL_DECLSPEC void SDLCALL TTF_RemoveFallbackFont(TTF_Font *font, TTF_Font *fallback);</code>
     /// <summary>
     /// <para>Remove a fallback font.</para>
@@ -265,8 +265,8 @@ public static partial class TTF
     /// <seealso cref="ClearFallbackFonts"/>
     [LibraryImport(FontLibrary, EntryPoint = "TTF_RemoveFallbackFont"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     public static partial void RemoveFallbackFont(IntPtr font, IntPtr fallback);
-    
-    
+
+
     /// <code>extern SDL_DECLSPEC void SDLCALL TTF_ClearFallbackFonts(TTF_Font *font);</code>
     /// <summary>
     /// <para>Remove all fallback fonts.</para>
@@ -280,8 +280,8 @@ public static partial class TTF
     /// <seealso cref="RemoveFallbackFont"/>
     [LibraryImport(FontLibrary, EntryPoint = "TTF_ClearFallbackFonts"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     public static partial void ClearFallbackFonts(IntPtr font);
-    
-    
+
+
     /// <code>extern SDL_DECLSPEC bool SDLCALL TTF_SetFontSize(TTF_Font *font, float ptsize);</code>
     /// <summary>
     /// <para>Set a font's size dynamically.</para>
@@ -299,8 +299,8 @@ public static partial class TTF
     [LibraryImport(FontLibrary, EntryPoint = "TTF_SetFontSize"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     [return: MarshalAs(UnmanagedType.I1)]
     public static partial bool SetFontSize(IntPtr font, float ptsize);
-    
-    
+
+
     /// <code>extern SDL_DECLSPEC bool SDLCALL TTF_SetFontSizeDPI(TTF_Font *font, float ptsize, int hdpi, int vdpi);</code>
     /// <summary>
     /// <para>Set font size dynamically with target resolutions, in dots per inch.</para>
@@ -320,8 +320,8 @@ public static partial class TTF
     [LibraryImport(FontLibrary, EntryPoint = "TTF_SetFontSizeDPI"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     [return: MarshalAs(UnmanagedType.I1)]
     public static partial bool SetFontSizeDPI(IntPtr font, float ptsize, int hdpi, int vdpi);
-    
-    
+
+
     /// <code>extern SDL_DECLSPEC float SDLCALL TTF_GetFontSize(TTF_Font *font);</code>
     /// <summary>
     /// Get the size of a font.
@@ -336,8 +336,8 @@ public static partial class TTF
     /// <seealso cref="SetFontSizeDPI"/>
     [LibraryImport(FontLibrary, EntryPoint = "TTF_GetFontSize"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     public static partial float GetFontSize(IntPtr font);
-    
-    
+
+
     /// <code>extern SDL_DECLSPEC bool SDLCALL TTF_GetFontDPI(TTF_Font *font, int *hdpi, int *vdpi);</code>
     /// <summary>
     /// <para>Get font target resolutions, in dots per inch.</para>
@@ -354,8 +354,8 @@ public static partial class TTF
     [LibraryImport(FontLibrary, EntryPoint = "TTF_GetFontDPI"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     [return: MarshalAs(UnmanagedType.I1)]
     public static partial bool GetFontDPI(IntPtr font, out int hdpi, out int vdpi);
-    
-    
+
+
     /// <code>extern SDL_DECLSPEC void SDLCALL TTF_SetFontStyle(TTF_Font *font, TTF_FontStyleFlags style);</code>
     /// <summary>
     /// <para>Set a font's current style.</para>
@@ -378,8 +378,8 @@ public static partial class TTF
     /// <seealso cref="GetFontStyle"/>
     [LibraryImport(FontLibrary, EntryPoint = "TTF_SetFontStyle"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     public static partial void SetFontStyle(IntPtr font, FontStyleFlags style);
-    
-    
+
+
     /// <code>extern SDL_DECLSPEC TTF_FontStyleFlags SDLCALL TTF_GetFontStyle(const TTF_Font *font);</code>
     /// <summary>
     /// <para>Query a font's current style.</para>
@@ -399,8 +399,8 @@ public static partial class TTF
     /// <seealso cref="SetFontStyle"/>
     [LibraryImport(FontLibrary, EntryPoint = "TTF_GetFontStyle"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     public static partial FontStyleFlags GetFontStyle(IntPtr font);
-    
-    
+
+
     /// <code>extern SDL_DECLSPEC bool SDLCALL TTF_SetFontOutline(TTF_Font *font, int outline);</code>
     /// <summary>
     /// <para>Set a font's current outline.</para>
@@ -421,8 +421,8 @@ public static partial class TTF
     [LibraryImport(FontLibrary, EntryPoint = "TTF_SetFontOutline"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     [return: MarshalAs(UnmanagedType.I1)]
     public static partial bool SetFontOutline(IntPtr font, int outline);
-    
-    
+
+
     /// <code>extern SDL_DECLSPEC int SDLCALL TTF_GetFontOutline(const TTF_Font *font);</code>
     /// <summary>
     /// <para>Query a font's current outline.</para>
@@ -434,8 +434,8 @@ public static partial class TTF
     /// <seealso cref="SetFontOutline"/>
     [LibraryImport(FontLibrary, EntryPoint = "TTF_GetFontOutline"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     public static partial int GetFontOutline(IntPtr font);
-    
-    
+
+
     /// <code>extern SDL_DECLSPEC void SDLCALL TTF_SetFontHinting(TTF_Font *font, TTF_HintingFlags hinting);</code>
     /// <summary>
     /// <para>Set a font's current hinter setting.</para>
@@ -458,8 +458,8 @@ public static partial class TTF
     /// <seealso cref="GetFontHinting"/>
     [LibraryImport(FontLibrary, EntryPoint = "TTF_SetFontHinting"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     public static partial void SetFontHinting(IntPtr font, HintingFlags hinting);
-    
-    
+
+
     /// <code>extern SDL_DECLSPEC int SDLCALL TTF_GetNumFontFaces(const TTF_Font *font);</code>
     /// <summary>
     /// <para>Query the number of faces of a font.</para>
@@ -470,8 +470,8 @@ public static partial class TTF
     /// <since>This function is available since SDL_ttf 3.0.0.</since>
     [LibraryImport(FontLibrary, EntryPoint = "TTF_GetNumFontFaces"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     public static partial int GetNumFontFaces(IntPtr font);
-    
-    
+
+
     /// <code>extern SDL_DECLSPEC TTF_HintingFlags SDLCALL TTF_GetFontHinting(const TTF_Font *font);</code>
     /// <summary>
     /// <para>Query a font's current FreeType hinter setting.</para>
@@ -491,8 +491,8 @@ public static partial class TTF
     /// <seealso cref="SetFontHinting"/>
     [LibraryImport(FontLibrary, EntryPoint = "TTF_GetFontHinting"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     public static partial HintingFlags GetFontHinting(IntPtr font);
-    
-    
+
+
     /// <code>extern SDL_DECLSPEC bool TTF_SetFontSDF(TTF_Font *font, bool enabled);</code>
     /// <summary>
     /// <para>Enable Signed Distance Field rendering for a font.</para>
@@ -514,8 +514,8 @@ public static partial class TTF
     [LibraryImport(FontLibrary, EntryPoint = "TTF_SetFontSDF"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     [return: MarshalAs(UnmanagedType.I1)]
     public static partial bool SetFontSDF(IntPtr font, [MarshalAs(UnmanagedType.I1)] bool enabled);
-    
-    
+
+
     /// <code>extern SDL_DECLSPEC bool TTF_GetFontSDF(const TTF_Font *font);</code>
     /// <summary>
     /// Query whether Signed Distance Field rendering is enabled for a font.
@@ -528,8 +528,8 @@ public static partial class TTF
     [LibraryImport(FontLibrary, EntryPoint = "TTF_GetFontSDF"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     [return: MarshalAs(UnmanagedType.I1)]
     public static partial bool GetFontSDF(IntPtr font);
-    
-    
+
+
     /// <code>extern SDL_DECLSPEC void SDLCALL TTF_SetFontWrapAlignment(TTF_Font *font, TTF_HorizontalAlignment align);</code>
     /// <summary>
     /// <para>Set a font's current wrap alignment option.</para>
@@ -543,8 +543,8 @@ public static partial class TTF
     /// <seealso cref="GetFontWrapAlignment"/>
     [LibraryImport(FontLibrary, EntryPoint = "TTF_SetFontWrapAlignment"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     public static partial void SetFontWrapAlignment(IntPtr font, HorizontalAlignment align);
-    
-    
+
+
     /// <code>extern SDL_DECLSPEC TTF_HorizontalAlignment SDLCALL TTF_GetFontWrapAlignment(const TTF_Font *font);</code>
     /// <summary>
     /// Query a font's current wrap alignment option.
@@ -556,8 +556,8 @@ public static partial class TTF
     /// <seealso cref="SetFontWrapAlignment"/>
     [LibraryImport(FontLibrary, EntryPoint = "TTF_GetFontWrapAlignment"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     public static partial HorizontalAlignment GetFontWrapAlignment(IntPtr font);
-    
-    
+
+
     /// <code>extern SDL_DECLSPEC int SDLCALL TTF_GetFontHeight(const TTF_Font *font);</code>
     /// <summary>
     /// <para>Query the total height of a font.</para>
@@ -569,8 +569,8 @@ public static partial class TTF
     /// <since>This function is available since SDL_ttf 3.0.0.</since>
     [LibraryImport(FontLibrary, EntryPoint = "TTF_GetFontHeight"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     public static partial int GetFontHeight(IntPtr font);
-    
-    
+
+
     /// <code>extern SDL_DECLSPEC int SDLCALL TTF_GetFontAscent(const TTF_Font *font);</code>
     /// <summary>
     /// <para>Query the offset from the baseline to the top of a font.</para>
@@ -582,8 +582,8 @@ public static partial class TTF
     /// <since>This function is available since SDL_ttf 3.0.0.</since>
     [LibraryImport(FontLibrary, EntryPoint = "TTF_GetFontAscent"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     public static partial int GetFontAscent(IntPtr font);
-    
-    
+
+
     /// <code>extern SDL_DECLSPEC int SDLCALL TTF_GetFontDescent(const TTF_Font *font);</code>
     /// <summary>
     /// <para>Query the offset from the baseline to the bottom of a font.</para>
@@ -595,8 +595,8 @@ public static partial class TTF
     /// <since>This function is available since SDL_ttf 3.0.0.</since>
     [LibraryImport(FontLibrary, EntryPoint = "TTF_GetFontDescent"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     public static partial int GetFontDescent(IntPtr font);
-    
-    
+
+
     /// <code>extern SDL_DECLSPEC void SDLCALL TTF_SetFontLineSkip(TTF_Font *font, int lineskip);</code>
     /// <summary>
     /// <para>Set the spacing between lines of text for a font.</para>
@@ -610,8 +610,8 @@ public static partial class TTF
     /// <seealso cref="GetFontLineSkip"/>
     [LibraryImport(FontLibrary, EntryPoint = "TTF_SetFontLineSkip"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     public static partial void SetFontLineSkip(IntPtr font, int lineskip);
-    
-    
+
+
     /// <code>extern SDL_DECLSPEC int SDLCALL TTF_GetFontLineSkip(const TTF_Font *font);</code>
     /// <summary>
     /// Query the spacing between lines of text for a font.
@@ -623,8 +623,8 @@ public static partial class TTF
     /// <seealso cref="SetFontLineSkip"/>
     [LibraryImport(FontLibrary, EntryPoint = "TTF_GetFontLineSkip"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     public static partial int GetFontLineSkip(IntPtr font);
-    
-    
+
+
     /// <code>extern SDL_DECLSPEC void SDLCALL TTF_SetFontKerning(TTF_Font *font, bool enabled);</code>
     /// <summary>
     /// <para>Set if kerning is enabled for a font.</para>
@@ -641,8 +641,8 @@ public static partial class TTF
     /// <since>This function is available since SDL_ttf 3.0.0.</since>
     [LibraryImport(FontLibrary, EntryPoint = "TTF_SetFontKerning"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     public static partial void SetFontKerning(IntPtr font, [MarshalAs(UnmanagedType.I1)] bool enabled);
-    
-    
+
+
     /// <code>extern SDL_DECLSPEC bool SDLCALL TTF_GetFontKerning(const TTF_Font *font);</code>
     /// <summary>
     /// Query whether or not kerning is enabled for a font.
@@ -655,8 +655,8 @@ public static partial class TTF
     [LibraryImport(FontLibrary, EntryPoint = "TTF_GetFontKerning"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     [return: MarshalAs(UnmanagedType.I1)]
     public static partial bool GetFontKerning(IntPtr font);
-    
-    
+
+
     /// <code>extern SDL_DECLSPEC bool SDLCALL TTF_FontIsFixedWidth(const TTF_Font *font);</code>
     /// <summary>
     /// <para>Query whether a font is fixed-width.</para>
@@ -673,8 +673,8 @@ public static partial class TTF
     [LibraryImport(FontLibrary, EntryPoint = "TTF_FontIsFixedWidth"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     [return: MarshalAs(UnmanagedType.I1)]
     public static partial bool FontIsFixedWidth(IntPtr font);
-    
-    
+
+
     /// <code>extern SDL_DECLSPEC bool TTF_FontIsScalable(const TTF_Font *font);</code>
     /// <summary>
     /// <para>Query whether a font is scalable or not.</para>
@@ -688,8 +688,8 @@ public static partial class TTF
     [LibraryImport(FontLibrary, EntryPoint = "TTF_FontIsScalable"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     [return: MarshalAs(UnmanagedType.I1)]
     public static partial bool FontIsScalable(IntPtr font);
-    
-    
+
+
     [LibraryImport(FontLibrary, EntryPoint = "TTF_GetFontFamilyName"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial IntPtr TTF_GetFontFamilyName(IntPtr font);
     /// <code>extern SDL_DECLSPEC const char * SDLCALL TTF_GetFontFamilyName(const TTF_Font *font);</code>
@@ -706,11 +706,11 @@ public static partial class TTF
     /// <since>This function is available since SDL_ttf 3.0.0.</since>
     public static string GetFontFamilyName(IntPtr font)
     {
-        var value = TTF_GetFontFamilyName(font); 
+        var value = TTF_GetFontFamilyName(font);
         return value == IntPtr.Zero ? "" : Marshal.PtrToStringUTF8(value)!;
     }
-    
-    
+
+
     [LibraryImport(FontLibrary, EntryPoint = "TTF_GetFontStyleName"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial IntPtr TTF_GetFontStyleName(IntPtr font);
     /// <code>extern SDL_DECLSPEC const char * SDLCALL TTF_GetFontStyleName(const TTF_Font *font);</code>
@@ -727,11 +727,11 @@ public static partial class TTF
     /// <since>This function is available since SDL_ttf 3.0.0.</since>
     public static string GetFontStyleName(IntPtr font)
     {
-        var value = TTF_GetFontStyleName(font); 
+        var value = TTF_GetFontStyleName(font);
         return value == IntPtr.Zero ? "" : Marshal.PtrToStringUTF8(value)!;
     }
-    
-    
+
+
     /// <code>extern SDL_DECLSPEC bool SDLCALL TTF_SetFontDirection(TTF_Font *font, TTF_Direction direction);</code>
     /// <summary>
     /// <para>Set the direction to be used for text shaping by a font.</para>
@@ -749,8 +749,8 @@ public static partial class TTF
     [LibraryImport(FontLibrary, EntryPoint = "TTF_SetFontDirection"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     [return: MarshalAs(UnmanagedType.I1)]
     public static partial bool SetFontDirection(IntPtr font, Direction direction);
-    
-    
+
+
     /// <code>extern SDL_DECLSPEC TTF_Direction SDLCALL TTF_GetFontDirection(TTF_Font *font);</code>
     /// <summary>
     /// <para>Get the direction to be used for text shaping by a font.</para>
@@ -763,8 +763,8 @@ public static partial class TTF
     /// <since>This function is available since SDL_ttf 3.0.0.</since>
     [LibraryImport(FontLibrary, EntryPoint = "TTF_GetFontDirection"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     public static partial Direction GetFontDirection(IntPtr font);
-    
-    
+
+
     /// <code>extern SDL_DECLSPEC Uint32 SDLCALL TTF_StringToTag(const char *string);</code>
     /// <summary>
     /// Convert from a 4 character string to a 32-bit tag.
@@ -776,8 +776,8 @@ public static partial class TTF
     /// <seealso cref="TagToString"/>
     [LibraryImport(FontLibrary, EntryPoint = "TTF_StringToTag"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     public static partial uint StringToTag([MarshalAs(UnmanagedType.LPUTF8Str)] string @string);
-    
-    
+
+
     /// <code>extern SDL_DECLSPEC void SDLCALL TTF_TagToString(Uint32 tag, char *string, size_t size);</code>
     /// <summary>
     /// Convert from a 32-bit tag to a 4 character string.
@@ -792,8 +792,8 @@ public static partial class TTF
     /// <seealso cref="StringToTag"/>
     [LibraryImport(FontLibrary, EntryPoint = "TTF_TagToString"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     public static partial void TagToString(uint tag, [MarshalAs(UnmanagedType.LPUTF8Str)] out string @string, ulong size);
-    
-    
+
+
     /// <code>extern SDL_DECLSPEC bool SDLCALL TTF_SetFontScript(TTF_Font *font, Uint32 script);</code>
     /// <summary>
     /// <para>Set the script to be used for text shaping by a font.</para>
@@ -812,8 +812,8 @@ public static partial class TTF
     [LibraryImport(FontLibrary, EntryPoint = "TTF_SetFontScript"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     [return: MarshalAs(UnmanagedType.I1)]
     public static partial bool SetFontScript(IntPtr font, uint script);
-    
-    
+
+
     /// <code>extern SDL_DECLSPEC Uint32 SDLCALL TTF_GetFontScript(TTF_Font *font);</code>
     /// <summary>
     /// <para>Get the script used for text shaping a font.</para>
@@ -828,8 +828,8 @@ public static partial class TTF
     /// <seealso cref="TagToString"/>
     [LibraryImport(FontLibrary, EntryPoint = "TTF_GetFontScript"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     public static partial uint GetFontScript(IntPtr font);
-    
-    
+
+
     /// <code>extern SDL_DECLSPEC Uint32 SDLCALL TTF_GetGlyphScript(Uint32 ch);</code>
     /// <summary>
     /// <para>Get the script used by a 32-bit codepoint.</para>
@@ -845,8 +845,8 @@ public static partial class TTF
     /// <seealso cref="TagToString"/>
     [LibraryImport(FontLibrary, EntryPoint = "TTF_GetGlyphScript"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     public static partial uint GetGlyphScript(uint ch);
-    
-    
+
+
     /// <code>extern SDL_DECLSPEC bool TTF_SetFontLanguage(TTF_Font *font, const char *language_bcp47);</code>
     /// <summary>
     /// <para>Set language to be used for text shaping by a font.</para>
@@ -865,8 +865,8 @@ public static partial class TTF
     [LibraryImport(FontLibrary, EntryPoint = "TTF_SetFontLanguage"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     [return: MarshalAs(UnmanagedType.I1)]
     public static partial bool SetFontLanguage(IntPtr font, [MarshalAs(UnmanagedType.LPUTF8Str)] string? languageBcp47);
-    
-    
+
+
     /// <code>extern SDL_DECLSPEC bool SDLCALL TTF_FontHasGlyph(TTF_Font *font, Uint32 ch);</code>
     /// <summary>
     /// Check whether a glyph is provided by the font for a UNICODE codepoint.
@@ -880,8 +880,8 @@ public static partial class TTF
     [LibraryImport(FontLibrary, EntryPoint = "TTF_FontHasGlyph"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     [return: MarshalAs(UnmanagedType.I1)]
     public static partial bool FontHasGlyph(IntPtr font, uint ch);
-    
-    
+
+
     /// <code>extern SDL_DECLSPEC SDL_Surface * SDLCALL TTF_GetGlyphImage(TTF_Font *font, Uint32 ch, TTF_ImageType *image_type);</code>
     /// <summary>
     /// Get the pixel image for a UNICODE codepoint.
@@ -897,8 +897,8 @@ public static partial class TTF
     /// <since>This function is available since SDL_ttf 3.0.0.</since>
     [LibraryImport(FontLibrary, EntryPoint = "TTF_GetGlyphImage"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     public static partial IntPtr GetGlyphImage(IntPtr font, uint ch, IntPtr imageType);
-    
-    
+
+
     /// <code>extern SDL_DECLSPEC SDL_Surface * SDLCALL TTF_GetGlyphImage(TTF_Font *font, Uint32 ch, TTF_ImageType *image_type);</code>
     /// <summary>
     /// Get the pixel image for a UNICODE codepoint.
@@ -914,8 +914,8 @@ public static partial class TTF
     /// <since>This function is available since SDL_ttf 3.0.0.</since>
     [LibraryImport(FontLibrary, EntryPoint = "TTF_GetGlyphImage"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     public static partial IntPtr GetGlyphImage(IntPtr font, uint ch, out ImageType imageType);
-    
-    
+
+
     /// <code>extern SDL_DECLSPEC SDL_Surface * SDLCALL TTF_GetGlyphImageForIndex(TTF_Font *font, Uint32 glyph_index, TTF_ImageType *image_type);</code>
     /// <summary>
     /// <para>Get the pixel image for a character index.</para>
@@ -933,8 +933,8 @@ public static partial class TTF
     /// <since>This function is available since SDL_ttf 3.0.0.</since>
     [LibraryImport(FontLibrary, EntryPoint = "TTF_GetGlyphImageForIndex"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     public static partial IntPtr GetGlyphImageForIndex(IntPtr font, uint glyphIndex, IntPtr imageType);
-    
-    
+
+
     /// <code>extern SDL_DECLSPEC SDL_Surface * SDLCALL TTF_GetGlyphImageForIndex(TTF_Font *font, Uint32 glyph_index, TTF_ImageType *image_type);</code>
     /// <summary>
     /// <para>Get the pixel image for a character index.</para>
@@ -952,8 +952,8 @@ public static partial class TTF
     /// <since>This function is available since SDL_ttf 3.0.0.</since>
     [LibraryImport(FontLibrary, EntryPoint = "TTF_GetGlyphImageForIndex"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     public static partial IntPtr GetGlyphImageForIndex(IntPtr font, uint glyphIndex, out ImageType imageType);
-    
-    
+
+
     /// <code>extern SDL_DECLSPEC bool SDLCALL TTF_GetGlyphMetrics(TTF_Font *font, Uint32 ch, int *minx, int *maxx, int *miny, int *maxy, int *advance);</code>
     /// <summary>
     /// <para>Query the metrics (dimensions) of a font's glyph for a UNICODE codepoint.</para>
@@ -982,8 +982,8 @@ public static partial class TTF
     [LibraryImport(FontLibrary, EntryPoint = "TTF_GetGlyphMetrics"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     [return: MarshalAs(UnmanagedType.I1)]
     public static partial bool GetGlyphMetrics(IntPtr font, uint ch, out int minx, out int maxx, out int miny, out int maxy, out int advance);
-    
-    
+
+
     /// <code>extern SDL_DECLSPEC bool TTF_GetGlyphKerning(TTF_Font *font, Uint32 previous_ch, Uint32 ch, int *kerning);</code>
     /// <summary>
     /// Query the kerning size between the glyphs of two UNICODE codepoints.
@@ -1001,8 +1001,8 @@ public static partial class TTF
     [LibraryImport(FontLibrary, EntryPoint = "TTF_GetGlyphKerning"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     [return: MarshalAs(UnmanagedType.I1)]
     public static partial bool GetGlyphKerning(IntPtr font, uint previousCh, uint ch, out int kerning);
-    
-    
+
+
     /// <code>extern SDL_DECLSPEC bool SDLCALL TTF_GetStringSize(TTF_Font *font, const char *text, size_t length, int *w, int *h);</code>
     /// <summary>
     /// <para>Calculate the dimensions of a rendered string of UTF-8 text.</para>
@@ -1023,8 +1023,8 @@ public static partial class TTF
     [LibraryImport(FontLibrary, EntryPoint = "TTF_GetStringSize"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     [return: MarshalAs(UnmanagedType.I1)]
     public static partial bool GetStringSize(IntPtr font, [MarshalAs(UnmanagedType.LPUTF8Str)] string text, ulong length, out int w, out int h);
-    
-    
+
+
     /// <code>extern SDL_DECLSPEC bool SDLCALL TTF_GetStringSizeWrapped(TTF_Font *font, const char *text, size_t length, int wrap_width, int *w, int *h);</code>
     /// <summary>
     /// <para>Calculate the dimensions of a rendered string of UTF-8 text.</para>
@@ -1049,8 +1049,8 @@ public static partial class TTF
     [LibraryImport(FontLibrary, EntryPoint = "TTF_GetStringSizeWrapped"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     [return: MarshalAs(UnmanagedType.I1)]
     public static partial bool GetStringSizeWrapped(IntPtr font, [MarshalAs(UnmanagedType.LPUTF8Str)] string text, ulong length, int wrapWidth, out int w, out int h);
-    
-    
+
+
     /// <code>extern SDL_DECLSPEC bool SDLCALL TTF_MeasureString(TTF_Font *font, const char *text, size_t length, int max_width, int *measured_width, size_t *measured_length);</code>
     /// <summary>
     /// <para>Calculate how much of a UTF-8 string will fit in a given width.</para>
@@ -1076,8 +1076,8 @@ public static partial class TTF
     [LibraryImport(FontLibrary, EntryPoint = "TTF_MeasureString"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     [return: MarshalAs(UnmanagedType.I1)]
     public static partial bool MeasureString(IntPtr font, [MarshalAs(UnmanagedType.LPUTF8Str)] string text, ulong length, int maxWidth, out int measuredWidth, out ulong measuredLength);
-    
-    
+
+
     /// <code>extern SDL_DECLSPEC SDL_Surface * SDLCALL TTF_RenderText_Solid(TTF_Font *font, const char *text, size_t length, SDL_Color fg);</code>
     /// <summary>
     /// <para>Render UTF-8 text at fast quality to a new 8-bit surface.</para>
@@ -1108,8 +1108,8 @@ public static partial class TTF
     /// <seealso cref="RenderTextSolidWrapped"/>
     [LibraryImport(FontLibrary, EntryPoint = "TTF_RenderText_Solid"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     public static partial IntPtr RenderTextSolid(IntPtr font, [MarshalAs(UnmanagedType.LPUTF8Str)] string text, ulong length, SDL.Color fg);
-    
-    
+
+
     /// <code>extern SDL_DECLSPEC SDL_Surface * SDLCALL TTF_RenderText_Solid_Wrapped(TTF_Font *font, const char *text, size_t length, SDL_Color fg, int wrapLength);</code>
     /// <summary>
     /// <para>Render word-wrapped UTF-8 text at fast quality to a new 8-bit surface.</para>
@@ -1139,8 +1139,8 @@ public static partial class TTF
     /// <seealso cref="RenderTextSolid"/>
     [LibraryImport(FontLibrary, EntryPoint = "TTF_RenderText_Solid_Wrapped"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     public static partial IntPtr RenderTextSolidWrapped(IntPtr font, [MarshalAs(UnmanagedType.LPUTF8Str)] string text, ulong length, SDL.Color fg, int wrapLength);
-    
-    
+
+
     /// <code>extern SDL_DECLSPEC SDL_Surface * SDLCALL TTF_RenderGlyph_Solid(TTF_Font *font, Uint32 ch, SDL_Color fg);</code>
     /// <summary>
     /// <para>Render a single 32-bit glyph at fast quality to a new 8-bit surface.</para>
@@ -1164,8 +1164,8 @@ public static partial class TTF
     /// <seealso cref="RenderGlyphShaded"/>
     [LibraryImport(FontLibrary, EntryPoint = "TTF_RenderGlyph_Solid"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     public static partial IntPtr RenderGlyphSolid(IntPtr font, uint ch, SDL.Color fg);
-    
-    
+
+
     /// <code>extern SDL_DECLSPEC SDL_Surface * SDLCALL TTF_RenderText_Shaded(TTF_Font *font, const char *text, size_t length, SDL_Color fg, SDL_Color bg);</code>
     /// <summary>
     /// <para>Render UTF-8 text at high quality to a new 8-bit surface.</para>
@@ -1197,8 +1197,8 @@ public static partial class TTF
     /// <seealso cref="RenderTextSolid"/>
     [LibraryImport(FontLibrary, EntryPoint = "TTF_RenderText_Shaded"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     public static partial IntPtr RenderTextShaded(IntPtr font, [MarshalAs(UnmanagedType.LPUTF8Str)] string text, ulong length, SDL.Color fg, SDL.Color bg);
-    
-    
+
+
     /// <code>extern SDL_DECLSPEC SDL_Surface * SDLCALL TTF_RenderText_Shaded_Wrapped(TTF_Font *font, const char *text, size_t length, SDL_Color fg, SDL_Color bg, int wrap_width);</code>
     /// <summary>
     /// <para>Render word-wrapped UTF-8 text at high quality to a new 8-bit surface.</para>
@@ -1225,8 +1225,8 @@ public static partial class TTF
     /// font.</threadsafety>
     [LibraryImport(FontLibrary, EntryPoint = "TTF_RenderText_Shaded_Wrapped"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     public static partial IntPtr RenderTextShadedWrapped(IntPtr font, [MarshalAs(UnmanagedType.LPUTF8Str)] string text, ulong length, SDL.Color fg, SDL.Color bg, int wrapWidth);
-    
-    
+
+
     /// <code>extern SDL_DECLSPEC SDL_Surface * SDLCALL TTF_RenderGlyph_Shaded(TTF_Font *font, Uint32 ch, SDL_Color fg, SDL_Color bg);</code>
     /// <summary>
     /// <para>Render a single UNICODE codepoint at high quality to a new 8-bit surface.</para>
@@ -1252,8 +1252,8 @@ public static partial class TTF
     /// <seealso cref="RenderGlyphSolid"/>
     [LibraryImport(FontLibrary, EntryPoint = "TTF_RenderGlyph_Shaded"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     public static partial IntPtr RenderGlyphShaded(IntPtr font, uint ch, SDL.Color fg, SDL.Color bg);
-    
-    
+
+
     /// <code>extern SDL_DECLSPEC SDL_Surface * SDLCALL TTF_RenderText_Blended(TTF_Font *font, const char *text, size_t length, SDL_Color fg);</code>
     /// <summary>
     /// <para>Render UTF-8 text at high quality to a new ARGB surface.</para>
@@ -1283,8 +1283,8 @@ public static partial class TTF
     /// <seealso cref="RenderTextSolid"/>
     [LibraryImport(FontLibrary, EntryPoint = "TTF_RenderText_Blended"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     public static partial IntPtr RenderTextBlended(IntPtr font, [MarshalAs(UnmanagedType.LPUTF8Str)] string text, ulong length, SDL.Color fg);
-    
-    
+
+
     /// <code>extern SDL_DECLSPEC SDL_Surface * SDLCALL TTF_RenderText_Blended_Wrapped(TTF_Font *font, const char *text, size_t length, SDL_Color fg, int wrap_width);</code>
     /// <summary>
     /// <para>Render word-wrapped UTF-8 text at high quality to a new ARGB surface.</para>
@@ -1314,8 +1314,8 @@ public static partial class TTF
     /// <seealso cref="RenderTextSolidWrapped"/>
     [LibraryImport(FontLibrary, EntryPoint = "TTF_RenderText_Blended_Wrapped"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     public static partial IntPtr RenderTextBlendedWrapped(IntPtr font, [MarshalAs(UnmanagedType.LPUTF8Str)] string text, ulong length, SDL.Color fg, int wrapWidth);
-    
-    
+
+
     /// <code>extern SDL_DECLSPEC SDL_Surface * SDLCALL TTF_RenderGlyph_Blended(TTF_Font *font, Uint32 ch, SDL_Color fg);</code>
     /// <summary>
     /// <para>Render a single UNICODE codepoint at high quality to a new ARGB surface.</para>
@@ -1339,8 +1339,8 @@ public static partial class TTF
     /// <seealso cref="RenderGlyphSolid"/>
     [LibraryImport(FontLibrary, EntryPoint = "TTF_RenderGlyph_Blended"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     public static partial IntPtr RenderGlyphBlended(IntPtr font, ulong ch, SDL.Color fg);
-    
-    
+
+
     /// <code>extern SDL_DECLSPEC SDL_Surface * SDLCALL TTF_RenderText_LCD(TTF_Font *font, const char *text, size_t length, SDL_Color fg, SDL_Color bg);</code>
     /// <summary>
     /// <para>Render UTF-8 text at LCD subpixel quality to a new ARGB surface.</para>
@@ -1371,8 +1371,8 @@ public static partial class TTF
     /// <seealso cref="RenderTextSolid"/>
     [LibraryImport(FontLibrary, EntryPoint = "TTF_RenderText_LCD"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     public static partial IntPtr RenderTextLCD(IntPtr font, [MarshalAs(UnmanagedType.LPUTF8Str)] string text, ulong length, SDL.Color fg, SDL.Color bg);
-    
-    
+
+
     /// <code>extern SDL_DECLSPEC SDL_Surface * SDLCALL TTF_RenderText_LCD_Wrapped(TTF_Font *font, const char *text, size_t length, SDL_Color fg, SDL_Color bg, int wrap_width);</code>
     /// <summary>
     /// <para>Render word-wrapped UTF-8 text at LCD subpixel quality to a new ARGB
@@ -1404,8 +1404,8 @@ public static partial class TTF
     /// <seealso cref="RenderTextSolidWrapped"/>
     [LibraryImport(FontLibrary, EntryPoint = "TTF_RenderText_LCD_Wrapped"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     public static partial IntPtr RenderTextLCDWrapped(IntPtr font, [MarshalAs(UnmanagedType.LPUTF8Str)] string text, ulong length, SDL.Color fg, SDL.Color bg, int wrapWidth);
-    
-    
+
+
     /// <code>extern SDL_DECLSPEC SDL_Surface * SDLCALL TTF_RenderGlyph_LCD(TTF_Font *font, Uint32 ch, SDL_Color fg, SDL_Color bg);</code>
     /// <summary>
     /// <para>Render a single UNICODE codepoint at LCD subpixel quality to a new ARGB
@@ -1431,8 +1431,8 @@ public static partial class TTF
     /// <seealso cref="RenderGlyphSolid"/>
     [LibraryImport(FontLibrary, EntryPoint = "TTF_RenderGlyph_LCD"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     public static partial IntPtr RenderGlyphLCD(IntPtr font, uint ch, SDL.Color fg, SDL.Color bg);
-    
-    
+
+
     /// <code>extern SDL_DECLSPEC TTF_TextEngine * SDLCALL TTF_CreateSurfaceTextEngine(void);</code>
     /// <summary>
     /// Create a text engine for drawing text on SDL surfaces.
@@ -1445,8 +1445,8 @@ public static partial class TTF
     /// <seealso cref="DrawSurfaceText"/>
     [LibraryImport(FontLibrary, EntryPoint = "TTF_CreateSurfaceTextEngine"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     public static partial IntPtr CreateSurfaceTextEngine();
-    
-    
+
+
     /// <code>extern SDL_DECLSPEC bool SDLCALL TTF_DrawSurfaceText(TTF_Text *text, int x, int y, SDL_Surface *surface);</code>
     /// <summary>
     /// <para>Draw text to an SDL surface.</para>
@@ -1469,8 +1469,8 @@ public static partial class TTF
     [LibraryImport(FontLibrary, EntryPoint = "TTF_DrawSurfaceText"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     [return: MarshalAs(UnmanagedType.I1)]
     public static partial bool DrawSurfaceText(IntPtr text, int x, int y, IntPtr surface);
-    
-    
+
+
     /// <code>extern SDL_DECLSPEC void SDLCALL TTF_DestroySurfaceTextEngine(TTF_TextEngine *engine);</code>
     /// <summary>
     /// <para>Destroy a text engine created for drawing text on SDL surfaces.</para>
@@ -1485,8 +1485,8 @@ public static partial class TTF
     /// <seealso cref="CreateSurfaceTextEngine"/>
     [LibraryImport(FontLibrary, EntryPoint = "TTF_DestroySurfaceTextEngine"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     public static partial void DestroySurfaceTextEngine(IntPtr engine);
-    
-    
+
+
     /// <code>extern SDL_DECLSPEC TTF_TextEngine * SDLCALL TTF_CreateRendererTextEngine(SDL_Renderer *renderer);</code>
     /// <summary>
     /// Create a text engine for drawing text on an SDL renderer.
@@ -1502,8 +1502,8 @@ public static partial class TTF
     /// <seealso cref="CreateRendererTextEngineWithProperties"/>
     [LibraryImport(FontLibrary, EntryPoint = "TTF_CreateRendererTextEngine"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     public static partial IntPtr CreateRendererTextEngine(IntPtr renderer);
-    
-    
+
+
     /// <code>extern SDL_DECLSPEC TTF_TextEngine * SDLCALL TTF_CreateRendererTextEngineWithProperties(SDL_PropertiesID props);</code>
     /// <summary>
     /// <para>Create a text engine for drawing text on an SDL renderer, with the
@@ -1527,8 +1527,8 @@ public static partial class TTF
     /// <seealso cref="DrawRendererText"/>
     [LibraryImport(FontLibrary, EntryPoint = "TTF_CreateRendererTextEngineWithProperties"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     public static partial IntPtr CreateRendererTextEngineWithProperties(uint props);
-    
-    
+
+
     /// <code>extern SDL_DECLSPEC bool SDLCALL TTF_DrawRendererText(TTF_Text *text, float x, float y);</code>
     /// <summary>
     /// <para>Draw text to an SDL renderer.</para>
@@ -1551,8 +1551,8 @@ public static partial class TTF
     [LibraryImport(FontLibrary, EntryPoint = "TTF_DrawRendererText"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     [return: MarshalAs(UnmanagedType.I1)]
     public static partial bool DrawRendererText(IntPtr text, float x, float y);
-    
-    
+
+
     /// <code>extern SDL_DECLSPEC void SDLCALL TTF_DestroyRendererTextEngine(TTF_TextEngine *engine);</code>
     /// <summary>
     /// <para>Destroy a text engine created for drawing text on an SDL renderer.</para>
@@ -1567,8 +1567,8 @@ public static partial class TTF
     /// <seealso cref="CreateRendererTextEngine"/>
     [LibraryImport(FontLibrary, EntryPoint = "TTF_DestroyRendererTextEngine"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     public static partial void DestroyRendererTextEngine(IntPtr engine);
-    
-    
+
+
     /// <code>extern SDL_DECLSPEC TTF_TextEngine * SDLCALL TTF_CreateGPUTextEngine(SDL_GPUDevice *device);</code>
     /// <summary>
     /// Create a text engine for drawing text with the SDL GPU API.
@@ -1585,8 +1585,8 @@ public static partial class TTF
     /// <seealso cref="GetGPUTextDrawData"/>
     [LibraryImport(FontLibrary, EntryPoint = "TTF_CreateGPUTextEngine"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     public static partial IntPtr CreateGPUTextEngine(IntPtr device);
-    
-    
+
+
     /// <code>extern SDL_DECLSPEC TTF_TextEngine * SDLCALL TTF_CreateGPUTextEngineWithProperties(SDL_PropertiesID props);</code>
     /// <summary>
     /// <para>Create a text engine for drawing text with the SDL GPU API, with the
@@ -1610,8 +1610,8 @@ public static partial class TTF
     /// <seealso cref="GetGPUTextDrawData"/>
     [LibraryImport(FontLibrary, EntryPoint = "TTF_CreateGPUTextEngineWithProperties"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     public static partial IntPtr CreateGPUTextEngineWithProperties(uint props);
-    
-    
+
+
     /// <code>extern SDL_DECLSPEC TTF_GPUAtlasDrawSequence * SDLCALL TTF_GetGPUTextDrawData(TTF_Text *text);</code>
     /// <summary>
     /// <para>Get the geometry data needed for drawing the text.</para>
@@ -1635,8 +1635,8 @@ public static partial class TTF
     /// <seealso cref="CreateText"/>
     [LibraryImport(FontLibrary, EntryPoint = "TTF_GetGPUTextDrawData"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     public static partial IntPtr GetGPUTextDrawData(IntPtr text);
-    
-    
+
+
     /// <code>extern SDL_DECLSPEC void SDLCALL TTF_DestroyGPUTextEngine(TTF_TextEngine *engine);</code>
     /// <summary>
     /// <para>Destroy a text engine created for drawing text with the SDL GPU API.</para>
@@ -1651,8 +1651,8 @@ public static partial class TTF
     /// <seealso cref="CreateGPUTextEngine"/>
     [LibraryImport(FontLibrary, EntryPoint = "TTF_DestroyGPUTextEngine"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     public static partial void DestroyGPUTextEngine(IntPtr engine);
-    
-    
+
+
     /// <code>extern SDL_DECLSPEC void SDLCALL TTF_SetGPUTextEngineWinding(TTF_TextEngine *engine, TTF_GPUTextEngineWinding winding);</code>
     /// <summary>
     /// Sets the winding order of the vertices returned by <see cref="GetGPUTextDrawData"/>
@@ -1667,8 +1667,8 @@ public static partial class TTF
     /// <seealso cref="GetGPUTextEngineWinding"/>
     [LibraryImport(FontLibrary, EntryPoint = "TTF_SetGPUTextEngineWinding"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     public static partial void SetGPUTextEngineWinding(IntPtr engine, GPUTextEngineWinding winding);
-    
-    
+
+
     /// <code>extern SDL_DECLSPEC TTF_GPUTextEngineWinding SDLCALL TTF_GetGPUTextEngineWinding(const TTF_TextEngine *engine);</code>
     /// <summary>
     /// <para>Get the winding order of the vertices returned by <see cref="GetGPUTextDrawData"/>
@@ -1684,8 +1684,8 @@ public static partial class TTF
     /// <seealso cref="SetGPUTextEngineWinding"/>
     [LibraryImport(FontLibrary, EntryPoint = "TTF_GetGPUTextEngineWinding"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     public static partial GPUTextEngineWinding GetGPUTextEngineWinding(IntPtr engine);
-    
-    
+
+
     /// <code>extern SDL_DECLSPEC TTF_Text * SDLCALL TTF_CreateText(TTF_TextEngine *engine, TTF_Font *font, const char *text, size_t length);</code>
     /// <summary>
     /// Create a text object from UTF-8 text and a text engine.
@@ -1704,8 +1704,8 @@ public static partial class TTF
     /// <seealso cref="DestroyText"/>
     [LibraryImport(FontLibrary, EntryPoint = "TTF_CreateText"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     public static partial IntPtr CreateText(IntPtr engine, IntPtr font, [MarshalAs(UnmanagedType.LPUTF8Str)] string text, ulong length);
-    
-    
+
+
     /// <code>extern SDL_DECLSPEC SDL_PropertiesID SDLCALL TTF_GetTextProperties(TTF_Text *text);</code>
     /// <summary>
     /// Get the properties associated with a text object.
@@ -1718,8 +1718,8 @@ public static partial class TTF
     /// <since>This function is available since SDL_ttf 3.0.0.</since>
     [LibraryImport(FontLibrary, EntryPoint = "TTF_GetTextProperties"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     public static partial uint GetTextProperties(IntPtr text);
-    
-    
+
+
     /// <code>extern SDL_DECLSPEC bool SDLCALL TTF_SetTextEngine(TTF_Text *text, TTF_TextEngine *engine);</code>
     /// <summary>
     /// Set the text engine used by a text object.
@@ -1736,8 +1736,8 @@ public static partial class TTF
     [LibraryImport(FontLibrary, EntryPoint = "TTF_SetTextEngine"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     [return: MarshalAs(UnmanagedType.I1)]
     public static partial bool SetTextEngine(IntPtr text, IntPtr engine);
-    
-    
+
+
     /// <code>extern SDL_DECLSPEC TTF_TextEngine * SDLCALL TTF_GetTextEngine(TTF_Text *text);</code>
     /// <summary>
     /// Get the text engine used by a text object.
@@ -1751,8 +1751,8 @@ public static partial class TTF
     /// <seealso cref="SetTextEngine"/>
     [LibraryImport(FontLibrary, EntryPoint = "TTF_GetTextEngine"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     public static partial IntPtr GetTextEngine(IntPtr text);
-    
-    
+
+
     /// <code>extern SDL_DECLSPEC bool SDLCALL TTF_SetTextFont(TTF_Text *text, TTF_Font *font);</code>
     /// <summary>
     /// <para>Set the font used by a text object.</para>
@@ -1769,8 +1769,8 @@ public static partial class TTF
     [LibraryImport(FontLibrary, EntryPoint = "TTF_SetTextFont"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     [return: MarshalAs(UnmanagedType.I1)]
     public static partial bool SetTextFont(IntPtr text, IntPtr font);
-    
-    
+
+
     /// <code>extern SDL_DECLSPEC TTF_Font * SDLCALL TTF_GetTextFont(TTF_Text *text);</code>
     /// <summary>
     /// Get the font used by a text object.
@@ -1784,8 +1784,8 @@ public static partial class TTF
     /// <seealso cref="SetTextFont"/>
     [LibraryImport(FontLibrary, EntryPoint = "TTF_GetTextFont"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     public static partial IntPtr GetTextFont(IntPtr text);
-    
-    
+
+
     /// <code>extern SDL_DECLSPEC bool SDLCALL TTF_SetTextDirection(TTF_Text *text, TTF_Direction direction);</code>
     /// <summary>
     /// <para>Set the direction to be used for text shaping a text object.</para>
@@ -1802,8 +1802,8 @@ public static partial class TTF
     [LibraryImport(FontLibrary, EntryPoint = "TTF_SetTextDirection"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     [return: MarshalAs(UnmanagedType.I1)]
     public static partial bool SetTextDirection(IntPtr text, Direction direction);
-    
-    
+
+
     /// <code>extern SDL_DECLSPEC TTF_Direction SDLCALL TTF_GetTextDirection(TTF_Text *text);</code>
     /// <summary>
     /// <para>Get the direction to be used for text shaping a text object.</para>
@@ -1816,8 +1816,8 @@ public static partial class TTF
     /// <since>This function is available since SDL_ttf 3.0.0.</since>
     [LibraryImport(FontLibrary, EntryPoint = "TTF_GetTextDirection"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     public static partial Direction GetTextDirection(IntPtr text);
-    
-    
+
+
     /// <code>extern SDL_DECLSPEC bool SDLCALL TTF_SetTextScript(TTF_Text *text, Uint32 script);</code>
     /// <summary>
     /// <para>Set the script to be used for text shaping a text object.</para>
@@ -1836,8 +1836,8 @@ public static partial class TTF
     [LibraryImport(FontLibrary, EntryPoint = "TTF_SetTextScript"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     [return: MarshalAs(UnmanagedType.I1)]
     public static partial bool SetTextScript(IntPtr text, uint script);
-    
-    
+
+
     /// <code>extern SDL_DECLSPEC Uint32 SDLCALL TTF_GetTextScript(TTF_Text *text);</code>
     /// <summary>
     /// <para>Get the script used for text shaping a text object.</para>
@@ -1854,8 +1854,8 @@ public static partial class TTF
     /// <seealso cref="TagToString"/>
     [LibraryImport(FontLibrary, EntryPoint = "TTF_GetTextScript"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     public static partial uint GetTextScript(IntPtr text);
-    
-    
+
+
     /// <code>extern SDL_DECLSPEC bool SDLCALL TTF_SetTextColor(TTF_Text *text, Uint8 r, Uint8 g, Uint8 b, Uint8 a);</code>
     /// <summary>
     /// <para>Set the color of a text object.</para>
@@ -1876,8 +1876,8 @@ public static partial class TTF
     [LibraryImport(FontLibrary, EntryPoint = "TTF_SetTextColor"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     [return: MarshalAs(UnmanagedType.I1)]
     public static partial bool SetTextColor(IntPtr text, byte r, byte g, byte b, byte a);
-    
-    
+
+
     /// <code>extern SDL_DECLSPEC bool SDLCALL TTF_SetTextColorFloat(TTF_Text *text, float r, float g, float b, float a);</code>
     /// <summary>
     /// <para>Set the color of a text object.</para>
@@ -1898,8 +1898,8 @@ public static partial class TTF
     [LibraryImport(FontLibrary, EntryPoint = "TTF_SetTextColorFloat"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     [return: MarshalAs(UnmanagedType.I1)]
     public static partial bool SetTextColorFloat(IntPtr text, float r, float g, float b, float a);
-    
-    
+
+
     /// <code>extern SDL_DECLSPEC bool SDLCALL TTF_GetTextColor(TTF_Text *text, Uint8 *r, Uint8 *g, Uint8 *b, Uint8 *a);</code>
     /// <summary>
     /// Get the color of a text object.
@@ -1923,8 +1923,8 @@ public static partial class TTF
     [LibraryImport(FontLibrary, EntryPoint = "TTF_GetTextColor"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     [return: MarshalAs(UnmanagedType.I1)]
     public static partial bool GetTextColor(IntPtr text, out byte r, out byte g, out byte b, out byte a);
-    
-    
+
+
     /// <code>extern SDL_DECLSPEC bool SDLCALL TTF_GetTextColorFloat(TTF_Text *text, float *r, float *g, float *b, float *a);</code>
     /// <summary>
     /// Get the color of a text object.
@@ -1948,8 +1948,8 @@ public static partial class TTF
     [LibraryImport(FontLibrary, EntryPoint = "TTF_GetTextColorFloat"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     [return: MarshalAs(UnmanagedType.I1)]
     public static partial bool GetTextColorFloat(IntPtr text, out float r, out float g, out float b, out float a);
-    
-    
+
+
     /// <code>extern SDL_DECLSPEC bool SDLCALL TTF_SetTextPosition(TTF_Text *text, int x, int y);</code>
     /// <summary>
     /// <para>Set the position of a text object.</para>
@@ -1968,8 +1968,8 @@ public static partial class TTF
     [LibraryImport(FontLibrary, EntryPoint = "TTF_SetTextPosition"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     [return: MarshalAs(UnmanagedType.I1)]
     public static partial bool SetTextPosition(IntPtr text, int x, int y);
-    
-    
+
+
     /// <code>extern SDL_DECLSPEC bool SDLCALL TTF_GetTextPosition(TTF_Text *text, int *x, int *y);</code>
     /// <summary>
     /// <para>Get the position of a text object.</para>
@@ -1987,8 +1987,8 @@ public static partial class TTF
     [LibraryImport(FontLibrary, EntryPoint = "TTF_GetTextPosition"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     [return: MarshalAs(UnmanagedType.I1)]
     public static partial bool GetTextPosition(IntPtr text, out int x, out int y);
-    
-    
+
+
     /// <code>extern SDL_DECLSPEC bool SDLCALL TTF_SetTextWrapWidth(TTF_Text *text, int wrap_width);</code>
     /// <summary>
     /// Set whether wrapping is enabled on a text object.
@@ -2006,8 +2006,8 @@ public static partial class TTF
     [LibraryImport(FontLibrary, EntryPoint = "TTF_SetTextWrapWidth"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     [return: MarshalAs(UnmanagedType.I1)]
     public static partial bool SetTextWrapWidth(IntPtr text, int wrapWidth);
-    
-    
+
+
     /// <code>extern SDL_DECLSPEC bool SDLCALL TTF_GetTextWrapWidth(TTF_Text *text, int *wrap_width);</code>
     /// <summary>
     /// Get whether wrapping is enabled on a text object.
@@ -2024,8 +2024,8 @@ public static partial class TTF
     [LibraryImport(FontLibrary, EntryPoint = "TTF_GetTextWrapWidth"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     [return: MarshalAs(UnmanagedType.I1)]
     public static partial bool GetTextWrapWidth(IntPtr text, out int wrapWidth);
-    
-    
+
+
     /// <code>extern SDL_DECLSPEC bool SDLCALL TTF_SetTextWrapWhitespaceVisible(TTF_Text *text, bool visible);</code>
     /// <summary>
     /// <para>Set whether whitespace should be visible when wrapping a text object.</para>
@@ -2047,8 +2047,8 @@ public static partial class TTF
     [LibraryImport(FontLibrary, EntryPoint = "TTF_SetTextWrapWhitespaceVisible"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     [return: MarshalAs(UnmanagedType.I1)]
     public static partial bool SetTextWrapWhitespaceVisible(IntPtr text, [MarshalAs(UnmanagedType.I1)] bool visible);
-    
-    
+
+
     /// <code>extern SDL_DECLSPEC bool SDLCALL TTF_TextWrapWhitespaceVisible(TTF_Text *text);</code>
     /// <summary>
     /// Return whether whitespace is shown when wrapping a text object.
@@ -2063,8 +2063,8 @@ public static partial class TTF
     [LibraryImport(FontLibrary, EntryPoint = "TTF_TextWrapWhitespaceVisible"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     [return: MarshalAs(UnmanagedType.I1)]
     public static partial bool TextWrapWhitespaceVisible(IntPtr text);
-    
-    
+
+
     /// <code>extern SDL_DECLSPEC bool SDLCALL TTF_SetTextString(TTF_Text *text, const char *string, size_t length);</code>
     /// <summary>
     /// Set the UTF-8 text used by a text object.
@@ -2085,8 +2085,8 @@ public static partial class TTF
     [LibraryImport(FontLibrary, EntryPoint = "TTF_SetTextString"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     [return: MarshalAs(UnmanagedType.I1)]
     public static partial bool SetTextString(IntPtr text, [MarshalAs(UnmanagedType.LPUTF8Str)] string @string, ulong length);
-    
-    
+
+
     /// <code>extern SDL_DECLSPEC bool SDLCALL TTF_InsertTextString(TTF_Text *text, int offset, const char *string, size_t length);</code>
     /// <summary>
     /// Insert UTF-8 text into a text object.
@@ -2111,8 +2111,8 @@ public static partial class TTF
     [LibraryImport(FontLibrary, EntryPoint = "TTF_InsertTextString"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     [return: MarshalAs(UnmanagedType.I1)]
     public static partial bool InsertTextString(IntPtr text, int offset, [MarshalAs(UnmanagedType.LPUTF8Str)] string @string, ulong length);
-    
-    
+
+
     /// <code>extern SDL_DECLSPEC bool SDLCALL TTF_AppendTextString(TTF_Text *text, const char *string, size_t length);</code>
     /// <summary>
     /// Append UTF-8 text to a text object.
@@ -2133,8 +2133,8 @@ public static partial class TTF
     [LibraryImport(FontLibrary, EntryPoint = "TTF_AppendTextString"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     [return: MarshalAs(UnmanagedType.I1)]
     public static partial bool AppendTextString(IntPtr text, [MarshalAs(UnmanagedType.LPUTF8Str)] string @string, ulong length);
-    
-    
+
+
     /// <code>extern SDL_DECLSPEC bool SDLCALL TTF_DeleteTextString(TTF_Text *text, int offset, int length);</code>
     /// <summary>
     /// Delete UTF-8 text from a text object.
@@ -2158,8 +2158,8 @@ public static partial class TTF
     [LibraryImport(FontLibrary, EntryPoint = "TTF_DeleteTextString"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     [return: MarshalAs(UnmanagedType.I1)]
     public static partial bool DeleteTextString(IntPtr text, int offset, int length);
-    
-    
+
+
     /// <code>extern SDL_DECLSPEC bool SDLCALL TTF_GetTextSize(TTF_Text *text, int *w, int *h);</code>
     /// <summary>
     /// <para>Get the size of a text object.</para>
@@ -2179,8 +2179,8 @@ public static partial class TTF
     [LibraryImport(FontLibrary, EntryPoint = "TTF_GetTextSize"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     [return: MarshalAs(UnmanagedType.I1)]
     public static partial bool GetTextSize(IntPtr text, out int w, out int h);
-    
-    
+
+
     /// <code>extern SDL_DECLSPEC bool SDLCALL TTF_GetTextSubString(TTF_Text *text, int offset, TTF_SubString *substring);</code>
     /// <summary>
     /// <para>Get the substring of a text object that surrounds a text offset.</para>
@@ -2202,8 +2202,8 @@ public static partial class TTF
     [LibraryImport(FontLibrary, EntryPoint = "TTF_GetTextSubString"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     [return: MarshalAs(UnmanagedType.I1)]
     public static partial bool GetTextSubString(IntPtr text, int offset, out SubString substring);
-    
-    
+
+
     /// <code>extern SDL_DECLSPEC bool SDLCALL TTF_GetTextSubStringForLine(TTF_Text *text, int line, TTF_SubString *substring);</code>
     /// <summary>
     /// <para>Get the substring of a text object that contains the given line.</para>
@@ -2225,8 +2225,8 @@ public static partial class TTF
     [LibraryImport(FontLibrary, EntryPoint = "TTF_GetTextSubStringForLine"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     [return: MarshalAs(UnmanagedType.I1)]
     public static partial bool GetTextSubStringForLine(IntPtr text, int line, out SubString substring);
-    
-    
+
+
     [LibraryImport(FontLibrary, EntryPoint = "TTF_GetTextSubStringsForRange"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial IntPtr TTF_GetTextSubStringsForRange(IntPtr text, int offset, int length, out int count);
     /// <code>extern SDL_DECLSPEC TTF_SubString ** SDLCALL TTF_GetTextSubStringsForRange(TTF_Text *text, int offset, int length, int *count);</code>
@@ -2256,8 +2256,8 @@ public static partial class TTF
             SDL.Free(ptr);
         }
     }
-    
-    
+
+
     /// <code>extern SDL_DECLSPEC bool SDLCALL TTF_GetTextSubStringForPoint(TTF_Text *text, int x, int y, TTF_SubString *substring);</code>
     /// <summary>
     /// <para>Get the portion of a text string that is closest to a point.</para>
@@ -2278,8 +2278,8 @@ public static partial class TTF
     [LibraryImport(FontLibrary, EntryPoint = "TTF_GetTextSubStringForPoint"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     [return: MarshalAs(UnmanagedType.I1)]
     public static partial bool GetTextSubStringForPoint(IntPtr text, int x, int y, out SubString substring);
-    
-    
+
+
     /// <code>extern SDL_DECLSPEC bool SDLCALL TTF_GetPreviousTextSubString(TTF_Text *text, const TTF_SubString *substring, TTF_SubString *previous);</code>
     /// <summary>
     /// <para>Get the previous substring in a text object</para>
@@ -2297,8 +2297,8 @@ public static partial class TTF
     [LibraryImport(FontLibrary, EntryPoint = "TTF_GetPreviousTextSubString"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     [return: MarshalAs(UnmanagedType.I1)]
     public static partial bool GetPreviousTextSubString(IntPtr text, in SubString substring, out SubString previous);
-    
-    
+
+
     /// <code>extern SDL_DECLSPEC bool SDLCALL TTF_GetNextTextSubString(TTF_Text *text, const TTF_SubString *substring, TTF_SubString *next);</code>
     /// <summary>
     /// <para>Get the next substring in a text object</para>
@@ -2316,8 +2316,8 @@ public static partial class TTF
     [LibraryImport(FontLibrary, EntryPoint = "TTF_GetNextTextSubString"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     [return: MarshalAs(UnmanagedType.I1)]
     public static partial bool GetNextTextSubString(IntPtr text, in SubString substring, out SubString next);
-    
-    
+
+
     /// <code>extern SDL_DECLSPEC bool SDLCALL TTF_UpdateText(TTF_Text *text);</code>
     /// <summary>
     /// <para>Update the layout of a text object.</para>
@@ -2334,8 +2334,8 @@ public static partial class TTF
     [LibraryImport(FontLibrary, EntryPoint = "TTF_UpdateText"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     [return: MarshalAs(UnmanagedType.I1)]
     public static partial bool UpdateText(IntPtr text);
-    
-    
+
+
     /// <code>extern SDL_DECLSPEC void SDLCALL TTF_DestroyText(TTF_Text *text);</code>
     /// <summary>
     /// Destroy a text object created by a text engine.
@@ -2347,8 +2347,8 @@ public static partial class TTF
     /// <seealso cref="CreateText"/>
     [LibraryImport(FontLibrary, EntryPoint = "TTF_DestroyText"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     public static partial void DestroyText(IntPtr text);
-    
-    
+
+
     /// <code>extern SDL_DECLSPEC void SDLCALL TTF_CloseFont(TTF_Font *font);</code>
     /// <summary>
     /// <para>Dispose of a previously-created font.</para>
@@ -2368,8 +2368,8 @@ public static partial class TTF
     /// <seealso cref="OpenFontIO"/>
     [LibraryImport(FontLibrary, EntryPoint = "TTF_CloseFont"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     public static partial void CloseFont(IntPtr font);
-    
-    
+
+
     /// <code>extern SDL_DECLSPEC void SDLCALL TTF_Quit(void);</code>
     /// <summary>
     /// <para>Deinitialize SDL_ttf.</para>
@@ -2388,8 +2388,8 @@ public static partial class TTF
     /// <since>This function is available since SDL_ttf 3.0.0.</since>
     [LibraryImport(FontLibrary, EntryPoint = "TTF_Quit"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     public static partial void Quit();
-    
-    
+
+
     /// <code>extern SDL_DECLSPEC int SDLCALL TTF_WasInit(void);</code>
     /// <summary>
     /// <para>Check if SDL_ttf is initialized.</para>

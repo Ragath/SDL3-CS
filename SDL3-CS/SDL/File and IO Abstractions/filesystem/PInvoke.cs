@@ -65,11 +65,11 @@ public static partial class SDL
     /// <seealso cref="GetPrefPath"/>
     public static string? GetBasePath()
     {
-        var value = SDL_GetBasePath(); 
+        var value = SDL_GetBasePath();
         return value == IntPtr.Zero ? null : Marshal.PtrToStringUTF8(value);
     }
-    
-    
+
+
     [LibraryImport(SDLLibrary, EntryPoint = "SDL_GetPrefPath"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial IntPtr SDL_GetPrefPath([MarshalAs(UnmanagedType.LPUTF8Str)] string org, [MarshalAs(UnmanagedType.LPUTF8Str)] string app);
     /// <code>extern SDL_DECLSPEC char * SDLCALL SDL_GetPrefPath(const char *org, const char *app);</code>
@@ -115,18 +115,18 @@ public static partial class SDL
     /// <seealso cref="GetBasePath"/>
     public static string? GetPrefPath(string org, string app)
     {
-        var value = SDL_GetPrefPath(org, app); 
+        var value = SDL_GetPrefPath(org, app);
         try
         {
             return value == IntPtr.Zero ? null : Marshal.PtrToStringUTF8(value);
         }
         finally
         {
-            if(value != IntPtr.Zero) Free(value);
+            if (value != IntPtr.Zero) Free(value);
         }
     }
-    
-    
+
+
     [LibraryImport(SDLLibrary, EntryPoint = "SDL_GetUserFolder"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial IntPtr SDL_GetUserFolder(Folder folder);
     /// <code>extern SDL_DECLSPEC const char * SDLCALL SDL_GetUserFolder(SDL_Folder folder);</code>
@@ -149,11 +149,11 @@ public static partial class SDL
     /// <since>This function is available since SDL 3.2.0</since>
     public static string? GetUserFolder(Folder folder)
     {
-        var value = SDL_GetUserFolder(folder); 
+        var value = SDL_GetUserFolder(folder);
         return value == IntPtr.Zero ? null : Marshal.PtrToStringUTF8(value);
     }
 
-    
+
     /// <code>extern SDL_DECLSPEC bool SDLCALL SDL_CreateDirectory(const char *path);</code>
     /// <summary>
     /// <para>Create a directory, and any missing parent directories.</para>
@@ -169,7 +169,7 @@ public static partial class SDL
     [return: MarshalAs(UnmanagedType.I1)]
     public static partial bool CreateDirectory([MarshalAs(UnmanagedType.LPUTF8Str)] string path);
 
-    
+
     /// <code>extern SDL_DECLSPEC bool SDLCALL SDL_EnumerateDirectory(const char *path, SDL_EnumerateDirectoryCallback callback, void *userdata);</code>
     /// <summary>
     /// <para>Enumerate a directory through a callback function.</para>
@@ -192,7 +192,7 @@ public static partial class SDL
     [return: MarshalAs(UnmanagedType.I1)]
     public static partial bool EnumerateDirectory([MarshalAs(UnmanagedType.LPUTF8Str)] string path, EnumerateDirectoryCallback callback, IntPtr userdata);
 
-    
+
     /// <code>extern SDL_DECLSPEC bool SDLCALL SDL_RemovePath(const char *path);</code>
     /// <summary>
     /// <para>Remove a file or an empty directory.</para>
@@ -206,8 +206,8 @@ public static partial class SDL
     [LibraryImport(SDLLibrary, EntryPoint = "SDL_RemovePath"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     [return: MarshalAs(UnmanagedType.I1)]
     public static partial bool RemovePath([MarshalAs(UnmanagedType.LPUTF8Str)] string path);
-    
-    
+
+
     /// <code>extern SDL_DECLSPEC bool SDLCALL SDL_RenamePath(const char *oldpath, const char *newpath);</code>
     /// <summary>
     /// <para>Rename a file or directory.</para>
@@ -228,8 +228,8 @@ public static partial class SDL
     [LibraryImport(SDLLibrary, EntryPoint = "SDL_RenamePath"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     [return: MarshalAs(UnmanagedType.I1)]
     public static partial bool RenamePath([MarshalAs(UnmanagedType.LPUTF8Str)] string oldpath, [MarshalAs(UnmanagedType.LPUTF8Str)] string newpath);
-    
-    
+
+
     /// <code>extern SDL_DECLSPEC bool SDLCALL SDL_CopyFile(const char *oldpath, const char *newpath);</code>
     /// <summary>
     /// <para>Copy a file.</para>
@@ -265,8 +265,8 @@ public static partial class SDL
     [LibraryImport(SDLLibrary, EntryPoint = "SDL_CopyFile"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     [return: MarshalAs(UnmanagedType.I1)]
     public static partial bool CopyFile([MarshalAs(UnmanagedType.LPUTF8Str)] string oldpath, [MarshalAs(UnmanagedType.LPUTF8Str)] string newpath);
-    
-    
+
+
     /// <code>extern SDL_DECLSPEC bool SDLCALL SDL_GetPathInfo(const char *path, SDL_PathInfo *info);</code>
     /// <summary>
     /// Get information about a filesystem path.
@@ -280,8 +280,8 @@ public static partial class SDL
     [LibraryImport(SDLLibrary, EntryPoint = "SDL_GetPathInfo"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     [return: MarshalAs(UnmanagedType.I1)]
     public static partial bool GetPathInfo([MarshalAs(UnmanagedType.LPUTF8Str)] string path, out PathInfo info);
-    
-    
+
+
     [LibraryImport(SDLLibrary, EntryPoint = "SDL_GlobDirectory"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial IntPtr SDL_GlobDirectory([MarshalAs(UnmanagedType.LPUTF8Str)] string path, [MarshalAs(UnmanagedType.LPUTF8Str)] string? pattern, GlobFlags flags, out int count);
     /// <code>extern SDL_DECLSPEC char ** SDLCALL SDL_GlobDirectory(const char *path, const char *pattern, SDL_GlobFlags flags, int *count);</code>
@@ -319,11 +319,11 @@ public static partial class SDL
         }
         finally
         {
-            if(ptr != IntPtr.Zero) Free(ptr);
+            if (ptr != IntPtr.Zero) Free(ptr);
         }
     }
-    
-    
+
+
     [LibraryImport(SDLLibrary, EntryPoint = "SDL_GetCurrentDirectory"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial IntPtr SDL_GetCurrentDirectory();
     /// <code>extern SDL_DECLSPEC char * SDLCALL SDL_GetCurrentDirectory(void);</code>
@@ -343,14 +343,14 @@ public static partial class SDL
     /// <since>This function is available since SDL 3.1.8.</since>
     public static string? GetCurrentDirectory()
     {
-        var value = SDL_GetCurrentDirectory(); 
+        var value = SDL_GetCurrentDirectory();
         try
         {
             return value == IntPtr.Zero ? null : Marshal.PtrToStringUTF8(value);
         }
         finally
         {
-            if(value != IntPtr.Zero) Free(value);
+            if (value != IntPtr.Zero) Free(value);
         }
     }
 }

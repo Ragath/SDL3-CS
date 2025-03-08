@@ -40,7 +40,7 @@ public static partial class SDL
         /// The scroll direction is normal
         /// </summary>
         Normal,
-        
+
         /// <summary>
         /// The scroll direction is flipped / natural
         /// </summary>

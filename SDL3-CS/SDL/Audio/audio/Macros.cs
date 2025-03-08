@@ -59,7 +59,7 @@ public static partial class SDL
         return format;
     }
 
-    
+
     /// <summary>
     /// <para>Retrieve the size, in bits, from an <see cref="AudioFormat"/>.</para>
     /// <para>For example, <c>AudioBitSize(AudioFormat.AudioS16)</c> returns 16.</para>
@@ -71,7 +71,7 @@ public static partial class SDL
     [Macro]
     public static uint AudioBitSize(uint x) => x & AudioMaskBitSize;
 
-    
+
     /// <summary>
     /// <para>Retrieve the size, in bytes, from an <see cref="AudioFormat"/>.</para>
     /// <para>For example, <c>AudioByteSize(AudioFormat.AudioS16)</c> returns 2.</para>
@@ -82,8 +82,8 @@ public static partial class SDL
     /// <since>This macro is available since SDL 3.2.0</since>
     [Macro]
     public static uint AudioByteSize(uint x) => AudioBitSize(x) / 8;
-    
-    
+
+
     /// <summary>
     /// <para>Determine if an <see cref="AudioFormat"/> represents floating point data.</para>
     /// <para>For example, <c>AudioIsFloat(AudioFormat.AudioS16)</c> returns 0.</para>
@@ -94,8 +94,8 @@ public static partial class SDL
     /// <since>This macro is available since SDL 3.2.0</since>
     [Macro]
     public static bool AudioIsFloat(uint x) => (x & AudioMaskFloat) != 0;
-    
-    
+
+
     /// <summary>
     /// <para>Determine if an <see cref="AudioFormat"/> represents bigendian data.</para>
     /// <para>For example, <c>AudioIsBitEndian(AudioFormat.AudioS16LE)</c> returns 0.</para>
@@ -106,8 +106,8 @@ public static partial class SDL
     /// <since>This macro is available since SDL 3.2.0</since>
     [Macro]
     public static bool AudioIsBigEndian(uint x) => (x & AudioMaskBigEndian) != 0;
-    
-    
+
+
     /// <summary>
     /// <para>Determine if an <see cref="AudioFormat"/> represents littleendian data.</para>
     /// <para>For example, <c>AudioIsLittleEndian(AudioFormat.AudioS16BE)</c> returns 0.</para>
@@ -118,8 +118,8 @@ public static partial class SDL
     /// <since>This macro is available since SDL 3.2.0</since>
     [Macro]
     public static bool AudioIsLittleEndian(uint x) => !AudioIsBigEndian(x);
-    
-    
+
+
     /// <summary>
     /// <para>Determine if an <see cref="AudioFormat"/> represents signed data.</para>
     /// <para>For example, <c>AudioIsSigned(AudioFormat.AudioU8)</c> returns 0.</para>
@@ -130,8 +130,8 @@ public static partial class SDL
     /// <since>This macro is available since SDL 3.2.0</since>
     [Macro]
     public static bool AudioIsSigned(uint x) => (x & AudioMaskSigned) != 0;
-    
-    
+
+
     /// <summary>
     /// <para>Determine if an <see cref="AudioFormat"/> represents integer data.</para>
     /// <para>For example, <c>AudioIsInt(AudioFormat.AudioF32)</c> returns 0.</para>
@@ -142,8 +142,8 @@ public static partial class SDL
     /// <since>This macro is available since SDL 3.2.0</since>
     [Macro]
     public static bool AudioIsInt(uint x) => !AudioIsFloat(x);
-    
-    
+
+
     /// <summary>
     /// <para>Determine if an <see cref="AudioFormat"/> represents unsigned data.</para>
     /// <para>For example, <c>AudioIsUnsigned(AudioFormat.AudioS16)</c> returns 0.</para>
@@ -154,8 +154,8 @@ public static partial class SDL
     /// <since>This macro is available since SDL 3.2.0</since>
     [Macro]
     public static bool AudioIsUnsigned(uint x) => !AudioIsSigned(x);
-    
-    
+
+
     /// <summary>
     /// <para>Calculate the size of each audio frame (in bytes) from an <see cref="AudioSpec"/>.</para>
     /// <para>This reports on the size of an audio sample frame: stereo Sint16 data (2
@@ -166,5 +166,5 @@ public static partial class SDL
     /// <threadsafety>It is safe to call this macro from any thread.</threadsafety>
     /// <since>This macro is available since SDL 3.2.0</since>
     [Macro]
-    public static uint AudioFrameSize(AudioSpec x) => (uint) (AudioByteSize((uint) x.Format) * x.Channels);
+    public static uint AudioFrameSize(AudioSpec x) => (uint)(AudioByteSize((uint)x.Format) * x.Channels);
 }

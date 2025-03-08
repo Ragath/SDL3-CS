@@ -39,8 +39,8 @@ public static partial class SDL
     /// <seealso cref="EventType.GamepadAdded"/>
     [LibraryImport(SDLLibrary, EntryPoint = "SDL_AddGamepadMapping"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     public static partial int AddGamepadMapping([MarshalAs(UnmanagedType.LPUTF8Str)] string mapping);
-    
-    
+
+
     /// <code>extern SDL_DECLSPEC int SDLCALL SDL_AddGamepadMappingsFromIO(SDL_IOStream *src, bool closeio);</code>
     /// <summary>
     /// <para>Load a set of gamepad mappings from an SDL_IOStream.</para>
@@ -73,8 +73,8 @@ public static partial class SDL
     /// <seealso cref="EventType.GamepadAdded"/>
     [LibraryImport(SDLLibrary, EntryPoint = "SDL_AddGamepadMappingsFromIO"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     public static partial int AddGamepadMappingsFromIO(IntPtr src, [MarshalAs(UnmanagedType.I1)] bool closeio);
-    
-    
+
+
     /// <code>extern SDL_DECLSPEC int SDLCALL SDL_AddGamepadMappingsFromFile(const char *file);</code>
     /// <summary>
     /// <para>Load a set of gamepad mappings from a file.</para>
@@ -102,8 +102,8 @@ public static partial class SDL
     /// <seealso cref="EventType.GamepadAdded"/>
     [LibraryImport(SDLLibrary, EntryPoint = "SDL_AddGamepadMappingsFromFile"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     public static partial int AddGamepadMappingsFromFile([MarshalAs(UnmanagedType.LPUTF8Str)] string file);
-    
-    
+
+
     /// <code>extern SDL_DECLSPEC bool SDLCALL SDL_ReloadGamepadMappings(void);</code>
     /// <summary>
     /// <para>Reinitialize the SDL mapping database to its initial state.</para>
@@ -115,8 +115,8 @@ public static partial class SDL
     [LibraryImport(SDLLibrary, EntryPoint = "SDL_ReloadGamepadMappings"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     [return: MarshalAs(UnmanagedType.I1)]
     public static partial bool ReloadGamepadMappings();
-    
-    
+
+
     [LibraryImport(SDLLibrary, EntryPoint = "SDL_GetGamepadMappings"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static unsafe partial IntPtr SDL_GetGamepadMappings(out int count);
     /// <code>extern SDL_DECLSPEC char ** SDLCALL SDL_GetGamepadMappings(int *count);</code>
@@ -133,7 +133,7 @@ public static partial class SDL
     public static string[]? GetGamepadMappings(out int count)
     {
         var ptr = SDL_GetGamepadMappings(out count);
-        
+
         try
         {
             return PointerToStringArray(ptr, count);
@@ -143,8 +143,8 @@ public static partial class SDL
             Free(ptr);
         }
     }
-    
-    
+
+
     [LibraryImport(SDLLibrary, EntryPoint = "SDL_GetGamepadMappingForGUID"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial IntPtr SDL_GetGamepadMappingForGUID(GUID guid);
     /// <code>extern SDL_DECLSPEC char * SDLCALL SDL_GetGamepadMappingForGUID(SDL_GUID guid);</code>
@@ -160,18 +160,18 @@ public static partial class SDL
     /// <seealso cref="GetJoystickGUID"/>
     public static string? GetGamepadMappingForGUID(GUID guid)
     {
-        var value = SDL_GetGamepadMappingForGUID(guid); 
+        var value = SDL_GetGamepadMappingForGUID(guid);
         try
         {
             return value == IntPtr.Zero ? null : Marshal.PtrToStringUTF8(value);
         }
         finally
         {
-            if(value != IntPtr.Zero) Free(value);
+            if (value != IntPtr.Zero) Free(value);
         }
     }
-    
-    
+
+
     [LibraryImport(SDLLibrary, EntryPoint = "SDL_GetGamepadMapping"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial IntPtr SDL_GetGamepadMapping(IntPtr gamepad);
     /// <code>extern SDL_DECLSPEC char * SDLCALL SDL_GetGamepadMapping(SDL_Gamepad *gamepad);</code>
@@ -190,18 +190,18 @@ public static partial class SDL
     /// <seealso cref="SetGamepadMapping"/>
     public static string? GetGamepadMapping(IntPtr gamepad)
     {
-    	var value = SDL_GetGamepadMapping(gamepad); 
+        var value = SDL_GetGamepadMapping(gamepad);
         try
         {
             return value == IntPtr.Zero ? null : Marshal.PtrToStringUTF8(value);
         }
         finally
         {
-            if(value != IntPtr.Zero) Free(value);
+            if (value != IntPtr.Zero) Free(value);
         }
     }
-    
-    
+
+
     /// <code>extern SDL_DECLSPEC bool SDLCALL SDL_SetGamepadMapping(SDL_JoystickID instance_id, const char *mapping);</code>
     /// <summary>
     /// <para>Set the current mapping of a joystick or gamepad.</para>
@@ -218,8 +218,8 @@ public static partial class SDL
     [LibraryImport(SDLLibrary, EntryPoint = "SDL_SetGamepadMapping"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     [return: MarshalAs(UnmanagedType.I1)]
     public static partial bool SetGamepadMapping(uint instanceID, [MarshalAs(UnmanagedType.LPUTF8Str)] string? mapping);
-    
-    
+
+
     /// <code>extern SDL_DECLSPEC bool SDLCALL SDL_HasGamepad(void);</code>
     /// <summary>
     /// Return whether a gamepad is currently connected.
@@ -230,8 +230,8 @@ public static partial class SDL
     [LibraryImport(SDLLibrary, EntryPoint = "SDL_HasGamepad"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     [return: MarshalAs(UnmanagedType.I1)]
     public static partial bool HasGamepad();
-    
-    
+
+
     [LibraryImport(SDLLibrary, EntryPoint = "SDL_GetGamepads"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial IntPtr SDL_GetGamepads(out int count);
     /// <code>extern SDL_DECLSPEC SDL_JoystickID * SDLCALL SDL_GetGamepads(int *count);</code>
@@ -249,7 +249,7 @@ public static partial class SDL
     public static uint[]? GetGamepads(out int count)
     {
         var ptr = SDL_GetGamepads(out count);
-        
+
         try
         {
             return PointerToStructureArray<uint>(ptr, count);
@@ -259,8 +259,8 @@ public static partial class SDL
             Free(ptr);
         }
     }
-    
-    
+
+
     /// <code>extern SDL_DECLSPEC bool SDLCALL SDL_IsGamepad(SDL_JoystickID instance_id);</code>
     /// <summary>
     /// Check if the given joystick is supported by the gamepad interface.
@@ -274,8 +274,8 @@ public static partial class SDL
     [LibraryImport(SDLLibrary, EntryPoint = "SDL_IsGamepad"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     [return: MarshalAs(UnmanagedType.I1)]
     public static partial bool IsGamepad(uint instanceId);
-    
-    
+
+
     [LibraryImport(SDLLibrary, EntryPoint = "SDL_GetGamepadNameForID"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial IntPtr SDL_GetGamepadNameForID(uint instanceId);
     /// <code>extern SDL_DECLSPEC const char * SDLCALL SDL_GetGamepadNameForID(SDL_JoystickID instance_id);</code>
@@ -291,11 +291,11 @@ public static partial class SDL
     /// <seealso cref="GetGamepads"/>
     public static string? GetGamepadNameForID(uint instanceId)
     {
-        var value = SDL_GetGamepadNameForID(instanceId); 
+        var value = SDL_GetGamepadNameForID(instanceId);
         return value == IntPtr.Zero ? null : Marshal.PtrToStringUTF8(value);
     }
-    
-    
+
+
     [LibraryImport(SDLLibrary, EntryPoint = "SDL_GetGamepadPathForID"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial IntPtr SDL_GetGamepadPathForID(uint instanceId);
     /// <code>extern SDL_DECLSPEC const char * SDLCALL SDL_GetGamepadPathForID(SDL_JoystickID instance_id);</code>
@@ -311,11 +311,11 @@ public static partial class SDL
     /// <seealso cref="GetGamepads"/>
     public static string? GetGamepadPathForID(uint instanceId)
     {
-        var value = SDL_GetGamepadPathForID(instanceId); 
+        var value = SDL_GetGamepadPathForID(instanceId);
         return value == IntPtr.Zero ? null : Marshal.PtrToStringUTF8(value);
     }
-    
-    
+
+
     /// <code>extern SDL_DECLSPEC int SDLCALL SDL_GetGamepadPlayerIndexForID(SDL_JoystickID instance_id);</code>
     /// <summary>
     /// <para>Get the player index of a gamepad.</para>
@@ -328,8 +328,8 @@ public static partial class SDL
     /// <seealso cref="GetGamepads"/>
     [LibraryImport(SDLLibrary, EntryPoint = "SDL_GetGamepadPlayerIndexForID"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     public static partial int GetGamepadPlayerIndexForID(uint instanceID);
-    
-    
+
+
     /// <code>extern SDL_DECLSPEC SDL_GUID SDLCALL SDL_GetGamepadGUIDForID(SDL_JoystickID instance_id);</code>
     /// <summary>
     /// <para>Get the implementation-dependent GUID of a gamepad.</para>
@@ -343,8 +343,8 @@ public static partial class SDL
     /// <seealso cref="GetGamepads"/>
     [LibraryImport(SDLLibrary, EntryPoint = "SDL_GetGamepadGUIDForID"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     public static partial GUID GetGamepadGUIDForID(uint instanceID);
-    
-    
+
+
     /// <code>extern SDL_DECLSPEC Uint16 SDLCALL SDL_GetGamepadVendorForID(SDL_JoystickID instance_id);</code>
     /// <summary>
     /// <para>Get the USB vendor ID of a gamepad, if available.</para>
@@ -359,8 +359,8 @@ public static partial class SDL
     /// <seealso cref="GetGamepads"/>
     [LibraryImport(SDLLibrary, EntryPoint = "SDL_GetGamepadVendorForID"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     public static partial ushort GetGamepadVendorForID(uint instanceID);
-    
-    
+
+
     /// <code>extern SDL_DECLSPEC Uint16 SDLCALL SDL_GetGamepadProductForID(SDL_JoystickID instance_id);</code>
     /// <summary>
     /// <para>Get the USB product ID of a gamepad, if available.</para>
@@ -375,8 +375,8 @@ public static partial class SDL
     /// <seealso cref="GetGamepads"/>
     [LibraryImport(SDLLibrary, EntryPoint = "SDL_GetGamepadProductForID"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     public static partial ushort GetGamepadProductForID(uint instanceID);
-    
-    
+
+
     /// <code>extern SDL_DECLSPEC Uint16 SDLCALL SDL_GetGamepadProductVersionForID(SDL_JoystickID instance_id);</code>
     /// <summary>
     /// <para>Get the product version of a gamepad, if available.</para>
@@ -391,8 +391,8 @@ public static partial class SDL
     /// <seealso cref="GetGamepads"/>
     [LibraryImport(SDLLibrary, EntryPoint = "SDL_GetGamepadProductVersionForID"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     public static partial ushort GetGamepadProductVersionForID(uint instanceID);
-    
-    
+
+
     /// <code>extern SDL_DECLSPEC SDL_GamepadType SDLCALL SDL_GetGamepadTypeForID(SDL_JoystickID instance_id);</code>
     /// <summary>
     /// <para>Get the type of a gamepad.</para>
@@ -421,8 +421,8 @@ public static partial class SDL
     /// <seealso cref="GetRealGamepadType"/>
     [LibraryImport(SDLLibrary, EntryPoint = "SDL_GetRealGamepadTypeForID"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     public static partial GamepadType GetRealGamepadTypeForID(uint instanceID);
-    
-    
+
+
     [LibraryImport(SDLLibrary, EntryPoint = "SDL_GetGamepadMappingForID"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial IntPtr SDL_GetGamepadMappingForID(uint instanceId);
     /// <code>extern SDL_DECLSPEC char * SDLCALL SDL_GetGamepadMappingForID(SDL_JoystickID instance_id);</code>
@@ -438,18 +438,18 @@ public static partial class SDL
     /// <seealso cref="GetGamepadMapping"/>
     public static string? GetGamepadMappingForID(uint instanceId)
     {
-        var value = SDL_GetGamepadMappingForID(instanceId); 
+        var value = SDL_GetGamepadMappingForID(instanceId);
         try
         {
             return value == IntPtr.Zero ? null : Marshal.PtrToStringUTF8(value);
         }
         finally
         {
-            if(value != IntPtr.Zero) Free(value);
+            if (value != IntPtr.Zero) Free(value);
         }
     }
-    
-    
+
+
     /// <code>extern SDL_DECLSPEC SDL_Gamepad * SDLCALL SDL_OpenGamepad(SDL_JoystickID instance_id);</code>
     /// <summary>
     /// Open a gamepad for use.
@@ -462,8 +462,8 @@ public static partial class SDL
     /// <seealso cref="IsGamepad"/>
     [LibraryImport(SDLLibrary, EntryPoint = "SDL_OpenGamepad"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     public static partial IntPtr OpenGamepad(uint instanceID);
-    
-    
+
+
     /// <code>extern SDL_DECLSPEC SDL_Gamepad * SDLCALL SDL_GetGamepadFromID(SDL_JoystickID instance_id);</code>
     /// <summary>
     /// <para>Get the SDL_Gamepad associated with a joystick instance ID, if it has been
@@ -475,8 +475,8 @@ public static partial class SDL
     /// <since>This function is available since SDL 3.2.0</since>
     [LibraryImport(SDLLibrary, EntryPoint = "SDL_GetGamepadFromID"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     public static partial IntPtr GetGamepadFromID(uint instanceID);
-    
-    
+
+
     /// <code>extern SDL_DECLSPEC SDL_Gamepad * SDLCALL SDL_GetGamepadFromPlayerIndex(int player_index);</code>
     /// <summary>
     /// Get the SDL_Gamepad associated with a player index.
@@ -488,8 +488,8 @@ public static partial class SDL
     /// <seealso cref="SetGamepadPlayerIndex"/>
     [LibraryImport(SDLLibrary, EntryPoint = "SDL_GetGamepadFromPlayerIndex"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     public static partial IntPtr GetGamepadFromPlayerIndex(int playerIndex);
-    
-    
+
+
     /// <code>extern SDL_DECLSPEC SDL_PropertiesID SDLCALL SDL_GetGamepadProperties(SDL_Gamepad *gamepad);</code>
     /// <summary>
     /// <para>Get the properties associated with an opened gamepad.</para>
@@ -515,8 +515,8 @@ public static partial class SDL
     /// <since>This function is available since SDL 3.2.0</since>
     [LibraryImport(SDLLibrary, EntryPoint = "SDL_GetGamepadProperties"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     public static partial uint GetGamepadProperties(IntPtr gamepad);
-    
-    
+
+
     /// <code>extern SDL_DECLSPEC SDL_JoystickID SDLCALL SDL_GetGamepadID(SDL_Gamepad *gamepad);</code>
     /// <summary>
     /// Get the instance ID of an opened gamepad.
@@ -528,8 +528,8 @@ public static partial class SDL
     /// <since>This function is available since SDL 3.2.0</since>
     [LibraryImport(SDLLibrary, EntryPoint = "SDL_GetGamepadID"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     public static partial uint GetGamepadID(IntPtr gamepad);
-    
-    
+
+
     [LibraryImport(SDLLibrary, EntryPoint = "SDL_GetGamepadName"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial IntPtr SDL_GetGamepadName(IntPtr gamepad);
     /// <code>extern SDL_DECLSPEC const char * SDLCALL SDL_GetGamepadName(SDL_Gamepad *gamepad);</code>
@@ -547,8 +547,8 @@ public static partial class SDL
         var value = SDL_GetGamepadName(gamepad);
         return value == IntPtr.Zero ? null : Marshal.PtrToStringUTF8(value);
     }
-    
-    
+
+
     [LibraryImport(SDLLibrary, EntryPoint = "SDL_GetGamepadPath"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial IntPtr SDL_GetGamepadPath(IntPtr gamepad);
     /// <code>extern SDL_DECLSPEC const char * SDLCALL SDL_GetGamepadPath(SDL_Gamepad *gamepad);</code>
@@ -566,8 +566,8 @@ public static partial class SDL
         var value = SDL_GetGamepadPath(gamepad);
         return value == IntPtr.Zero ? null : Marshal.PtrToStringUTF8(value);
     }
-    
-    
+
+
     /// <code>extern SDL_DECLSPEC SDL_GamepadType SDLCALL SDL_GetGamepadType(SDL_Gamepad *gamepad);</code>
     /// <summary>
     /// Get the type of an opened gamepad.
@@ -579,8 +579,8 @@ public static partial class SDL
     /// <seealso cref="GetGamepadTypeForID"/>
     [LibraryImport(SDLLibrary, EntryPoint = "SDL_GetGamepadType"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     public static partial GamepadType GetGamepadType(IntPtr gamepad);
-    
-    
+
+
     /// <code>extern SDL_DECLSPEC SDL_GamepadType SDLCALL SDL_GetRealGamepadType(SDL_Gamepad *gamepad);</code>
     /// <summary>
     /// Get the type of an opened gamepad, ignoring any mapping override.
@@ -592,8 +592,8 @@ public static partial class SDL
     /// <seealso cref="GetRealGamepadTypeForID"/>
     [LibraryImport(SDLLibrary, EntryPoint = "SDL_GetRealGamepadType"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     public static partial GamepadType GetRealGamepadType(IntPtr gamepad);
-    
-    
+
+
     /// <code>extern SDL_DECLSPEC int SDLCALL SDL_GetGamepadPlayerIndex(SDL_Gamepad *gamepad);</code>
     /// <summary>
     /// <para>Get the player index of an opened gamepad.</para>
@@ -605,8 +605,8 @@ public static partial class SDL
     /// <seealso cref="SetGamepadPlayerIndex"/>
     [LibraryImport(SDLLibrary, EntryPoint = "SDL_GetGamepadPlayerIndex"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     public static partial int GetGamepadPlayerIndex(IntPtr gamepad);
-    
-    
+
+
     /// <code>extern SDL_DECLSPEC bool SDLCALL SDL_SetGamepadPlayerIndex(SDL_Gamepad *gamepad, int player_index);</code>
     /// <summary>
     /// Set the player index of an opened gamepad.
@@ -620,8 +620,8 @@ public static partial class SDL
     [LibraryImport(SDLLibrary, EntryPoint = "SDL_SetGamepadPlayerIndex"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     [return: MarshalAs(UnmanagedType.I1)]
     public static partial bool SetGamepadPlayerIndex(IntPtr gamepad, int playerIndex);
-    
-    
+
+
     /// <code>extern SDL_DECLSPEC Uint16 SDLCALL SDL_GetGamepadVendor(SDL_Gamepad *gamepad);</code>
     /// <summary>
     /// <para>Get the USB vendor ID of an opened gamepad, if available.</para>
@@ -633,8 +633,8 @@ public static partial class SDL
     /// <seealso cref="GetGamepadVendorForID"/>
     [LibraryImport(SDLLibrary, EntryPoint = "SDL_GetGamepadVendor"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     public static partial ushort GetGamepadVendor(IntPtr gamepad);
-    
-    
+
+
     /// <code>extern SDL_DECLSPEC Uint16 SDLCALL SDL_GetGamepadProduct(SDL_Gamepad *gamepad);</code>
     /// <summary>
     /// <para>Get the USB product ID of an opened gamepad, if available.</para>
@@ -646,8 +646,8 @@ public static partial class SDL
     /// <seealso cref="GetGamepadProductForID"/>
     [LibraryImport(SDLLibrary, EntryPoint = "SDL_GetGamepadProduct"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     public static partial ushort GetGamepadProduct(IntPtr gamepad);
-    
-    
+
+
     /// <code>extern SDL_DECLSPEC Uint16 SDLCALL SDL_GetGamepadProductVersion(SDL_Gamepad *gamepad);</code>
     /// <summary>
     /// <para>Get the product version of an opened gamepad, if available.</para>
@@ -659,8 +659,8 @@ public static partial class SDL
     /// <seealso cref="GetGamepadProductVersionForID"/>
     [LibraryImport(SDLLibrary, EntryPoint = "SDL_GetGamepadProductVersion"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     public static partial ushort GetGamepadProductVersion(IntPtr gamepad);
-    
-    
+
+
     /// <code>extern SDL_DECLSPEC Uint16 SDLCALL SDL_GetGamepadFirmwareVersion(SDL_Gamepad *gamepad);</code>
     /// <summary>
     /// <para>Get the firmware version of an opened gamepad, if available.</para>
@@ -671,8 +671,8 @@ public static partial class SDL
     /// <since>This function is available since SDL 3.2.0</since>
     [LibraryImport(SDLLibrary, EntryPoint = "SDL_GetGamepadFirmwareVersion"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     public static partial ushort GetGamepadFirmwareVersion(IntPtr gamepad);
-    
-    
+
+
     [LibraryImport(SDLLibrary, EntryPoint = "SDL_GetGamepadSerial"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial IntPtr SDL_GetGamepadSerial(IntPtr gamepad);
     /// <code>extern SDL_DECLSPEC const char * SDLCALL SDL_GetGamepadSerial(SDL_Gamepad *gamepad);</code>
@@ -685,11 +685,11 @@ public static partial class SDL
     /// <since>This function is available since SDL 3.2.0</since>
     public static string? GetGamepadSerial(IntPtr gamepad)
     {
-        var value = SDL_GetGamepadSerial(gamepad); 
+        var value = SDL_GetGamepadSerial(gamepad);
         return value == IntPtr.Zero ? null : Marshal.PtrToStringUTF8(value);
     }
-    
-    
+
+
     /// <code>extern SDL_DECLSPEC Uint64 SDLCALL SDL_GetGamepadSteamHandle(SDL_Gamepad *gamepad);</code>
     /// <summary>
     /// <para>Get the Steam Input handle of an opened gamepad, if available.</para>
@@ -701,8 +701,8 @@ public static partial class SDL
     /// <since>This function is available since SDL 3.2.0</since>
     [LibraryImport(SDLLibrary, EntryPoint = "SDL_GetGamepadSteamHandle"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     public static partial ulong GetGamepadSteamHandle(IntPtr gamepad);
-    
-    
+
+
     /// <code>extern SDL_DECLSPEC SDL_JoystickConnectionState SDLCALL SDL_GetGamepadConnectionState(SDL_Gamepad *gamepad);</code>
     /// <summary>
     /// Get the connection state of a gamepad.
@@ -714,8 +714,8 @@ public static partial class SDL
     /// <since>This function is available since SDL 3.2.0</since>
     [LibraryImport(SDLLibrary, EntryPoint = "SDL_GetGamepadConnectionState"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     public static partial JoystickConnectionState GetGamepadConnectionState(IntPtr gamepad);
-    
-    
+
+
     /// <code>extern SDL_DECLSPEC SDL_PowerState SDLCALL SDL_GetGamepadPowerInfo(SDL_Gamepad *gamepad, int *percent);</code>
     /// <summary>
     /// <para>Get the battery state of a gamepad.</para>
@@ -734,8 +734,8 @@ public static partial class SDL
     /// <since>This function is available since SDL 3.2.0</since>
     [LibraryImport(SDLLibrary, EntryPoint = "SDL_GetGamepadPowerInfo"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     public static partial PowerState GetGamepadPowerInfo(IntPtr gamepad, out int percent);
-    
-    
+
+
     /// <code>extern SDL_DECLSPEC bool SDLCALL SDL_GamepadConnected(SDL_Gamepad *gamepad);</code>
     /// <summary>
     /// Check if a gamepad has been opened and is currently connected.
@@ -748,8 +748,8 @@ public static partial class SDL
     [LibraryImport(SDLLibrary, EntryPoint = "SDL_GamepadConnected"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     [return: MarshalAs(UnmanagedType.I1)]
     public static partial bool GamepadConnected(IntPtr gamepad);
-    
-    
+
+
     /// <code>extern SDL_DECLSPEC SDL_Joystick * SDLCALL SDL_GetGamepadJoystick(SDL_Gamepad *gamepad);</code>
     /// <summary>
     /// <para>Get the underlying joystick from a gamepad.</para>
@@ -767,8 +767,8 @@ public static partial class SDL
     /// <since>This function is available since SDL 3.2.0</since>
     [LibraryImport(SDLLibrary, EntryPoint = "SDL_GetGamepadJoystick"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     public static partial IntPtr GetGamepadJoystick(IntPtr gamepad);
-    
-    
+
+
     /// <code>extern SDL_DECLSPEC void SDLCALL SDL_SetGamepadEventsEnabled(bool enabled);</code>
     /// <summary>
     /// <para>Set the state of gamepad event processing.</para>
@@ -781,8 +781,8 @@ public static partial class SDL
     /// <seealso cref="UpdateGamepads"/>
     [LibraryImport(SDLLibrary, EntryPoint = "SDL_SetGamepadEventsEnabled"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     public static partial void SetGamepadEventsEnabled([MarshalAs(UnmanagedType.I1)] bool enabled);
-    
-    
+
+
     /// <code>extern SDL_DECLSPEC bool SDLCALL SDL_GamepadEventsEnabled(void);</code>
     /// <summary>
     /// <para>Query the state of gamepad event processing.</para>
@@ -795,8 +795,8 @@ public static partial class SDL
     [LibraryImport(SDLLibrary, EntryPoint = "SDL_GamepadEventsEnabled"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     [return: MarshalAs(UnmanagedType.I1)]
     public static partial bool GamepadEventsEnabled();
-    
-    
+
+
     [LibraryImport(SDLLibrary, EntryPoint = "SDL_GetGamepadBindings"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial IntPtr SDL_GetGamepadBindings(IntPtr gamepad, out int count);
     /// <code>extern SDL_DECLSPEC SDL_GamepadBinding ** SDLCALL SDL_GetGamepadBindings(SDL_Gamepad *gamepad, int *count);</code>
@@ -813,9 +813,9 @@ public static partial class SDL
     public static GamepadBinding[]? GetGamepadBindings(IntPtr gamepad, out int count)
     {
         var ptr = SDL_GetGamepadBindings(gamepad, out count);
-        
+
         if (ptr == IntPtr.Zero) return null;
-        
+
         try
         {
             return PointerToStructureArray<GamepadBinding>(gamepad, count);
@@ -825,8 +825,8 @@ public static partial class SDL
             Free(ptr);
         }
     }
-    
-    
+
+
     /// <code>extern SDL_DECLSPEC void SDLCALL SDL_UpdateGamepads(void);</code>
     /// <summary>
     /// <para>Manually pump gamepad updates if not using the loop.</para>
@@ -837,8 +837,8 @@ public static partial class SDL
     /// <since>This function is available since SDL 3.2.0</since>
     [LibraryImport(SDLLibrary, EntryPoint = "SDL_UpdateGamepads"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     public static partial void UpdateGamepads();
-    
-    
+
+
     /// <code>extern SDL_DECLSPEC SDL_GamepadType SDLCALL SDL_GetGamepadTypeFromString(const char *str);</code>
     /// <summary>
     /// <para>Convert a string into <see cref="GamepadType"/> enum.</para>
@@ -854,8 +854,8 @@ public static partial class SDL
     /// <seealso cref="GetGamepadStringForType"/>
     [LibraryImport(SDLLibrary, EntryPoint = "SDL_GetGamepadTypeFromString"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     public static partial GamepadType GetGamepadTypeFromString([MarshalAs(UnmanagedType.LPUTF8Str)] string str);
-    
-    
+
+
     [LibraryImport(SDLLibrary, EntryPoint = "SDL_GetGamepadStringForType"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial IntPtr SDL_GetGamepadStringForType(GamepadType type);
     /// <code>extern SDL_DECLSPEC const char * SDLCALL SDL_GetGamepadStringForType(SDL_GamepadType type);</code>
@@ -870,11 +870,11 @@ public static partial class SDL
     /// <seealso cref="GetGamepadTypeFromString"/>
     public static string? GetGamepadStringForType(GamepadType type)
     {
-        var value = SDL_GetGamepadStringForType(type); 
+        var value = SDL_GetGamepadStringForType(type);
         return value == IntPtr.Zero ? null : Marshal.PtrToStringUTF8(value);
     }
-    
-    
+
+
     /// <code>extern SDL_DECLSPEC SDL_GamepadAxis SDLCALL SDL_GetGamepadAxisFromString(const char *str);</code>
     /// <summary>
     /// <para>Convert a string into <see cref="GamepadAxis"/> enum.</para>
@@ -893,8 +893,8 @@ public static partial class SDL
     /// <seealso cref="GetGamepadStringForAxis"/>
     [LibraryImport(SDLLibrary, EntryPoint = "SDL_GetGamepadAxisFromString"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     public static partial GamepadAxis GetGamepadAxisFromString([MarshalAs(UnmanagedType.LPUTF8Str)] string str);
-    
-    
+
+
     [LibraryImport(SDLLibrary, EntryPoint = "SDL_GetGamepadStringForAxis"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial IntPtr SDL_GetGamepadStringForAxis(GamepadAxis axis);
     /// <code>extern SDL_DECLSPEC const char * SDLCALL SDL_GetGamepadStringForAxis(SDL_GamepadAxis axis);</code>
@@ -909,11 +909,11 @@ public static partial class SDL
     /// <seealso cref="GetGamepadAxisFromString"/>
     public static string? GetGamepadStringForAxis(GamepadAxis axis)
     {
-        var value = SDL_GetGamepadStringForAxis(axis); 
+        var value = SDL_GetGamepadStringForAxis(axis);
         return value == IntPtr.Zero ? null : Marshal.PtrToStringUTF8(value);
     }
-    
-    
+
+
     /// <code>extern SDL_DECLSPEC bool SDLCALL SDL_GamepadHasAxis(SDL_Gamepad *gamepad, SDL_GamepadAxis axis);</code>
     /// <summary>
     /// <para>Query whether a gamepad has a given axis.</para>
@@ -929,8 +929,8 @@ public static partial class SDL
     [LibraryImport(SDLLibrary, EntryPoint = "SDL_GamepadHasAxis"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     [return: MarshalAs(UnmanagedType.I1)]
     public static partial bool GamepadHasAxis(IntPtr gamepad, GamepadAxis axis);
-    
-    
+
+
     /// <code>extern SDL_DECLSPEC Sint16 SDLCALL SDL_GetGamepadAxis(SDL_Gamepad *gamepad, SDL_GamepadAxis axis);</code>
     /// <summary>
     /// <para>Get the current state of an axis control on a gamepad.</para>
@@ -951,8 +951,8 @@ public static partial class SDL
     /// <seealso cref="GetGamepadButton"/>
     [LibraryImport(SDLLibrary, EntryPoint = "SDL_GetGamepadAxis"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     public static partial short GetGamepadAxis(IntPtr gamepad, GamepadAxis axis);
-    
-    
+
+
     /// <code>extern SDL_DECLSPEC SDL_GamepadButton SDLCALL SDL_GetGamepadButtonFromString(const char *str);</code>
     /// <summary>
     /// <para>Convert a string into an SDL_GamepadButton enum.</para>
@@ -968,8 +968,8 @@ public static partial class SDL
     /// <seealso cref="GetGamepadStringForButton"/>
     [LibraryImport(SDLLibrary, EntryPoint = "SDL_GetGamepadButtonFromString"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     public static partial GamepadButton GetGamepadButtonFromString([MarshalAs(UnmanagedType.LPUTF8Str)] string str);
-    
-    
+
+
     [LibraryImport(SDLLibrary, EntryPoint = "SDL_GetGamepadStringForButton"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial IntPtr SDL_GetGamepadStringForButton(GamepadButton button);
     /// <code>extern SDL_DECLSPEC const char * SDLCALL SDL_GetGamepadStringForButton(SDL_GamepadButton button);</code>
@@ -984,11 +984,11 @@ public static partial class SDL
     /// <seealso cref="GetGamepadButtonFromString"/>
     public static string? GetGamepadStringForButton(GamepadButton button)
     {
-        var value = SDL_GetGamepadStringForButton(button); 
+        var value = SDL_GetGamepadStringForButton(button);
         return value == IntPtr.Zero ? null : Marshal.PtrToStringUTF8(value);
     }
-    
-    
+
+
     /// <code>extern SDL_DECLSPEC bool SDLCALL SDL_GamepadHasButton(SDL_Gamepad *gamepad, SDL_GamepadButton button);</code>
     /// <summary>
     /// <para>Query whether a gamepad has a given button.</para>
@@ -1003,7 +1003,7 @@ public static partial class SDL
     [LibraryImport(SDLLibrary, EntryPoint = "SDL_GamepadHasButton"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     [return: MarshalAs(UnmanagedType.I1)]
     public static partial bool GamepadHasButton(IntPtr gamepad, GamepadButton button);
-    
+
 
     /// <code>extern SDL_DECLSPEC bool SDLCALL SDL_GetGamepadButton(SDL_Gamepad *gamepad, SDL_GamepadButton button);</code>
     /// <summary>
@@ -1018,8 +1018,8 @@ public static partial class SDL
     [LibraryImport(SDLLibrary, EntryPoint = "SDL_GetGamepadButton"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     [return: MarshalAs(UnmanagedType.I1)]
     public static partial bool GetGamepadButton(IntPtr gamepad, GamepadButton button);
-    
-    
+
+
     /// <code>extern SDL_DECLSPEC SDL_GamepadButtonLabel SDLCALL SDL_GetGamepadButtonLabelForType(SDL_GamepadType type, SDL_GamepadButton button);</code>
     /// <summary>
     /// <para>Get the label of a button on a gamepad.</para>
@@ -1031,8 +1031,8 @@ public static partial class SDL
     /// <seealso cref="GetGamepadButtonLabel"/>
     [LibraryImport(SDLLibrary, EntryPoint = "SDL_GetGamepadButtonLabelForType"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     public static partial GamepadButtonLabel GetGamepadButtonLabelForType(GamepadType type, GamepadButton button);
-    
-    
+
+
     /// <code>extern SDL_DECLSPEC SDL_GamepadButtonLabel SDLCALL SDL_GetGamepadButtonLabel(SDL_Gamepad *gamepad, SDL_GamepadButton button);</code>
     /// <summary>
     /// Get the label of a button on a gamepad.
@@ -1044,8 +1044,8 @@ public static partial class SDL
     /// <seealso cref="GetGamepadButtonLabelForType"/>
     [LibraryImport(SDLLibrary, EntryPoint = "SDL_GetGamepadButtonLabel"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     public static partial GamepadButtonLabel GetGamepadButtonLabel(IntPtr gamepad, GamepadButton button);
-    
-    
+
+
     /// <code>extern SDL_DECLSPEC int SDLCALL SDL_GetNumGamepadTouchpads(SDL_Gamepad *gamepad);</code>
     /// <summary>
     /// Get the number of touchpads on a gamepad.
@@ -1056,8 +1056,8 @@ public static partial class SDL
     /// <seealso cref="GetNumGamepadTouchpadFingers"/>
     [LibraryImport(SDLLibrary, EntryPoint = "SDL_GetNumGamepadTouchpads"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     public static partial int GetNumGamepadTouchpads(IntPtr gamepad);
-    
-    
+
+
     /// <code>extern SDL_DECLSPEC int SDLCALL SDL_GetNumGamepadTouchpadFingers(SDL_Gamepad *gamepad, int touchpad);</code>
     /// <summary>
     /// <para>Get the number of supported simultaneous fingers on a touchpad on a game
@@ -1071,8 +1071,8 @@ public static partial class SDL
     /// <seealso cref="GetNumGamepadTouchpads"/>
     [LibraryImport(SDLLibrary, EntryPoint = "SDL_GetNumGamepadTouchpadFingers"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     public static partial int GetNumGamepadTouchpadFingers(IntPtr gamepad, int touchpad);
-    
-    
+
+
     /// <code>extern SDL_DECLSPEC bool SDLCALL SDL_GetGamepadTouchpadFinger(SDL_Gamepad *gamepad, int touchpad, int finger, bool *down, float *x, float *y, float *pressure);</code>
     /// <summary>
     /// Get the current state of a finger on a touchpad on a gamepad.
@@ -1094,8 +1094,8 @@ public static partial class SDL
     [LibraryImport(SDLLibrary, EntryPoint = "SDL_GetGamepadTouchpadFinger"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     [return: MarshalAs(UnmanagedType.I1)]
     public static partial bool GetGamepadTouchpadFinger(IntPtr gamepad, int touchpad, int finger, [MarshalAs(UnmanagedType.I1)] out bool down, out float x, out float y, out float pressure);
-    
-    
+
+
     /// <code>extern SDL_DECLSPEC bool SDLCALL SDL_GamepadHasSensor(SDL_Gamepad *gamepad, SDL_SensorType type);</code>
     /// <summary>
     /// Return whether a gamepad has a particular sensor.
@@ -1110,8 +1110,8 @@ public static partial class SDL
     [LibraryImport(SDLLibrary, EntryPoint = "SDL_GamepadHasSensor"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     [return: MarshalAs(UnmanagedType.I1)]
     public static partial bool GamepadHasSensor(IntPtr gamepad, SensorType type);
-    
-    
+
+
     /// <code>extern SDL_DECLSPEC bool SDLCALL SDL_SetGamepadSensorEnabled(SDL_Gamepad *gamepad, SDL_SensorType type, bool enabled);</code>
     /// <summary>
     /// Set whether data reporting for a gamepad sensor is enabled.
@@ -1127,8 +1127,8 @@ public static partial class SDL
     [LibraryImport(SDLLibrary, EntryPoint = "SDL_SetGamepadSensorEnabled"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     [return: MarshalAs(UnmanagedType.I1)]
     public static partial bool SetGamepadSensorEnabled(IntPtr gamepad, SensorType type, [MarshalAs(UnmanagedType.I1)] bool enabled);
-    
-    
+
+
     /// <code>extern SDL_DECLSPEC bool SDLCALL SDL_GamepadSensorEnabled(SDL_Gamepad *gamepad, SDL_SensorType type);</code>
     /// <summary>
     /// <para>Query whether sensor data reporting is enabled for a gamepad.</para>
@@ -1141,8 +1141,8 @@ public static partial class SDL
     [LibraryImport(SDLLibrary, EntryPoint = "SDL_GamepadSensorEnabled"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     [return: MarshalAs(UnmanagedType.I1)]
     public static partial bool GamepadSensorEnabled(IntPtr gamepd, SensorType type);
-    
-    
+
+
     /// <code>extern SDL_DECLSPEC float SDLCALL SDL_GetGamepadSensorDataRate(SDL_Gamepad *gamepad, SDL_SensorType type);</code>
     /// <summary>
     /// Get the data rate (number of events per second) of a gamepad sensor.
@@ -1153,8 +1153,8 @@ public static partial class SDL
     /// <since>This function is available since SDL 3.2.0</since>
     [LibraryImport(SDLLibrary, EntryPoint = "SDL_GetGamepadSensorDataRate"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     public static partial float GetGamepadSensorDataRate(IntPtr gamepad, SensorType type);
-    
-    
+
+
     /// <code>extern SDL_DECLSPEC bool SDLCALL SDL_GetGamepadSensorData(SDL_Gamepad *gamepad, SDL_SensorType type, float *data, int num_values);</code>
     /// <summary>
     /// <para>Get the current state of a gamepad sensor.</para>
@@ -1171,8 +1171,8 @@ public static partial class SDL
     [LibraryImport(SDLLibrary, EntryPoint = "SDL_GetGamepadSensorData"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     [return: MarshalAs(UnmanagedType.I1)]
     public static partial bool GetGamepadSensorData(IntPtr gamepad, SensorType type, [MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 3)] out float[] data, int numValues);
-    
-    
+
+
     /// <code>extern SDL_DECLSPEC bool SDLCALL SDL_RumbleGamepad(SDL_Gamepad *gamepad, Uint16 low_frequency_rumble, Uint16 high_frequency_rumble, Uint32 duration_ms);</code>
     /// <summary>
     /// <para>Start a rumble effect on a gamepad.</para>
@@ -1192,8 +1192,8 @@ public static partial class SDL
     [LibraryImport(SDLLibrary, EntryPoint = "SDL_RumbleGamepad"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     [return: MarshalAs(UnmanagedType.I1)]
     public static partial bool RumbleGamepad(IntPtr gamepad, ushort lowFrequencyRumble, ushort highFrequencyRumble, uint durationMs);
-    
-    
+
+
     /// <code>extern SDL_DECLSPEC bool SDLCALL SDL_RumbleGamepadTriggers(SDL_Gamepad *gamepad, Uint16 left_rumble, Uint16 right_rumble, Uint32 duration_ms);</code>
     /// <summary>
     /// <para>Start a rumble effect in the gamepad's triggers.</para>
@@ -1218,8 +1218,8 @@ public static partial class SDL
     [LibraryImport(SDLLibrary, EntryPoint = "SDL_RumbleGamepadTriggers"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     [return: MarshalAs(UnmanagedType.I1)]
     public static partial bool RumbleGamepadTriggers(IntPtr gamepad, ushort leftRumble, ushort rightRumble, uint durationMs);
-    
-    
+
+
     /// <code>extern SDL_DECLSPEC bool SDLCALL SDL_SetGamepadLED(SDL_Gamepad *gamepad, Uint8 red, Uint8 green, Uint8 blue);</code>
     /// <summary>
     /// <para>Update a gamepad's LED color.</para>
@@ -1238,8 +1238,8 @@ public static partial class SDL
     [LibraryImport(SDLLibrary, EntryPoint = "SDL_SetGamepadLED"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     [return: MarshalAs(UnmanagedType.I1)]
     public static partial bool SetGamepadLED(IntPtr gamepad, byte red, byte green, byte blue);
-    
-    
+
+
     /// <code>extern SDL_DECLSPEC bool SDLCALL SDL_SendGamepadEffect(SDL_Gamepad *gamepad, const void *data, int size);</code>
     /// <summary>
     /// Send a gamepad specific effect packet.
@@ -1253,8 +1253,8 @@ public static partial class SDL
     [LibraryImport(SDLLibrary, EntryPoint = "SDL_SendGamepadEffect"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     [return: MarshalAs(UnmanagedType.I1)]
     public static partial bool SendGamepadEffect(IntPtr gamepad, IntPtr data, int size);
-    
-    
+
+
     /// <code>extern SDL_DECLSPEC bool SDLCALL SDL_SendGamepadEffect(SDL_Gamepad *gamepad, const void *data, int size);</code>
     /// <summary>
     /// Send a gamepad specific effect packet.
@@ -1268,8 +1268,8 @@ public static partial class SDL
     [LibraryImport(SDLLibrary, EntryPoint = "SDL_SendGamepadEffect"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     [return: MarshalAs(UnmanagedType.I1)]
     public static partial bool SendGamepadEffect(IntPtr gamepad, [MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 2)] byte[] data, int size);
-    
-    
+
+
     /// <code>extern SDL_DECLSPEC void SDLCALL SDL_CloseGamepad(SDL_Gamepad *gamepad);</code>
     /// <summary>
     /// Close a gamepad previously opened with <see cref="OpenGamepad"/>.
@@ -1280,8 +1280,8 @@ public static partial class SDL
     /// <seealso cref="OpenGamepad"/>
     [LibraryImport(SDLLibrary, EntryPoint = "SDL_CloseGamepad"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     public static partial void CloseGamepad(IntPtr gamepad);
-    
-    
+
+
     [LibraryImport(SDLLibrary, EntryPoint = "SDL_GetGamepadAppleSFSymbolsNameForButton"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial IntPtr SDL_GetGamepadAppleSFSymbolsNameForButton(IntPtr gamepad, GamepadButton button);
     /// <code>extern SDL_DECLSPEC const char * SDLCALL SDL_GetGamepadAppleSFSymbolsNameForButton(SDL_Gamepad *gamepad, SDL_GamepadButton button);</code>
@@ -1296,11 +1296,11 @@ public static partial class SDL
     /// <seealso cref="GetGamepadAppleSFSymbolsNameForAxis"/>
     public static string? GetGamepadAppleSFSymbolsNameForButton(IntPtr gamepad, GamepadButton button)
     {
-        var value = SDL_GetGamepadAppleSFSymbolsNameForButton(gamepad, button); 
+        var value = SDL_GetGamepadAppleSFSymbolsNameForButton(gamepad, button);
         return value == IntPtr.Zero ? null : Marshal.PtrToStringUTF8(value);
     }
-    
-    
+
+
     [LibraryImport(SDLLibrary, EntryPoint = "SDL_GetGamepadAppleSFSymbolsNameForAxis"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial IntPtr SDL_GetGamepadAppleSFSymbolsNameForAxis(IntPtr gamepad, GamepadAxis axis);
     /// <code>extern SDL_DECLSPEC const char * SDLCALL SDL_GetGamepadAppleSFSymbolsNameForAxis(SDL_Gamepad *gamepad, SDL_GamepadAxis axis);</code>
@@ -1314,7 +1314,7 @@ public static partial class SDL
     /// <seealso cref="GetGamepadAppleSFSymbolsNameForButton"/>
     public static string? GetGamepadAppleSFSymbolsNameForAxis(IntPtr gamepad, GamepadAxis axis)
     {
-        var value = SDL_GetGamepadAppleSFSymbolsNameForAxis(gamepad, axis); 
+        var value = SDL_GetGamepadAppleSFSymbolsNameForAxis(gamepad, axis);
         return value == IntPtr.Zero ? null : Marshal.PtrToStringUTF8(value);
     }
 }

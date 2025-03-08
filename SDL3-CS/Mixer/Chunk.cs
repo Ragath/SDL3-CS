@@ -31,9 +31,9 @@ public partial class Mixer
     public struct Chunk
     {
         public int Allocated;
-        
+
         public IntPtr ABuf;
-        
+
         public uint ALen;
 
         /// <summary>

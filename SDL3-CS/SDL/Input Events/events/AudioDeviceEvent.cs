@@ -39,27 +39,27 @@ public static partial class SDL
         /// or <see cref="EventType.AudioDeviceFormatChanged"/>
         /// </summary>
         public EventType Type;
-        
+
         private UInt32 _reserved;
         /// <summary>
         /// In nanoseconds, populated using <see cref="GetTicksNS"/>
         /// </summary>
         public UInt64 Timestamp;
-        
+
         /// <summary>
         /// SDL_AudioDeviceID for the device being added or removed or changing
         /// </summary>
         public UInt32 Which;
-        
+
         /// <summary>
         /// false if a playback device, true if a recording device.
         /// </summary>
         [MarshalAs(UnmanagedType.I1)] public bool Recording;
-        
+
         private Byte _padding1;
-        
+
         private Byte _padding2;
-        
+
         private Byte _padding3;
     }
 }

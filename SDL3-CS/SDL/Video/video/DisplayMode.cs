@@ -43,42 +43,42 @@ public static partial class SDL
         /// The display this mode is associated with
         /// </summary>
         public UInt32 DisplayID;
-        
+
         /// <summary>
         /// Pixel format
         /// </summary>
         public PixelFormat Format;
-        
+
         /// <summary>
         /// Width 
         /// </summary>
         public int W;
-        
+
         /// <summary>
         /// Height 
         /// </summary>
         public int H;
-        
+
         /// <summary>
         /// Scale converting size to pixels (e.g. a 1920x1080 mode with 2.0 scale would have 3840x2160 pixels)
         /// </summary>
         public float PixelDensity;
-        
+
         /// <summary>
         /// Refresh rate (or 0.0f for unspecified)
         /// </summary>
         public float RefreshRate;
-        
+
         /// <summary>
         /// Precise refresh rate numerator (or 0 for unspecified)
         /// </summary>
         public int RefreshRateNumerator;
-        
+
         /// <summary>
         /// Precise refresh rate denominator
         /// </summary>
         public int RefreshRateDenominator;
-        
+
         /// <summary>
         /// Private
         /// </summary>

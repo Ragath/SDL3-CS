@@ -1,5 +1,5 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
-
+  
     <PropertyGroup>
         <RootNamespace>SDL3</RootNamespace>
         <LangVersion>latest</LangVersion>
@@ -43,11 +43,11 @@
     </PropertyGroup>
     
     <ItemGroup>
-      <None Include="../README.md" Pack="true" PackagePath="\"/>
-      <None Include="../README-nuget.md" Pack="true" PackagePath="\"/>
-      <None Include="../LICENSE" Pack="true" PackagePath="\"/>
-      <None Include="../CODE_OF_CONDUCT.md" Pack="true" PackagePath="\"/>
-      <None Include="../logo.png" Pack="true" Visible="false" PackagePath="\"/>
+      <None Include="../README.md" Pack="true" PackagePath="\" />
+      <None Include="../README-nuget.md" Pack="true" PackagePath="\" />
+      <None Include="../LICENSE" Pack="true" PackagePath="\" />
+      <None Include="../CODE_OF_CONDUCT.md" Pack="true" PackagePath="\" />
+      <None Include="../logo.png" Pack="true" Visible="false" PackagePath="\" />
       <None Include="bin\Release\SDL3-CS.xml" Visible="false" Pack="true" PackagePath="\" />
     </ItemGroup>
 

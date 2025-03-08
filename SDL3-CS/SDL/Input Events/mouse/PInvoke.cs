@@ -44,8 +44,8 @@ public static partial class SDL
     [LibraryImport(SDLLibrary, EntryPoint = "SDL_HasMouse"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     [return: MarshalAs(UnmanagedType.I1)]
     public static partial bool HasMouse();
-    
-    
+
+
     [LibraryImport(SDLLibrary, EntryPoint = "SDL_GetMice"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial IntPtr SDL_GetMice(out int count);
     /// <code>extern SDL_DECLSPEC SDL_MouseID * SDLCALL SDL_GetMice(int *count);</code>
@@ -68,7 +68,7 @@ public static partial class SDL
     public static uint[]? GetMice(out int count)
     {
         var ptr = SDL_GetMice(out count);
-        
+
         try
         {
             return PointerToStructureArray<uint>(ptr, count);
@@ -78,8 +78,8 @@ public static partial class SDL
             Free(ptr);
         }
     }
-    
-    
+
+
     [LibraryImport(SDLLibrary, EntryPoint = "SDL_GetMouseNameForID"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial IntPtr SDL_GetMouseNameForID(uint instanceId);
     /// <code>extern SDL_DECLSPEC const char * SDLCALL SDL_GetMouseNameForID(SDL_MouseID instance_id);</code>
@@ -95,11 +95,11 @@ public static partial class SDL
     /// <seealso cref="GetMice"/>
     public static string? GetMouseNameForID(uint instanceId)
     {
-        var value = SDL_GetMouseNameForID(instanceId); 
+        var value = SDL_GetMouseNameForID(instanceId);
         return value == IntPtr.Zero ? null : Marshal.PtrToStringUTF8(value);
     }
 
-    
+
     /// <code>extern SDL_DECLSPEC SDL_Window * SDLCALL SDL_GetMouseFocus(void);</code>
     /// <summary>
     /// Get the window which currently has mouse focus.
@@ -109,8 +109,8 @@ public static partial class SDL
     /// <since>This function is available since SDL 3.2.0</since>
     [LibraryImport(SDLLibrary, EntryPoint = "SDL_GetMouseFocus"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     public static partial IntPtr GetMouseFocus();
-    
-    
+
+
     /// <code>extern SDL_DECLSPEC SDL_MouseButtonFlags SDLCALL SDL_GetMouseState(float *x, float *y);</code>
     /// <summary>
     /// <para>Query SDL's cache for the synchronous mouse button state and the
@@ -132,8 +132,8 @@ public static partial class SDL
     /// <seealso cref="GetRelativeMouseState"/>
     [LibraryImport(SDLLibrary, EntryPoint = "SDL_GetMouseState"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     public static partial MouseButtonFlags GetMouseState(out float x, out float y);
-    
-    
+
+
     /// <code>extern SDL_DECLSPEC SDL_MouseButtonFlags SDLCALL SDL_GetGlobalMouseState(float *x, float *y);</code>
     /// <summary>
     /// <para>Query the platform for the asynchronous mouse button state and the
@@ -164,8 +164,8 @@ public static partial class SDL
     /// <seealso cref="GetGlobalMouseState"/>
     [LibraryImport(SDLLibrary, EntryPoint = "SDL_GetGlobalMouseState"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     public static partial MouseButtonFlags GetGlobalMouseState(out float x, out float y);
-    
-    
+
+
     /// <code>extern SDL_DECLSPEC SDL_MouseButtonFlags SDLCALL SDL_GetRelativeMouseState(float *x, float *y);</code>
     /// <summary>
     /// <para>Query SDL's cache for the synchronous mouse button state and accumulated
@@ -197,8 +197,8 @@ public static partial class SDL
     /// <seealso cref="GetGlobalMouseState"/>
     [LibraryImport(SDLLibrary, EntryPoint = "SDL_GetRelativeMouseState"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     public static partial MouseButtonFlags GetRelativeMouseState(out float x, out float y);
-    
-    
+
+
     /// <code>extern SDL_DECLSPEC void SDLCALL SDL_WarpMouseInWindow(SDL_Window * window, float x, float y);</code>
     /// <summary>
     /// <para>Move the mouse cursor to the given position within the window.</para>
@@ -217,8 +217,8 @@ public static partial class SDL
     /// <seealso cref="WarpMouseGlobal"/>
     [LibraryImport(SDLLibrary, EntryPoint = "SDL_WarpMouseInWindow"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     public static partial void WarpMouseInWindow(IntPtr window, float x, float y);
-    
-    
+
+
     /// <code>extern SDL_DECLSPEC bool SDLCALL SDL_WarpMouseGlobal(float x, float y);</code>
     /// <summary>
     /// <para>Move the mouse to the given position in global screen space.</para>
@@ -238,8 +238,8 @@ public static partial class SDL
     [LibraryImport(SDLLibrary, EntryPoint = "SDL_WarpMouseGlobal"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     [return: MarshalAs(UnmanagedType.I1)]
     public static partial bool WarpMouseGlobal(float x, float y);
-    
-    
+
+
     /// <code>extern SDL_DECLSPEC bool SDLCALL SDL_SetRelativeMouseTransform(SDL_MouseMotionTransformCallback callback, void *userdata);</code>
     /// <summary>
     /// <para>Set a user-defined function by which to transform relative mouse inputs.</para>
@@ -256,8 +256,8 @@ public static partial class SDL
     [LibraryImport(SDLLibrary, EntryPoint = "SDL_SetRelativeMouseTransform"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     [return: MarshalAs(UnmanagedType.I1)]
     public static partial bool SetRelativeMouseTransform(MouseMotionTransformCallback callback, IntPtr userdata);
-    
-    
+
+
     /// <code>extern SDL_DECLSPEC bool SDLCALL SDL_SetWindowRelativeMouseMode(SDL_Window *window, bool enabled);</code>
     /// <summary>
     /// <para>Set relative mouse mode for a window.</para>
@@ -281,8 +281,8 @@ public static partial class SDL
     [LibraryImport(SDLLibrary, EntryPoint = "SDL_SetWindowRelativeMouseMode"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     [return: MarshalAs(UnmanagedType.I1)]
     public static partial bool SetWindowRelativeMouseMode(IntPtr window, [MarshalAs(UnmanagedType.I1)] bool enabled);
-    
-    
+
+
     /// <code>extern SDL_DECLSPEC bool SDLCALL SDL_GetWindowRelativeMouseMode(SDL_Window *window);</code>
     /// <summary>
     /// Query whether relative mouse mode is enabled for a window.
@@ -295,8 +295,8 @@ public static partial class SDL
     [LibraryImport(SDLLibrary, EntryPoint = "SDL_GetWindowRelativeMouseMode"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     [return: MarshalAs(UnmanagedType.I1)]
     public static partial bool GetWindowRelativeMouseMode(IntPtr window);
-    
-    
+
+
     /// <code>extern SDL_DECLSPEC bool SDLCALL SDL_CaptureMouse(bool enabled);</code>
     /// <summary>
     /// <para>Capture the mouse and to track input outside an SDL window.</para>
@@ -338,7 +338,7 @@ public static partial class SDL
     [LibraryImport(SDLLibrary, EntryPoint = "SDL_CaptureMouse"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     [return: MarshalAs(UnmanagedType.I1)]
     public static partial bool CaptureMouse([MarshalAs(UnmanagedType.I1)] bool enabled);
-    
+
     /// <code>extern SDL_DECLSPEC SDL_Cursor * SDLCALL SDL_CreateCursor(const Uint8 * data, const Uint8 * mask, int w, int h, int hot_x, int hot_y);</code>
     /// <summary>
     /// <para>Create a cursor using the specified bitmap data and mask (in MSB format).</para>
@@ -377,8 +377,8 @@ public static partial class SDL
     /// <seealso cref="SetCursor"/>
     [LibraryImport(SDLLibrary, EntryPoint = "SDL_CreateCursor"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     public static partial IntPtr CreateCursor(byte[] data, byte[] mask, int w, int h, int hotX, int hotY);
-    
-    
+
+
     /// <code>extern SDL_DECLSPEC SDL_Cursor * SDLCALL SDL_CreateColorCursor(SDL_Surface *surface, int hot_x, int hot_y);</code>
     /// <summary>
     /// <para>Create a color cursor.</para>
@@ -405,8 +405,8 @@ public static partial class SDL
     /// <seealso cref="SetCursor"/>
     [LibraryImport(SDLLibrary, EntryPoint = "SDL_CreateColorCursor"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     public static partial IntPtr CreateColorCursor(IntPtr surface, int hotX, int hotY);
-    
-    
+
+
     /// <code>extern SDL_DECLSPEC SDL_Cursor * SDLCALL SDL_CreateSystemCursor(SDL_SystemCursor id);</code>
     /// <summary>
     /// Create a system cursor.
@@ -453,7 +453,7 @@ public static partial class SDL
     [LibraryImport(SDLLibrary, EntryPoint = "SDL_GetCursor"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     public static partial IntPtr GetCursor();
 
-    
+
     /// <code>extern SDL_DECLSPEC SDL_Cursor * SDLCALL SDL_GetDefaultCursor(void);</code>
     /// <summary>
     /// <para>Get the default cursor.</para>
@@ -466,7 +466,7 @@ public static partial class SDL
     /// <since>This function is available since SDL 3.2.0</since>
     [LibraryImport(SDLLibrary, EntryPoint = "SDL_GetDefaultCursor"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     public static partial IntPtr GetDefaultCursor();
-    
+
 
     /// <code>extern SDL_DECLSPEC void SDLCALL SDL_DestroyCursor(SDL_Cursor *cursor);</code>
     /// <summary>
@@ -483,7 +483,7 @@ public static partial class SDL
     [LibraryImport(SDLLibrary, EntryPoint = "SDL_DestroyCursor"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     public static partial void DestroyCursor(IntPtr cursor);
 
-    
+
     /// <code>extern SDL_DECLSPEC bool SDLCALL SDL_ShowCursor(void);</code>
     /// <summary>
     /// Show the cursor.
@@ -497,8 +497,8 @@ public static partial class SDL
     [LibraryImport(SDLLibrary, EntryPoint = "SDL_ShowCursor"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     [return: MarshalAs(UnmanagedType.I1)]
     public static partial bool ShowCursor();
-    
-    
+
+
     /// <code>extern SDL_DECLSPEC bool SDLCALL SDL_HideCursor(void);</code>
     /// <summary>
     /// Hide the cursor.
@@ -512,8 +512,8 @@ public static partial class SDL
     [LibraryImport(SDLLibrary, EntryPoint = "SDL_HideCursor"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     [return: MarshalAs(UnmanagedType.I1)]
     public static partial bool HideCursor();
-    
-    
+
+
     /// <code>extern SDL_DECLSPEC bool SDLCALL SDL_CursorVisible(void);</code>
     /// <summary>
     /// Return whether the cursor is currently being shown.

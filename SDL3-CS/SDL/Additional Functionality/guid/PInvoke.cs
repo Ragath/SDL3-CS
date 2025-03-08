@@ -41,8 +41,8 @@ public static partial class SDL
     [LibraryImport(SDLLibrary, EntryPoint = "SDL_GUIDToString"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     [return: MarshalAs(UnmanagedType.I1)]
     public static partial void GUIDToString(GUID guid, [MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 2)] ref byte[] pszGUID, int cbGUID);
-    
-    
+
+
     /// <code>extern SDL_DECLSPEC SDL_GUID SDLCALL SDL_StringToGUID(const char *pchGUID);</code>
     /// <summary>
     /// <para>Convert a GUID string into a <see cref="GUID"/> structure.</para>

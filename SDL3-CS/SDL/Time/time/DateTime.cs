@@ -39,42 +39,42 @@ public static partial class SDL
         /// Year
         /// </summary>
         public int Year;
-        
+
         /// <summary>
         /// Month [01-12]
         /// </summary>
         public int Month;
-        
+
         /// <summary>
         /// Day of the month [01-31]
         /// </summary>
         public int Day;
-        
+
         /// <summary>
         /// Hour [0-23]
         /// </summary>
         public int Hour;
-        
+
         /// <summary>
         /// Minute [0-59]
         /// </summary>
         public int Minute;
-        
+
         /// <summary>
         /// Seconds [0-60]
         /// </summary>
         public int Second;
-        
+
         /// <summary>
         /// Nanoseconds [0-999999999]
         /// </summary>
         public int Nanosecond;
-        
+
         /// <summary>
         /// Day of the week [0-6] (0 being Sunday)
         /// </summary>
         public int DayOfWeek;
-        
+
         /// <summary>
         /// Seconds east of UTC
         /// </summary>

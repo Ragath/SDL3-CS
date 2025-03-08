@@ -42,34 +42,34 @@ public static partial class SDL
         /// <summary>
         /// <see cref="Audio"/> implies <see cref="Events"/>
         /// </summary>
-        Audio =     0x00000010u,
-        
+        Audio = 0x00000010u,
+
         /// <summary>
         /// <see cref="Video"/> implies <see cref="Events"/>, should be initialized on the main thread
         /// </summary>
-        Video =     0x00000020u,
-        
+        Video = 0x00000020u,
+
         /// <summary>
         /// <see cref="Joystick"/> implies <see cref="Events"/>, should be initialized on the same thread as
         /// <see cref="Video"/> on Windows if you don't set <see cref="Hints.JoystickThread"/>
         /// </summary>
-        Joystick =  0x00000200u,
-        Haptic =    0x00001000u,
-        
+        Joystick = 0x00000200u,
+        Haptic = 0x00001000u,
+
         /// <summary>
         /// <see cref="Gamepad"/> implies <see cref="Events"/>
         /// </summary>
-        Gamepad =   0x00002000u,
-        Events =    0x00004000u,
-        
+        Gamepad = 0x00002000u,
+        Events = 0x00004000u,
+
         /// <summary>
         /// <see cref="Sensor"/> implies <see cref="Events"/>
         /// </summary>
-        Sensor =    0x00008000u,
-        
+        Sensor = 0x00008000u,
+
         /// <summary>
         /// <see cref="Camera"/> implies <see cref="Events"/>
         /// </summary>
-        Camera =    0x00010000u
+        Camera = 0x00010000u
     }
 }
