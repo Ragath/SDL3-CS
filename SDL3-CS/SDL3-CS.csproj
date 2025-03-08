@@ -7,7 +7,7 @@
         <Nullable>enable</Nullable>
         <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
         <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
-        <TargetFrameworks>net9.0;net7.0;net8.0</TargetFrameworks>
+        <TargetFrameworks>net9.0-browser;net9.0;net7.0;net8.0</TargetFrameworks>
         <PackageReleaseNotes>
             This is a stable bugfix release, with the following changes:
 
@@ -37,9 +37,8 @@
         <PackageLicenseFile>LICENSE</PackageLicenseFile>
     </PropertyGroup>
 
-    <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
-      <DocumentationFile>bin\Release\SDL3-CS.xml</DocumentationFile>
-      <DebugType>embedded</DebugType>
+    <PropertyGroup Condition="'$(TargetFramework)'=='net9.0-browser'">
+      <DefineConstants>$(DefineConstants);WASM</DefineConstants>
     </PropertyGroup>
     
     <ItemGroup>
@@ -48,7 +47,6 @@
       <None Include="../LICENSE" Pack="true" PackagePath="\" />
       <None Include="../CODE_OF_CONDUCT.md" Pack="true" PackagePath="\" />
       <None Include="../logo.png" Pack="true" Visible="false" PackagePath="\" />
-      <None Include="bin\Release\SDL3-CS.xml" Visible="false" Pack="true" PackagePath="\" />
     </ItemGroup>
 
 </Project>

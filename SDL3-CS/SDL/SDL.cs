@@ -29,7 +29,6 @@ namespace SDL3;
 public static partial class SDL
 {
     private const string SDLLibrary = "SDL3";
-    
 
     /// <summary>
     /// Converts a pointer to a structure of type <typeparamref name="T"/>.
