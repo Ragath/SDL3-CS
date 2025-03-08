@@ -24,6 +24,8 @@
 namespace SDL3;
 
 public static partial class SDL
+{
+    public static partial class GPU
     {
         /// <summary>
         /// Specifies the format of a vertex attribute.
@@ -89,3 +91,4 @@ public static partial class SDL
             Half4
         }
     }
+}

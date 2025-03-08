@@ -24,6 +24,8 @@
 namespace SDL3;
 
 public static partial class SDL
+{
+    public static partial class GPU
     {
         /// <summary>
         /// <para>Specifies a blending factor to be used when pixels in a render target are
@@ -104,3 +106,4 @@ public static partial class SDL
             SrcAlphaSaturate
         }
     }
+}

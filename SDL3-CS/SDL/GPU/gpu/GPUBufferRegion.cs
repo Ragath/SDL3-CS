@@ -26,6 +26,8 @@ using System.Runtime.InteropServices;
 namespace SDL3;
 
 public static partial class SDL
+{
+    public static partial class GPU
     {
         /// <summary>
         /// <para>A structure specifying a region of a buffer.</para>
@@ -53,3 +55,4 @@ public static partial class SDL
             public UInt32 Size;
         }
     }
+}

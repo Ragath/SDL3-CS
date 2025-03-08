@@ -24,6 +24,8 @@
 namespace SDL3;
 
 public static partial class SDL
+{
+    public static partial class GPU
     {
         /// <summary>
         /// Specifies the rate at which vertex attributes are pulled from buffers.
@@ -43,3 +45,4 @@ public static partial class SDL
             Instance
         }
     }
+}

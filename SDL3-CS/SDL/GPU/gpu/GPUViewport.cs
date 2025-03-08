@@ -26,6 +26,8 @@ using System.Runtime.InteropServices;
 namespace SDL3;
 
 public static partial class SDL
+{
+    public static partial class GPU
     {
         /// <summary>
         /// A structure specifying a viewport.
@@ -66,3 +68,4 @@ public static partial class SDL
             public float MaxDepth;
         }
     }
+}

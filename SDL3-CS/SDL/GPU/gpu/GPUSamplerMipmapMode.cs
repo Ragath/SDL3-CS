@@ -24,6 +24,8 @@
 namespace SDL3;
 
 public static partial class SDL
+{
+    public static partial class GPU
     {
         /// <summary>
         /// Specifies a mipmap mode used by a sampler.
@@ -43,3 +45,4 @@ public static partial class SDL
             Linear
         }
     }
+}

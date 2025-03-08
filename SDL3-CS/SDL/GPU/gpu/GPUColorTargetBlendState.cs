@@ -27,76 +27,80 @@ namespace SDL3;
 
 public static partial class SDL
 {
-    /// <summary>
-    /// A structure specifying the blend state of a color target.
-    /// </summary>
-    /// <since>This struct is available since SDL 3.2.0</since>
-    /// <seealso cref="GPUColorTargetDescription"/>
-    /// <seealso cref="GPUBlendFactor"/>
-    /// <seealso cref="GPUBlendOp"/>
-    /// <seealso cref="GPUColorComponentFlags"/>
-    [StructLayout(LayoutKind.Sequential)]
-    public struct GPUColorTargetBlendState
+    public static partial class GPU
     {
-        /// <summary>
-        /// The value to be multiplied by the source RGB value.
-        /// </summary>
-        public GPUBlendFactor SrcColorBlendFactor;
-        
-        /// <summary>
-        /// The value to be multiplied by the destination RGB value.
-        /// </summary>
-        public GPUBlendFactor DstColorBlendFactor;
-        
-        /// <summary>
-        /// The blend operation for the RGB components.
-        /// </summary>
-        public GPUBlendOp ColorBlendOp;
-        
-        /// <summary>
-        /// The value to be multiplied by the source alpha.
-        /// </summary>
-        public GPUBlendFactor SrcAlphaBlendFactor;
-        
-        /// <summary>
-        /// The value to be multiplied by the destination alpha.
-        /// </summary>
-        public GPUBlendFactor DstAlphaBlendFactor;
-        
-        /// <summary>
-        /// The blend operation for the alpha component.
-        /// </summary>
-        public GPUBlendOp AlphaBlendOp;
-        
-        /// <summary>
-        /// A bitmask specifying which of the RGBA components are enabled for writing. Writes to all channels if enable_color_write_mask is false.
-        /// </summary>
-        public GPUColorComponentFlags ColorWriteMask;
-        
-        private Byte _enableBlend;
-        
-        private Byte _enableColorWriteMask;
-        
-        private Byte _padding1;
-        
-        private Byte _padding2;
 
         /// <summary>
-        /// Whether blending is enabled for the color target.
+        /// A structure specifying the blend state of a color target.
         /// </summary>
-        public bool EnableBlend
-        { 
-            get => _enableBlend > 0;
-            set => _enableBlend = (byte)(value ? 1 : 0);
-        }
-        
-        /// <summary>
-        /// Whether the color write mask is enabled.
-        /// </summary>
-        public bool EnableColorWriteMask
+        /// <since>This struct is available since SDL 3.2.0</since>
+        /// <seealso cref="GPUColorTargetDescription"/>
+        /// <seealso cref="GPUBlendFactor"/>
+        /// <seealso cref="GPUBlendOp"/>
+        /// <seealso cref="GPUColorComponentFlags"/>
+        [StructLayout(LayoutKind.Sequential)]
+        public struct GPUColorTargetBlendState
         {
-            get => _enableColorWriteMask > 0;
-            set => _enableColorWriteMask = (byte)(value ? 1 : 0);
+            /// <summary>
+            /// The value to be multiplied by the source RGB value.
+            /// </summary>
+            public GPUBlendFactor SrcColorBlendFactor;
+
+            /// <summary>
+            /// The value to be multiplied by the destination RGB value.
+            /// </summary>
+            public GPUBlendFactor DstColorBlendFactor;
+
+            /// <summary>
+            /// The blend operation for the RGB components.
+            /// </summary>
+            public GPUBlendOp ColorBlendOp;
+
+            /// <summary>
+            /// The value to be multiplied by the source alpha.
+            /// </summary>
+            public GPUBlendFactor SrcAlphaBlendFactor;
+
+            /// <summary>
+            /// The value to be multiplied by the destination alpha.
+            /// </summary>
+            public GPUBlendFactor DstAlphaBlendFactor;
+
+            /// <summary>
+            /// The blend operation for the alpha component.
+            /// </summary>
+            public GPUBlendOp AlphaBlendOp;
+
+            /// <summary>
+            /// A bitmask specifying which of the RGBA components are enabled for writing. Writes to all channels if enable_color_write_mask is false.
+            /// </summary>
+            public GPUColorComponentFlags ColorWriteMask;
+
+            private Byte _enableBlend;
+
+            private Byte _enableColorWriteMask;
+
+            private Byte _padding1;
+
+            private Byte _padding2;
+
+            /// <summary>
+            /// Whether blending is enabled for the color target.
+            /// </summary>
+            public bool EnableBlend
+            {
+                get => _enableBlend > 0;
+                set => _enableBlend = (byte)(value ? 1 : 0);
+            }
+
+            /// <summary>
+            /// Whether the color write mask is enabled.
+            /// </summary>
+            public bool EnableColorWriteMask
+            {
+                get => _enableColorWriteMask > 0;
+                set => _enableColorWriteMask = (byte)(value ? 1 : 0);
+            }
         }
     }
 }

@@ -27,77 +27,81 @@ namespace SDL3;
 
 public static partial class SDL
 {
-    /// <summary>
-    /// A structure specifying the parameters of the graphics pipeline depth
-    /// stencil state.
-    /// </summary>
-    /// <since>This struct is available since SDL 3.2.0</since>
-    /// <seealso cref="GPUGraphicsPipelineCreateInfo"/>
-    [StructLayout(LayoutKind.Sequential)]
-    public struct GPUDepthStencilState
+    public static partial class GPU
     {
-        /// <summary>
-        /// The comparison operator used for depth testing.
-        /// </summary>
-        public GPUCompareOp CompareOp;
-        
-        /// <summary>
-        /// The stencil op state for back-facing triangles.
-        /// </summary>
-        public GPUStencilOpState BackStencilState;
-        
-        /// <summary>
-        /// The stencil op state for front-facing triangles.
-        /// </summary>
-        public GPUStencilOpState FrontStencilState;
-        
-        /// <summary>
-        /// Selects the bits of the stencil values participating in the stencil test.
-        /// </summary>
-        public Byte CompareMask;
-        
-        /// <summary>
-        /// Selects the bits of the stencil values updated by the stencil test.
-        /// </summary>
-        public Byte WriteMask;
-        
-        private Byte _enableDepthTest;
-        
-        private Byte _enableDepthWrite;
-        
-        public Byte _enableStencilTest;
-        
-        private Byte _padding1;
-        
-        private Byte _padding2;
-        
-        private Byte _padding3;
 
         /// <summary>
-        /// true enables the depth test.
+        /// A structure specifying the parameters of the graphics pipeline depth
+        /// stencil state.
         /// </summary>
-        public bool EnableDepthTest
+        /// <since>This struct is available since SDL 3.2.0</since>
+        /// <seealso cref="GPUGraphicsPipelineCreateInfo"/>
+        [StructLayout(LayoutKind.Sequential)]
+        public struct GPUDepthStencilState
         {
-            get => _enableDepthTest > 0;
-            set => _enableDepthTest = (byte)(value ? 1 : 0);
-        }
+            /// <summary>
+            /// The comparison operator used for depth testing.
+            /// </summary>
+            public GPUCompareOp CompareOp;
 
-        /// <summary>
-        /// true enables depth writes. Depth writes are always disabled when enable_depth_test is false.
-        /// </summary>
-        public bool EnableDepthWrite
-        {
-            get => _enableDepthWrite > 0;
-            set => _enableDepthWrite = (byte)(value ? 1 : 0);
-        }
+            /// <summary>
+            /// The stencil op state for back-facing triangles.
+            /// </summary>
+            public GPUStencilOpState BackStencilState;
 
-        /// <summary>
-        /// true enables the stencil test.
-        /// </summary>
-        public bool EnableStencilTest
-        {
-            get => _enableStencilTest > 0;
-            set => _enableStencilTest = (byte)(value ? 1 : 0);
+            /// <summary>
+            /// The stencil op state for front-facing triangles.
+            /// </summary>
+            public GPUStencilOpState FrontStencilState;
+
+            /// <summary>
+            /// Selects the bits of the stencil values participating in the stencil test.
+            /// </summary>
+            public Byte CompareMask;
+
+            /// <summary>
+            /// Selects the bits of the stencil values updated by the stencil test.
+            /// </summary>
+            public Byte WriteMask;
+
+            private Byte _enableDepthTest;
+
+            private Byte _enableDepthWrite;
+
+            public Byte _enableStencilTest;
+
+            private Byte _padding1;
+
+            private Byte _padding2;
+
+            private Byte _padding3;
+
+            /// <summary>
+            /// true enables the depth test.
+            /// </summary>
+            public bool EnableDepthTest
+            {
+                get => _enableDepthTest > 0;
+                set => _enableDepthTest = (byte)(value ? 1 : 0);
+            }
+
+            /// <summary>
+            /// true enables depth writes. Depth writes are always disabled when enable_depth_test is false.
+            /// </summary>
+            public bool EnableDepthWrite
+            {
+                get => _enableDepthWrite > 0;
+                set => _enableDepthWrite = (byte)(value ? 1 : 0);
+            }
+
+            /// <summary>
+            /// true enables the stencil test.
+            /// </summary>
+            public bool EnableStencilTest
+            {
+                get => _enableStencilTest > 0;
+                set => _enableStencilTest = (byte)(value ? 1 : 0);
+            }
         }
     }
 }

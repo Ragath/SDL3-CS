@@ -24,6 +24,8 @@
 namespace SDL3;
 
 public static partial class SDL
+{
+    public static partial class GPU
     {
         /// <summary>
         /// Specifies which stage a shader program corresponds to.
@@ -36,3 +38,4 @@ public static partial class SDL
             Fragment
         }
     }
+}

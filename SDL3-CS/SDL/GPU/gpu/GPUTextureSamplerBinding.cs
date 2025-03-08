@@ -27,23 +27,27 @@ namespace SDL3;
 
 public static partial class SDL
 {
-    /// <summary>
-    /// A structure specifying parameters in a sampler binding call.
-    /// </summary>
-    /// <since>This struct is available since SDL 3.2.0</since>
-    /// <seealso cref="BindGPUVertexSamplers(nint, uint, GPUTextureSamplerBinding[], uint)"/>
-    /// <seealso cref="BindGPUFragmentSamplers(nint, uint, GPUTextureSamplerBinding[], uint)"/>
-    [StructLayout(LayoutKind.Sequential)]
-    public struct GPUTextureSamplerBinding
+    public static partial class GPU
     {
+
         /// <summary>
-        /// The texture to bind. Must have been created with <see cref="GPUTextureUsageFlags.Sampler"/>.
+        /// A structure specifying parameters in a sampler binding call.
         /// </summary>
-        public IntPtr Texture;
-        
-        /// <summary>
-        /// The sampler to bind.
-        /// </summary>
-        public IntPtr Sampler;
+        /// <since>This struct is available since SDL 3.2.0</since>
+        /// <seealso cref="BindGPUVertexSamplers(nint, uint, GPUTextureSamplerBinding[], uint)"/>
+        /// <seealso cref="BindGPUFragmentSamplers(nint, uint, GPUTextureSamplerBinding[], uint)"/>
+        [StructLayout(LayoutKind.Sequential)]
+        public struct GPUTextureSamplerBinding
+        {
+            /// <summary>
+            /// The texture to bind. Must have been created with <see cref="GPUTextureUsageFlags.Sampler"/>.
+            /// </summary>
+            public IntPtr Texture;
+
+            /// <summary>
+            /// The sampler to bind.
+            /// </summary>
+            public IntPtr Sampler;
+        }
     }
 }

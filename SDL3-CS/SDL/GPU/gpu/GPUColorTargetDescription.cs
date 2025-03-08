@@ -26,6 +26,8 @@ using System.Runtime.InteropServices;
 namespace SDL3;
 
 public static partial class SDL
+{
+    public static partial class GPU
     {
         /// <summary>
         /// A structure specifying the parameters of color targets used in a graphics
@@ -47,3 +49,4 @@ public static partial class SDL
             public GPUColorTargetBlendState BlendState;
         }
     }
+}

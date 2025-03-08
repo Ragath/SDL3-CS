@@ -27,100 +27,104 @@ namespace SDL3;
 
 public static partial class SDL
 {
-    /// <summary>
-    /// A structure specifying the parameters of a sampler.
-    /// <para>Note that mip_lod_bias is a no-op for the Metal driver. For Metal, LOD bias
-    /// must be applied via shader instead.</para>
-    /// </summary>
-    /// <since>This function is available since SDL 3.2.0</since>
-    /// <seealso cref="CreateGPUSampler"/>
-    /// <seealso cref="GPUFilter"/>
-    /// <seealso cref="GPUSamplerMipmapMode"/>
-    /// <seealso cref="GPUSamplerAddressMode"/>
-    /// <seealso cref="GPUCompareOp"/>
-    [StructLayout(LayoutKind.Sequential)]
-    public struct GPUSamplerCreateInfo
+    public static partial class GPU
     {
-        /// <summary>
-        /// The minification filter to apply to lookups.
-        /// </summary>
-        public GPUFilter MinFilter;
-        
-        /// <summary>
-        /// The magnification filter to apply to lookups.
-        /// </summary>
-        public GPUFilter MagFilter;
-        
-        /// <summary>
-        /// The mipmap filter to apply to lookups.
-        /// </summary>
-        public GPUSamplerMipmapMode MipmapMode;
-        
-        /// <summary>
-        /// The addressing mode for U coordinates outside [0, 1).
-        /// </summary>
-        public GPUSamplerAddressMode AddressModeU;
-        
-        /// <summary>
-        /// The addressing mode for V coordinates outside [0, 1).
-        /// </summary>
-        public GPUSamplerAddressMode AddressModeV;
-        
-        /// <summary>
-        /// The addressing mode for W coordinates outside [0, 1).
-        /// </summary>
-        public GPUSamplerAddressMode AddressModeW;
-        
-        /// <summary>
-        /// The bias to be added to mipmap LOD calculation.
-        /// </summary>
-        public float MipLodBias;
-        
-        /// <summary>
-        /// The anisotropy value clamp used by the sampler. If enable_anisotropy is false, this is ignored.
-        /// </summary>
-        public float MaxAnisotropy;
-        
-        /// <summary>
-        /// The comparison operator to apply to fetched data before filtering.
-        /// </summary>
-        public GPUCompareOp CompareOp;
-        
-        /// <summary>
-        /// Clamps the minimum of the computed LOD value.
-        /// </summary>
-        public float MinLod;
-        
-        /// <summary>
-        /// Clamps the maximum of the computed LOD value.
-        /// </summary>
-        public float MaxLod;
-        
-        private Byte _enableAnisotropy;
-        
-        
-        private Byte _enableCompare;
-        
-        private byte padding1;
-        
-        private byte padding2;
 
         /// <summary>
-        /// true to enable anisotropic filtering.
+        /// A structure specifying the parameters of a sampler.
+        /// <para>Note that mip_lod_bias is a no-op for the Metal driver. For Metal, LOD bias
+        /// must be applied via shader instead.</para>
         /// </summary>
-        public bool EnableAnisotropy
+        /// <since>This function is available since SDL 3.2.0</since>
+        /// <seealso cref="CreateGPUSampler"/>
+        /// <seealso cref="GPUFilter"/>
+        /// <seealso cref="GPUSamplerMipmapMode"/>
+        /// <seealso cref="GPUSamplerAddressMode"/>
+        /// <seealso cref="GPUCompareOp"/>
+        [StructLayout(LayoutKind.Sequential)]
+        public struct GPUSamplerCreateInfo
         {
-            get => _enableAnisotropy != 0;
-            set => _enableAnisotropy = value ? (byte)1 : (byte)0;
-        }
-        
-        /// <summary>
-        /// true to enable comparison against a reference value during lookups.
-        /// </summary>
-        public bool EnableCompare
-        {
-            get => _enableCompare != 0;
-            set => _enableCompare = value ? (byte)1 : (byte)0;
+            /// <summary>
+            /// The minification filter to apply to lookups.
+            /// </summary>
+            public GPUFilter MinFilter;
+
+            /// <summary>
+            /// The magnification filter to apply to lookups.
+            /// </summary>
+            public GPUFilter MagFilter;
+
+            /// <summary>
+            /// The mipmap filter to apply to lookups.
+            /// </summary>
+            public GPUSamplerMipmapMode MipmapMode;
+
+            /// <summary>
+            /// The addressing mode for U coordinates outside [0, 1).
+            /// </summary>
+            public GPUSamplerAddressMode AddressModeU;
+
+            /// <summary>
+            /// The addressing mode for V coordinates outside [0, 1).
+            /// </summary>
+            public GPUSamplerAddressMode AddressModeV;
+
+            /// <summary>
+            /// The addressing mode for W coordinates outside [0, 1).
+            /// </summary>
+            public GPUSamplerAddressMode AddressModeW;
+
+            /// <summary>
+            /// The bias to be added to mipmap LOD calculation.
+            /// </summary>
+            public float MipLodBias;
+
+            /// <summary>
+            /// The anisotropy value clamp used by the sampler. If enable_anisotropy is false, this is ignored.
+            /// </summary>
+            public float MaxAnisotropy;
+
+            /// <summary>
+            /// The comparison operator to apply to fetched data before filtering.
+            /// </summary>
+            public GPUCompareOp CompareOp;
+
+            /// <summary>
+            /// Clamps the minimum of the computed LOD value.
+            /// </summary>
+            public float MinLod;
+
+            /// <summary>
+            /// Clamps the maximum of the computed LOD value.
+            /// </summary>
+            public float MaxLod;
+
+            private Byte _enableAnisotropy;
+
+
+            private Byte _enableCompare;
+
+            private byte padding1;
+
+            private byte padding2;
+
+            /// <summary>
+            /// true to enable anisotropic filtering.
+            /// </summary>
+            public bool EnableAnisotropy
+            {
+                get => _enableAnisotropy != 0;
+                set => _enableAnisotropy = value ? (byte)1 : (byte)0;
+            }
+
+            /// <summary>
+            /// true to enable comparison against a reference value during lookups.
+            /// </summary>
+            public bool EnableCompare
+            {
+                get => _enableCompare != 0;
+                set => _enableCompare = value ? (byte)1 : (byte)0;
+            }
         }
     }
 }

@@ -26,6 +26,8 @@ using System.Runtime.InteropServices;
 namespace SDL3;
 
 public static partial class SDL
+{
+    public static partial class GPU
     {
         /// <summary>
         /// A structure specifying the stencil operation state of a graphics pipeline.
@@ -56,3 +58,4 @@ public static partial class SDL
             public GPUCompareOp CompareOp;
         }
     }
+}

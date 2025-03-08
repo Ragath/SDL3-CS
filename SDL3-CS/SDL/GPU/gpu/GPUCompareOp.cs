@@ -25,53 +25,57 @@ namespace SDL3;
 
 public static partial class SDL
 {
-    /// <summary>
-    /// Specifies a comparison operator for depth, stencil and sampler operations.
-    /// </summary>
-    /// <since>This enum is available since SDL 3.2.0</since>
-    /// <seealso cref="CreateGPUGraphicsPipeline"/>
-    public enum GPUCompareOp
+    public static partial class GPU
     {
-        Invalid,
-        
+
         /// <summary>
-        /// The comparison always evaluates false.
+        /// Specifies a comparison operator for depth, stencil and sampler operations.
         /// </summary>
-        Never,
-        
-        /// <summary>
-        /// The comparison evaluates reference &lt; test.
-        /// </summary>
-        Less,
-        
-        /// <summary>
-        /// The comparison evaluates reference == test.
-        /// </summary>
-        Equal,
-        
-        /// <summary>
-        /// The comparison evaluates reference &lt;= test.
-        /// </summary>
-        LessOrEqual,
-        
-        /// <summary>
-        /// The comparison evaluates reference &gt; test.
-        /// </summary>
-        Greater,
-        
-        /// <summary>
-        /// The comparison evaluates reference != test.
-        /// </summary>
-        NotEqual,
-        
-        /// <summary>
-        /// The comparison evaluates reference &lt;= test.
-        /// </summary>
-        GreaterOrEqual,
-        
-        /// <summary>
-        /// The comparison always evaluates true.
-        /// </summary>
-        Always
+        /// <since>This enum is available since SDL 3.2.0</since>
+        /// <seealso cref="CreateGPUGraphicsPipeline"/>
+        public enum GPUCompareOp
+        {
+            Invalid,
+
+            /// <summary>
+            /// The comparison always evaluates false.
+            /// </summary>
+            Never,
+
+            /// <summary>
+            /// The comparison evaluates reference &lt; test.
+            /// </summary>
+            Less,
+
+            /// <summary>
+            /// The comparison evaluates reference == test.
+            /// </summary>
+            Equal,
+
+            /// <summary>
+            /// The comparison evaluates reference &lt;= test.
+            /// </summary>
+            LessOrEqual,
+
+            /// <summary>
+            /// The comparison evaluates reference &gt; test.
+            /// </summary>
+            Greater,
+
+            /// <summary>
+            /// The comparison evaluates reference != test.
+            /// </summary>
+            NotEqual,
+
+            /// <summary>
+            /// The comparison evaluates reference &lt;= test.
+            /// </summary>
+            GreaterOrEqual,
+
+            /// <summary>
+            /// The comparison always evaluates true.
+            /// </summary>
+            Always
+        }
     }
 }

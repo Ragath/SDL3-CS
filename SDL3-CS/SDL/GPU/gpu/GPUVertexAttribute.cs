@@ -27,36 +27,39 @@ namespace SDL3;
 
 public static partial class SDL
 {
-    /// <summary>
-    /// <para>A structure specifying a vertex attribute.</para>
-    /// <para>All vertex attribute locations provided to an <see cref="GPUVertexInputState"/> must
-    /// be unique.</para>
-    /// <since>This struct is available since SDL 3.2.0</since>
-    /// </summary>
-    /// <seealso cref="GPUVertexBufferDescription"/>
-    /// <seealso cref="GPUVertexInputState"/>
-    /// <seealso cref="GPUVertexElementFormat"/>
-    [StructLayout(LayoutKind.Sequential)]
-    public struct GPUVertexAttribute
+    public static partial class GPU
     {
         /// <summary>
-        /// The shader input location index.
+        /// <para>A structure specifying a vertex attribute.</para>
+        /// <para>All vertex attribute locations provided to an <see cref="GPUVertexInputState"/> must
+        /// be unique.</para>
+        /// <since>This struct is available since SDL 3.2.0</since>
         /// </summary>
-        public UInt32 Location;
+        /// <seealso cref="GPUVertexBufferDescription"/>
+        /// <seealso cref="GPUVertexInputState"/>
+        /// <seealso cref="GPUVertexElementFormat"/>
+        [StructLayout(LayoutKind.Sequential)]
+        public struct GPUVertexAttribute
+        {
+            /// <summary>
+            /// The shader input location index.
+            /// </summary>
+            public UInt32 Location;
 
-        /// <summary>
-        /// The binding slot of the associated vertex buffer.
-        /// </summary>
-        public UInt32 BufferSlot;
+            /// <summary>
+            /// The binding slot of the associated vertex buffer.
+            /// </summary>
+            public UInt32 BufferSlot;
 
-        /// <summary>
-        /// The size and type of the attribute data.
-        /// </summary>
-        public GPUVertexElementFormat Format;
+            /// <summary>
+            /// The size and type of the attribute data.
+            /// </summary>
+            public GPUVertexElementFormat Format;
 
-        /// <summary>
-        /// The byte offset of this attribute relative to the start of the vertex element.
-        /// </summary>
-        public UInt32 Offset;
+            /// <summary>
+            /// The byte offset of this attribute relative to the start of the vertex element.
+            /// </summary>
+            public UInt32 Offset;
+        }
     }
 }

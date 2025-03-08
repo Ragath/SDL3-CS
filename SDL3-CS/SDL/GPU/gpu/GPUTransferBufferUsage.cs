@@ -24,6 +24,8 @@
 namespace SDL3;
 
 public static partial class SDL
+{
+    public static partial class GPU
     {
         /// <summary>
         /// <para>Specifies how a transfer buffer is intended to be used by the client.</para>
@@ -38,3 +40,4 @@ public static partial class SDL
             Download
         }
     }
+}

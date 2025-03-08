@@ -27,59 +27,63 @@ namespace SDL3;
 
 public static partial class SDL
 {
-    /// <summary>
-    /// A structure containing parameters for a blit command.
-    /// </summary>
-    /// <since>This struct is available since SDL 3.2.0</since>
-    /// <seealso cref="BlitGPUTexture"/>
-    [StructLayout(LayoutKind.Sequential)]
-    public struct GPUBlitInfo
+    public static partial class GPU
     {
+
         /// <summary>
-        /// The source region for the blit.
+        /// A structure containing parameters for a blit command.
         /// </summary>
-        public GPUBlitRegion Source;
-        
-        /// <summary>
-        /// The destination region for the blit.
-        /// </summary>
-        public GPUBlitRegion Destination;
-        
-        /// <summary>
-        /// What is done with the contents of the destination before the blit.
-        /// </summary>
-        public GPULoadOp LoadOp;
-        
-        /// <summary>
-        /// The color to clear the destination region to before the blit. Ignored if load_op is not public GPU_LOADOP_CLEAR.
-        /// </summary>
-        public FColor ClearColor;
-        
-        /// <summary>
-        /// The flip mode for the source region.
-        /// </summary>
-        public FlipMode FlipMode;
-        
-        /// <summary>
-        /// The filter mode used when blitting.
-        /// </summary>
-        public GPUFilter Filter;
-        
-        private Byte _cycle;
-        
-        /// <summary>
-        /// true cycles the destination texture if it is already bound.
-        /// </summary>
-        public bool Cycle
+        /// <since>This struct is available since SDL 3.2.0</since>
+        /// <seealso cref="BlitGPUTexture"/>
+        [StructLayout(LayoutKind.Sequential)]
+        public struct GPUBlitInfo
         {
-            get => _cycle > 0;
-            set => _cycle = (byte)(value ? 1 : 0);
+            /// <summary>
+            /// The source region for the blit.
+            /// </summary>
+            public GPUBlitRegion Source;
+
+            /// <summary>
+            /// The destination region for the blit.
+            /// </summary>
+            public GPUBlitRegion Destination;
+
+            /// <summary>
+            /// What is done with the contents of the destination before the blit.
+            /// </summary>
+            public GPULoadOp LoadOp;
+
+            /// <summary>
+            /// The color to clear the destination region to before the blit. Ignored if load_op is not public GPU_LOADOP_CLEAR.
+            /// </summary>
+            public FColor ClearColor;
+
+            /// <summary>
+            /// The flip mode for the source region.
+            /// </summary>
+            public FlipMode FlipMode;
+
+            /// <summary>
+            /// The filter mode used when blitting.
+            /// </summary>
+            public GPUFilter Filter;
+
+            private Byte _cycle;
+
+            /// <summary>
+            /// true cycles the destination texture if it is already bound.
+            /// </summary>
+            public bool Cycle
+            {
+                get => _cycle > 0;
+                set => _cycle = (byte)(value ? 1 : 0);
+            }
+
+            private Byte _padding1;
+
+            private Byte _padding2;
+
+            private Byte _padding3;
         }
-        
-        private Byte _padding1;
-        
-        private Byte _padding2;
-        
-        private Byte _padding3;
     }
 }

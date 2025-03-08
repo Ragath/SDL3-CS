@@ -24,6 +24,8 @@
 namespace SDL3;
 
 public static partial class SDL
+{
+    public static partial class GPU
     {
         /// <summary>
         /// Specifies how the contents of a texture attached to a render pass are
@@ -49,3 +51,4 @@ public static partial class SDL
             DontCare,
         }
     }
+}
