@@ -7,7 +7,7 @@
         <Nullable>enable</Nullable>
         <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
         <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
-        <TargetFrameworks>net7.0;net8.0;net9.0;net10.0</TargetFrameworks>
+        <TargetFrameworks>net7.0;net8.0;net9.0;net10.0;net10.0-browser;</TargetFrameworks>
         <PackageReleaseNotes></PackageReleaseNotes>
         <Configurations>Debug;Release;Prerelease</Configurations>
         <Platforms>AnyCPU</Platforms>
@@ -33,7 +33,11 @@
         <PackageLicenseFile>LICENSE</PackageLicenseFile>
     </PropertyGroup>
 
-    <PropertyGroup Condition="'$(Configuration)' == 'Prerelease'">
+  <PropertyGroup Condition="'$(TargetFramework)'=='net10.0-browser'">
+    <DefineConstants>$(DefineConstants);WASM</DefineConstants>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)' == 'Prerelease'">
         <VersionSuffix>preview.$([System.DateTime]::UtcNow.ToString('yyyyMMdd-HHmmss'))</VersionSuffix>
         <Description>This is SDL3#, a C# wrapper for SDL — PREVIEW CI build (preview builds supported)</Description>
         <PackageReleaseNotes>Preview CI build at $([System.DateTime]::UtcNow.ToString('yyyy-MM-dd HH:mm:ss')) UTC; Version $(VersionPrefix)-$(VersionSuffix)</PackageReleaseNotes>
@@ -50,18 +54,18 @@
     </PropertyGroup>
     
     <ItemGroup>
-        <None Include="../README.md" Pack="true" PackagePath="\"/>
-        <None Include="../README-nuget.md" Pack="true" PackagePath="\"/>
-        <None Include="../LICENSE" Pack="true" PackagePath="\"/>
-        <None Include="../CODE_OF_CONDUCT.md" Pack="true" PackagePath="\"/>
-        <None Include="../logo.png" Pack="true" Visible="false" PackagePath="\"/>
-        <None Remove="SDL3-CS.csproj.DotSettings" />
+      <None Include="../README.md" Pack="true" PackagePath="\" />
+      <None Include="../README-nuget.md" Pack="true" PackagePath="\" />
+      <None Include="../LICENSE" Pack="true" PackagePath="\" />
+      <None Include="../CODE_OF_CONDUCT.md" Pack="true" PackagePath="\" />
+      <None Include="../logo.png" Pack="true" Visible="false" PackagePath="\" />
+      <None Remove="SDL3-CS.csproj.DotSettings" />
     </ItemGroup>
-
+  
     <ItemGroup Condition="'$(Configuration)' == 'Release'">
-        <None Include="bin\Release\SDL3-CS.xml" Visible="false" Pack="true" PackagePath="\" />
+      <None Include="bin\Release\SDL3-CS.xml" Visible="false" Pack="true" PackagePath="\" />
     </ItemGroup>
-
+  
     <ItemGroup Condition="'$(Configuration)' == 'Debug'">
         <None Include="bin\Debug\SDL3-CS.xml" Visible="false" Pack="true" PackagePath="\" />
     </ItemGroup>
