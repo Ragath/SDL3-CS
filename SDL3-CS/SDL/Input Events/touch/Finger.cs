@@ -42,17 +42,17 @@ public static partial class SDL
         /// the finger ID
         /// </summary>
         public UInt64 ID;
-        
+
         /// <summary>
         /// the x-axis location of the touch event, normalized (0...1)
         /// </summary>
         public float X;
-        
+
         /// <summary>
         /// the y-axis location of the touch event, normalized (0...1)
         /// </summary>
         public float Y;
-        
+
         /// <summary>
         /// the quantity of pressure applied, normalized (0...1)
         /// </summary>

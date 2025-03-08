@@ -37,12 +37,12 @@ public static partial class SDL
         /// Year/Month/Day
         /// </summary>
         YYYYMMDD = 0,
-        
+
         /// <summary>
         /// Day/Month/Year
         /// </summary>
         DDMMYYYY = 1,
-        
+
         /// <summary>
         /// Month/Day/Year
         /// </summary>

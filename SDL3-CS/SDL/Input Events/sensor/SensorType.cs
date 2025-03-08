@@ -76,37 +76,37 @@ public static partial class SDL
         /// Returned for an invalid sensor
         /// </summary>
         Invalid = -1,
-        
+
         /// <summary>
         /// Unknown sensor type
         /// </summary>
         Unknown,
-        
+
         /// <summary>
         /// Accelerometer
         /// </summary>
         Accel,
-        
+
         /// <summary>
         /// Gyroscope
         /// </summary>
         Gyro,
-        
+
         /// <summary>
         /// Accelerometer for left Joy-Con controller and Wii nunchuk
         /// </summary>
         AccelL,
-        
+
         /// <summary>
         /// Gyroscope for left Joy-Con controller
         /// </summary>
         GyroL,
-        
+
         /// <summary>
         /// Accelerometer for right Joy-Con controller
         /// </summary>
         AccelR,
-        
+
         /// <summary>
         /// Gyroscope for right Joy-Con controller
         /// </summary>

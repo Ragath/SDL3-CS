@@ -42,11 +42,11 @@ public static partial class SDL
     public struct Rect
     {
         public int X;
-        
+
         public int Y;
-        
+
         public int W;
-        
+
         public int H;
     }
 }

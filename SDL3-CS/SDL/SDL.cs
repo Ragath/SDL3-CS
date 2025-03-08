@@ -31,7 +31,7 @@ public static partial class SDL
 {
     private const string SDLLibrary = "SDL3";
     
-    
+
     /// <summary>
     /// Converts a pointer to a structure of type <typeparamref name="T"/>.
     /// </summary>
@@ -60,8 +60,8 @@ public static partial class SDL
     {
         return pointer == IntPtr.Zero ? null : Marshal.PtrToStructure<T>(pointer);
     }
-    
-    
+
+
     /// <summary>
     /// Allocates unmanaged memory and copies the data of a structure of type <typeparamref name="T"/> into the allocated memory.
     /// </summary>
@@ -99,15 +99,15 @@ public static partial class SDL
     public static IntPtr StructureToPointer<T>(T? structure) where T : struct
     {
         if (!structure.HasValue) return IntPtr.Zero;
-        
+
         var ptr = Marshal.AllocHGlobal(Marshal.SizeOf<T>());
-        
+
         Marshal.StructureToPtr(structure, ptr, false);
-    
+
         return ptr;
     }
 
-    
+
     /// <summary>
     /// Allocates unmanaged memory and copies the data of an array of structures of type <typeparamref name="T"/> 
     /// into the allocated memory.
@@ -160,7 +160,7 @@ public static partial class SDL
         return unmanagedPointer;
     }
 
-    
+
     /// <summary>
     /// Converts a block of unmanaged memory pointed to by an <see cref="IntPtr"/> into an array of <see cref="IntPtr"/> instances.
     /// </summary>
@@ -198,17 +198,17 @@ public static partial class SDL
     public static IntPtr[]? PointerToPointerArray(IntPtr pointer, int size)
     {
         if (pointer == IntPtr.Zero) return null;
-        
+
         if (size == 0) return [];
-        
+
         var pointers = new IntPtr[size];
-        
+
         Marshal.Copy(pointer, pointers, 0, pointers.Length);
-        
+
         return pointers;
     }
-    
-    
+
+
     /// <summary>
     /// Converts an unmanaged array of null-terminated UTF-8 strings, represented as an <see cref="IntPtr"/>, 
     /// into a managed array of <see cref="string"/>.
@@ -261,14 +261,14 @@ public static partial class SDL
             var str = Marshal.PtrToStringUTF8(currentPtr);
             if (str != null)
                 result.Add(str);
-            
+
             pointer += IntPtr.Size;
         }
-        
+
         return result.Count > 0 ? result.ToArray() : null;
     }
-    
-    
+
+
     /// <summary>
     /// Converts an unmanaged array of pointers to null-terminated UTF-8 strings, represented by an <see cref="IntPtr"/>, 
     /// into a managed array of <see cref="string"/> of a specified size.
@@ -313,15 +313,15 @@ public static partial class SDL
     public static string[]? PointerToStringArray(IntPtr pointer, int size)
     {
         if (pointer == IntPtr.Zero) return null;
-        
+
         if (size == 0) return [];
-        
+
         var result = new string[size];
-        
+
         var ptrArray = new IntPtr[size];
-        
+
         Marshal.Copy(pointer, ptrArray, 0, size);
-            
+
         for (var i = 0; i < size; i++)
         {
             result[i] = Marshal.PtrToStringUTF8(ptrArray[i])!;
@@ -404,7 +404,7 @@ public static partial class SDL
         if (count == 0) return [];
 
         var array = new T[count];
-        
+
         if (typeof(T).IsPrimitive)
         {
             new Span<T>((void*)pointer, count).CopyTo(new Span<T>(array, 0, count));
@@ -418,11 +418,11 @@ public static partial class SDL
                 array[i] = Marshal.PtrToStructure<T>(elementPtr);
             }
         }
-    
+
         return array;
     }
-    
-    
+
+
     /// <summary>
     /// Allocates unmanaged memory for an array of UTF-8 string pointers (char*).
     /// Each string is converted via <see cref="StringToPointer(string?)"/>.

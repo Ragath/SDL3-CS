@@ -36,11 +36,11 @@ public static partial class SDL
     public struct FColor(float r, float g, float b, float a)
     {
         public float R = r;
-        
+
         public float G = g;
-        
+
         public float B = b;
-        
+
         public float A = a;
     }
 }

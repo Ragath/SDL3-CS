@@ -32,17 +32,17 @@ public static partial class TTF
     public enum ImageType
     {
         Invalid,
-        
+
         /// <summary>
         /// The color channels are white
         /// </summary>
-        Alpha, 
-        
+        Alpha,
+
         /// <summary>
         /// The color channels have image data
         /// </summary>
         Color,
-        
+
         /// <summary>
         /// The alpha channel has signed distance field
         /// </summary>

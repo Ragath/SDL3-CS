@@ -26,24 +26,24 @@ using System.Runtime.InteropServices;
 namespace SDL3;
 
 public static partial class SDL
-{
-    /// <summary>
-    /// A structure specifying the parameters of color targets used in a graphics
-    /// pipeline.
-    /// </summary>
-    /// <since>This struct is available since SDL 3.2.0</since>
-    /// <seealso cref="GPUGraphicsPipelineTargetInfo"/>
-    [StructLayout(LayoutKind.Sequential)]
-    public struct GPUColorTargetDescription
     {
         /// <summary>
-        /// The pixel format of the texture to be used as a color target.
+        /// A structure specifying the parameters of color targets used in a graphics
+        /// pipeline.
         /// </summary>
-        public GPUTextureFormat Format;
-        
-        /// <summary>
-        /// The blend state to be used for the color target.
-        /// </summary>
-        public GPUColorTargetBlendState BlendState;
+        /// <since>This struct is available since SDL 3.2.0</since>
+        /// <seealso cref="GPUGraphicsPipelineTargetInfo"/>
+        [StructLayout(LayoutKind.Sequential)]
+        public struct GPUColorTargetDescription
+        {
+            /// <summary>
+            /// The pixel format of the texture to be used as a color target.
+            /// </summary>
+            public GPUTextureFormat Format;
+
+            /// <summary>
+            /// The blend state to be used for the color target.
+            /// </summary>
+            public GPUColorTargetBlendState BlendState;
+        }
     }
-}

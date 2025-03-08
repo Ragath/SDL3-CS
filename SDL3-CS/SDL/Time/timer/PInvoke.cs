@@ -41,8 +41,8 @@ public static partial class SDL
     /// <seealso cref="GetTicksNS"/>
     [LibraryImport(SDLLibrary, EntryPoint = "SDL_GetTicks"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     public static partial ulong GetTicks();
-    
-    
+
+
     /// <code>extern SDL_DECLSPEC Uint64 SDLCALL SDL_GetTicksNS(void);</code>
     /// <summary>
     /// Get the number of nanoseconds since SDL library initialization.
@@ -53,8 +53,8 @@ public static partial class SDL
     /// <since>This function is available since SDL 3.2.0</since>
     [LibraryImport(SDLLibrary, EntryPoint = "SDL_GetTicksNS"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     public static partial ulong GetTicksNS();
-    
-    
+
+
     /// <code>extern SDL_DECLSPEC Uint64 SDLCALL SDL_GetPerformanceCounter(void);</code>
     /// <summary>
     /// <para>Get the current value of the high resolution counter.</para>
@@ -97,8 +97,8 @@ public static partial class SDL
     /// <seealso cref="DelayPrecise"/>
     [LibraryImport(SDLLibrary, EntryPoint = "SDL_Delay"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     public static partial void Delay(uint ms);
-    
-    
+
+
     /// <code>extern SDL_DECLSPEC void SDLCALL SDL_DelayNS(Uint64 ns);</code>
     /// <summary>
     /// <para>Wait a specified number of nanoseconds before returning.</para>
@@ -113,8 +113,8 @@ public static partial class SDL
     /// <seealso cref="DelayPrecise"/>
     [LibraryImport(SDLLibrary, EntryPoint = "SDL_DelayNS"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     public static partial void DelayNS(ulong ns);
-    
-    
+
+
     /// <code>extern SDL_DECLSPEC void SDLCALL SDL_DelayPrecise(Uint64 ns);</code>
     /// <summary>
     /// <para>Wait a specified number of nanoseconds before returning.</para>

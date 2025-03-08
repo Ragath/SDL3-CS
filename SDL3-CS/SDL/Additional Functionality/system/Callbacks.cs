@@ -47,8 +47,8 @@ public static partial class SDL
     [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
     [return: MarshalAs(UnmanagedType.I1)]
     public delegate bool WindowsMessageHook(IntPtr userdata, IntPtr msg);
-    
-    
+
+
     /// <code>typedef bool (SDLCALL *SDL_X11EventHook)(void *userdata, XEvent *xevent);</code>
     /// <summary>
     /// A callback to be used with <see cref="SetX11EventHook"/>.
@@ -67,8 +67,8 @@ public static partial class SDL
     [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
     [return: MarshalAs(UnmanagedType.I1)]
     public delegate bool X11EventHook(IntPtr userdata, IntPtr xevent);
-    
-    
+
+
     /// <code>typedef void (SDLCALL *SDL_iOSAnimationCallback)(void *userdata);</code>
     /// <summary>
     /// <para>The prototype for an Apple iOS animation callback.</para>
@@ -83,8 +83,8 @@ public static partial class SDL
     /// <seealso cref="SetiOSAnimationCallback"/>
     [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
     public delegate void IOSAnimationCallback(IntPtr userdata);
-    
-    
+
+
     /// <code>typedef void (SDLCALL *SDL_RequestAndroidPermissionCallback)(void *userdata, const char *permission, bool granted);</code>
     /// <summary>
     /// Callback that presents a response from a <see cref="RequestAndroidPermission"/> call.

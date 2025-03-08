@@ -44,20 +44,20 @@ public static partial class SDL
         /// The version of this interface
         /// </summary>
         public UInt32 Version;
-        
+
         /// <summary>
         /// Return the number of bytes in this SDL_IOStream
         /// </summary>
         /// <returns>the total size of the data stream, or -1 on error.</returns>
         public SizeDelegate Size;
-        
+
         /// <summary>
         /// Seek to <c>offset</c> relative to <c>whence</c>, one of stdio's whence values:
         /// <see cref="IOWhence.Set"/>, <see cref="IOWhence.Cur"/>, <see cref="IOWhence.End"/>
         /// </summary>
         /// <returns>the final offset in the data stream, or -1 on error.</returns>
         public SeekDelegate Seek;
-        
+
         /// <summary>
         /// <para>Read up to <c>size</c> bytes from the data stream to the area pointed
         /// at by <c>ptr</c>.</para>
@@ -67,7 +67,7 @@ public static partial class SDL
         /// </summary>
         /// <returns>the number of bytes read</returns>
         public ReadDelegate Read;
-        
+
         /// <summary>
         /// <para>Write exactly <c>size</c> bytes from the area pointed at by <c>ptr</c>
         /// to data stream.</para>
@@ -86,7 +86,7 @@ public static partial class SDL
         /// </summary>
         /// <returns><c>true</c> if successful or <c>false</c> on write error when flushing data.</returns>
         public FlushDelegate Flush;
-        
+
         /// <summary>
         /// <para>Close and free any allocated resources.</para>
         /// <para>This does not guarantee file writes will sync to physical media; they
@@ -96,18 +96,18 @@ public static partial class SDL
         /// </summary>
         /// <returns><c>true</c> if successful or <c>false</c> on write error when flushing data.</returns>
         public CloseDelegate Close;
-        
-        
+
+
         public delegate long SizeDelegate(IntPtr userdata);
-        
+
         public delegate long SeekDelegate(IntPtr userdata, long offset, IOWhence whence);
-        
+
         public delegate ulong ReadDelegate(IntPtr userdata, IntPtr ptr, ulong size, out IOStatus status);
-        
+
         public delegate ulong WriteDelegate(IntPtr userdata, IntPtr ptr, ulong size, out IOStatus status);
-        
+
         public delegate bool FlushDelegate(IntPtr userdata, out IOStatus status);
-        
+
         public delegate bool CloseDelegate(IntPtr userdata);
     }
 }

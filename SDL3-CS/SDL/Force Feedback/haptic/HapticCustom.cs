@@ -86,7 +86,7 @@ public static partial class SDL
         /// Amount of samples.
         /// </summary>
         public UInt16 Samples;
-        
+
         /// <summary>
         /// Should contain channels*samples items.
         /// </summary>

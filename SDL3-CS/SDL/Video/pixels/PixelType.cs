@@ -43,7 +43,7 @@ public static partial class SDL
         ArrayU32,
         ArrayF16,
         ArrayF32,
-        
+
         /// <summary>
         /// appended at the end for compatibility with sdl2-compat:
         /// </summary>

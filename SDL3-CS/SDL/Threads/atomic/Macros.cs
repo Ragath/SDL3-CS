@@ -37,8 +37,8 @@ public static partial class SDL
     /// <seealso cref="AtomicDecRef"/>
     [Macro]
     public static int AtomicIncRef(ref AtomicInt a) => AddAtomicInt(ref a, 1);
-    
-    
+
+
     /// <code>#define SDL_AtomicDecRef(a)    (SDL_AddAtomicInt(a, -1) == 1)</code>
     /// <summary>
     /// <para>Decrement an atomic variable used as a reference count.</para>
@@ -52,8 +52,8 @@ public static partial class SDL
     /// <seealso cref="AtomicIncRef"/>
     [Macro]
     public static bool AtomicDecRef(ref AtomicInt a) => AddAtomicInt(ref a, -1) == 1;
-    
-    
+
+
     /// <code>#define SDL_MemoryBarrierRelease() SDL_MemoryBarrierReleaseFunction()</code>
     /// <summary>
     /// <para>Insert a memory release barrier (macro version).</para>
@@ -85,8 +85,8 @@ public static partial class SDL
     /// <seealso cref="MemoryBarrierReleaseFunction"/>
     [Macro]
     public static void MemoryBarrierRelease() => MemoryBarrierReleaseFunction();
-    
-    
+
+
     /// <code>#define SDL_MemoryBarrierAcquire() SDL_MemoryBarrierAcquireFunction()</code>
     /// <summary>
     /// <para>Insert a memory acquire barrier (macro version).</para>

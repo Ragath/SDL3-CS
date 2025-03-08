@@ -37,12 +37,12 @@ public static partial class SDL
         /// Seek from the beginning of data
         /// </summary>
         Set,
-        
+
         /// <summary>
         /// Seek relative to current read point
         /// </summary>
         Cur,
-        
+
         /// <summary>
         /// Seek relative to the end of data
         /// </summary>

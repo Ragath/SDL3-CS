@@ -35,12 +35,12 @@ public static partial class SDL
         /// Add events to the back of the queue.
         /// </summary>
         AddEvent,
-        
+
         /// <summary>
         /// Check but don't remove events from the queue front.
         /// </summary>
         PeekEvent,
-        
+
         /// <summary>
         /// Retrieve/remove events from the front of the queue.
         /// </summary>

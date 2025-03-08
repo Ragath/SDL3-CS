@@ -58,37 +58,37 @@ public static partial class SDL
         /// the USB vendor ID of this joystick
         /// </summary>
         public UInt16 VendorID;
-        
+
         /// <summary>
         /// the USB product ID of this joystick
         /// </summary>
         public UInt16 ProductID;
-        
+
         /// <summary>
         /// the number of axes on this joystick
         /// </summary>
         public UInt16 NAxes;
-        
+
         /// <summary>
         /// the number of buttons on this joystick
         /// </summary>
         public UInt16 NButtons;
-        
+
         /// <summary>
         /// the number of balls on this joystick
         /// </summary>
         public UInt16 NBalls;
-        
+
         /// <summary>
         /// the number of hats on this joystick
         /// </summary>
         public UInt16 NHats;
-        
+
         /// <summary>
         /// the number of touchpads on this joystick, requires <c>touchpads</c> to point at valid descriptions
         /// </summary>
         public UInt16 NTouchpads;
-        
+
         /// <summary>
         /// the number of sensors on this joystick, requires <c>sensors</c> to point at valid descriptions
         /// </summary>
@@ -98,13 +98,13 @@ public static partial class SDL
         /// unused
         /// </summary>
         private unsafe fixed UInt16 _padding2[2];
-        
+
         /// <summary>
         /// A mask of which buttons are valid for this controller
         /// e.g. (1 &lt;&lt; <see cref="GamepadButton.South"/>)
         /// </summary>
         public UInt32 ButtonMask;
-        
+
         /// <summary>
         /// A mask of which axes are valid for this controller
         /// e.g. (1 &lt;&lt; <see cref="GamepadAxis.LeftX"/>)

@@ -24,50 +24,50 @@
 namespace SDL3;
 
 public static partial class SDL
-{
-    /// <summary>
-    /// <para>Specifies how a buffer is intended to be used by the client.</para>
-    /// <para>A buffer must have at least one usage flag. Note that some usage flag
-    /// combinations are invalid.</para>
-    /// <para>Unlike textures, READ | WRITE can be used for simultaneous read-write
-    /// usage. The same data synchronization concerns as textures apply.</para>
-    /// <para>If you use a STORAGE flag, the data in the buffer must respect std140
-    /// layout conventions. In practical terms this means you must ensure that vec3
-    /// and vec4 fields are 16-byte aligned.</para>
-    /// </summary>
-    /// <since>This datatype is available since SDL 3.2.0</since>
-    /// <seealso cref="CreateGPUBuffer"/>
-    [Flags]
-    public enum GPUBufferUsageFlags : uint
     {
         /// <summary>
-        /// Buffer is a vertex buffer.
+        /// <para>Specifies how a buffer is intended to be used by the client.</para>
+        /// <para>A buffer must have at least one usage flag. Note that some usage flag
+        /// combinations are invalid.</para>
+        /// <para>Unlike textures, READ | WRITE can be used for simultaneous read-write
+        /// usage. The same data synchronization concerns as textures apply.</para>
+        /// <para>If you use a STORAGE flag, the data in the buffer must respect std140
+        /// layout conventions. In practical terms this means you must ensure that vec3
+        /// and vec4 fields are 16-byte aligned.</para>
         /// </summary>
-        Vertex = 1u << 0,
-        
-        /// <summary>
-        /// Buffer is an index buffer.
-        /// </summary>
-        Index = 1u << 1,
-        
-        /// <summary>
-        /// Buffer is an indirect buffer.
-        /// </summary>
-        Indirect = 1u << 2,
-        
-        /// <summary>
-        /// Buffer supports storage reads in graphics stages.
-        /// </summary>
-        GraphicsStorageRead = 1u << 3,
-        
-        /// <summary>
-        /// Buffer supports storage reads in the compute stage.
-        /// </summary>
-        ComputeStorageRead = 1u << 4,
-        
-        /// <summary>
-        /// Buffer supports storage writes in the compute stage.
-        /// </summary>
-        ComputeStorageWrite = 1u << 5
+        /// <since>This datatype is available since SDL 3.2.0</since>
+        /// <seealso cref="CreateGPUBuffer"/>
+        [Flags]
+        public enum GPUBufferUsageFlags : uint
+        {
+            /// <summary>
+            /// Buffer is a vertex buffer.
+            /// </summary>
+            Vertex = 1u << 0,
+
+            /// <summary>
+            /// Buffer is an index buffer.
+            /// </summary>
+            Index = 1u << 1,
+
+            /// <summary>
+            /// Buffer is an indirect buffer.
+            /// </summary>
+            Indirect = 1u << 2,
+
+            /// <summary>
+            /// Buffer supports storage reads in graphics stages.
+            /// </summary>
+            GraphicsStorageRead = 1u << 3,
+
+            /// <summary>
+            /// Buffer supports storage reads in the compute stage.
+            /// </summary>
+            ComputeStorageRead = 1u << 4,
+
+            /// <summary>
+            /// Buffer supports storage writes in the compute stage.
+            /// </summary>
+            ComputeStorageWrite = 1u << 5
+        }
     }
-}

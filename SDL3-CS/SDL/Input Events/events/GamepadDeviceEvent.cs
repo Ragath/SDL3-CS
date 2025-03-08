@@ -46,14 +46,14 @@ public static partial class SDL
         /// or <see cref="EventType.GamepadSteamHandleUpdated"/>
         /// </summary>
         public EventType Type;
-        
+
         private UInt32 _reserved;
-        
+
         /// <summary>
         /// In nanoseconds, populated using <see cref="GetTicksNS"/>
         /// </summary>
         public UInt64 Timestamp;
-        
+
         /// <summary>
         /// The joystick instance id
         /// </summary>

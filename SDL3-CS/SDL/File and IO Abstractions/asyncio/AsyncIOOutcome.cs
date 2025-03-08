@@ -38,37 +38,37 @@ public static partial class SDL
         /// what generated this task. This pointer will be invalid if it was closed!
         /// </summary>
         public IntPtr ASyncIO;
-        
+
         /// <summary>
         /// What sort of task was this? Read, write, etc?
         /// </summary>
         public AsyncIOTaskType Type;
-        
+
         /// <summary>
         /// the result of the work (success, failure, cancellation).
         /// </summary>
         public AsyncIOResult Result;
-        
+
         /// <summary>
         /// buffer where data was read/written.
         /// </summary>
         public IntPtr Buffer;
-        
+
         /// <summary>
         /// offset in the SDL_AsyncIO where data was read/written.
         /// </summary>
         public UInt64 Offset;
-        
+
         /// <summary>
         /// number of bytes the task was to read/write.
         /// </summary>
         public UInt64 BytesRequested;
-        
+
         /// <summary>
         /// actual number of bytes that were read/written.
         /// </summary>
         public UInt64 BytesTransferred;
-        
+
         /// <summary>
         /// pointer provided by the app when starting the task
         /// </summary>

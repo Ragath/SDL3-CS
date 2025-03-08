@@ -62,8 +62,8 @@ public static partial class SDL
     /// <seealso cref="SetAudioStreamPutCallback"/>
     [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
     public delegate void AudioStreamCallback(IntPtr userdata, IntPtr stream, int additionalAmount, int totalAmount);
-    
-    
+
+
     /// <code>typedef void (SDLCALL *SDL_AudioPostmixCallback)(void *userdata, const SDL_AudioSpec *spec, float *buffer, int buflen);</code>
     /// <summary>
     /// <para>A callback that fires when data is about to be fed to an audio device.</para>

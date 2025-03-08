@@ -38,14 +38,14 @@ public static partial class SDL
         /// <see cref="EventType.RenderTargetsReset"/>, <see cref="EventType.RenderDeviceReset"/>, <see cref="EventType.RenderDeviceLost"/>
         /// </summary>
         public EventType Type;
-        
+
         private UInt32 _reserved;
-        
+
         /// <summary>
         /// In nanoseconds, populated using <see cref="GetTicksNS"/>
         /// </summary>
         public UInt64 Timestamp;
-        
+
         /// <summary>
         /// The window containing the renderer in question.
         /// </summary>

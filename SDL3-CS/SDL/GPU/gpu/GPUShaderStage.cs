@@ -24,15 +24,15 @@
 namespace SDL3;
 
 public static partial class SDL
-{
-    /// <summary>
-    /// Specifies which stage a shader program corresponds to.
-    /// </summary>
-    /// <since>This enum is available since SDL 3.2.0</since>
-    /// <seealso cref="CreateGPUShader"/>
-    public enum GPUShaderStage
     {
-        Vertex,
-        Fragment
+        /// <summary>
+        /// Specifies which stage a shader program corresponds to.
+        /// </summary>
+        /// <since>This enum is available since SDL 3.2.0</since>
+        /// <seealso cref="CreateGPUShader"/>
+        public enum GPUShaderStage
+        {
+            Vertex,
+            Fragment
+        }
     }
-}

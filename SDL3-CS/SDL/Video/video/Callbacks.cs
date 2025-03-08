@@ -46,8 +46,8 @@ public static partial class SDL
     /// <seealso cref="EGLSetAttributeCallbacks"/>
     [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
     public delegate IntPtr EGLAttribArrayCallback(IntPtr userdata);
-    
-    
+
+
     /// <code>typedef SDL_EGLint *(SDLCALL *SDL_EGLIntArrayCallback)(void *userdata, SDL_EGLDisplay display, SDL_EGLConfig config);</code>
     /// <summary>
     /// <para>EGL surface/context attribute initialization callback types.</para>
@@ -72,8 +72,8 @@ public static partial class SDL
     /// <seealso cref="EGLSetAttributeCallbacks"/>
     [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
     public delegate IntPtr EGLIntArrayCallback(IntPtr userdata, IntPtr display, IntPtr config);
-    
-    
+
+
     /// <code>typedef SDL_HitTestResult (SDLCALL *SDL_HitTest)(SDL_Window *win, const SDL_Point *area, void *data);</code>
     /// <summary>
     /// Callback used for hit-testing.

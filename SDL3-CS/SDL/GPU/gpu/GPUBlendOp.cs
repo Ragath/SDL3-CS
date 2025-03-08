@@ -24,42 +24,42 @@
 namespace SDL3;
 
 public static partial class SDL
-{
-    /// <summary>
-    /// <para>Specifies the operator to be used when pixels in a render target are
-    /// blended with existing pixels in the texture.</para>
-    /// <para>The source color is the value written by the fragment shader. The
-    /// destination color is the value currently existing in the texture.</para>
-    /// </summary>
-    /// <since>This enum is available since SDL 3.2.0</since>
-    /// <seealso cref="CreateGPUGraphicsPipeline"/>
-    public enum GPUBlendOp
     {
-        Invalid,
-        
         /// <summary>
-        /// (source * source_factor) + (destination * destination_factor)
+        /// <para>Specifies the operator to be used when pixels in a render target are
+        /// blended with existing pixels in the texture.</para>
+        /// <para>The source color is the value written by the fragment shader. The
+        /// destination color is the value currently existing in the texture.</para>
         /// </summary>
-        Add,
-        
-        /// <summary>
-        /// (source * source_factor) - (destination * destination_factor)
-        /// </summary>
-        Subtract,
-        
-        /// <summary>
-        /// (destination * destination_factor) - (source * source_factor)
-        /// </summary>
-        ReverseSubtract,
-        
-        /// <summary>
-        /// min(source, destination)
-        /// </summary>
-        Min,
-        
-        /// <summary>
-        /// max(source, destination)
-        /// </summary>
-        Max
+        /// <since>This enum is available since SDL 3.2.0</since>
+        /// <seealso cref="CreateGPUGraphicsPipeline"/>
+        public enum GPUBlendOp
+        {
+            Invalid,
+
+            /// <summary>
+            /// (source * source_factor) + (destination * destination_factor)
+            /// </summary>
+            Add,
+
+            /// <summary>
+            /// (source * source_factor) - (destination * destination_factor)
+            /// </summary>
+            Subtract,
+
+            /// <summary>
+            /// (destination * destination_factor) - (source * source_factor)
+            /// </summary>
+            ReverseSubtract,
+
+            /// <summary>
+            /// min(source, destination)
+            /// </summary>
+            Min,
+
+            /// <summary>
+            /// max(source, destination)
+            /// </summary>
+            Max
+        }
     }
-}

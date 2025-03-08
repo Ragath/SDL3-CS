@@ -38,9 +38,9 @@ public static partial class SDL
         /// Event type, shared with all events, Uint32 to cover user events which are not in the <see cref="EventType"/> enumeration
         /// </summary>
         public UInt32 Type;
-        
+
         private UInt32 _reserved;
-        
+
         /// <summary>
         /// In nanoseconds, populated using <see cref="GetTicksNS"/>
         /// </summary>

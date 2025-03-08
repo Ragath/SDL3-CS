@@ -26,39 +26,39 @@ using System.Runtime.InteropServices;
 namespace SDL3;
 
 public static partial class SDL
-{
-    /// <summary>
-    /// <para>A structure specifying the parameters of an indirect draw command.</para>
-    /// <para>Note that the <c>FirstVertex</c> and <c>FirstInstance</c> parameters are NOT
-    /// compatible with built-in vertex/instance ID variables in shaders (for
-    /// example, SV_VertexID); GPU APIs and shader languages do not define these
-    /// built-in variables consistently, so if your shader depends on them, the 
-    /// only way to keep behavior consistent and portable is to always pass 0 for 
-    /// the correlating parameter in the draw calls.</para>
-    /// </summary>
-    /// <since>This struct is available since SDL 3.2.0</since>
-    /// <seealso cref="DrawGPUPrimitivesIndirect"/>
-    [StructLayout(LayoutKind.Sequential)]
-    public struct GPUIndirectDrawCommand
     {
         /// <summary>
-        /// The number of vertices to draw.
+        /// <para>A structure specifying the parameters of an indirect draw command.</para>
+        /// <para>Note that the <c>FirstVertex</c> and <c>FirstInstance</c> parameters are NOT
+        /// compatible with built-in vertex/instance ID variables in shaders (for
+        /// example, SV_VertexID); GPU APIs and shader languages do not define these
+        /// built-in variables consistently, so if your shader depends on them, the 
+        /// only way to keep behavior consistent and portable is to always pass 0 for 
+        /// the correlating parameter in the draw calls.</para>
         /// </summary>
-        public UInt32 NumVertices;
-        
-        /// <summary>
-        /// The number of instances to draw.
-        /// </summary>
-        public UInt32 NumInstances;
-        
-        /// <summary>
-        /// The index of the first vertex to draw.
-        /// </summary>
-        public UInt32 FirstVertex;
-        
-        /// <summary>
-        /// The ID of the first instance to draw.
-        /// </summary>
-        public UInt32 FirstInstance;
+        /// <since>This struct is available since SDL 3.2.0</since>
+        /// <seealso cref="DrawGPUPrimitivesIndirect"/>
+        [StructLayout(LayoutKind.Sequential)]
+        public struct GPUIndirectDrawCommand
+        {
+            /// <summary>
+            /// The number of vertices to draw.
+            /// </summary>
+            public UInt32 NumVertices;
+
+            /// <summary>
+            /// The number of instances to draw.
+            /// </summary>
+            public UInt32 NumInstances;
+
+            /// <summary>
+            /// The index of the first vertex to draw.
+            /// </summary>
+            public UInt32 FirstVertex;
+
+            /// <summary>
+            /// The ID of the first instance to draw.
+            /// </summary>
+            public UInt32 FirstInstance;
+        }
     }
-}

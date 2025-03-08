@@ -50,49 +50,49 @@ public static partial class SDL
         /// <see cref="EventType.FingerDown"/>, <see cref="EventType.FingerUp"/>, <see cref="EventType.FingerMotion"/>, or <see cref="EventType.FingerCanceled"/>
         /// </summary>
         public EventType Type;
-        
+
         private UInt32 _reserved;
-        
+
         /// <summary>
         /// In nanoseconds, populated using <see cref="GetTicksNS"/>
         /// </summary>
         public UInt64 Timestamp;
-        
+
         /// <summary>
         /// The touch device id
         /// </summary>
         public UInt64 TouchID;
-        
+
         /// <summary>
         /// The touch device id
         /// </summary>
         public UInt64 FingerID;
-        
+
         /// <summary>
         /// Normalized in the range 0...1
         /// </summary>
         public float X;
-        
+
         /// <summary>
         /// Normalized in the range 0...1
         /// </summary>
         public float Y;
-        
+
         /// <summary>
         /// Normalized in the range -1...1
         /// </summary>
         public float DX;
-        
+
         /// <summary>
         /// Normalized in the range -1...1
         /// </summary>
         public float DY;
-        
+
         /// <summary>
         /// Normalized in the range 0...1
         /// </summary>
         public float Pressure;
-        
+
         /// <summary>
         /// The window underneath the finger, if any
         /// </summary>

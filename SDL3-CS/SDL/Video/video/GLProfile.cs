@@ -34,13 +34,13 @@ public static partial class SDL
         /// <summary>
         /// OpenGL Core Profile context
         /// </summary>
-        Core           = 0x0001,
-        
+        Core = 0x0001,
+
         /// <summary>
         /// OpenGL Compatibility Profile context
         /// </summary>
-        Compatibility  = 0x0002,
-        
+        Compatibility = 0x0002,
+
         /// <summary>
         /// GLX_CONTEXT_ES2_PROFILE_BIT_EXT
         /// </summary>

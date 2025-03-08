@@ -36,8 +36,8 @@ public static partial class SDL
     /// <since>This datatype is available since SDL 3.2.0</since>
     [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
     public delegate int ThreadFunction(IntPtr data);
-    
-    
+
+
     /// <code>typedef void (SDLCALL *SDL_TLSDestructorCallback)(void *value);</code>
     /// <summary>
     /// <para>The callback used to cleanup data passed to <see cref="SetTLS"/>.</para>

@@ -38,34 +38,34 @@ public static partial class SDL
         /// <see cref="EventType.TextEditingCandidates"/>
         /// </summary>
         public EventType Type;
-        
+
         private UInt32 _reserved;
-        
+
         /// <summary>
         /// In nanoseconds, populated using <see cref="GetTicksNS"/>
         /// </summary>
         public UInt64 Timestamp;
-        
+
         /// <summary>
         /// The window with keyboard focus, if any
         /// </summary>
         public UInt32 WindowID;
-        
+
         /// <summary>
         /// The list of candidates, or <c>null</c> if there are no candidates available
         /// </summary>
         public IntPtr Candidates;
-        
+
         /// <summary>
         /// The number of strings in <c>candidates</c>
         /// </summary>
         public Int32 NumCandidates;
-        
+
         /// <summary>
         /// The index of the selected candidate, or -1 if no candidate is selected
         /// </summary>
         public Int32 SelectedCandidate;
-        
+
         /// <summary>
         /// true if the list is horizontal, false if it's vertical
         /// </summary>

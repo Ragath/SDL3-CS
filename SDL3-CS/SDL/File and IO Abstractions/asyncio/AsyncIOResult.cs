@@ -35,12 +35,12 @@ public static partial class SDL
         /// request was completed without error
         /// </summary>
         Complete,
-        
+
         /// <summary>
         /// request failed for some reason; check <see cref="GetError"/>!
         /// </summary>
         Failure,
-        
+
         /// <summary>
         /// request was canceled before completing.
         /// </summary>

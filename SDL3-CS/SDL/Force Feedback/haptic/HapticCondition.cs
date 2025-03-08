@@ -89,27 +89,27 @@ public static partial class SDL
         /// Level when joystick is to the positive side; max 0xFFFF.
         /// </summary>
         public unsafe fixed UInt16 RightSat[3];
-        
+
         /// <summary>
         /// Level when joystick is to the negative side; max 0xFFFF.
         /// </summary>
         public unsafe fixed UInt16 LeftSat[3];
-        
+
         /// <summary>
         /// How fast to increase the force towards the positive side.
         /// </summary>
         public unsafe fixed UInt16 RightCoeff[3];
-        
+
         /// <summary>
         /// How fast to increase the force towards the negative side.
         /// </summary>
         public unsafe fixed UInt16 LeftCoeff[3];
-        
+
         /// <summary>
         /// Size of the dead zone; max 0xFFFF: whole axis-range when 0-centered.
         /// </summary>
         public unsafe fixed UInt16 Deadband[3];
-        
+
         /// <summary>
         /// Position of the dead zone.
         /// </summary>

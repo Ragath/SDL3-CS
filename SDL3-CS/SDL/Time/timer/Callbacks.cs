@@ -49,7 +49,7 @@ public static partial class SDL
     [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
     public delegate uint TimerCallback(IntPtr userdata, uint timerId, uint interval);
 
-    
+
     /// <code>typedef Uint64 (SDLCALL *SDL_NSTimerCallback)(void *userdata, SDL_TimerID timerID, Uint64 interval);</code>
     /// <summary>
     /// <para>Function prototype for the nanosecond timer callback function.</para>

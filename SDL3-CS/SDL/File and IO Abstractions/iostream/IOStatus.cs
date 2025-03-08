@@ -35,27 +35,27 @@ public static partial class SDL
         /// Everything is ready (no errors and not EOF).
         /// </summary>
         Ready,
-        
+
         /// <summary>
         /// Read or write I/O error
         /// </summary>
         Error,
-        
+
         /// <summary>
         /// End of file
         /// </summary>
         EOF,
-        
+
         /// <summary>
         /// Non blocking I/O, not ready
         /// </summary>
         NotReady,
-        
+
         /// <summary>
         /// Tried to write a read-only buffer
         /// </summary>
-        ReadOnly, 
-        
+        ReadOnly,
+
         /// <summary>
         /// Tried to read a write-only buffer
         /// </summary>

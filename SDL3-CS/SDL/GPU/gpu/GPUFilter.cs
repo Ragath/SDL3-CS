@@ -24,22 +24,22 @@
 namespace SDL3;
 
 public static partial class SDL
-{
-    /// <summary>
-    /// Specifies a filter operation used by a sampler.
-    /// </summary>
-    /// <since>This enum is available since SDL 3.2.0</since>
-    /// <seealso cref="CreateGPUSampler"/>
-    public enum GPUFilter
     {
         /// <summary>
-        /// Point filtering.
+        /// Specifies a filter operation used by a sampler.
         /// </summary>
-        Nearest,
-        
-        /// <summary>
-        /// Linear filtering.
-        /// </summary>
-        Linear
+        /// <since>This enum is available since SDL 3.2.0</since>
+        /// <seealso cref="CreateGPUSampler"/>
+        public enum GPUFilter
+        {
+            /// <summary>
+            /// Point filtering.
+            /// </summary>
+            Nearest,
+
+            /// <summary>
+            /// Linear filtering.
+            /// </summary>
+            Linear
+        }
     }
-}

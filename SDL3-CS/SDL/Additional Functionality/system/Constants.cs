@@ -31,8 +31,8 @@ public static partial class SDL
     /// </summary>
     /// <since>This macro is available since SDL 3.2.0</since>
     public const uint AndroidExternalStorageRead = 0x01;
-    
-    
+
+
     /// <summary>
     /// <para>See the official Android developer guide for more information:
     /// http://developer.android.com/guide/topics/data/data-storage.html</para>

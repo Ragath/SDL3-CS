@@ -44,29 +44,29 @@ public static partial class SDL
         /// Uint32 because these are not in the <see cref="EventType"/> enumeration
         /// </summary>
         public UInt32 Type;
-        
+
         private UInt32 _reserved;
-        
+
         /// <summary>
         /// In nanoseconds, populated using <see cref="GetTicksNS"/>
         /// </summary>
         public UInt64 Timestamp;
-        
+
         /// <summary>
         /// The associated window if any
         /// </summary>
         public UInt32 WindowID;
-        
+
         /// <summary>
         /// User defined event code 
         /// </summary>
         public Int32 Code;
-        
+
         /// <summary>
         /// User defined data pointer
         /// </summary>
         public IntPtr Data1;
-        
+
         /// <summary>
         /// User defined data pointer
         /// </summary>
