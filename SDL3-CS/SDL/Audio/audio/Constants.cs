@@ -24,23 +24,23 @@
 namespace SDL3;
 
 public static partial class SDL
-{ 
+{
     /// <summary>
     /// <para>Mask of bits in an <see cref="AudioFormat"/> that contains the format bit size.</para>
     /// <para>Generally one should use <see cref="AudioBitSize"/> instead of this macro directly.</para>
     /// </summary>
     /// <since>This macro is available since SDL 3.2.0</since>
     public const uint AudioMaskBitSize = 0xFFu;
-    
-    
+
+
     /// <summary>
     /// <para>Mask of bits in an <see cref="AudioFormat"/> that contain the floating point flag.</para>
     /// <para>Generally one should use <see cref="AudioIsFloat"/> instead of this macro directly.</para>
     /// </summary>
     /// <since>This macro is available since SDL 3.2.0</since>
     public const uint AudioMaskFloat = 1u << 8;
-    
-    
+
+
     /// <summary>
     /// <para>Mask of bits in an <see cref="AudioFormat"/> that contain the bigendian flag.</para>
     /// <para>Generally one should use <see cref="AudioIsBigEndian"/> or <see cref="AudioIsLittleEndian"/>
@@ -48,16 +48,16 @@ public static partial class SDL
     /// </summary>
     /// <since>This macro is available since SDL 3.2.0</since>
     public const uint AudioMaskBigEndian = 1u << 12;
-    
-    
+
+
     /// <summary>
     /// <para>Mask of bits in an <see cref="AudioFormat"/> that contain the signed data flag.</para>
     /// <para>Generally one should use <see cref="AudioIsSigned"/> instead of this macro directly.</para>
     /// </summary>
     /// <since>This macro is available since SDL 3.2.0</since>
     public const uint AudioMaskSigned = 1u << 15;
-    
-    
+
+
     /// <summary>
     /// <para>A value used to request a default playback audio device.</para>
     /// <para>Several functions that require an SDL_AudioDeviceID will accept this value
@@ -66,8 +66,8 @@ public static partial class SDL
     /// </summary>
     /// <since>This macro is available since SDL 3.2.0</since>
     public const uint AudioDeviceDefaultPlayback = 0xFFFFFFFFu;
-    
-    
+
+
     /// <summary>
     /// <para>A value used to request a default recording audio device.</para>
     /// <para>Several functions that require an SDL_AudioDeviceID will accept this value

@@ -35,8 +35,8 @@ public static partial class SDL
     /// <since>This macro is available since SDL 3.2.0</since>
     [Macro]
     public static bool Unsupported() => SetError("That operation is not supported");
-    
-    
+
+
     /// <code>#define SDL_InvalidParamError(param) SDL_SetError("Parameter '%s' is invalid", (param))</code>
     /// <summary>
     /// <para>A macro to standardize error reporting on unsupported operations.</para>

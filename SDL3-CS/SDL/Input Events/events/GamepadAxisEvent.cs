@@ -38,35 +38,35 @@ public static partial class SDL
         /// <see cref="EventType.GamepadAxisMotion"/>
         /// </summary>
         public EventType Type;
-        
+
         private UInt32 _reserved;
-        
+
         /// <summary>
         /// In nanoseconds, populated using <see cref="GetTicksNS"/>
         /// </summary>
         public UInt64 Timestamp;
-        
+
         /// <summary>
         /// The joystick instance id
         /// </summary>
         public UInt32 Which;
-        
+
         /// <summary>
         /// The gamepad axis (<see cref="GamepadAxis"/>)
         /// </summary>
         public Byte Axis;
-        
+
         private Byte _padding1;
-        
+
         private Byte _padding2;
-        
+
         private Byte _padding3;
-        
+
         /// <summary>
         /// The axis value (range: -32768 to 32767)
         /// </summary>
         public Int16 Value;
-        
+
         private UInt16 _padding4;
     }
 }

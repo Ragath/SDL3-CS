@@ -46,7 +46,7 @@ public static partial class SDL
         /// Direction of the effect.
         /// </summary>
         public HapticDirection Direction;
-        
+
         /// <summary>
         /// Duration of the effect.
         /// </summary>
@@ -56,12 +56,12 @@ public static partial class SDL
         /// Delay before starting the effect.
         /// </summary>
         public UInt16 Delay;
-        
+
         /// <summary>
         /// Button that triggers the effect.
         /// </summary>
         public UInt16 Button;
-        
+
         /// <summary>
         /// How soon it can be triggered again after button.
         /// </summary>
@@ -71,22 +71,22 @@ public static partial class SDL
         /// Strength of the constant effect.
         /// </summary>
         public short Level;
-        
+
         /// <summary>
         /// Duration of the attack.
         /// </summary>
         public UInt16 AttackLength;
-        
+
         /// <summary>
         /// Level at the start of the attack.
         /// </summary>
         public UInt16 AttackLevel;
-        
+
         /// <summary>
         /// Duration of the fade.
         /// </summary>
         public UInt16 FadeLength;
-        
+
         /// <summary>
         /// Level at the end of the fade.
         /// </summary>

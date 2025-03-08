@@ -39,17 +39,17 @@ public static partial class SDL
         /// No auto-capitalization will be done
         /// </summary>
         None,
-        
+
         /// <summary>
         /// The first letter of sentences will be capitalized
         /// </summary>
         Sentences,
-        
+
         /// <summary>
         /// The first letter of words will be capitalized
         /// </summary>
         Words,
-        
+
         /// <summary>
         /// All letters will be capitalized
         /// </summary>

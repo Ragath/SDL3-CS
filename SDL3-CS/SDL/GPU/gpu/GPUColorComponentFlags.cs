@@ -24,33 +24,33 @@
 namespace SDL3;
 
 public static partial class SDL
-{
-    /// <summary>
-    /// Specifies which color components are written in a graphics pipeline.
-    /// </summary>
-    /// <since>This datatype is available since SDL 3.2.0</since>
-    /// <seealso cref="CreateGPUGraphicsPipeline"/>
-    [Flags]
-    public enum GPUColorComponentFlags : byte
     {
         /// <summary>
-        /// the red component
+        /// Specifies which color components are written in a graphics pipeline.
         /// </summary>
-        R = 1,
-        
-        /// <summary>
-        /// the green component
-        /// </summary>
-        G = 2,
-        
-        /// <summary>
-        /// the blue component
-        /// </summary>
-        B = 4,
-        
-        /// <summary>
-        /// the alpha component
-        /// </summary>
-        A = 8
+        /// <since>This datatype is available since SDL 3.2.0</since>
+        /// <seealso cref="CreateGPUGraphicsPipeline"/>
+        [Flags]
+        public enum GPUColorComponentFlags : byte
+        {
+            /// <summary>
+            /// the red component
+            /// </summary>
+            R = 1,
+
+            /// <summary>
+            /// the green component
+            /// </summary>
+            G = 2,
+
+            /// <summary>
+            /// the blue component
+            /// </summary>
+            B = 4,
+
+            /// <summary>
+            /// the alpha component
+            /// </summary>
+            A = 8
+        }
     }
-}

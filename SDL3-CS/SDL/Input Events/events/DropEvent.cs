@@ -41,34 +41,34 @@ public static partial class SDL
         /// or <see cref="EventType.DropPosition"/>
         /// </summary>
         public EventType Type;
-        
+
         private UInt32 _reserved;
-        
+
         /// <summary>
         /// In nanoseconds, populated using <see cref="GetTicksNS"/>
         /// </summary>
         public UInt64 Timestamp;
-        
+
         /// <summary>
         /// The window that was dropped on, if any
         /// </summary>
         public UInt32 WindowID;
-        
+
         /// <summary>
         /// X coordinate, relative to window (not on begin)
         /// </summary>
         public float X;
-        
+
         /// <summary>
         /// Y coordinate, relative to window (not on begin)
         /// </summary>
         public float Y;
-        
+
         /// <summary>
         /// The source app that sent this drop event, or <c>null</c>if that isn't available
         /// </summary>
         public IntPtr Source;
-        
+
         /// <summary>
         /// The text for <see cref="EventType.DropText"/> and the file name for <see cref="EventType.DropFile"/>, <c>null</c> for other events
         /// </summary>

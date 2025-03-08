@@ -31,7 +31,7 @@ public static partial class SDL
     /// <since>This macro is available since SDL 3.2.0</since>
     /// <seealso cref="JoystickAxisMin"/>
     public const short JoystickAxisMax = short.MaxValue;
-    
+
     /// <summary>
     /// <para>The smallest value an SDL_Joystick's axis can report.</para>
     /// <para>This is a negative number!</para>
@@ -39,7 +39,7 @@ public static partial class SDL
     /// <since>This macro is available since SDL 3.2.0</since>
     /// <seealso cref="JoystickAxisMax"/>
     public const short JoystickAxisMin = short.MinValue;
-    
+
     // ReSharper disable once InconsistentNaming
     public const float IPhoneMaxGForce = 5.0f;
 }

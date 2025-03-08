@@ -51,7 +51,7 @@ public static partial class TTF
         /// Application reference count, used when freeing surface
         /// </summary>
         public int Refcount;
-        
+
         /// <summary>
         /// Private
         /// </summary>

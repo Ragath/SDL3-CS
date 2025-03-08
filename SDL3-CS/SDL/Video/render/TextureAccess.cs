@@ -35,12 +35,12 @@ public static partial class SDL
         /// Changes rarely, not lockable
         /// </summary>
         Static,
-        
+
         /// <summary>
         /// Changes frequently, lockable
         /// </summary>
         Streaming,
-        
+
         /// <summary>
         /// Texture can be used as a render target
         /// </summary>

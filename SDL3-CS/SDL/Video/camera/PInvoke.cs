@@ -46,8 +46,8 @@ public static partial class SDL
     /// <seealso cref="GetCameraDriver"/>
     [LibraryImport(SDLLibrary, EntryPoint = "SDL_GetNumCameraDrivers"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     public static partial int GetNumCameraDrivers();
-    
-    
+
+
     [LibraryImport(SDLLibrary, EntryPoint = "SDL_GetCameraDriver"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial IntPtr SDL_GetCameraDriver(int index);
     /// <code>extern SDL_DECLSPEC const char *SDLCALL SDL_GetCameraDriver(int index);</code>
@@ -73,8 +73,8 @@ public static partial class SDL
 
         return value == IntPtr.Zero ? null : Marshal.PtrToStringUTF8(value);
     }
-    
-    
+
+
     [LibraryImport(SDLLibrary, EntryPoint = "SDL_GetCurrentCameraDriver"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial IntPtr SDL_GetCurrentCameraDriver();
     /// <code>extern SDL_DECLSPEC const char * SDLCALL SDL_GetCurrentCameraDriver(void);</code>
@@ -89,12 +89,12 @@ public static partial class SDL
     /// <threadsafety>It is safe to call this function from any thread.</threadsafety>
     /// <since>This function is available since SDL 3.2.0</since>
     public static string? GetCurrentCameraDriver()
-    { 
+    {
         var value = SDL_GetCurrentCameraDriver();
         return value == IntPtr.Zero ? null : Marshal.PtrToStringUTF8(value);
     }
-    
-    
+
+
     [LibraryImport(SDLLibrary, EntryPoint = "SDL_GetCameras"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial IntPtr SDL_GetCameras(out int count);
     /// <code>extern SDL_DECLSPEC SDL_CameraID * SDLCALL SDL_GetCameras(int *count);</code>
@@ -122,8 +122,8 @@ public static partial class SDL
             if (ptr != IntPtr.Zero) Free(ptr);
         }
     }
-    
-    
+
+
     [LibraryImport(SDLLibrary, EntryPoint = "SDL_GetCameraSupportedFormats"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial IntPtr SDL_GetCameraSupportedFormats(uint instanceId, out int count);
     /// <code>extern SDL_DECLSPEC SDL_CameraSpec *SDLCALL SDL_GetCameraSupportedFormats(SDL_CameraID devid, int *count);</code>
@@ -159,7 +159,7 @@ public static partial class SDL
     public static CameraSpec[]? GetCameraSupportedFormats(uint instanceId, out int count)
     {
         var ptr = SDL_GetCameraSupportedFormats(instanceId, out count);
-        
+
         try
         {
             return PointerToStructureArray<CameraSpec>(ptr, count);
@@ -169,8 +169,8 @@ public static partial class SDL
             if (ptr != IntPtr.Zero) Free(ptr);
         }
     }
-    
-    
+
+
     [LibraryImport(SDLLibrary, EntryPoint = "SDL_GetCameraName"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial IntPtr SDL_GetCameraName(uint instanceId);
     /// <code>extern SDL_DECLSPEC const char * SDLCALL SDL_GetCameraName(SDL_CameraID instance_id);</code>
@@ -185,10 +185,10 @@ public static partial class SDL
     /// <seealso cref="GetCameras"/>
     public static string? GetCameraName(uint instanceId)
     {
-        var value = SDL_GetCameraName(instanceId); 
+        var value = SDL_GetCameraName(instanceId);
         return value == IntPtr.Zero ? null : Marshal.PtrToStringUTF8(value);
     }
-    
+
 
     /// <code>extern SDL_DECLSPEC SDL_CameraPosition SDLCALL SDL_GetCameraPosition(SDL_CameraID instance_id);</code>
     /// <summary>
@@ -205,9 +205,9 @@ public static partial class SDL
     /// <seealso cref="GetCameras"/>
     [LibraryImport(SDLLibrary, EntryPoint = "SDL_GetCameraPosition"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     public static partial CameraPosition GetCameraPosition(uint instanceId);
-    
 
-    
+
+
     /// <code>extern SDL_DECLSPEC SDL_Camera * SDLCALL SDL_OpenCamera(SDL_CameraID instance_id, const SDL_CameraSpec *spec);</code>
     /// <summary>
     /// <para>Open a video recording device (a "camera").</para>
@@ -247,8 +247,8 @@ public static partial class SDL
     /// <seealso cref="GetCameraFormat"/>
     [LibraryImport(SDLLibrary, EntryPoint = "SDL_OpenCamera"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     public static partial IntPtr OpenCamera(uint instanceId, IntPtr spec);
-    
-    
+
+
     /// <code>extern SDL_DECLSPEC SDL_Camera * SDLCALL SDL_OpenCamera(SDL_CameraID instance_id, const SDL_CameraSpec *spec);</code>
     /// <summary>
     /// <para>Open a video recording device (a "camera").</para>
@@ -288,8 +288,8 @@ public static partial class SDL
     /// <seealso cref="GetCameraFormat"/>
     [LibraryImport(SDLLibrary, EntryPoint = "SDL_OpenCamera"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     public static partial IntPtr OpenCamera(uint instanceId, in CameraSpec spec);
-    
-    
+
+
     /// <code>extern SDL_DECLSPEC int SDLCALL SDL_GetCameraPermissionState(SDL_Camera *camera);</code>
     /// <summary>
     /// <para>Query if camera access has been approved by the user.</para>
@@ -316,7 +316,7 @@ public static partial class SDL
     /// <seealso cref="CloseCamera"/>
     [LibraryImport(SDLLibrary, EntryPoint = "SDL_GetCameraPermissionState"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     public static partial int GetCameraPermissionState(IntPtr camera);
-    
+
 
     /// <code>extern SDL_DECLSPEC SDL_CameraID SDLCALL SDL_GetCameraID(SDL_Camera *camera);</code>
     /// <summary>
@@ -330,7 +330,7 @@ public static partial class SDL
     /// <seealso cref="OpenCamera(uint, nint)"/>
     [LibraryImport(SDLLibrary, EntryPoint = "SDL_GetCameraID"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     public static partial uint GetCameraID(IntPtr camera);
-    
+
 
     /// <code>extern SDL_DECLSPEC SDL_PropertiesID SDLCALL SDL_GetCameraProperties(SDL_Camera *camera);</code>
     /// <summary>
@@ -343,7 +343,7 @@ public static partial class SDL
     /// <since>This function is available since SDL 3.2.0</since>
     [LibraryImport(SDLLibrary, EntryPoint = "SDL_GetCameraProperties"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     public static partial uint GetCameraProperties(IntPtr camera);
-    
+
 
     /// <code>extern SDL_DECLSPEC bool SDLCALL SDL_GetCameraFormat(SDL_Camera *camera, SDL_CameraSpec *spec);</code>
     /// <summary>
@@ -366,9 +366,9 @@ public static partial class SDL
     /// <seealso cref="OpenCamera(uint, nint)"/>    
     [LibraryImport(SDLLibrary, EntryPoint = "SDL_GetCameraFormat"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     public static partial int GetCameraFormat(IntPtr camera, out CameraSpec spec);
-    
 
-    
+
+
     /// <code>extern SDL_DECLSPEC SDL_Surface * SDLCALL SDL_AcquireCameraFrame(SDL_Camera *camera, Uint64 *timestampNS);</code>
     /// <summary>
     /// <para>Acquire a frame.</para>
@@ -403,8 +403,8 @@ public static partial class SDL
     /// <seealso cref="ReleaseCameraFrame"/>
     [LibraryImport(SDLLibrary, EntryPoint = "SDL_AcquireCameraFrame"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     public static partial IntPtr AcquireCameraFrame(IntPtr camera, out ulong timestampNS);
-    
-    
+
+
     /// <code>extern SDL_DECLSPEC void SDLCALL SDL_ReleaseCameraFrame(SDL_Camera *camera, SDL_Surface *frame);</code>
     /// <summary>
     /// <para>Release a frame of video acquired from a camera.</para>
@@ -426,8 +426,8 @@ public static partial class SDL
     /// <seealso cref="AcquireCameraFrame"/>
     [LibraryImport(SDLLibrary, EntryPoint = "SDL_ReleaseCameraFrame"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     public static partial void ReleaseCameraFrame(IntPtr camera, IntPtr frame);
-    
-    
+
+
     /// <code>extern SDL_DECLSPEC void SDLCALL SDL_CloseCamera(SDL_Camera *camera);</code>
     /// <summary>
     /// Use this function to shut down camera processing and close the camera
@@ -440,5 +440,5 @@ public static partial class SDL
     /// <seealso cref="OpenCamera(uint, nint)"/>
     [LibraryImport(SDLLibrary, EntryPoint = "SDL_CloseCamera"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     public static partial void CloseCamera(IntPtr camera);
-    
+
 }

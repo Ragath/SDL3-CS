@@ -33,7 +33,7 @@ public static partial class SDL
     [Flags]
     public enum GLСontextReleaseFlag
     {
-        None   = 0x0000,
-        Flush  = 0x0001
+        None = 0x0000,
+        Flush = 0x0001
     }
 }

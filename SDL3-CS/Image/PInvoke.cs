@@ -36,8 +36,8 @@ public partial class Image
     /// <since>This function is available since SDL_image 3.0.0.</since>
     [LibraryImport(ImageLibrary, EntryPoint = "IMG_Version"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     public static partial int Version();
-    
-    
+
+
     /// <code>extern SDL_DECLSPEC SDL_Surface * SDLCALL IMG_LoadTyped_IO(SDL_IOStream *src, bool closeio, const char *type);</code>
     /// <summary>
     /// <para>Load an image from an SDL data source into a software surface.</para>
@@ -89,8 +89,8 @@ public partial class Image
     /// <seealso cref="SDL.DestroySurface"/>
     [LibraryImport(ImageLibrary, EntryPoint = "IMG_LoadTyped_IO"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     public static partial IntPtr LoadTypedIO(IntPtr src, [MarshalAs(UnmanagedType.I1)] bool closeio, [MarshalAs(UnmanagedType.LPUTF8Str)] string type);
-    
-    
+
+
     /// <code>extern SDL_DECLSPEC SDL_Surface * SDLCALL IMG_Load(const char *file);</code>
     /// <summary>
     /// <para>Load an image from a filesystem path into a software surface.</para>
@@ -128,8 +128,8 @@ public partial class Image
     /// <seealso cref="SDL.DestroySurface"/>
     [LibraryImport(ImageLibrary, EntryPoint = "IMG_Load"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     public static partial IntPtr Load([MarshalAs(UnmanagedType.LPUTF8Str)] string file);
-    
-    
+
+
     /// <code>extern SDL_DECLSPEC SDL_Surface * SDLCALL IMG_Load_IO(SDL_IOStream *src, bool closeio);</code>
     /// <summary>
     /// <para>Load an image from an SDL data source into a software surface.</para>
@@ -174,8 +174,8 @@ public partial class Image
     /// <seealso cref="SDL.DestroySurface"/>
     [LibraryImport(ImageLibrary, EntryPoint = "IMG_Load_IO"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     public static partial IntPtr LoadIO(IntPtr src, [MarshalAs(UnmanagedType.I1)] bool closeio);
-    
-    
+
+
     /// <code>extern SDL_DECLSPEC SDL_Texture * SDLCALL IMG_LoadTexture(SDL_Renderer *renderer, const char *file);</code>
     /// <summary>
     /// <para>Load an image from a filesystem path into a GPU texture.</para>
@@ -204,8 +204,8 @@ public partial class Image
     /// <seealso cref="LoadTextureIO"/>
     [LibraryImport(ImageLibrary, EntryPoint = "IMG_LoadTexture"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     public static partial IntPtr LoadTexture(IntPtr renderer, [MarshalAs(UnmanagedType.LPUTF8Str)] string file);
-    
-    
+
+
     /// <code>extern SDL_DECLSPEC SDL_Texture * SDLCALL IMG_LoadTexture_IO(SDL_Renderer *renderer, SDL_IOStream *src, bool closeio);</code>
     /// <summary>
     /// <para>Load an image from an SDL data source into a GPU texture.</para>
@@ -244,8 +244,8 @@ public partial class Image
     /// <seealso cref="SDL.DestroyTexture"/>
     [LibraryImport(ImageLibrary, EntryPoint = "IMG_LoadTexture_IO"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     public static partial IntPtr LoadTextureIO(IntPtr renderer, IntPtr src, [MarshalAs(UnmanagedType.I1)] bool closeio);
-    
-    
+
+
     /// <code>extern SDL_DECLSPEC SDL_Texture * SDLCALL IMG_LoadTextureTyped_IO(SDL_Renderer *renderer, SDL_IOStream *src, bool closeio, const char *type);</code>
     /// <summary>
     /// <para>Load an image from an SDL data source into a GPU texture.</para>
@@ -291,8 +291,8 @@ public partial class Image
     /// <seealso cref="SDL.DestroyTexture"/>
     [LibraryImport(ImageLibrary, EntryPoint = "IMG_LoadTextureTyped_IO"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     public static partial IntPtr LoadTextureTypedIO(IntPtr renderer, IntPtr src, [MarshalAs(UnmanagedType.I1)] bool closeio, [MarshalAs(UnmanagedType.LPUTF8Str)] string type);
-    
-    
+
+
     /// <code>extern SDL_DECLSPEC bool SDLCALL IMG_isAVIF(SDL_IOStream *src);</code>
     /// <summary>
     /// <para>Detect AVIF image data on a readable/seekable SDL_IOStream.</para>
@@ -332,8 +332,8 @@ public partial class Image
     [LibraryImport(ImageLibrary, EntryPoint = "IMG_isAVIF"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     [return: MarshalAs(UnmanagedType.I1)]
     public static partial bool IsAVIF(IntPtr src);
-    
-    
+
+
     /// <code>extern SDL_DECLSPEC bool SDLCALL IMG_isICO(SDL_IOStream *src);</code>
     /// <summary>
     /// <para>Detect ICO image data on a readable/seekable SDL_IOStream.</para>
@@ -372,8 +372,8 @@ public partial class Image
     [LibraryImport(ImageLibrary, EntryPoint = "IMG_isICO"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     [return: MarshalAs(UnmanagedType.I1)]
     public static partial bool IsICO(IntPtr src);
-    
-    
+
+
     /// <code>extern SDL_DECLSPEC bool SDLCALL IMG_isCUR(SDL_IOStream *src);</code>
     /// <summary>
     /// <para>Detect CUR image data on a readable/seekable SDL_IOStream.</para>
@@ -412,8 +412,8 @@ public partial class Image
     [LibraryImport(ImageLibrary, EntryPoint = "IMG_isCUR"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     [return: MarshalAs(UnmanagedType.I1)]
     public static partial bool IsCUR(IntPtr src);
-    
-    
+
+
     /// <code>extern SDL_DECLSPEC bool SDLCALL IMG_isBMP(SDL_IOStream *src);</code>
     /// <summary>
     /// <para>Detect BMP image data on a readable/seekable SDL_IOStream.</para>
@@ -452,8 +452,8 @@ public partial class Image
     [LibraryImport(ImageLibrary, EntryPoint = "IMG_isBMP"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     [return: MarshalAs(UnmanagedType.I1)]
     public static partial bool IsBMP(IntPtr src);
-    
-    
+
+
     /// <code>extern SDL_DECLSPEC bool SDLCALL IMG_isGIF(SDL_IOStream *src);</code>
     /// <summary>
     /// <para>Detect GIF image data on a readable/seekable SDL_IOStream.</para>
@@ -492,8 +492,8 @@ public partial class Image
     [LibraryImport(ImageLibrary, EntryPoint = "IMG_isGIF"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     [return: MarshalAs(UnmanagedType.I1)]
     public static partial bool IsGIF(IntPtr src);
-    
-    
+
+
     /// <code>extern SDL_DECLSPEC bool SDLCALL IMG_isJPG(SDL_IOStream *src);</code>
     /// <summary>
     /// <para>Detect JPG image data on a readable/seekable SDL_IOStream.</para>
@@ -532,8 +532,8 @@ public partial class Image
     [LibraryImport(ImageLibrary, EntryPoint = "IMG_isJPG"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     [return: MarshalAs(UnmanagedType.I1)]
     public static partial bool IsJPG(IntPtr src);
-    
-    
+
+
     /// <code>extern SDL_DECLSPEC bool SDLCALL IMG_isJXL(SDL_IOStream *src);</code>
     /// <summary>
     /// <para>Detect JXL image data on a readable/seekable SDL_IOStream.</para>
@@ -572,8 +572,8 @@ public partial class Image
     [LibraryImport(ImageLibrary, EntryPoint = "IMG_isJXL"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     [return: MarshalAs(UnmanagedType.I1)]
     public static partial bool IsJXL(IntPtr src);
-    
-    
+
+
     /// <code>extern SDL_DECLSPEC bool SDLCALL IMG_isLBM(SDL_IOStream *src);</code>
     /// <summary>
     /// <para>Detect LBM image data on a readable/seekable SDL_IOStream.</para>
@@ -607,8 +607,8 @@ public partial class Image
     [LibraryImport(ImageLibrary, EntryPoint = "IMG_isLBM"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     [return: MarshalAs(UnmanagedType.I1)]
     public static partial bool IsLBM(IntPtr src);
-    
-    
+
+
     /// <code>extern SDL_DECLSPEC bool SDLCALL IMG_isPCX(SDL_IOStream *src);</code>
     /// <summary>
     /// <para>Detect PCX image data on a readable/seekable SDL_IOStream.</para>
@@ -647,8 +647,8 @@ public partial class Image
     [LibraryImport(ImageLibrary, EntryPoint = "IMG_isPCX"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     [return: MarshalAs(UnmanagedType.I1)]
     public static partial bool IsPCX(IntPtr src);
-    
-    
+
+
     /// <code>extern SDL_DECLSPEC bool SDLCALL IMG_isPNG(SDL_IOStream *src);</code>
     /// <summary>
     /// <para>Detect PNG image data on a readable/seekable SDL_IOStream.</para>
@@ -687,8 +687,8 @@ public partial class Image
     [LibraryImport(ImageLibrary, EntryPoint = "IMG_isPNG"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     [return: MarshalAs(UnmanagedType.I1)]
     public static partial bool IsPNG(IntPtr src);
-    
-    
+
+
     /// <code>extern SDL_DECLSPEC bool SDLCALL IMG_isPNM(SDL_IOStream *src);</code>
     /// <summary>
     /// <para>Detect PNM image data on a readable/seekable SDL_IOStream.</para>
@@ -727,8 +727,8 @@ public partial class Image
     [LibraryImport(ImageLibrary, EntryPoint = "IMG_isPNM"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     [return: MarshalAs(UnmanagedType.I1)]
     public static partial bool IsPNM(IntPtr src);
-    
-    
+
+
     /// <code>extern SDL_DECLSPEC bool SDLCALL IMG_isSVG(SDL_IOStream *src);</code>
     /// <summary>
     /// <para>Detect SVG image data on a readable/seekable SDL_IOStream.</para>
@@ -767,8 +767,8 @@ public partial class Image
     [LibraryImport(ImageLibrary, EntryPoint = "IMG_isSVG"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     [return: MarshalAs(UnmanagedType.I1)]
     public static partial bool IsSVG(IntPtr src);
-    
-    
+
+
     /// <code>extern SDL_DECLSPEC bool SDLCALL IMG_isQOI(SDL_IOStream *src);</code>
     /// <summary>
     /// <para>Detect QOI image data on a readable/seekable SDL_IOStream.</para>
@@ -807,8 +807,8 @@ public partial class Image
     [LibraryImport(ImageLibrary, EntryPoint = "IMG_isQOI"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     [return: MarshalAs(UnmanagedType.I1)]
     public static partial bool IsQOI(IntPtr src);
-    
-    
+
+
     /// <code>extern SDL_DECLSPEC bool SDLCALL IMG_isTIF(SDL_IOStream *src);</code>
     /// <summary>
     /// <para>Detect TIFF image data on a readable/seekable SDL_IOStream.</para>
@@ -847,8 +847,8 @@ public partial class Image
     [LibraryImport(ImageLibrary, EntryPoint = "IMG_isTIF"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     [return: MarshalAs(UnmanagedType.I1)]
     public static partial bool IsTIF(IntPtr src);
-    
-    
+
+
     /// <code>extern SDL_DECLSPEC bool SDLCALL IMG_isXCF(SDL_IOStream *src);</code>
     /// <summary>
     /// <para>Detect XCF image data on a readable/seekable SDL_IOStream.</para>
@@ -887,8 +887,8 @@ public partial class Image
     [LibraryImport(ImageLibrary, EntryPoint = "IMG_isXCF"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     [return: MarshalAs(UnmanagedType.I1)]
     public static partial bool IsXCF(IntPtr src);
-    
-    
+
+
     /// <code>extern SDL_DECLSPEC bool SDLCALL IMG_isXPM(SDL_IOStream *src);</code>
     /// <summary>
     /// <para>Detect XPM image data on a readable/seekable SDL_IOStream.</para>
@@ -927,8 +927,8 @@ public partial class Image
     [LibraryImport(ImageLibrary, EntryPoint = "IMG_isXPM"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     [return: MarshalAs(UnmanagedType.I1)]
     public static partial bool IsXPM(IntPtr src);
-    
-    
+
+
     /// <code>extern SDL_DECLSPEC bool SDLCALL IMG_isXV(SDL_IOStream *src);</code>
     /// <summary>
     /// <para>Detect XV image data on a readable/seekable SDL_IOStream.</para>
@@ -967,8 +967,8 @@ public partial class Image
     [LibraryImport(ImageLibrary, EntryPoint = "IMG_isXV"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     [return: MarshalAs(UnmanagedType.I1)]
     public static partial bool IsXV(IntPtr src);
-    
-    
+
+
     /// <code>extern SDL_DECLSPEC bool SDLCALL IMG_isWEBP(SDL_IOStream *src);</code>
     /// <summary>
     /// <para>Detect WEBP image data on a readable/seekable SDL_IOStream.</para>
@@ -1007,8 +1007,8 @@ public partial class Image
     [LibraryImport(ImageLibrary, EntryPoint = "IMG_isWEBP"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     [return: MarshalAs(UnmanagedType.I1)]
     public static partial bool IsWEBP(IntPtr src);
-    
-    
+
+
     /// <code>extern SDL_DECLSPEC SDL_Surface * SDLCALL IMG_LoadAVIF_IO(SDL_IOStream *src);</code>
     /// <summary>
     /// <para>Load a AVIF image directly.</para>
@@ -1040,8 +1040,8 @@ public partial class Image
     /// <seealso cref="LoadWEBPIO"/>
     [LibraryImport(ImageLibrary, EntryPoint = "IMG_LoadAVIF_IO"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     public static partial IntPtr LoadAVIFIO(IntPtr src);
-    
-    
+
+
     /// <code>extern SDL_DECLSPEC SDL_Surface * SDLCALL IMG_LoadICO_IO(SDL_IOStream *src);</code>
     /// <summary>
     /// <para>Load a ICO image directly.</para>
@@ -1073,8 +1073,8 @@ public partial class Image
     /// <seealso cref="LoadWEBPIO"/>
     [LibraryImport(ImageLibrary, EntryPoint = "IMG_LoadICO_IO"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     public static partial IntPtr LoadICOIO(IntPtr src);
-    
-    
+
+
     /// <code>extern SDL_DECLSPEC SDL_Surface * SDLCALL IMG_LoadCUR_IO(SDL_IOStream *src);</code>
     /// <summary>
     /// <para>Load a CUR image directly.</para>
@@ -1106,8 +1106,8 @@ public partial class Image
     /// <seealso cref="LoadWEBPIO"/>
     [LibraryImport(ImageLibrary, EntryPoint = "IMG_LoadCUR_IO"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     public static partial IntPtr LoadCURIO(IntPtr src);
-    
-    
+
+
     /// <code>extern SDL_DECLSPEC SDL_Surface * SDLCALL IMG_LoadBMP_IO(SDL_IOStream *src);</code>
     /// <summary>
     /// <para>Load a BMP image directly.</para>
@@ -1139,8 +1139,8 @@ public partial class Image
     /// <seealso cref="LoadWEBPIO"/>
     [LibraryImport(ImageLibrary, EntryPoint = "IMG_LoadBMP_IO"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     public static partial IntPtr LoadBMPIO(IntPtr src);
-    
-    
+
+
     /// <code>extern SDL_DECLSPEC SDL_Surface * SDLCALL IMG_LoadGIF_IO(SDL_IOStream *src);</code>
     /// <summary>
     /// <para>Load a GIF image directly.</para>
@@ -1172,8 +1172,8 @@ public partial class Image
     /// <seealso cref="LoadWEBPIO"/>
     [LibraryImport(ImageLibrary, EntryPoint = "IMG_LoadGIF_IO"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     public static partial IntPtr LoadGIFIO(IntPtr src);
-    
-    
+
+
     /// <code>extern SDL_DECLSPEC SDL_Surface * SDLCALL IMG_LoadJPG_IO(SDL_IOStream *src);</code>
     /// <summary>
     /// <para>Load a JPG image directly.</para>
@@ -1205,8 +1205,8 @@ public partial class Image
     /// <seealso cref="LoadWEBPIO"/>
     [LibraryImport(ImageLibrary, EntryPoint = "IMG_LoadJPG_IO"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     public static partial IntPtr LoadJPGIO(IntPtr src);
-    
-    
+
+
     /// <code>extern SDL_DECLSPEC SDL_Surface * SDLCALL IMG_LoadJXL_IO(SDL_IOStream *src);</code>
     /// <summary>
     /// <para>Load a JXL image directly.</para>
@@ -1238,8 +1238,8 @@ public partial class Image
     /// <seealso cref="LoadWEBPIO"/>
     [LibraryImport(ImageLibrary, EntryPoint = "IMG_LoadJXL_IO"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     public static partial IntPtr LoadJXLIO(IntPtr src);
-    
-    
+
+
     /// <code>extern SDL_DECLSPEC SDL_Surface * SDLCALL IMG_LoadLBM_IO(SDL_IOStream *src);</code>
     /// <summary>
     /// <para>Load a LBM image directly.</para>
@@ -1271,8 +1271,8 @@ public partial class Image
     /// <seealso cref="LoadWEBPIO"/>
     [LibraryImport(ImageLibrary, EntryPoint = "IMG_LoadLBM_IO"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     public static partial IntPtr LoadLBMIO(IntPtr src);
-    
-    
+
+
     /// <code>extern SDL_DECLSPEC SDL_Surface * SDLCALL IMG_LoadPCX_IO(SDL_IOStream *src);</code>
     /// <summary>
     /// <para>Load a PCX image directly.</para>
@@ -1304,8 +1304,8 @@ public partial class Image
     /// <seealso cref="LoadWEBPIO"/>
     [LibraryImport(ImageLibrary, EntryPoint = "IMG_LoadPCX_IO"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     public static partial IntPtr LoadPCXIO(IntPtr src);
-    
-    
+
+
     /// <code>extern SDL_DECLSPEC SDL_Surface * SDLCALL IMG_LoadPNG_IO(SDL_IOStream *src);</code>
     /// <summary>
     /// <para>Load a PNG image directly.</para>
@@ -1337,8 +1337,8 @@ public partial class Image
     /// <seealso cref="LoadWEBPIO"/>
     [LibraryImport(ImageLibrary, EntryPoint = "IMG_LoadPNG_IO"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     public static partial IntPtr LoadPNGIO(IntPtr src);
-    
-    
+
+
     /// <code>extern SDL_DECLSPEC SDL_Surface * SDLCALL IMG_LoadPNM_IO(SDL_IOStream *src);</code>
     /// <summary>
     /// <para>Load a PNM image directly.</para>
@@ -1370,8 +1370,8 @@ public partial class Image
     /// <seealso cref="LoadWEBPIO"/>
     [LibraryImport(ImageLibrary, EntryPoint = "IMG_LoadPNM_IO"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     public static partial IntPtr LoadPNMIO(IntPtr src);
-    
-    
+
+
     /// <code>extern SDL_DECLSPEC SDL_Surface * SDLCALL IMG_LoadSVG_IO(SDL_IOStream *src);</code>
     /// <summary>
     /// <para>Load a SVG image directly.</para>
@@ -1403,8 +1403,8 @@ public partial class Image
     /// <seealso cref="LoadWEBPIO"/>
     [LibraryImport(ImageLibrary, EntryPoint = "IMG_LoadSVG_IO"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     public static partial IntPtr LoadSVGIO(IntPtr src);
-    
-    
+
+
     /// <code>extern SDL_DECLSPEC SDL_Surface * SDLCALL IMG_LoadQOI_IO(SDL_IOStream *src);</code>
     /// <summary>
     /// <para>Load a QOI image directly.</para>
@@ -1436,8 +1436,8 @@ public partial class Image
     /// <seealso cref="LoadWEBPIO"/>
     [LibraryImport(ImageLibrary, EntryPoint = "IMG_LoadQOI_IO"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     public static partial IntPtr LoadQOIIO(IntPtr src);
-    
-    
+
+
     /// <code>extern SDL_DECLSPEC SDL_Surface * SDLCALL IMG_LoadTGA_IO(SDL_IOStream *src);</code>
     /// <summary>
     /// <para>Load a TGA image directly.</para>
@@ -1469,8 +1469,8 @@ public partial class Image
     /// <seealso cref="LoadWEBPIO"/>
     [LibraryImport(ImageLibrary, EntryPoint = "IMG_LoadTGA_IO"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     public static partial IntPtr LoadTGAIO(IntPtr src);
-    
-    
+
+
     /// <code>extern SDL_DECLSPEC SDL_Surface * SDLCALL IMG_LoadTIF_IO(SDL_IOStream *src);</code>
     /// <summary>
     /// <para>Load a TIFF image directly.</para>
@@ -1502,8 +1502,8 @@ public partial class Image
     /// <seealso cref="LoadWEBPIO"/>
     [LibraryImport(ImageLibrary, EntryPoint = "IMG_LoadTIF_IO"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     public static partial IntPtr LoadTIFIO(IntPtr src);
-    
-    
+
+
     /// <code>extern SDL_DECLSPEC SDL_Surface * SDLCALL IMG_LoadXCF_IO(SDL_IOStream *src);</code>
     /// <summary>
     /// <para>Load a XCF image directly.</para>
@@ -1535,8 +1535,8 @@ public partial class Image
     /// <seealso cref="LoadWEBPIO"/>
     [LibraryImport(ImageLibrary, EntryPoint = "IMG_LoadXCF_IO"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     public static partial IntPtr LoadXCFIO(IntPtr src);
-    
-    
+
+
     /// <code>extern SDL_DECLSPEC SDL_Surface * SDLCALL IMG_LoadXPM_IO(SDL_IOStream *src);</code>
     /// <summary>
     /// <para>Load a XPM image directly.</para>
@@ -1568,8 +1568,8 @@ public partial class Image
     /// <seealso cref="LoadWEBPIO"/>
     [LibraryImport(ImageLibrary, EntryPoint = "IMG_LoadXPM_IO"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     public static partial IntPtr LoadXPMIO(IntPtr src);
-    
-    
+
+
     /// <code>extern SDL_DECLSPEC SDL_Surface * SDLCALL IMG_LoadXV_IO(SDL_IOStream *src);</code>
     /// <summary>
     /// <para>Load a XV image directly.</para>
@@ -1601,8 +1601,8 @@ public partial class Image
     /// <seealso cref="LoadWEBPIO"/>
     [LibraryImport(ImageLibrary, EntryPoint = "IMG_LoadXV_IO"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     public static partial IntPtr LoadXVIO(IntPtr src);
-    
-    
+
+
     /// <code>extern SDL_DECLSPEC SDL_Surface * SDLCALL IMG_LoadWEBP_IO(SDL_IOStream *src);</code>
     /// <summary>
     /// <para>Load a WEBP image directly.</para>
@@ -1634,8 +1634,8 @@ public partial class Image
     /// <seealso cref="LoadXVIO"/>
     [LibraryImport(ImageLibrary, EntryPoint = "IMG_LoadWEBP_IO"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     public static partial IntPtr LoadWEBPIO(IntPtr src);
-    
-    
+
+
     /// <code>extern SDL_DECLSPEC SDL_Surface * SDLCALL IMG_LoadSizedSVG_IO(SDL_IOStream *src, int width, int height);</code>
     /// <summary>
     /// <para>Load an SVG image, scaled to a specific size.</para>
@@ -1653,8 +1653,8 @@ public partial class Image
     /// <since>This function is available since SDL_image 3.0.0.</since>
     [LibraryImport(ImageLibrary, EntryPoint = "IMG_LoadSizedSVG_IO"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     public static partial IntPtr LoadSizedSVGIO(IntPtr src, int width, int height);
-    
-    
+
+
     /// <code>extern SDL_DECLSPEC SDL_Surface * SDLCALL IMG_ReadXPMFromArray(char **xpm);</code>
     /// <summary>
     /// <para>Load an XPM image from a memory array.</para>
@@ -1669,8 +1669,8 @@ public partial class Image
     /// <since>This function is available since SDL_image 3.0.0.</since>
     [LibraryImport(ImageLibrary, EntryPoint = "IMG_ReadXPMFromArray"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     public static partial IntPtr ReadXPMFromArray([MarshalAs(UnmanagedType.LPArray, ArraySubType = UnmanagedType.LPUTF8Str)] string[] xpm);
-    
-    
+
+
     /// <code>extern SDL_DECLSPEC SDL_Surface * SDLCALL IMG_ReadXPMFromArrayToRGB888(char **xpm);</code>
     /// <summary>
     /// <para>Load an XPM image from a memory array.</para>
@@ -1686,8 +1686,8 @@ public partial class Image
     /// <seealso cref="ReadXPMFromArray"/>
     [LibraryImport(ImageLibrary, EntryPoint = "IMG_ReadXPMFromArrayToRGB888"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     public static partial IntPtr ReadXPMFromArrayToRGB888([MarshalAs(UnmanagedType.LPArray, ArraySubType = UnmanagedType.LPUTF8Str)] string[] xpm);
-    
-    
+
+
     /// <code>extern SDL_DECLSPEC bool SDLCALL IMG_SaveAVIF(SDL_Surface *surface, const char *file, int quality);</code>
     /// <summary>
     /// <para>Save an SDL_Surface into a AVIF image file.</para>
@@ -1704,8 +1704,8 @@ public partial class Image
     [LibraryImport(ImageLibrary, EntryPoint = "IMG_SaveAVIF"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     [return: MarshalAs(UnmanagedType.I1)]
     public static partial bool SaveAVIF(IntPtr surface, [MarshalAs(UnmanagedType.LPUTF8Str)] string file, int quality);
-    
-    
+
+
     /// <code>extern SDL_DECLSPEC bool SDLCALL IMG_SaveAVIF_IO(SDL_Surface *surface, SDL_IOStream *dst, bool closeio, int quality);</code>
     /// <summary>
     /// <para>Save an SDL_Surface into AVIF image data, via an SDL_IOStream.</para>
@@ -1726,8 +1726,8 @@ public partial class Image
     [LibraryImport(ImageLibrary, EntryPoint = "IMG_SaveAVIF_IO"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     [return: MarshalAs(UnmanagedType.I1)]
     public static partial bool SaveAVIFIO(IntPtr surface, IntPtr dst, [MarshalAs(UnmanagedType.I1)] bool closeio, int quality);
-    
-    
+
+
     /// <code>extern SDL_DECLSPEC bool SDLCALL IMG_SavePNG(SDL_Surface *surface, const char *file);</code>
     /// <summary>
     /// <para>Save an SDL_Surface into a PNG image file.</para>
@@ -1742,8 +1742,8 @@ public partial class Image
     [LibraryImport(ImageLibrary, EntryPoint = "IMG_SavePNG"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     [return: MarshalAs(UnmanagedType.I1)]
     public static partial bool SavePNG(IntPtr surface, [MarshalAs(UnmanagedType.LPUTF8Str)] string file);
-    
-    
+
+
     /// <code>extern SDL_DECLSPEC bool SDLCALL IMG_SavePNG_IO(SDL_Surface *surface, SDL_IOStream *dst, bool closeio);</code>
     /// <summary>
     /// <para>Save an SDL_Surface into PNG image data, via an SDL_IOStream.</para>
@@ -1762,8 +1762,8 @@ public partial class Image
     [LibraryImport(ImageLibrary, EntryPoint = "IMG_SavePNG_IO"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     [return: MarshalAs(UnmanagedType.I1)]
     public static partial bool SavePNGIO(IntPtr surface, IntPtr dst, [MarshalAs(UnmanagedType.I1)] bool closeio);
-    
-    
+
+
     /// <code>extern SDL_DECLSPEC bool SDLCALL IMG_SaveJPG(SDL_Surface *surface, const char *file, int quality);</code>
     /// <summary>
     /// <para>Save an SDL_Surface into a JPEG image file.</para>
@@ -1780,8 +1780,8 @@ public partial class Image
     [LibraryImport(ImageLibrary, EntryPoint = "IMG_SaveJPG"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     [return: MarshalAs(UnmanagedType.I1)]
     public static partial bool SaveJPG(IntPtr surface, [MarshalAs(UnmanagedType.LPUTF8Str)] string file, int quality);
-    
-    
+
+
     /// <code>extern SDL_DECLSPEC bool SDLCALL IMG_SaveJPG_IO(SDL_Surface *surface, SDL_IOStream *dst, bool closeio, int quality);</code>
     /// <summary>
     /// <para>Save an SDL_Surface into JPEG image data, via an SDL_IOStream.</para>
@@ -1802,8 +1802,8 @@ public partial class Image
     [LibraryImport(ImageLibrary, EntryPoint = "IMG_SaveJPG_IO"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     [return: MarshalAs(UnmanagedType.I1)]
     public static partial bool SaveJPGIO(IntPtr surface, IntPtr dst, [MarshalAs(UnmanagedType.I1)] bool closeio, int quality);
-    
-    
+
+
     /// <code>extern SDL_DECLSPEC IMG_Animation * SDLCALL IMG_LoadAnimation(const char *file);</code>
     /// <summary>
     /// <para>Load an animation from a file.</para>
@@ -1816,8 +1816,8 @@ public partial class Image
     /// <seealso cref="FreeAnimation"/>
     [LibraryImport(ImageLibrary, EntryPoint = "IMG_LoadAnimation"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     public static partial IntPtr LoadAnimation([MarshalAs(UnmanagedType.LPUTF8Str)] string file);
-    
-    
+
+
     /// <code>extern SDL_DECLSPEC IMG_Animation * SDLCALL IMG_LoadAnimation_IO(SDL_IOStream *src, bool closeio);</code>
     /// <summary>
     /// <para>Load an animation from an SDL_IOStream.</para>
@@ -1835,8 +1835,8 @@ public partial class Image
     /// <seealso cref="FreeAnimation"/>
     [LibraryImport(ImageLibrary, EntryPoint = "IMG_LoadAnimation_IO"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     public static partial IntPtr LoadAnimationIO(IntPtr src, [MarshalAs(UnmanagedType.I1)] bool closeio);
-    
-    
+
+
     /// <code>extern SDL_DECLSPEC IMG_Animation * SDLCALL IMG_LoadAnimationTyped_IO(SDL_IOStream *src, bool closeio, const char *type);</code>
     /// <summary>
     /// <para>Load an animation from an SDL datasource</para>
@@ -1862,8 +1862,8 @@ public partial class Image
     /// <seealso cref="FreeAnimation"/>
     [LibraryImport(ImageLibrary, EntryPoint = "IMG_LoadAnimationTyped_IO"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     public static partial IntPtr LoadAnimationTypedIO(IntPtr src, [MarshalAs(UnmanagedType.I1)] bool closeio, [MarshalAs(UnmanagedType.LPUTF8Str)] string type);
-    
-    
+
+
     /// <code>extern SDL_DECLSPEC void SDLCALL IMG_FreeAnimation(IMG_Animation *anim);</code>
     /// <summary>
     /// <para>Dispose of an <see cref="Animation"/> and free its resources.</para>
@@ -1876,8 +1876,8 @@ public partial class Image
     /// <seealso cref="LoadAnimationTypedIO"/>
     [LibraryImport(ImageLibrary, EntryPoint = "IMG_FreeAnimation"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     public static partial void FreeAnimation(IntPtr anim);
-    
-    
+
+
     /// <code>extern SDL_DECLSPEC IMG_Animation * SDLCALL IMG_LoadGIFAnimation_IO(SDL_IOStream *src);</code>
     /// <summary>
     /// <para>Load a GIF animation directly.</para>
@@ -1895,8 +1895,8 @@ public partial class Image
     /// <seealso cref="FreeAnimation"/>
     [LibraryImport(ImageLibrary, EntryPoint = "IMG_LoadGIFAnimation_IO"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     public static partial IntPtr LoadGIFAnimationIO(IntPtr src);
-    
-    
+
+
     /// <code>extern SDL_DECLSPEC IMG_Animation * SDLCALL IMG_LoadWEBPAnimation_IO(SDL_IOStream *src);</code>
     /// <summary>
     /// <para>Load a WEBP animation directly.</para>

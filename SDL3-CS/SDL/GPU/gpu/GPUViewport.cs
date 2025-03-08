@@ -26,43 +26,43 @@ using System.Runtime.InteropServices;
 namespace SDL3;
 
 public static partial class SDL
-{
-    /// <summary>
-    /// A structure specifying a viewport.
-    /// </summary>
-    /// <since>This struct is available since SDL 3.2.0</since>
-    /// <seealso cref="SetGPUViewport"/>
-    [StructLayout(LayoutKind.Sequential)]
-    public struct GPUViewport
     {
         /// <summary>
-        /// The left offset of the viewport.
+        /// A structure specifying a viewport.
         /// </summary>
-        public float X;
-        
-        /// <summary>
-        /// The top offset of the viewport.
-        /// </summary>
-        public float Y;
-        
-        /// <summary>
-        /// The width of the viewport.
-        /// </summary>
-        public float W;
-        
-        /// <summary>
-        /// The height of the viewport.
-        /// </summary>
-        public float H;
-        
-        /// <summary>
-        /// The minimum depth of the viewport.
-        /// </summary>
-        public float MinDepth;
-        
-        /// <summary>
-        /// The maximum depth of the viewport.
-        /// </summary>
-        public float MaxDepth;
+        /// <since>This struct is available since SDL 3.2.0</since>
+        /// <seealso cref="SetGPUViewport"/>
+        [StructLayout(LayoutKind.Sequential)]
+        public struct GPUViewport
+        {
+            /// <summary>
+            /// The left offset of the viewport.
+            /// </summary>
+            public float X;
+
+            /// <summary>
+            /// The top offset of the viewport.
+            /// </summary>
+            public float Y;
+
+            /// <summary>
+            /// The width of the viewport.
+            /// </summary>
+            public float W;
+
+            /// <summary>
+            /// The height of the viewport.
+            /// </summary>
+            public float H;
+
+            /// <summary>
+            /// The minimum depth of the viewport.
+            /// </summary>
+            public float MinDepth;
+
+            /// <summary>
+            /// The maximum depth of the viewport.
+            /// </summary>
+            public float MaxDepth;
+        }
     }
-}

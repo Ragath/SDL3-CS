@@ -24,15 +24,15 @@
 namespace SDL3;
 
 public partial class Mixer
-{ 
+{
     public const int Channels = 8;
-        
+
     public const int DefaultFrequency = 44100;
-        
+
     public const SDL.AudioFormat DefaultFormat = SDL.AudioFormat.AudioS16LE;
-        
+
     public const int DefaultChannels = 2;
-        
+
     public const int MaxVolume = 128;
 
     /// <summary>

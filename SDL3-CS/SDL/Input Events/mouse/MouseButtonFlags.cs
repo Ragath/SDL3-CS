@@ -47,10 +47,10 @@ public static partial class SDL
     [Flags]
     public enum MouseButtonFlags : uint
     {
-         Left = 1 << (ButtonLeft - 1),
-         Middle = 1 << (ButtonMiddle - 1),
-         Right = 1 << (ButtonRight - 1),
-         X1 = 1 << (ButtonX1 - 1),
-         X2 = 1 << (ButtonX2 - 1)
+        Left = 1 << (ButtonLeft - 1),
+        Middle = 1 << (ButtonMiddle - 1),
+        Right = 1 << (ButtonRight - 1),
+        X1 = 1 << (ButtonX1 - 1),
+        X2 = 1 << (ButtonX2 - 1)
     }
 }

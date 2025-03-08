@@ -39,17 +39,17 @@ public static partial class SDL
         /// number of elements in <c>colors</c>.
         /// </summary>
         public int NColors;
-        
+
         /// <summary>
         /// an array of colors, <c>ncolors</c> long.
         /// </summary>
         public Color[] Colors;
-        
+
         /// <summary>
         /// internal use only, do not touch.
         /// </summary>
         public uint Version;
-        
+
         /// <summary>
         /// internal use only, do not touch.
         /// </summary>

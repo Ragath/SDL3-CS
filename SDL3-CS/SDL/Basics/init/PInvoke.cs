@@ -78,8 +78,8 @@ public static partial class SDL
     [LibraryImport(SDLLibrary, EntryPoint = "SDL_Init"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     [return: MarshalAs(UnmanagedType.I1)]
     public static partial bool Init(InitFlags flags);
-    
-    
+
+
     /// <code>extern SDL_DECLSPEC bool SDLCALL SDL_InitSubSystem(SDL_InitFlags flags);</code>
     /// <summary>
     /// Compatibility function to initialize the SDL library.
@@ -95,8 +95,8 @@ public static partial class SDL
     [LibraryImport(SDLLibrary, EntryPoint = "SDL_InitSubSystem"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     [return: MarshalAs(UnmanagedType.I1)]
     public static partial bool InitSubSystem(InitFlags flags);
-    
-    
+
+
     /// <code>extern SDL_DECLSPEC void SDLCALL SDL_QuitSubSystem(SDL_InitFlags flags);</code>
     /// <summary>
     /// Shut down specific SDL subsystems.
@@ -109,8 +109,8 @@ public static partial class SDL
     /// <seealso cref="Quit"/>
     [LibraryImport(SDLLibrary, EntryPoint = "SDL_QuitSubSystem"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     public static partial void QuitSubSystem(InitFlags flags);
-    
-    
+
+
     /// <code>extern SDL_DECLSPEC SDL_InitFlags SDLCALL SDL_WasInit(SDL_InitFlags flags);</code>
     /// <summary>
     /// Get a mask of the specified subsystems which are currently initialized.
@@ -123,8 +123,8 @@ public static partial class SDL
     /// <seealso cref="InitSubSystem"/>
     [LibraryImport(SDLLibrary, EntryPoint = "SDL_WasInit"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     public static partial InitFlags WasInit(InitFlags flags);
-    
-    
+
+
     /// <code>extern SDL_DECLSPEC void SDLCALL SDL_Quit(void);</code>
     /// <summary>
     /// <para>Clean up all initialized subsystems.</para>
@@ -140,8 +140,8 @@ public static partial class SDL
     /// <seealso cref="QuitSubSystem"/>
     [LibraryImport(SDLLibrary, EntryPoint = "SDL_Quit"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     public static partial void Quit();
-    
-    
+
+
     /// <code>extern SDL_DECLSPEC bool SDLCALL SDL_IsMainThread(void);</code>
     /// <summary>
     /// <para>Return whether this is the main thread.</para>
@@ -159,8 +159,8 @@ public static partial class SDL
     [LibraryImport(SDLLibrary, EntryPoint = "SDL_IsMainThread"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     [return: MarshalAs(UnmanagedType.I1)]
     public static partial bool IsMainThread();
-    
-    
+
+
     /// <code>extern SDL_DECLSPEC bool SDLCALL SDL_RunOnMainThread(SDL_MainThreadCallback callback, void *userdata, bool wait_complete);</code>
     /// <summary>
     /// <para>Call a function on the main thread during event processing.</para>
@@ -183,8 +183,8 @@ public static partial class SDL
     [LibraryImport(SDLLibrary, EntryPoint = "SDL_RunOnMainThread"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     [return: MarshalAs(UnmanagedType.I1)]
     public static partial bool RunOnMainThread(MainThreadCallback callback, IntPtr userdata, [MarshalAs(UnmanagedType.I1)] bool waitComplete);
-    
-    
+
+
     /// <code>extern SDL_DECLSPEC bool SDLCALL SDL_SetAppMetadata(const char *appname, const char *appversion, const char *appidentifier);</code>
     /// <summary>
     /// <para>Specify basic metadata about your app.</para>
@@ -219,8 +219,8 @@ public static partial class SDL
         [MarshalAs(UnmanagedType.LPUTF8Str)] string appname,
         [MarshalAs(UnmanagedType.LPUTF8Str)] string appversion,
         [MarshalAs(UnmanagedType.LPUTF8Str)] string appidentifier);
-    
-    
+
+
     /// <code>extern SDL_DECLSPEC bool SDLCALL SDL_SetAppMetadataProperty(const char *name, const char *value);</code>
     /// <summary>
     /// <para>Specify metadata about your app through a set of properties.</para>
@@ -278,8 +278,8 @@ public static partial class SDL
     [LibraryImport(SDLLibrary, EntryPoint = "SDL_SetAppMetadataProperty"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     [return: MarshalAs(UnmanagedType.I1)]
     public static partial bool SetAppMetadataProperty([MarshalAs(UnmanagedType.LPUTF8Str)] string name, [MarshalAs(UnmanagedType.LPUTF8Str)] string value);
-    
-    
+
+
     /// <code>extern SDL_DECLSPEC const char * SDLCALL SDL_GetAppMetadataProperty(const char *name);</code>
     /// <summary>
     /// <para>Get metadata about your app.</para>

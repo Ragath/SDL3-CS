@@ -38,24 +38,24 @@ public static partial class SDL
         /// <see cref="EventType.SensorUpdate"/>
         /// </summary>
         public EventType Type;
-        
+
         private UInt32 _reserved;
-        
+
         /// <summary>
         /// In nanoseconds, populated using <see cref="GetTicksNS"/>
         /// </summary>
         public UInt64 Timestamp;
-        
+
         /// <summary>
         /// The instance ID of the sensor
         /// </summary>
         public UInt32 Which;
-        
+
         /// <summary>
         /// Up to 6 values from the sensor - additional values can be queried using <see cref="GetSensorData"/>
         /// </summary>
         public unsafe fixed float Data[6];
-        
+
         /// <summary>
         /// The timestamp of the sensor reading in nanoseconds, not necessarily synchronized with the system clock
         /// </summary>

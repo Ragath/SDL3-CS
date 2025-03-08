@@ -24,37 +24,37 @@
 namespace SDL3;
 
 public static partial class SDL
-{
-    /// <summary>
-    /// Specifies the type of a texture.
-    /// </summary>
-    /// <since>This enum is available since SDL 3.2.0</since>
-    /// <seealso cref="CreateGPUTexture"/>
-    public enum GPUTextureType
     {
         /// <summary>
-        /// The texture is a 2-dimensional image.
+        /// Specifies the type of a texture.
         /// </summary>
-        Texturetype2D,
-        
-        /// <summary>
-        /// The texture is a 2-dimensional array image.
-        /// </summary>
-        Texturetype2DArray,
-        
-        /// <summary>
-        /// The texture is a 3-dimensional image.
-        /// </summary>
-        Texturetype3D,
-        
-        /// <summary>
-        /// The texture is a cube image.
-        /// </summary>
-        TexturetypeCube,
-        
-        /// <summary>
-        /// The texture is a cube array image.
-        /// </summary>
-        TexturetypeCubeArray
+        /// <since>This enum is available since SDL 3.2.0</since>
+        /// <seealso cref="CreateGPUTexture"/>
+        public enum GPUTextureType
+        {
+            /// <summary>
+            /// The texture is a 2-dimensional image.
+            /// </summary>
+            Texturetype2D,
+
+            /// <summary>
+            /// The texture is a 2-dimensional array image.
+            /// </summary>
+            Texturetype2DArray,
+
+            /// <summary>
+            /// The texture is a 3-dimensional image.
+            /// </summary>
+            Texturetype3D,
+
+            /// <summary>
+            /// The texture is a cube image.
+            /// </summary>
+            TexturetypeCube,
+
+            /// <summary>
+            /// The texture is a cube array image.
+            /// </summary>
+            TexturetypeCubeArray
+        }
     }
-}

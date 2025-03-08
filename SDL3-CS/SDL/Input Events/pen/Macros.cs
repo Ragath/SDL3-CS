@@ -35,8 +35,8 @@ public static partial class SDL
     /// </summary>
     /// <since>This macro is available since SDL 3.2.0</since>
     public static int PenMouseID = -2;
-    
-    
+
+
     /// <summary>
     /// The SDL_TouchID for touch events simulated with pen input.
     /// </summary>

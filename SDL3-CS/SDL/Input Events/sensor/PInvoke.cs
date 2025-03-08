@@ -43,7 +43,7 @@ public static partial class SDL
     public static uint[]? GetSensors(out int count)
     {
         var ptr = SDL_GetSensors(out count);
-        
+
         try
         {
             return PointerToStructureArray<uint>(ptr, count);
@@ -53,8 +53,8 @@ public static partial class SDL
             if (ptr != IntPtr.Zero) Free(ptr);
         }
     }
-    
-    
+
+
     [LibraryImport(SDLLibrary, EntryPoint = "SDL_GetSensorNameForID"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial IntPtr SDL_GetSensorNameForID(int instanceId);
     /// <code>extern SDL_DECLSPEC const char * SDLCALL SDL_GetSensorNameForID(SDL_SensorID instance_id);</code>
@@ -67,11 +67,11 @@ public static partial class SDL
     /// <since>This function is available since SDL 3.2.0</since>
     public static string? GetSensorNameForID(int instanceId)
     {
-        var value = SDL_GetSensorNameForID(instanceId); 
+        var value = SDL_GetSensorNameForID(instanceId);
         return value == IntPtr.Zero ? null : Marshal.PtrToStringUTF8(value);
     }
-    
-    
+
+
     /// <code>extern SDL_DECLSPEC SDL_SensorType SDLCALL SDL_GetSensorTypeForID(SDL_SensorID instance_id);</code>
     /// <summary>
     /// <para>Get the type of a sensor.</para>
@@ -83,8 +83,8 @@ public static partial class SDL
     /// <since>This function is available since SDL 3.2.0</since>
     [LibraryImport(SDLLibrary, EntryPoint = "SDL_GetSensorTypeForID"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     public static partial SensorType GetSensorTypeForID(int instanceID);
-    
-    
+
+
     /// <code>extern SDL_DECLSPEC int SDLCALL SDL_GetSensorNonPortableTypeForID(SDL_SensorID instance_id);</code>
     /// <summary>
     /// <para>Get the platform dependent type of a sensor.</para>
@@ -96,8 +96,8 @@ public static partial class SDL
     /// <since>This function is available since SDL 3.2.0</since>
     [LibraryImport(SDLLibrary, EntryPoint = "SDL_GetSensorNonPortableTypeForID"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     public static partial int GetSensorNonPortableTypeForID(int instanceID);
-    
-    
+
+
     /// <code>extern SDL_DECLSPEC SDL_Sensor * SDLCALL SDL_OpenSensor(SDL_SensorID instance_id);</code>
     /// <summary>
     /// Open a sensor for use.
@@ -108,8 +108,8 @@ public static partial class SDL
     /// <since>This function is available since SDL 3.2.0</since>
     [LibraryImport(SDLLibrary, EntryPoint = "SDL_OpenSensor"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     public static partial IntPtr OpenSensor(int instanceID);
-    
-    
+
+
     /// <code>extern SDL_DECLSPEC SDL_Sensor * SDLCALL SDL_GetSensorFromID(SDL_SensorID instance_id);</code>
     /// <summary>
     /// Return the SDL_Sensor associated with an instance ID.
@@ -120,8 +120,8 @@ public static partial class SDL
     /// <since>This function is available since SDL 3.2.0</since>
     [LibraryImport(SDLLibrary, EntryPoint = "SDL_GetSensorFromID"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     public static partial IntPtr GetSensorFromID(int instanceID);
-    
-    
+
+
     /// <code>extern SDL_DECLSPEC SDL_PropertiesID SDLCALL SDL_GetSensorProperties(SDL_Sensor *sensor);</code>
     /// <summary>
     /// Get the properties associated with a sensor.
@@ -132,8 +132,8 @@ public static partial class SDL
     /// <since>This function is available since SDL 3.2.0</since>
     [LibraryImport(SDLLibrary, EntryPoint = "SDL_GetSensorProperties"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     public static partial uint GetSensorProperties(IntPtr sensor);
-    
-    
+
+
     [LibraryImport(SDLLibrary, EntryPoint = "SDL_GetSensorName"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial IntPtr SDL_GetSensorName(IntPtr sensor);
     /// <code>extern SDL_DECLSPEC const char * SDLCALL SDL_GetSensorName(SDL_Sensor *sensor);</code>
@@ -146,7 +146,7 @@ public static partial class SDL
     /// <since>This function is available since SDL 3.2.0</since>
     public static string? GetSensorName(IntPtr sensor)
     {
-        var value = SDL_GetSensorName(sensor); 
+        var value = SDL_GetSensorName(sensor);
         return value == IntPtr.Zero ? null : Marshal.PtrToStringUTF8(value);
     }
 
@@ -172,7 +172,7 @@ public static partial class SDL
     /// <since>This function is available since SDL 3.2.0</since>
     [LibraryImport(SDLLibrary, EntryPoint = "SDL_GetSensorNonPortableType"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     public static partial int GetSensorNonPortableType(IntPtr sensor);
-    
+
 
     /// <code>extern SDL_DECLSPEC SDL_SensorID SDLCALL SDL_GetSensorID(SDL_Sensor *sensor);</code>
     /// <summary>
@@ -200,8 +200,8 @@ public static partial class SDL
     [LibraryImport(SDLLibrary, EntryPoint = "SDL_GetSensorData"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     [return: MarshalAs(UnmanagedType.I1)]
     public static partial bool GetSensorData(IntPtr sensor, out float data, int numValues);
-    
-    
+
+
     /// <code>extern SDL_DECLSPEC void SDLCALL SDL_CloseSensor(SDL_Sensor *sensor);</code>
     /// <summary>
     /// Close a sensor previously opened with <see cref="OpenSensor"/>.
@@ -210,7 +210,7 @@ public static partial class SDL
     /// <since>This function is available since SDL 3.2.0</since>
     [LibraryImport(SDLLibrary, EntryPoint = "SDL_CloseSensor"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     public static partial void CloseSensor(IntPtr sensor);
-    
+
 
     /// <code>extern SDL_DECLSPEC void SDLCALL SDL_UpdateSensors(void);</code>
     /// <summary>

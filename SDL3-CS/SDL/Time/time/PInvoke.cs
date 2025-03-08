@@ -44,10 +44,10 @@ public static partial class SDL
     /// information.</returns>
     /// <since>This function is available since SDL 3.2.0</since>
 	[LibraryImport(SDLLibrary, EntryPoint = "SDL_GetDateTimeLocalePreferences"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
-	[return: MarshalAs(UnmanagedType.I1)]
-	public static partial bool GetDateTimeLocalePreferences(out DateFormat dateFormat, out TimeFormat timeFormat);
-    
-    
+    [return: MarshalAs(UnmanagedType.I1)]
+    public static partial bool GetDateTimeLocalePreferences(out DateFormat dateFormat, out TimeFormat timeFormat);
+
+
     /// <code>extern SDL_DECLSPEC bool SDLCALL SDL_GetCurrentTime(SDL_Time *ticks);</code>
     /// <summary>
     /// <para>Gets the current value of the system realtime clock in nanoseconds since
@@ -60,8 +60,8 @@ public static partial class SDL
     [LibraryImport(SDLLibrary, EntryPoint = "SDL_GetCurrentTime"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     [return: MarshalAs(UnmanagedType.I1)]
     public static partial bool GetCurrentTime(out long ticks);
-    
-    
+
+
     /// <code>extern SDL_DECLSPEC bool SDLCALL SDL_TimeToDateTime(SDL_Time ticks, SDL_DateTime *dt, bool localTime);</code>
     /// <summary>
     /// Converts an SDL_Time in nanoseconds since the epoch to a calendar time in
@@ -78,8 +78,8 @@ public static partial class SDL
     [LibraryImport(SDLLibrary, EntryPoint = "SDL_TimeToDateTime"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     [return: MarshalAs(UnmanagedType.I1)]
     public static partial bool TimeToDateTime(long ticks, out DateTime dt, [MarshalAs(UnmanagedType.I1)] bool localTime);
-    
-    
+
+
     /// <code>extern SDL_DECLSPEC bool SDLCALL SDL_DateTimeToTime(const SDL_DateTime *dt, SDL_Time *ticks);</code>
     /// <summary>
     /// <para>Converts a calendar time to an SDL_Time in nanoseconds since the epoch.</para>
@@ -94,8 +94,8 @@ public static partial class SDL
     [LibraryImport(SDLLibrary, EntryPoint = "SDL_DateTimeToTime"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     [return: MarshalAs(UnmanagedType.I1)]
     public static partial bool DateTimeToTime(in DateTime dt, out long ticks);
-    
-    
+
+
     /// <code>extern SDL_DECLSPEC void SDLCALL SDL_TimeToWindows(SDL_Time ticks, Uint32 *dwLowDateTime, Uint32 *dwHighDateTime);</code>
     /// <summary>
     /// <para>Converts an SDL time into a Windows FILETIME (100-nanosecond intervals
@@ -110,8 +110,8 @@ public static partial class SDL
     /// <since>This function is available since SDL 3.2.0</since>
     [LibraryImport(SDLLibrary, EntryPoint = "SDL_TimeToWindows"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     public static partial void TimeToWindows(long ticks, out uint dwLowDateTime, out uint dwHighDateTime);
-    
-    
+
+
     /// <code>extern SDL_DECLSPEC SDL_Time SDLCALL SDL_TimeFromWindows(Uint32 dwLowDateTime, Uint32 dwHighDateTime);</code>
     /// <summary>
     /// <para>Converts a Windows FILETIME (100-nanosecond intervals since January 1,
@@ -125,8 +125,8 @@ public static partial class SDL
     /// <since>This function is available since SDL 3.2.0</since>
     [LibraryImport(SDLLibrary, EntryPoint = "SDL_TimeFromWindows"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     public static partial long TimeFromWindows(uint dwLowDateTime, uint dwHighDateTime);
-    
-    
+
+
     /// <code>extern SDL_DECLSPEC int SDLCALL SDL_GetDaysInMonth(int year, int month);</code>
     /// <summary>
     /// Get the number of days in a month for a given year.
@@ -138,8 +138,8 @@ public static partial class SDL
     /// <since>This function is available since SDL 3.2.0</since>
     [LibraryImport(SDLLibrary, EntryPoint = "SDL_GetDaysInMonth"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     public static partial int GetDaysInMonth(int year, int month);
-    
-    
+
+
     /// <code>extern SDL_DECLSPEC int SDLCALL SDL_GetDayOfYear(int year, int month, int day);</code>
     /// <summary>
     /// Get the day of year for a calendar date.
@@ -152,8 +152,8 @@ public static partial class SDL
     /// <since>This function is available since SDL 3.2.0</since>
     [LibraryImport(SDLLibrary, EntryPoint = "SDL_GetDayOfYear"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     public static partial int GetDayOfYear(int year, int month, int day);
-    
-    
+
+
     /// <code>extern SDL_DECLSPEC int SDLCALL SDL_GetDayOfWeek(int year, int month, int day);</code>
     /// <summary>
     /// Get the day of week for a calendar date.

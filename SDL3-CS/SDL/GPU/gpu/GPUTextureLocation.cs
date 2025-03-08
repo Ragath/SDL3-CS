@@ -26,44 +26,44 @@ using System.Runtime.InteropServices;
 namespace SDL3;
 
 public static partial class SDL
-{
-    /// <summary>
-    /// <para>A structure specifying a location in a texture.</para>
-    /// <para>Used when copying data from one texture to another.</para>
-    /// </summary>
-    /// <since>This struct is available since SDL 3.2.0</since>
-    /// <seealso cref="CopyGPUTextureToTexture"/>
-    [StructLayout(LayoutKind.Sequential)]
-    public struct GPUTextureLocation
     {
         /// <summary>
-        /// The texture used in the copy operation.
+        /// <para>A structure specifying a location in a texture.</para>
+        /// <para>Used when copying data from one texture to another.</para>
         /// </summary>
-        public IntPtr Texture;
-        
-        /// <summary>
-        /// The mip level index of the location.
-        /// </summary>
-        public UInt32 MipLevel;
-        
-        /// <summary>
-        /// The layer index of the location.
-        /// </summary>
-        public UInt32 Layer;
-        
-        /// <summary>
-        /// The left offset of the location.
-        /// </summary>
-        public UInt32 X;
-        
-        /// <summary>
-        /// The top offset of the location.
-        /// </summary>
-        public UInt32 Y;
-        
-        /// <summary>
-        /// The front offset of the location.
-        /// </summary>
-        public UInt32 Z;
+        /// <since>This struct is available since SDL 3.2.0</since>
+        /// <seealso cref="CopyGPUTextureToTexture"/>
+        [StructLayout(LayoutKind.Sequential)]
+        public struct GPUTextureLocation
+        {
+            /// <summary>
+            /// The texture used in the copy operation.
+            /// </summary>
+            public IntPtr Texture;
+
+            /// <summary>
+            /// The mip level index of the location.
+            /// </summary>
+            public UInt32 MipLevel;
+
+            /// <summary>
+            /// The layer index of the location.
+            /// </summary>
+            public UInt32 Layer;
+
+            /// <summary>
+            /// The left offset of the location.
+            /// </summary>
+            public UInt32 X;
+
+            /// <summary>
+            /// The top offset of the location.
+            /// </summary>
+            public UInt32 Y;
+
+            /// <summary>
+            /// The front offset of the location.
+            /// </summary>
+            public UInt32 Z;
+        }
     }
-}

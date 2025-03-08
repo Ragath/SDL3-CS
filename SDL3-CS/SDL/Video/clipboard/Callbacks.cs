@@ -49,8 +49,8 @@ public static partial class SDL
     /// <seealso cref="SetClipboardData"/>
     [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
     public delegate IntPtr ClipboardDataCallback(IntPtr userdata, [MarshalAs(UnmanagedType.LPUTF8Str)] string mimeType, out ulong size);
-    
-    
+
+
     /// <code>typedef void (SDLCALL *SDL_ClipboardCleanupCallback)(void *userdata);</code>
     /// <summary>
     /// Callback function that will be called when the clipboard is cleared, or new

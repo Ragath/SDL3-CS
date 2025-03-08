@@ -46,18 +46,18 @@ public static partial class SDL
     public static ulong[]? GetTouchDevices(out int count)
     {
         var ptr = SDL_GetTouchDevices(out count);
-        
+
         try
         {
             return PointerToStructureArray<ulong>(ptr, count);
         }
         finally
         {
-            if(ptr != IntPtr.Zero) Free(ptr);
+            if (ptr != IntPtr.Zero) Free(ptr);
         }
     }
 
-    
+
     [LibraryImport(SDLLibrary, EntryPoint = "SDL_GetTouchDeviceName"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial IntPtr SDL_GetTouchDeviceName(ulong touchID);
     /// <code>extern SDL_DECLSPEC const char * SDLCALL SDL_GetTouchDeviceName(SDL_TouchID touchID);</code>
@@ -70,11 +70,11 @@ public static partial class SDL
     /// <since>This function is available since SDL 3.2.0</since>
     public static string? GetTouchDeviceName(ulong touchID)
     {
-        var value = SDL_GetTouchDeviceName(touchID); 
+        var value = SDL_GetTouchDeviceName(touchID);
         return value == IntPtr.Zero ? null : Marshal.PtrToStringUTF8(value);
     }
-    
-    
+
+
     /// <code>extern SDL_DECLSPEC SDL_TouchDeviceType SDLCALL SDL_GetTouchDeviceType(SDL_TouchID touchID);</code>
     /// <summary>
     /// Get the type of the given touch device.
@@ -84,8 +84,8 @@ public static partial class SDL
     /// <since>This function is available since SDL 3.2.0</since>
     [LibraryImport(SDLLibrary, EntryPoint = "SDL_GetTouchDeviceType"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     public static partial TouchDeviceType GetTouchDeviceType(ulong touchID);
-    
-    
+
+
     [LibraryImport(SDLLibrary, EntryPoint = "SDL_GetTouchFingers"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial IntPtr SDL_GetTouchFingers(ulong touchID, out int count);
     /// <code>extern SDL_DECLSPEC SDL_Finger ** SDLCALL SDL_GetTouchFingers(SDL_TouchID touchID, int *count);</code>
@@ -103,7 +103,7 @@ public static partial class SDL
     public static Finger[]? GetTouchFingers(ulong touchID, out int count)
     {
         var ptr = SDL_GetTouchFingers(touchID, out count);
-        
+
         try
         {
             return PointerToStructureArray<Finger>(ptr, count);

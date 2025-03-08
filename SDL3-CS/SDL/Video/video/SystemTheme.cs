@@ -35,12 +35,12 @@ public static partial class SDL
         /// Unknown system theme
         /// </summary>
         Unknown,
-        
+
         /// <summary>
         /// Light colored system theme
         /// </summary>
         Light,
-        
+
         /// <summary>
         /// Dark colored system theme
         /// </summary>

@@ -38,44 +38,44 @@ public static partial class SDL
         /// <see cref="EventType.MouseWheel"/>
         /// </summary>
         public EventType Type;
-        
+
         private UInt32 _reserved;
-        
+
         /// <summary>
         /// In nanoseconds, populated using <see cref="GetTicksNS"/>
         /// </summary>
         public UInt64 Timestamp;
-        
+
         /// <summary>
         /// The window with mouse focus, if any
         /// </summary>
         public UInt32 WindowID;
-        
+
         /// <summary>
         /// The mouse instance id in relative mode or 0
         /// </summary>
         public UInt32 Which;
-        
+
         /// <summary>
         /// The amount scrolled horizontally, positive to the right and negative to the left
         /// </summary>
         public float X;
-        
+
         /// <summary>
         /// The amount scrolled vertically, positive away from the user and negative toward the user
         /// </summary>
         public float Y;
-        
+
         /// <summary>
         /// Set to one of the SDL_MOUSEWHEEL_* defines. When FLIPPED the values in X and Y will be opposite. Multiply by -1 to change them back
         /// </summary>
         public MouseWheelDirection Direction;
-        
+
         /// <summary>
         /// X coordinate, relative to window
         /// </summary>
         public float MouseX;
-        
+
         /// <summary>
         /// Y coordinate, relative to window
         /// </summary>

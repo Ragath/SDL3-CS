@@ -34,7 +34,7 @@ public static partial class SDL
         Left = 0x08,
         RightUp = Right | Up,
         RightDown = Right | Down,
-        LeftUp = Left | Up, 
+        LeftUp = Left | Up,
         LeftDown = Left | Down
     }
 }

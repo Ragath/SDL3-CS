@@ -29,7 +29,7 @@ namespace SDL3;
 public static partial class SDL
 {
     [LibraryImport(SDLLibrary, EntryPoint = "SDL_ShowOpenFileDialog"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
-    private static partial void SDL_ShowOpenFileDialog(DialogFileCallback callback, IntPtr userdata, IntPtr window, 
+    private static partial void SDL_ShowOpenFileDialog(DialogFileCallback callback, IntPtr userdata, IntPtr window,
         IntPtr filters, int nfilters, IntPtr defaultLocation, [MarshalAs(UnmanagedType.I1)] bool allowMany);
     /// <code>extern SDL_DECLSPEC void SDLCALL SDL_ShowOpenFileDialog(SDL_DialogFileCallback callback, void *userdata, SDL_Window *window, const SDL_DialogFileFilter *filters, int nfilters, const char *default_location, bool allow_many);</code>
     /// <summary>
@@ -73,13 +73,13 @@ public static partial class SDL
     /// <seealso cref="ShowSaveFileDialog"/>
     /// <seealso cref="ShowOpenFolderDialog"/>
     /// <seealso cref="ShowFileDialogWithProperties"/>
-    public static void ShowOpenFileDialog(DialogFileCallback callback, IntPtr userdata, IntPtr window, 
+    public static void ShowOpenFileDialog(DialogFileCallback callback, IntPtr userdata, IntPtr window,
         DialogFileFilter[]? filters, int nfilters, string? defaultLocation, bool allowMany)
     {
         var pathPointer = IntPtr.Zero;
         var filterPointer = IntPtr.Zero;
         GCHandle? filterHandle = null;
-        
+
         try
         {
             if (filters != null)
@@ -92,7 +92,7 @@ public static partial class SDL
             {
                 pathPointer = Marshal.StringToCoTaskMemUTF8(defaultLocation);
             }
-            
+
             SDL_ShowOpenFileDialog(callback, userdata, window, filterPointer, nfilters, pathPointer, allowMany);
         }
         finally
@@ -105,10 +105,10 @@ public static partial class SDL
             filterHandle?.Free();
         }
     }
-    
-    
+
+
     [LibraryImport(SDLLibrary, EntryPoint = "SDL_ShowSaveFileDialog"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
-    private static partial void SDL_ShowSaveFileDialog(DialogFileCallback callback, IntPtr userdata, IntPtr window, 
+    private static partial void SDL_ShowSaveFileDialog(DialogFileCallback callback, IntPtr userdata, IntPtr window,
         IntPtr filters, int nfilters, IntPtr defaultLocation);
     /// <code>extern SDL_DECLSPEC void SDLCALL SDL_ShowSaveFileDialog(SDL_DialogFileCallback callback, void *userdata, SDL_Window *window, const SDL_DialogFileFilter *filters, int nfilters, const char *default_location);</code>
     /// <summary>
@@ -150,13 +150,13 @@ public static partial class SDL
     /// <seealso cref="ShowOpenFileDialog"/>
     /// <seealso cref="ShowOpenFolderDialog"/>
     /// <seealso cref="ShowFileDialogWithProperties"/>
-    public static void ShowSaveFileDialog(DialogFileCallback callback, IntPtr userdata, IntPtr window, 
+    public static void ShowSaveFileDialog(DialogFileCallback callback, IntPtr userdata, IntPtr window,
         DialogFileFilter[]? filters, int nfilters, string? defaultLocation)
     {
         var pathPointer = IntPtr.Zero;
         var filterPointer = IntPtr.Zero;
         GCHandle? filterHandle = null;
-        
+
         try
         {
             if (filters != null)
@@ -169,7 +169,7 @@ public static partial class SDL
             {
                 pathPointer = Marshal.StringToCoTaskMemUTF8(defaultLocation);
             }
-            
+
             SDL_ShowSaveFileDialog(callback, userdata, window, filterPointer, nfilters, pathPointer);
         }
         finally
@@ -182,10 +182,10 @@ public static partial class SDL
             filterHandle?.Free();
         }
     }
-    
+
 
     [LibraryImport(SDLLibrary, EntryPoint = "SDL_ShowOpenFolderDialog"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
-    private static partial void SDL_ShowOpenFolderDialog(DialogFileCallback callback, IntPtr userdata, IntPtr window, 
+    private static partial void SDL_ShowOpenFolderDialog(DialogFileCallback callback, IntPtr userdata, IntPtr window,
         IntPtr defaultLocation, [MarshalAs(UnmanagedType.I1)] bool allowMany);
     /// <summary>
     /// <para>Displays a dialog that lets the user select a folder on their filesystem.</para>
@@ -225,15 +225,15 @@ public static partial class SDL
     public static void ShowOpenFolderDialog(DialogFileCallback callback, IntPtr userdata, IntPtr window, string? defaultLocation, bool allowMany)
     {
         var pathPointer = IntPtr.Zero;
-        
+
         try
         {
             if (defaultLocation != null)
             {
                 pathPointer = Marshal.StringToCoTaskMemUTF8(defaultLocation);
             }
-            
-            SDL_ShowOpenFolderDialog(callback, userdata, window,  pathPointer, allowMany);
+
+            SDL_ShowOpenFolderDialog(callback, userdata, window, pathPointer, allowMany);
         }
         finally
         {
@@ -243,8 +243,8 @@ public static partial class SDL
             }
         }
     }
-    
-    
+
+
     /// <code>extern SDL_DECLSPEC void SDLCALL SDL_ShowFileDialogWithProperties(SDL_FileDialogType type, SDL_DialogFileCallback callback, void *userdata, SDL_PropertiesID props);</code>
     /// <summary>
     /// <para>Create and launch a file dialog with the specified properties.</para>
@@ -290,5 +290,5 @@ public static partial class SDL
     /// <seealso cref="ShowOpenFolderDialog"/>
     [LibraryImport(SDLLibrary, EntryPoint = "SDL_ShowFileDialogWithProperties"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     public static partial void ShowFileDialogWithProperties(FileDialogType type, DialogFileCallback callback, IntPtr userdata, uint props);
-    
+
 }

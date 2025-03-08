@@ -37,7 +37,7 @@ public static partial class SDL
     public struct FPoint
     {
         public float X;
-        
+
         public float Y;
     }
 }

@@ -47,8 +47,8 @@ public partial class SDL
     /// <seealso cref="DestroyTray"/>
     [LibraryImport(SDLLibrary, EntryPoint = "SDL_CreateTray"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     public static partial IntPtr CreateTray(IntPtr icon, [MarshalAs(UnmanagedType.LPUTF8Str)] string? tooltip);
-    
-    
+
+
     /// <code>extern SDL_DECLSPEC void SDLCALL SDL_SetTrayIcon(SDL_Tray *tray, SDL_Surface *icon);</code>
     /// <summary>
     /// Updates the system tray icon's icon.
@@ -61,8 +61,8 @@ public partial class SDL
     /// <seealso cref="CreateTray"/>
     [LibraryImport(SDLLibrary, EntryPoint = "SDL_SetTrayIcon"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     public static partial void SetTrayIcon(IntPtr tray, IntPtr icon);
-    
-    
+
+
     /// <code>extern SDL_DECLSPEC void SDLCALL SDL_SetTrayTooltip(SDL_Tray *tray, const char *tooltip);</code>
     /// <summary>
     /// Updates the system tray icon's tooltip.
@@ -75,8 +75,8 @@ public partial class SDL
     /// <seealso cref="CreateTray"/>
     [LibraryImport(SDLLibrary, EntryPoint = "SDL_SetTrayTooltip"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     public static partial void SetTrayTooltip(IntPtr tray, [MarshalAs(UnmanagedType.LPUTF8Str)] string? tooltip);
-    
-    
+
+
     /// <code>extern SDL_DECLSPEC SDL_TrayMenu *SDLCALL SDL_CreateTrayMenu(SDL_Tray *tray);</code>
     /// <summary>
     /// <para>Create a menu for a system tray.</para>
@@ -95,8 +95,8 @@ public partial class SDL
     /// <seealso cref="GetTrayMenuParentTray"/>
     [LibraryImport(SDLLibrary, EntryPoint = "SDL_CreateTrayMenu"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     public static partial IntPtr CreateTrayMenu(IntPtr tray);
-    
-    
+
+
     /// <code>extern SDL_DECLSPEC SDL_TrayMenu *SDLCALL SDL_CreateTraySubmenu(SDL_TrayEntry *entry);</code>
     /// <summary>
     /// <para>Create a submenu for a system tray entry.</para>
@@ -115,8 +115,8 @@ public partial class SDL
     /// <seealso cref="GetTrayMenuParentEntry"/>
     [LibraryImport(SDLLibrary, EntryPoint = "SDL_CreateTraySubmenu"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     public static partial IntPtr CreateTraySubmenu(IntPtr entry);
-    
-    
+
+
     /// <code>extern SDL_DECLSPEC SDL_TrayMenu *SDLCALL SDL_GetTrayMenu(SDL_Tray *tray);</code>
     /// <summary>
     /// <para>Gets a previously created tray menu.</para>
@@ -135,8 +135,8 @@ public partial class SDL
     /// <seealso cref="CreateTrayMenu"/>
     [LibraryImport(SDLLibrary, EntryPoint = "SDL_GetTrayMenu"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     public static partial IntPtr GetTrayMenu(IntPtr tray);
-    
-    
+
+
     /// <code>extern SDL_DECLSPEC SDL_TrayMenu *SDLCALL SDL_GetTraySubmenu(SDL_TrayEntry *entry);</code>
     /// <summary>
     /// <para>Gets a previously created tray entry submenu.</para>
@@ -155,8 +155,8 @@ public partial class SDL
     /// <seealso cref="CreateTraySubmenu"/>
     [LibraryImport(SDLLibrary, EntryPoint = "SDL_GetTraySubmenu"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     public static partial IntPtr GetTraySubmenu(IntPtr entry);
-    
-    
+
+
     [LibraryImport(SDLLibrary, EntryPoint = "SDL_GetTrayEntries"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial IntPtr SDL_GetTrayEntries(IntPtr menu, out int count);
     /// <code>extern SDL_DECLSPEC const SDL_TrayEntry **SDLCALL SDL_GetTrayEntries(SDL_TrayMenu *menu, int *count);</code>
@@ -174,10 +174,10 @@ public partial class SDL
     /// <since>This function is available since SDL 3.1.8.</since>
     /// <seealso cref="RemoveTrayEntry"/>
     /// <seealso cref="InsertTrayEntryAt"/>
-    public static IntPtr[]? GetTrayEntries(IntPtr menu, out int size) 
+    public static IntPtr[]? GetTrayEntries(IntPtr menu, out int size)
     {
         var ptr = SDL_GetTrayEntries(menu, out size);
-            
+
         try
         {
             return PointerToPointerArray(ptr, size);
@@ -187,8 +187,8 @@ public partial class SDL
             if (ptr != IntPtr.Zero) Free(ptr);
         }
     }
-    
-    
+
+
     /// <code>extern SDL_DECLSPEC void SDLCALL SDL_RemoveTrayEntry(SDL_TrayEntry *entry);</code>
     /// <summary>
     /// Removes a tray entry.
@@ -201,8 +201,8 @@ public partial class SDL
     /// <seealso cref="InsertTrayEntryAt"/>
     [LibraryImport(SDLLibrary, EntryPoint = "SDL_RemoveTrayEntry"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     public static partial void RemoveTrayEntry(IntPtr entry);
-    
-    
+
+
     /// <code>extern SDL_DECLSPEC SDL_TrayEntry *SDLCALL SDL_InsertTrayEntryAt(SDL_TrayMenu *menu, int pos, const char *label, SDL_TrayEntryFlags flags);</code>
     /// <summary>
     /// <para>Insert a tray entry at a given position.</para>
@@ -226,8 +226,8 @@ public partial class SDL
     /// <seealso cref="GetTrayEntryParent"/>
     [LibraryImport(SDLLibrary, EntryPoint = "SDL_InsertTrayEntryAt"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     public static partial IntPtr InsertTrayEntryAt(IntPtr menu, int pos, [MarshalAs(UnmanagedType.LPUTF8Str)] string? label, TrayEntryFlags flags);
-    
-    
+
+
     /// <code>extern SDL_DECLSPEC void SDLCALL SDL_SetTrayEntryLabel(SDL_TrayEntry *entry, const char *label);</code>
     /// <summary>
     /// <para>Sets the label of an entry.</para>
@@ -246,8 +246,8 @@ public partial class SDL
     /// <seealso cref="GetTrayEntryLabel"/>
     [LibraryImport(SDLLibrary, EntryPoint = "SDL_InsertTrayEntryAt"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     public static partial void SetTrayEntryLabel(IntPtr entry, [MarshalAs(UnmanagedType.LPUTF8Str)] string label);
-    
-    
+
+
     [LibraryImport(SDLLibrary, EntryPoint = "SDL_GetTrayEntryLabel"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial IntPtr SDL_GetTrayEntryLabel(IntPtr entry);
     /// <code>extern SDL_DECLSPEC const char *SDLCALL SDL_GetTrayEntryLabel(SDL_TrayEntry *entry);</code>
@@ -265,11 +265,11 @@ public partial class SDL
     /// <seealso cref="SetTrayEntryLabel"/>
     public static string? GetTrayEntryLabel(IntPtr entry)
     {
-    	var value = SDL_GetTrayEntryLabel(entry); 
-    	return value == IntPtr.Zero ? null : Marshal.PtrToStringUTF8(value);
+        var value = SDL_GetTrayEntryLabel(entry);
+        return value == IntPtr.Zero ? null : Marshal.PtrToStringUTF8(value);
     }
-    
-    
+
+
     /// <code>extern SDL_DECLSPEC void SDLCALL SDL_SetTrayEntryChecked(SDL_TrayEntry *entry, bool checked);</code>
     /// <summary>
     /// <para>Sets whether or not an entry is checked.</para>
@@ -286,8 +286,8 @@ public partial class SDL
     /// <seealso cref="GetTrayEntryChecked"/>
     [LibraryImport(SDLLibrary, EntryPoint = "SDL_SetTrayEntryChecked"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     public static partial void SetTrayEntryChecked(IntPtr entry, [MarshalAs(UnmanagedType.I1)] bool @checked);
-    
-    
+
+
     /// <code>extern SDL_DECLSPEC bool SDLCALL SDL_GetTrayEntryChecked(SDL_TrayEntry *entry);</code>
     /// <summary>
     /// <para>Gets whether or not an entry is checked.</para>
@@ -304,8 +304,8 @@ public partial class SDL
     [LibraryImport(SDLLibrary, EntryPoint = "SDL_GetTrayEntryChecked"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     [return: MarshalAs(UnmanagedType.I1)]
     public static partial bool GetTrayEntryChecked(IntPtr entry);
-    
-    
+
+
     /// <code>extern SDL_DECLSPEC void SDLCALL SDL_SetTrayEntryEnabled(SDL_TrayEntry *entry, bool enabled);</code>
     /// <summary>
     /// Sets whether or not an entry is enabled.
@@ -321,8 +321,8 @@ public partial class SDL
     /// <seealso cref="GetTrayEntryEnabled"/>
     [LibraryImport(SDLLibrary, EntryPoint = "SDL_SetTrayEntryEnabled"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     public static partial void SetTrayEntryEnabled(IntPtr entry, [MarshalAs(UnmanagedType.I1)] bool enabled);
-    
-    
+
+
     /// <code>extern SDL_DECLSPEC bool SDLCALL SDL_GetTrayEntryEnabled(SDL_TrayEntry *entry);</code>
     /// <summary>
     /// Gets whether or not an entry is enabled.
@@ -338,8 +338,8 @@ public partial class SDL
     [LibraryImport(SDLLibrary, EntryPoint = "SDL_GetTrayEntryEnabled"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     [return: MarshalAs(UnmanagedType.I1)]
     public static partial bool GetTrayEntryEnabled(IntPtr entry);
-    
-    
+
+
     /// <code>extern SDL_DECLSPEC void SDLCALL SDL_SetTrayEntryCallback(SDL_TrayEntry *entry, SDL_TrayCallback callback, void *userdata);</code>
     /// <summary>
     /// Sets a callback to be invoked when the entry is selected.
@@ -355,8 +355,8 @@ public partial class SDL
     /// <seealso cref="InsertTrayEntryAt"/>
     [LibraryImport(SDLLibrary, EntryPoint = "SDL_SetTrayEntryCallback"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     public static partial void SetTrayEntryCallback(IntPtr entry, TrayCallback callback, IntPtr userdata);
-    
-    
+
+
     /// <code>extern SDL_DECLSPEC void SDLCALL SDL_ClickTrayEntry(SDL_TrayEntry *entry);</code>
     /// <summary>
     /// Simulate a click on a tray entry.
@@ -367,8 +367,8 @@ public partial class SDL
     /// <since>This function is available since SDL 3.1.10.</since>
     [LibraryImport(SDLLibrary, EntryPoint = "SDL_ClickTrayEntry"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     public static partial void ClickTrayEntry(IntPtr entry);
-    
-    
+
+
     /// <code>extern SDL_DECLSPEC void SDLCALL SDL_DestroyTray(SDL_Tray *tray);</code>
     /// <summary>
     /// <para>Destroys a tray object.</para>
@@ -381,8 +381,8 @@ public partial class SDL
     /// <seealso cref="CreateTray"/>
     [LibraryImport(SDLLibrary, EntryPoint = "SDL_DestroyTray"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     public static partial void DestroyTray(IntPtr tray);
-    
-    
+
+
     /// <code>extern SDL_DECLSPEC SDL_TrayMenu *SDLCALL SDL_GetTrayEntryParent(SDL_TrayEntry *entry);</code>
     /// <summary>
     /// Gets the menu contianing a certain tray entry.
@@ -395,8 +395,8 @@ public partial class SDL
     /// <seealso cref="InsertTrayEntryAt"/>
     [LibraryImport(SDLLibrary, EntryPoint = "SDL_GetTrayEntryParent"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     public static partial IntPtr GetTrayEntryParent(IntPtr entry);
-    
-    
+
+
     /// <code>extern SDL_DECLSPEC SDL_TrayEntry *SDLCALL SDL_GetTrayMenuParentEntry(SDL_TrayMenu *menu);</code>
     /// <summary>
     /// <para>Gets the entry for which the menu is a submenu, if the current menu is a
@@ -413,8 +413,8 @@ public partial class SDL
     /// <seealso cref="GetTrayMenuParentTray"/>
     [LibraryImport(SDLLibrary, EntryPoint = "SDL_GetTrayMenuParentEntry"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     public static partial IntPtr GetTrayMenuParentEntry(IntPtr menu);
-    
-    
+
+
     /// <code>extern SDL_DECLSPEC SDL_Tray *SDLCALL SDL_GetTrayMenuParentTray(SDL_TrayMenu *menu);</code>
     /// <summary>
     /// <para>Gets the tray for which this menu is the first-level menu, if the current
@@ -431,8 +431,8 @@ public partial class SDL
     /// <seealso cref="GetTrayMenuParentEntry"/>
     [LibraryImport(SDLLibrary, EntryPoint = "SDL_GetTrayMenuParentTray"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     public static partial IntPtr GetTrayMenuParentTray(IntPtr menu);
-    
-    
+
+
     /// extern SDL_DECLSPEC void SDLCALL SDL_UpdateTrays(void);
     /// <summary>
     /// <para>Update the trays.</para>

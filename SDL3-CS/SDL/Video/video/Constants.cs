@@ -32,8 +32,8 @@ public static partial class SDL
     /// </summary>
     /// <since>This macro is available since SDL 3.2.0</since>
     public const uint WindowposUndefinedMask = 0x1FFF0000u;
-    
-    
+
+
     /// <summary>
     /// <para>A magic value used with <see cref="WindowPosCentered"/>.</para>
     /// <para>Generally this macro isn't used directly, but rather through
@@ -41,7 +41,7 @@ public static partial class SDL
     /// </summary>
     /// <since>This macro is available since SDL 3.2.0</since>
     public const uint WindowposCenteredMask = 0x2FFF0000u;
-    
+
     public const int WindowSurfaceVSyncDisabled = 0;
     public const int WindowSurfaceVSyncAdaptive = -1;
 }

@@ -38,14 +38,14 @@ public static partial class SDL
         /// <see cref="EventType.KeyboardAdded"/> or <see cref="EventType.KeyboardRemoved"/>
         /// </summary>
         public EventType Type;
-        
+
         private UInt32 _reserved;
-        
+
         /// <summary>
         /// In nanoseconds, populated using <see cref="GetTicksNS"/>
         /// </summary>
         public UInt64 Timestamp;
-        
+
         /// <summary>
         /// The keyboard instance id
         /// </summary>

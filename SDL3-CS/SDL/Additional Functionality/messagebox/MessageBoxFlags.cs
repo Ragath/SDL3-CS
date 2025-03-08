@@ -37,22 +37,22 @@ public static partial class SDL
         /// error dialog
         /// </summary>
         Error = 0x00000010u,
-        
+
         /// <summary>
         /// warning dialog
         /// </summary>
         Warning = 0x00000020u,
-        
+
         /// <summary>
         /// informational dialog
         /// </summary>
         Information = 0x00000040u,
-        
+
         /// <summary>
         /// buttons placed left to right
         /// </summary>
         ButtonsLeftToRight = 0x00000080u,
-        
+
         /// <summary>
         /// buttons placed right to left
         /// </summary>

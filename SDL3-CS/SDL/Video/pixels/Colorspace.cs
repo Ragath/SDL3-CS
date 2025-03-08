@@ -38,9 +38,9 @@ public static partial class SDL
     /// <seealso cref="MatrixCoefficients"/>
     /// <seealso cref="TransferCharacteristics"/>
     public enum Colorspace : uint
-    { 
+    {
         Unknown = 0,
-        
+
         /// <summary>
         /// <para>sRGB is a gamma corrected colorspace, and the default colorspace for SDL rendering and 8-bit RGB surfaces</para>
         /// <para>Equivalent to DXGI_COLOR_SPACE_RGB_FULL_G22_NONE_P709</para>
@@ -48,7 +48,7 @@ public static partial class SDL
         /// MatrixCoefficients.Identity, ChromaLocation.None);</code>
         /// </summary>
         SRGB = 0x120005a0u,
-        
+
         /// <summary>
         /// <para>This is a linear colorspace and the default colorspace for floating point surfaces. On Windows this is the
         /// scRGB colorspace, and on Apple platforms this is kCGColorSpaceExtendedLinearSRGB for EDR content</para>
@@ -93,14 +93,14 @@ public static partial class SDL
         /// MatrixCoefficients.BT709, ChromaLocation.Left);</code>
         /// </summary>
         BT709Limited = 0x21100421u,
-        
+
         /// <summary>
         /// Equivalent to DXGI_COLOR_SPACE_YCBCR_STUDIO_G22_LEFT_P709
         /// <code>DefineColorspace(ColorType.YCBCR, ColorRange.Full, ColorPrimaries.BT709, TransferCharacteristics.BT709,
         /// MatrixCoefficients.BT709, ChromaLocation.Left);</code>
         /// </summary>
         BT709Full = 0x22100421u,
-        
+
         /// <summary>
         /// Equivalent to DXGI_COLOR_SPACE_YCBCR_STUDIO_G22_LEFT_P2020
         /// <code>DefineColorspace(ColorType.YCBCR, ColorRange.Limited, ColorPrimaries.BT2020, TransferCharacteristics.PQ,
@@ -114,12 +114,12 @@ public static partial class SDL
         /// MatrixCoefficients.BT2020NCL, ChromaLocation.Left);</code>
         /// </summary>
         BT2020Full = 0x22102609u,
-        
+
         /// <summary>
         /// The default colorspace for RGB surfaces if no colorspace is specified
         /// </summary>
         RGBDefault = SRGB,
-        
+
         /// <summary>
         /// The default colorspace for YUV surfaces if no colorspace is specified
         /// </summary>

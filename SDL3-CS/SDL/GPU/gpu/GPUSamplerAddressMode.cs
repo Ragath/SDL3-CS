@@ -24,28 +24,28 @@
 namespace SDL3;
 
 public static partial class SDL
-{
-    /// <summary>
-    /// Specifies behavior of texture sampling when the coordinates exceed the 0-1
-    /// range.
-    /// </summary>
-    /// <since>This enum is available since SDL 3.2.0</since>
-    /// <seealso cref="CreateGPUSampler"/>
-    public enum GPUSamplerAddressMode
     {
         /// <summary>
-        /// Specifies that the coordinates will wrap around.
+        /// Specifies behavior of texture sampling when the coordinates exceed the 0-1
+        /// range.
         /// </summary>
-        Repeat,
-        
-        /// <summary>
-        /// Specifies that the coordinates will wrap around mirrored.
-        /// </summary>
-        MirroredRepeat,
-        
-        /// <summary>
-        /// Specifies that the coordinates will clamp to the 0-1 range.
-        /// </summary>
-        ClampToEdge
+        /// <since>This enum is available since SDL 3.2.0</since>
+        /// <seealso cref="CreateGPUSampler"/>
+        public enum GPUSamplerAddressMode
+        {
+            /// <summary>
+            /// Specifies that the coordinates will wrap around.
+            /// </summary>
+            Repeat,
+
+            /// <summary>
+            /// Specifies that the coordinates will wrap around mirrored.
+            /// </summary>
+            MirroredRepeat,
+
+            /// <summary>
+            /// Specifies that the coordinates will clamp to the 0-1 range.
+            /// </summary>
+            ClampToEdge
+        }
     }
-}

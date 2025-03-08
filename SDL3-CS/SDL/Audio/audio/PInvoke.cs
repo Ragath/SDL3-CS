@@ -46,8 +46,8 @@ public static partial class SDL
     /// <seealso cref="GetAudioDriver"/>
     [LibraryImport(SDLLibrary, EntryPoint = "SDL_GetNumAudioDrivers"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     public static partial int GetNumAudioDrivers();
-   
-    
+
+
     [LibraryImport(SDLLibrary, EntryPoint = "SDL_GetAudioDriver"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial IntPtr SDL_GetAudioDriver(int index);
     /// <code>extern SDL_DECLSPEC const char * SDLCALL SDL_GetAudioDriver(int index);</code>
@@ -69,11 +69,11 @@ public static partial class SDL
     /// <seealso cref="GetNumAudioDrivers"/>
     public static string? GetAudioDriver(int index)
     {
-        var value = SDL_GetAudioDriver(index); 
+        var value = SDL_GetAudioDriver(index);
         return value == IntPtr.Zero ? null : Marshal.PtrToStringUTF8(value);
     }
-    
-    
+
+
     [LibraryImport(SDLLibrary, EntryPoint = "SDL_GetCurrentAudioDriver"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial IntPtr SDL_GetCurrentAudioDriver();
     /// <code>extern SDL_DECLSPEC const char * SDLCALL SDL_GetCurrentAudioDriver(void);</code>
@@ -89,11 +89,11 @@ public static partial class SDL
     /// <since>This function is available since SDL 3.2.0</since>
     public static string? GetCurrentAudioDriver()
     {
-        var value = SDL_GetCurrentAudioDriver(); 
+        var value = SDL_GetCurrentAudioDriver();
         return value == IntPtr.Zero ? null : Marshal.PtrToStringUTF8(value);
     }
-    
-    
+
+
     [LibraryImport(SDLLibrary, EntryPoint = "SDL_GetAudioPlaybackDevices"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial IntPtr SDL_GetAudioPlaybackDevices(out int count);
     /// <code>extern SDL_DECLSPEC SDL_AudioDeviceID * SDLCALL SDL_GetAudioPlaybackDevices(int *count);</code>
@@ -130,8 +130,8 @@ public static partial class SDL
             Free(ptr);
         }
     }
-    
-    
+
+
     [LibraryImport(SDLLibrary, EntryPoint = "SDL_GetAudioRecordingDevices"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial IntPtr SDL_GetAudioRecordingDevices(out int count);
     /// <code>extern SDL_DECLSPEC SDL_AudioDeviceID * SDLCALL SDL_GetAudioRecordingDevices(int *count);</code>
@@ -158,18 +158,18 @@ public static partial class SDL
     public static uint[]? GetAudioRecordingDevices(out int count)
     {
         var ptr = SDL_GetAudioRecordingDevices(out count);
-        
+
         try
         {
             return PointerToStructureArray<uint>(ptr, count);
         }
         finally
         {
-            if(ptr != IntPtr.Zero) Free(ptr);
+            if (ptr != IntPtr.Zero) Free(ptr);
         }
     }
 
-    
+
     [LibraryImport(SDLLibrary, EntryPoint = "SDL_GetAudioDeviceName"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial IntPtr SDL_GetAudioDeviceName(uint devid);
     /// <code>extern SDL_DECLSPEC const char * SDLCALL SDL_GetAudioDeviceName(SDL_AudioDeviceID devid);</code>
@@ -185,11 +185,11 @@ public static partial class SDL
     /// <seealso cref="GetAudioRecordingDevices"/>
     public static string? GetAudioDeviceName(uint devid)
     {
-        var value = SDL_GetAudioDeviceName(devid); 
+        var value = SDL_GetAudioDeviceName(devid);
         return value == IntPtr.Zero ? null : Marshal.PtrToStringUTF8(value);
     }
-    
-    
+
+
     /// <code>extern SDL_DECLSPEC bool SDLCALL SDL_GetAudioDeviceFormat(SDL_AudioDeviceID devid, SDL_AudioSpec *spec, int *sample_frames);</code>
     /// <summary>
     /// <para>Get the current audio format of a specific audio device.</para>
@@ -220,7 +220,7 @@ public static partial class SDL
     [return: MarshalAs(UnmanagedType.I1)]
     public static partial bool GetAudioDeviceFormat(uint devid, out AudioSpec spec, out int sampleFrames);
 
-    
+
     [LibraryImport(SDLLibrary, EntryPoint = "SDL_GetAudioDeviceChannelMap"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial IntPtr SDL_GetAudioDeviceChannelMap(uint devid, out int count);
     /// <c>extern SDL_DECLSPEC int * SDLCALL SDL_GetAudioDeviceChannelMap(SDL_AudioDeviceID devid, int *count);</c>
@@ -318,8 +318,8 @@ public static partial class SDL
     /// <seealso cref="GetAudioDeviceFormat"/>
     [LibraryImport(SDLLibrary, EntryPoint = "SDL_OpenAudioDevice"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     public static partial uint OpenAudioDevice(uint devid, in AudioSpec spec);
-    
-    
+
+
     /// <code>extern SDL_DECLSPEC SDL_AudioDeviceID SDLCALL SDL_OpenAudioDevice(SDL_AudioDeviceID devid, const SDL_AudioSpec *spec);</code>
     /// <summary>
     /// <para>Open a specific audio device.</para>
@@ -561,8 +561,8 @@ public static partial class SDL
     /// <seealso cref="OpenAudioDevice(uint, nint)"/>
     [LibraryImport(SDLLibrary, EntryPoint = "SDL_CloseAudioDevice"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     public static partial void CloseAudioDevice(uint devid);
-    
-    
+
+
     /// <code>extern SDL_DECLSPEC bool SDLCALL SDL_BindAudioStreams(SDL_AudioDeviceID devid, SDL_AudioStream * const *streams, int num_streams);</code>
     /// <summary>
     /// <para>Bind a list of audio streams to an audio device.</para>
@@ -594,7 +594,7 @@ public static partial class SDL
     [LibraryImport(SDLLibrary, EntryPoint = "SDL_BindAudioStreams"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     [return: MarshalAs(UnmanagedType.I1)]
     public static partial bool BindAudioStreams(uint devid, [MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 2)] IntPtr[] streams, int numStream);
-    
+
 
     /// <code>extern SDL_DECLSPEC bool SDLCALL SDL_BindAudioStream(SDL_AudioDeviceID devid, SDL_AudioStream *stream);</code>
     /// <summary>
@@ -833,7 +833,7 @@ public static partial class SDL
     [return: MarshalAs(UnmanagedType.I1)]
     public static partial bool SetAudioStreamGain(IntPtr stream, float gain);
 
-    
+
     [LibraryImport(SDLLibrary, EntryPoint = "SDL_GetAudioStreamInputChannelMap"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial IntPtr SDL_GetAudioStreamInputChannelMap(IntPtr stream, out int count);
     /// <code>extern SDL_DECLSPEC int * SDLCALL SDL_GetAudioStreamInputChannelMap(SDL_AudioStream *stream, int *count);</code>
@@ -1026,8 +1026,8 @@ public static partial class SDL
     [LibraryImport(SDLLibrary, EntryPoint = "SDL_PutAudioStreamData"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     [return: MarshalAs(UnmanagedType.I1)]
     public static partial bool PutAudioStreamData(IntPtr stream, IntPtr buf, int len);
-    
-    
+
+
     /// <code>extern SDL_DECLSPEC bool SDLCALL SDL_PutAudioStreamData(SDL_AudioStream *stream, const void *buf, int len);</code>
     /// <summary>
     /// <para>Add data to the stream.</para>
@@ -1081,8 +1081,8 @@ public static partial class SDL
     /// <seealso cref="PutAudioStreamData(nint, byte[], int)"/>
     [LibraryImport(SDLLibrary, EntryPoint = "SDL_GetAudioStreamData"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     public static partial int GetAudioStreamData(IntPtr stream, IntPtr buf, int len);
-    
-    
+
+
     /// <code>extern SDL_DECLSPEC int SDLCALL SDL_GetAudioStreamData(SDL_AudioStream *stream, void *buf, int len);</code>
     /// <summary>
     /// <para>Get converted/resampled data from the stream.</para>
@@ -1246,8 +1246,8 @@ public static partial class SDL
     [LibraryImport(SDLLibrary, EntryPoint = "SDL_ResumeAudioStreamDevice"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     [return: MarshalAs(UnmanagedType.I1)]
     public static partial bool ResumeAudioStreamDevice(IntPtr stream);
-    
-    
+
+
     /// <code>extern SDL_DECLSPEC bool SDLCALL SDL_AudioStreamDevicePaused(SDL_AudioStream *stream);</code>
     /// <summary>
     /// <para>Use this function to query if an audio device associated with a stream is
@@ -1453,8 +1453,8 @@ public static partial class SDL
     /// <seealso cref="ResumeAudioStreamDevice"/>
     [LibraryImport(SDLLibrary, EntryPoint = "SDL_OpenAudioDeviceStream"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     public static partial IntPtr OpenAudioDeviceStream(uint devid, in AudioSpec spec, AudioStreamCallback? callback, IntPtr userdata);
-    
-    
+
+
     /// <code>extern SDL_DECLSPEC SDL_AudioStream * SDLCALL SDL_OpenAudioDeviceStream(SDL_AudioDeviceID devid, const SDL_AudioSpec *spec, SDL_AudioStreamCallback callback, void *userdata);</code>
     /// <summary>
     /// <para>Convenience function for straightforward audio init for the common case.</para>
@@ -1715,7 +1715,7 @@ public static partial class SDL
     [return: MarshalAs(UnmanagedType.I1)]
     public static partial bool ConvertAudioSamples(in AudioSpec srcSpec, IntPtr srcData, int srcLen, in AudioSpec dstSpec, out IntPtr dstData, out int dstLen);
 
-    
+
     [LibraryImport(SDLLibrary, EntryPoint = "SDL_GetAudioFormatName"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial IntPtr SDL_GetAudioFormatName(AudioFormat format);
     /// <code>extern SDL_DECLSPEC const char * SDLCALL SDL_GetAudioFormatName(SDL_AudioFormat format);</code>
@@ -1729,7 +1729,7 @@ public static partial class SDL
     /// <since>This function is available since SDL 3.2.0</since>
     public static string GetAudioFormatName(AudioFormat format)
     {
-        var value = SDL_GetAudioFormatName(format); 
+        var value = SDL_GetAudioFormatName(format);
         return value == IntPtr.Zero ? "" : Marshal.PtrToStringUTF8(value)!;
     }
 

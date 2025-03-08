@@ -36,12 +36,12 @@ public static partial class SDL
         /// Value that requests that enumeration continue.
         /// </summary>
         Continue,
-        
+
         /// <summary>
         /// Value that requests that enumeration stop, successfully.
         /// </summary>
         Success,
-        
+
         /// <summary>
         /// Value that requests that enumeration stop, as a failure.
         /// </summary>

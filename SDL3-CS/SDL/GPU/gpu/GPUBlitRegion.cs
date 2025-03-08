@@ -26,48 +26,48 @@ using System.Runtime.InteropServices;
 namespace SDL3;
 
 public static partial class SDL
-{
-    /// <summary>
-    /// <para>A structure specifying a region of a texture used in the blit operation.</para>
-    /// </summary>
-    /// <since>This struct is available since SDL 3.2.0</since>
-    /// <seealso cref="BlitGPUTexture"/>
-    [StructLayout(LayoutKind.Sequential)]
-    public struct GPUBlitRegion
     {
         /// <summary>
-        /// The texture.
+        /// <para>A structure specifying a region of a texture used in the blit operation.</para>
         /// </summary>
-        public IntPtr Texture;
-        
-        /// <summary>
-        /// The mip level index of the region.
-        /// </summary>
-        public UInt32 MipLevel;
-        
-        /// <summary>
-        /// The layer index or depth plane of the region. This value is treated as a layer index on 2D array and cube textures, and as a depth plane on 3D textures.
-        /// </summary>
-        public UInt32 LayerOrDepthPlane;
-        
-        /// <summary>
-        /// The left offset of the region.
-        /// </summary>
-        public UInt32 X;
-        
-        /// <summary>
-        /// The top offset of the region.
-        /// </summary>
-        public UInt32 Y;
-        
-        /// <summary>
-        /// The width of the region.
-        /// </summary>
-        public UInt32 W;
-        
-        /// <summary>
-        /// The height of the region.
-        /// </summary>
-        public UInt32 H;
+        /// <since>This struct is available since SDL 3.2.0</since>
+        /// <seealso cref="BlitGPUTexture"/>
+        [StructLayout(LayoutKind.Sequential)]
+        public struct GPUBlitRegion
+        {
+            /// <summary>
+            /// The texture.
+            /// </summary>
+            public IntPtr Texture;
+
+            /// <summary>
+            /// The mip level index of the region.
+            /// </summary>
+            public UInt32 MipLevel;
+
+            /// <summary>
+            /// The layer index or depth plane of the region. This value is treated as a layer index on 2D array and cube textures, and as a depth plane on 3D textures.
+            /// </summary>
+            public UInt32 LayerOrDepthPlane;
+
+            /// <summary>
+            /// The left offset of the region.
+            /// </summary>
+            public UInt32 X;
+
+            /// <summary>
+            /// The top offset of the region.
+            /// </summary>
+            public UInt32 Y;
+
+            /// <summary>
+            /// The width of the region.
+            /// </summary>
+            public UInt32 W;
+
+            /// <summary>
+            /// The height of the region.
+            /// </summary>
+            public UInt32 H;
+        }
     }
-}

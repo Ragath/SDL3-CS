@@ -41,8 +41,8 @@ public static partial class SDL
     /// <seealso cref="UnloadObject"/>
     [LibraryImport(SDLLibrary, EntryPoint = "SDL_LoadObject"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     public static partial IntPtr LoadObject([MarshalAs(UnmanagedType.LPUTF8Str)] string sofile);
-    
-    
+
+
     /// <code>extern SDL_DECLSPEC SDL_FunctionPointer SDLCALL SDL_LoadFunction(SDL_SharedObject *handle, const char *name);</code>
     /// <summary>
     /// <para>Look up the address of the named function in a shared object.</para>
@@ -65,7 +65,7 @@ public static partial class SDL
     [LibraryImport(SDLLibrary, EntryPoint = "SDL_LoadFunction"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     public static partial FunctionPointer? LoadFunction(IntPtr handle, [MarshalAs(UnmanagedType.LPUTF8Str)] string name);
 
-    
+
     /// <code>extern SDL_DECLSPEC void SDLCALL SDL_UnloadObject(SDL_SharedObject *handle);</code>
     /// <summary>
     /// <para>Unload a shared object from memory.</para>

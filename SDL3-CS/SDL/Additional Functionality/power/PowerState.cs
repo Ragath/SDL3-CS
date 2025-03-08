@@ -36,27 +36,27 @@ public static partial class SDL
         /// error determining power status
         /// </summary>
         Error = -1,
-        
+
         /// <summary>
         /// cannot determine power status
         /// </summary>
         Unknown,
-        
+
         /// <summary>
         /// Not plugged in, running on the battery
         /// </summary>
         OnBattery,
-        
+
         /// <summary>
         /// Plugged in, no battery available
         /// </summary>
         NoBattery,
-        
+
         /// <summary>
         /// Plugged in, charging battery
         /// </summary>
         Charging,
-        
+
         /// <summary>
         /// Plugged in, battery charged
         /// </summary>

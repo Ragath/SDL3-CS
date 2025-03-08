@@ -26,31 +26,31 @@ using System.Runtime.InteropServices;
 namespace SDL3;
 
 public static partial class SDL
-{
-    /// <summary>
-    /// <para>A structure specifying the parameters of a buffer.</para>
-    /// <para>Usage flags can be bitwise OR'd together for combinations of usages. Note
-    /// that certain combinations are invalid, for example VERTEX and INDEX.</para>
-    /// </summary>
-    /// <since>This struct is available since SDL 3.2.0</since>
-    /// <seealso cref="CreateGPUBuffer"/>
-    /// <seealso cref="GPUBufferUsageFlags"/>
-    [StructLayout(LayoutKind.Sequential)]
-    public struct GPUBufferCreateInfo
     {
         /// <summary>
-        /// How the buffer is intended to be used by the client.
+        /// <para>A structure specifying the parameters of a buffer.</para>
+        /// <para>Usage flags can be bitwise OR'd together for combinations of usages. Note
+        /// that certain combinations are invalid, for example VERTEX and INDEX.</para>
         /// </summary>
-        public GPUBufferUsageFlags Usage;
-        
-        /// <summary>
-        /// The size in bytes of the buffer.
-        /// </summary>
-        public UInt32 Size;
+        /// <since>This struct is available since SDL 3.2.0</since>
+        /// <seealso cref="CreateGPUBuffer"/>
+        /// <seealso cref="GPUBufferUsageFlags"/>
+        [StructLayout(LayoutKind.Sequential)]
+        public struct GPUBufferCreateInfo
+        {
+            /// <summary>
+            /// How the buffer is intended to be used by the client.
+            /// </summary>
+            public GPUBufferUsageFlags Usage;
 
-        /// <summary>
-        /// A properties ID for extensions. Should be 0 if no extensions are needed.
-        /// </summary>
-        public UInt32 Props;
+            /// <summary>
+            /// The size in bytes of the buffer.
+            /// </summary>
+            public UInt32 Size;
+
+            /// <summary>
+            /// A properties ID for extensions. Should be 0 if no extensions are needed.
+            /// </summary>
+            public UInt32 Props;
+        }
     }
-}

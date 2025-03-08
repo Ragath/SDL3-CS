@@ -37,17 +37,17 @@ public partial class SDL
         /// The thread is not valid
         /// </summary>
         Unknown,
-        
+
         /// <summary>
         /// The thread is currently running
         /// </summary>
         Alive,
-        
+
         /// <summary>
         /// The thread is detached and can't be waited on
         /// </summary>
         Detached,
-        
+
         /// <summary>
         /// The thread has finished and should be cleaned up with <see cref="WaitThread"/>
         /// </summary>

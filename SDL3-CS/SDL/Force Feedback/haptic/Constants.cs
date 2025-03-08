@@ -48,7 +48,7 @@ public static partial class SDL
     /// <since>This macro is available since SDL 3.2.0</since>
     /// <seealso cref="HapticPeriodic"/>
     public const uint HAPTIC_SQUARE = 1u << 2;
-    
+
     /// <summary>
     /// <para>Triangle wave effect supported.</para>
     /// <para>Periodic haptic effect that simulates triangular waves.</para>
@@ -56,7 +56,7 @@ public static partial class SDL
     /// <since>This macro is available since SDL 3.2.0</since>
     /// <seealso cref="HapticPeriodic"/>
     public const uint HAPTIC_TRIANGLE = 1u << 3;
-    
+
     /// <summary>
     /// <para>Sawtoothup wave effect supported.</para>
     /// <para>Periodic haptic effect that simulates saw tooth up waves.</para>
@@ -64,7 +64,7 @@ public static partial class SDL
     /// <since>This macro is available since SDL 3.2.0</since>
     /// <seealso cref="HapticPeriodic"/>
     public const uint HAPTIC_SAWTOOTHUP = 1u << 4;
-    
+
     /// <summary>
     /// <para>Sawtoothdown wave effect supported.</para>
     /// <para>Periodic haptic effect that simulates saw tooth down waves.</para>
@@ -72,7 +72,7 @@ public static partial class SDL
     /// <since>This macro is available since SDL 3.2.0</since>
     /// <seealso cref="HapticPeriodic"/>
     public const uint HAPTIC_SAWTOOTHDOWN = 1u << 5;
-    
+
     /// <summary>
     /// <para>Ramp effect supported.</para>
     /// <para>Ramp haptic effect.</para>
@@ -80,7 +80,7 @@ public static partial class SDL
     /// <since>This macro is available since SDL 3.2.0</since>
     /// <seealso cref="HapticRamp"/>
     public const uint HAPTIC_RAMP = 1u << 6;
-    
+
     /// <summary>
     /// <para>Spring effect supported - uses axes position.</para>
     /// <para>Condition haptic effect that simulates a spring. Effect is based on the
@@ -98,7 +98,7 @@ public static partial class SDL
     /// <since>This macro is available since SDL 3.2.0</since>
     /// <seealso cref="HapticCondition"/>
     public const uint HAPTIC_DAMPER = 1u << 8;
-    
+
     /// <summary>
     /// <para>Inertia effect supported - uses axes acceleration.</para>
     /// <para>Condition haptic effect that simulates inertia. Effect is based on the axes
@@ -107,7 +107,7 @@ public static partial class SDL
     /// <since>This macro is available since SDL 3.2.0</since>
     /// <seealso cref="HapticCondition"/>
     public const uint HAPTIC_INERTIA = 1u << 9;
-    
+
     /// <summary>
     /// <para>Friction effect supported - uses axes movement.</para>
     /// <para>Condition haptic effect that simulates friction. Effect is based on the
@@ -116,7 +116,7 @@ public static partial class SDL
     /// <since>This macro is available since SDL 3.2.0</since>
     /// <seealso cref="HapticCondition"/>
     public const uint HAPTIC_FRICTION = 1u << 10;
-    
+
     /// <summary>
     /// <para>Left/Right effect supported.</para>
     /// <para>Haptic effect for direct control over high/low frequency motors.</para>
@@ -124,19 +124,19 @@ public static partial class SDL
     /// <since>This macro is available since SDL 3.2.0</since>
     /// <seealso cref="HapticLeftRight"/>
     public const uint HAPTIC_LEFTRIGHT = 1u << 11;
-    
+
     /// <summary>
     /// Reserved for future use.
     /// </summary>
     /// <since>This macro is available since SDL 3.2.0</since>
     public const uint HAPTIC_RESERVED1 = 1u << 12;
-    
+
     /// <summary>
     /// Reserved for future use.
     /// </summary>
     /// <since>This macro is available since SDL 3.2.0</since>
     public const uint HAPTIC_RESERVED2 = 1u << 13;
-    
+
     /// <summary>
     /// Reserved for future use.
     /// </summary>
@@ -157,7 +157,7 @@ public static partial class SDL
     /// <since>This macro is available since SDL 3.2.0</since>
     /// <seealso cref="SetHapticGain"/>
     public const uint HAPTIC_GAIN = 1u << 16;
-    
+
     /// <summary>
     /// <para>Device can set autocenter.</para>
     /// <para>Device supports setting autocenter.</para>
@@ -165,7 +165,7 @@ public static partial class SDL
     /// <since>This macro is available since SDL 3.2.0</since>
     /// <seealso cref="SetHapticAutocenter"/>
     public const uint HAPTIC_AUTOCENTER = 1u << 17;
-    
+
     /// <summary>
     /// <para>Device can be queried for effect status.</para>
     /// <para>Device supports querying effect status.</para>
@@ -173,7 +173,7 @@ public static partial class SDL
     /// <since>This macro is available since SDL 3.2.0</since>
     /// <seealso cref="GetHapticEffectStatus"/>
     public const uint HAPTIC_STATUS = 1u << 18;
-    
+
     /// <summary>
     /// <para>Device can be paused.</para>
     /// <para>Devices supports being paused.</para>
@@ -196,14 +196,14 @@ public static partial class SDL
     /// <since>This macro is available since SDL 3.2.0</since>
     /// <seealso cref="HapticDirection"/>
     public const byte HAPTIC_CARTESIAN = 1;
-    
+
     /// <summary>
     /// <para>Uses spherical coordinates for the direction.</para>
     /// </summary>
     /// <since>This macro is available since SDL 3.2.0</since>
     /// <seealso cref="HapticDirection"/>
     public const byte HAPTIC_SPHERICAL = 2;
-    
+
     /// <summary>
     /// <para>Use this value to play an effect on the steering wheel axis.</para>
     /// <para>This provides better compatibility across platforms and devices as SDL will

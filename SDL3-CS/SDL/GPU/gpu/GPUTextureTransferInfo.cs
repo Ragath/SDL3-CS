@@ -50,7 +50,7 @@ public static partial class SDL
         /// The starting byte of the image data in the transfer buffer.
         /// </summary>
         public UInt32 Offset;
-        
+
         /// <summary>
         /// The number of pixels from one row to the next.
         /// </summary>

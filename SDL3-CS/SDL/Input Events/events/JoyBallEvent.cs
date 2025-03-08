@@ -38,35 +38,35 @@ public static partial class SDL
         /// <see cref="EventType.JoystickBallMotion"/>
         /// </summary>
         public EventType Type;
-        
+
         private UInt32 _reserved;
-        
+
         /// <summary>
         /// In nanoseconds, populated using <see cref="GetTicksNS"/>
         /// </summary>
         public UInt64 Timestamp;
-        
+
         /// <summary>
         /// The joystick instance id
         /// </summary>
-        public UInt32 Which; 
-        
+        public UInt32 Which;
+
         /// <summary>
         /// The joystick trackball index
         /// </summary>
         public Byte Ball;
-        
+
         private Byte _padding1;
-        
+
         private Byte _padding2;
-        
+
         private Byte _padding3;
-        
+
         /// <summary>
         /// The relative motion in the X direction
         /// </summary>
         public Int16 XRel;
-        
+
         /// <summary>
         /// The relative motion in the Y direction
         /// </summary>

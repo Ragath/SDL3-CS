@@ -44,8 +44,8 @@ public static partial class SDL
     /// <seealso cref="MetalGetLayer"/>
     [LibraryImport(SDLLibrary, EntryPoint = "SDL_Metal_CreateView"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     public static partial IntPtr MetalCreateView(IntPtr window);
-    
-    
+
+
     /// <code>extern SDL_DECLSPEC void SDLCALL SDL_Metal_DestroyView(SDL_MetalView view);</code>
     /// <summary>
     /// <para>Destroy an existing SDL_MetalView object.</para>
@@ -57,8 +57,8 @@ public static partial class SDL
     /// <seealso cref="MetalCreateView"/>
     [LibraryImport(SDLLibrary, EntryPoint = "SDL_Metal_DestroyView"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     public static partial void MetalDestroyView(IntPtr view);
-    
-    
+
+
     /// <code>extern SDL_DECLSPEC void * SDLCALL SDL_Metal_GetLayer(SDL_MetalView view);</code>
     /// <summary>
     /// <para>Get a pointer to the backing CAMetalLayer for the given view.</para>

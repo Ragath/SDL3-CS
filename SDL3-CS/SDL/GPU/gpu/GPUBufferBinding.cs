@@ -26,26 +26,26 @@ using System.Runtime.InteropServices;
 namespace SDL3;
 
 public static partial class SDL
-{
-    /// <summary>
-    /// A structure specifying parameters in a buffer binding call.
-    /// </summary>
-    /// <since>This struct is available since SDL 3.2.0</since>
-    /// <seealso cref="BindGPUVertexBuffers(nint, uint, GPUBufferBinding[], uint)"/>
-    /// <seealso cref="BindGPUIndexBuffer"/>
-    [StructLayout(LayoutKind.Sequential)]
-    public struct GPUBufferBinding
     {
         /// <summary>
-        /// The buffer to bind. Must have been created with <see cref="GPUBufferUsageFlags.Vertex"/> for
-        /// <see cref="BindGPUVertexBuffers(nint, uint, GPUBufferBinding[], uint)"/>, or
-        /// <see cref="GPUBufferUsageFlags.Index"/> for <see cref="BindGPUIndexBuffer"/>.
+        /// A structure specifying parameters in a buffer binding call.
         /// </summary>
-        public IntPtr Buffer;
-        
-        /// <summary>
-        /// The starting byte of the data to bind in the buffer.
-        /// </summary>
-        public UInt32 Offset;
+        /// <since>This struct is available since SDL 3.2.0</since>
+        /// <seealso cref="BindGPUVertexBuffers(nint, uint, GPUBufferBinding[], uint)"/>
+        /// <seealso cref="BindGPUIndexBuffer"/>
+        [StructLayout(LayoutKind.Sequential)]
+        public struct GPUBufferBinding
+        {
+            /// <summary>
+            /// The buffer to bind. Must have been created with <see cref="GPUBufferUsageFlags.Vertex"/> for
+            /// <see cref="BindGPUVertexBuffers(nint, uint, GPUBufferBinding[], uint)"/>, or
+            /// <see cref="GPUBufferUsageFlags.Index"/> for <see cref="BindGPUIndexBuffer"/>.
+            /// </summary>
+            public IntPtr Buffer;
+
+            /// <summary>
+            /// The starting byte of the data to bind in the buffer.
+            /// </summary>
+            public UInt32 Offset;
+        }
     }
-}

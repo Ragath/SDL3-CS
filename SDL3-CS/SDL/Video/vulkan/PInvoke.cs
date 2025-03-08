@@ -71,8 +71,8 @@ public static partial class SDL
     [LibraryImport(SDLLibrary, EntryPoint = "SDL_Vulkan_LoadLibrary"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     [return: MarshalAs(UnmanagedType.I1)]
     public static partial bool VulkanLoadLibrary([MarshalAs(UnmanagedType.LPUTF8Str)] string? path);
-    
-    
+
+
     /// <code>extern SDL_DECLSPEC SDL_FunctionPointer SDLCALL SDL_Vulkan_GetVkGetInstanceProcAddr(void);</code>
     /// <summary>
     /// <para>Get the address of the <c>vkGetInstanceProcAddr</c> function.</para>
@@ -90,8 +90,8 @@ public static partial class SDL
     /// <since>This function is available since SDL 3.2.0</since>
     [LibraryImport(SDLLibrary, EntryPoint = "SDL_Vulkan_GetVkGetInstanceProcAddr"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     public static partial FunctionPointer? VulkanGetVkGetInstanceProcAddr();
-    
-    
+
+
     /// <code>extern SDL_DECLSPEC void SDLCALL SDL_Vulkan_UnloadLibrary(void);</code>
     /// <summary>
     /// Unload the Vulkan library previously loaded by <see cref="VulkanLoadLibrary"/>.
@@ -100,8 +100,8 @@ public static partial class SDL
     /// <seealso cref="VulkanLoadLibrary"/>
     [LibraryImport(SDLLibrary, EntryPoint = "SDL_Vulkan_UnloadLibrary"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     public static partial void VulkanUnloadLibrary();
-    
-    
+
+
     [LibraryImport(SDLLibrary, EntryPoint = "SDL_Vulkan_GetInstanceExtensions"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial IntPtr SDL_Vulkan_GetInstanceExtensions(out uint count);
     /// <code>extern SDL_DECLSPEC char const * const * SDLCALL SDL_Vulkan_GetInstanceExtensions(Uint32 *count);</code>
@@ -126,8 +126,8 @@ public static partial class SDL
         var ptr = SDL_Vulkan_GetInstanceExtensions(out count);
         return ptr == IntPtr.Zero ? null : PointerToStringArray(ptr);
     }
-    
-    
+
+
     /// <code>extern SDL_DECLSPEC bool SDLCALL SDL_Vulkan_CreateSurface(SDL_Window *window, VkInstance instance, const struct VkAllocationCallbacks *allocator, VkSurfaceKHR* surface);</code>
     /// <summary>
     /// <para>Create a Vulkan rendering surface for a window.</para>
@@ -151,8 +151,8 @@ public static partial class SDL
     [LibraryImport(SDLLibrary, EntryPoint = "SDL_Vulkan_CreateSurface"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     [return: MarshalAs(UnmanagedType.I1)]
     public static partial bool VulkanCreateSurface(IntPtr window, IntPtr instance, IntPtr allocator, out IntPtr surface);
-    
-    
+
+
     /// <code>extern SDL_DECLSPEC void SDLCALL SDL_Vulkan_DestroySurface(VkInstance instance, VkSurfaceKHR surface, const struct VkAllocationCallbacks *allocator);</code>
     /// <summary>
     /// <para>Destroy the Vulkan rendering surface of a window.</para>
@@ -173,8 +173,8 @@ public static partial class SDL
     /// <seealso cref="VulkanCreateSurface"/>
     [LibraryImport(SDLLibrary, EntryPoint = "SDL_Vulkan_DestroySurface"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     public static partial void VulkanDestroySurface(IntPtr instance, IntPtr surface, IntPtr allocator);
-    
-    
+
+
     /// <code>extern SDL_DECLSPEC bool SDLCALL SDL_Vulkan_GetPresentationSupport(VkInstance instance, VkPhysicalDevice physicalDevice, Uint32 queueFamilyIndex);</code>
     /// <summary>
     /// <para>Query support for presentation via a given physical device and queue

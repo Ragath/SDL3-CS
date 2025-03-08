@@ -57,8 +57,8 @@ public static partial class SDL
     [DllImport(SDLLibrary, EntryPoint = "SDL_ShowMessageBox"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     [return: MarshalAs(UnmanagedType.I1)]
     public static extern bool ShowMessageBox(in MessageBoxData messageboxdata, out int buttonid);
-    
-    
+
+
     /// <code>extern SDL_DECLSPEC bool SDLCALL SDL_ShowSimpleMessageBox(SDL_MessageBoxFlags flags, const char *title, const char *message, SDL_Window *window);</code>
     /// <summary>
     /// <para>Display a simple modal message box.</para>

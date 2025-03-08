@@ -24,83 +24,83 @@
 namespace SDL3;
 
 public static partial class SDL
-{
-    /// <summary>
-    /// <para>Specifies a blending factor to be used when pixels in a render target are
-    /// blended with existing pixels in the texture.</para>
-    /// <para>The source color is the value written by the fragment shader. The
-    /// destination color is the value currently existing in the texture.</para>
-    /// </summary>
-    /// <since>This enum is available since SDL 3.2.0</since>
-    /// <seealso cref="CreateGPUGraphicsPipeline"/>
-    public enum GPUBlendFactor
     {
-        Invalid,
-        
         /// <summary>
-        /// 0
+        /// <para>Specifies a blending factor to be used when pixels in a render target are
+        /// blended with existing pixels in the texture.</para>
+        /// <para>The source color is the value written by the fragment shader. The
+        /// destination color is the value currently existing in the texture.</para>
         /// </summary>
-        Zero,
-        
-        /// <summary>
-        /// 1
-        /// </summary>
-        One,
-        
-        /// <summary>
-        /// source color
-        /// </summary>
-        SrcColor,
-        
-        /// <summary>
-        /// 1 - source color
-        /// </summary>
-        OneMinusSrcColor,
-        
-        /// <summary>
-        /// destination color
-        /// </summary>
-        DstColor,
-        
-        
-        /// <summary>
-        /// 1 - destination color
-        /// </summary>
-        OneMinusDstColor,
-        
-        /// <summary>
-        /// source alpha
-        /// </summary>
-        SrcAlpha,
-        
-        /// <summary>
-        /// 1 - source alpha
-        /// </summary>
-        OneMinusSrcAlpha,
-        
-        /// <summary>
-        /// destination alpha
-        /// </summary>
-        DstAlpha,
-        
-        /// <summary>
-        /// 1 - destination alpha
-        /// </summary>
-        OneMinusDstAlpha,
-        
-        /// <summary>
-        /// blend constant
-        /// </summary>
-        ConstantColor,
-        
-        /// <summary>
-        /// 1 - blend constant
-        /// </summary>
-        OneMinusConstantColor,
-        
-        /// <summary>
-        /// min(source alpha, 1 - destination alpha)
-        /// </summary>
-        SrcAlphaSaturate
+        /// <since>This enum is available since SDL 3.2.0</since>
+        /// <seealso cref="CreateGPUGraphicsPipeline"/>
+        public enum GPUBlendFactor
+        {
+            Invalid,
+
+            /// <summary>
+            /// 0
+            /// </summary>
+            Zero,
+
+            /// <summary>
+            /// 1
+            /// </summary>
+            One,
+
+            /// <summary>
+            /// source color
+            /// </summary>
+            SrcColor,
+
+            /// <summary>
+            /// 1 - source color
+            /// </summary>
+            OneMinusSrcColor,
+
+            /// <summary>
+            /// destination color
+            /// </summary>
+            DstColor,
+
+
+            /// <summary>
+            /// 1 - destination color
+            /// </summary>
+            OneMinusDstColor,
+
+            /// <summary>
+            /// source alpha
+            /// </summary>
+            SrcAlpha,
+
+            /// <summary>
+            /// 1 - source alpha
+            /// </summary>
+            OneMinusSrcAlpha,
+
+            /// <summary>
+            /// destination alpha
+            /// </summary>
+            DstAlpha,
+
+            /// <summary>
+            /// 1 - destination alpha
+            /// </summary>
+            OneMinusDstAlpha,
+
+            /// <summary>
+            /// blend constant
+            /// </summary>
+            ConstantColor,
+
+            /// <summary>
+            /// 1 - blend constant
+            /// </summary>
+            OneMinusConstantColor,
+
+            /// <summary>
+            /// min(source alpha, 1 - destination alpha)
+            /// </summary>
+            SrcAlphaSaturate
+        }
     }
-}

@@ -30,36 +30,36 @@ public static partial class SDL
     [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
     public delegate void VirtualJoystickUpdateCallback(IntPtr userdata);
 
-    
+
     [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
     public delegate void VirtualJoystickSetPlayerIndexCallback(IntPtr userdata, int playerIndex);
-    
-    
+
+
     [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
     [return: MarshalAs(UnmanagedType.I1)]
     public delegate bool VirtualJoystickRumbleCallback(IntPtr userdata, ushort lowFrequencyRumble, ushort highFrequencyRumble);
-    
-    
+
+
     [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
     [return: MarshalAs(UnmanagedType.I1)]
     public delegate bool VirtualJoystickRumbleTriggersCallback(IntPtr userdata, ushort leftRumble, ushort rightRumble);
-    
-    
+
+
     [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
     [return: MarshalAs(UnmanagedType.I1)]
     public delegate bool VirtualJoystickSetLEDCallback(IntPtr userdata, byte red, byte green, byte blue);
-    
-    
+
+
     [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
     [return: MarshalAs(UnmanagedType.I1)]
     public delegate bool VirtualJoystickSendEffectCallback(IntPtr userdata, IntPtr data, int size);
-    
-    
+
+
     [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
     [return: MarshalAs(UnmanagedType.I1)]
     public delegate bool VirtualJoystickSetSensorsEnabledCallback(IntPtr userdata, bool enabled);
-    
-    
+
+
     [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
     public delegate void VirtualJoystickCleanupCallback(IntPtr userdata);
 }

@@ -42,8 +42,8 @@ public static partial class SDL
     /// <seealso cref="SetMemoryFunctions"/>
     [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
     public delegate IntPtr MallocFunc(ulong size);
-    
-    
+
+
     /// <code>typedef void *(SDLCALL *SDL_calloc_func)(size_t nmemb, size_t size);</code>
     /// <summary>
     /// <para>A callback used to implement <see cref="Calloc"/>.</para>
@@ -61,8 +61,8 @@ public static partial class SDL
     /// <seealso cref="SetMemoryFunctions"/>
     [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
     public delegate IntPtr CallocFunc(ulong nmemb, ulong size);
-    
-    
+
+
     /// <code>typedef void *(SDLCALL *SDL_realloc_func)(void *mem, size_t size);</code>
     /// <summary>
     /// <para>A callback used to implement <see cref="Realloc"/>.</para>
@@ -80,8 +80,8 @@ public static partial class SDL
     /// <seealso cref="SetMemoryFunctions"/>
     [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
     public delegate IntPtr ReallocFunc(IntPtr mem, ulong size);
-    
-    
+
+
     /// <code>typedef void (SDLCALL *SDL_free_func)(void *mem);</code>
     /// <summary>
     /// <para>A callback used to implement <see cref="Free"/>.</para>
@@ -96,8 +96,8 @@ public static partial class SDL
     /// <seealso cref="SetMemoryFunctions"/>
     [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
     public delegate void FreeFunc(IntPtr mem);
-    
-    
+
+
     /// <summary>
     /// <para>A generic function pointer.</para>
     /// <para>In theory, generic function pointers should use this, instead of <c>void *</c>,

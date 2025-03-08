@@ -26,84 +26,84 @@ using System.Runtime.InteropServices;
 namespace SDL3;
 
 public static partial class SDL
-{
-    /// <summary>
-    /// A structure specifying the parameters of a compute pipeline state.
-    /// </summary>
-    /// <since>This struct is available since SDL 3.2.0</since>
-    /// <seealso cref="CreateGPUComputePipeline"/>
-    /// <seealso cref="GPUShaderFormat"/>
-    [StructLayout(LayoutKind.Sequential)]
-    public struct GPUComputePipelineCreateInfo
     {
         /// <summary>
-        /// The size in bytes of the compute shader code pointed to.
+        /// A structure specifying the parameters of a compute pipeline state.
         /// </summary>
-        public UIntPtr CodeSize;
-        
-        /// <summary>
-        /// A pointer to compute shader code.
-        /// </summary>
-        public IntPtr Code;
-        
-        /// <summary>
-        /// A pointer to a null-terminated UTF-8 string specifying the entry point function name for the shader.
-        /// </summary>
-        public IntPtr Entrypoint;
-        
-        /// <summary>
-        /// The format of the compute shader code.
-        /// </summary>
-        public GPUShaderFormat Format;
-        
-        /// <summary>
-        /// The number of samplers defined in the shader.
-        /// </summary>
-        public UInt32 NumSamplers;
-        
-        /// <summary>
-        /// The number of readonly storage textures defined in the shader.
-        /// </summary>
-        public UInt32 NumReadonlyStorageTextures;
-        
-        /// <summary>
-        /// The number of readonly storage buffers defined in the shader.
-        /// </summary>
-        public UInt32 NumReadonlyStorageBuffers;
-        
-        /// <summary>
-        /// The number of read-write storage textures defined in the shader.
-        /// </summary>
-        public UInt32 NumReadwriteStorageTextures;
-        
-        /// <summary>
-        /// The number of read-write storage buffers defined in the shader.
-        /// </summary>
-        public UInt32 NumReadwriteStorageBuffers;
-        
-        /// <summary>
-        /// The number of uniform buffers defined in the shader.
-        /// </summary>
-        public UInt32 NumUniformBuffers;
-        
-        /// <summary>
-        /// The number of threads in the X dimension. This should match the value in the shader.
-        /// </summary>
-        public UInt32 ThreadcountX;
-        
-        /// <summary>
-        /// The number of threads in the Y dimension. This should match the value in the shader.
-        /// </summary>
-        public UInt32 ThreadcountY;
-        
-        /// <summary>
-        /// The number of threads in the Z dimension. This should match the value in the shader.
-        /// </summary>
-        public UInt32 ThreadcountZ;
+        /// <since>This struct is available since SDL 3.2.0</since>
+        /// <seealso cref="CreateGPUComputePipeline"/>
+        /// <seealso cref="GPUShaderFormat"/>
+        [StructLayout(LayoutKind.Sequential)]
+        public struct GPUComputePipelineCreateInfo
+        {
+            /// <summary>
+            /// The size in bytes of the compute shader code pointed to.
+            /// </summary>
+            public UIntPtr CodeSize;
 
-        /// <summary>
-        /// A properties ID for extensions. Should be 0 if no extensions are needed.
-        /// </summary>
-        public UInt32 Props;
+            /// <summary>
+            /// A pointer to compute shader code.
+            /// </summary>
+            public IntPtr Code;
+
+            /// <summary>
+            /// A pointer to a null-terminated UTF-8 string specifying the entry point function name for the shader.
+            /// </summary>
+            public IntPtr Entrypoint;
+
+            /// <summary>
+            /// The format of the compute shader code.
+            /// </summary>
+            public GPUShaderFormat Format;
+
+            /// <summary>
+            /// The number of samplers defined in the shader.
+            /// </summary>
+            public UInt32 NumSamplers;
+
+            /// <summary>
+            /// The number of readonly storage textures defined in the shader.
+            /// </summary>
+            public UInt32 NumReadonlyStorageTextures;
+
+            /// <summary>
+            /// The number of readonly storage buffers defined in the shader.
+            /// </summary>
+            public UInt32 NumReadonlyStorageBuffers;
+
+            /// <summary>
+            /// The number of read-write storage textures defined in the shader.
+            /// </summary>
+            public UInt32 NumReadwriteStorageTextures;
+
+            /// <summary>
+            /// The number of read-write storage buffers defined in the shader.
+            /// </summary>
+            public UInt32 NumReadwriteStorageBuffers;
+
+            /// <summary>
+            /// The number of uniform buffers defined in the shader.
+            /// </summary>
+            public UInt32 NumUniformBuffers;
+
+            /// <summary>
+            /// The number of threads in the X dimension. This should match the value in the shader.
+            /// </summary>
+            public UInt32 ThreadcountX;
+
+            /// <summary>
+            /// The number of threads in the Y dimension. This should match the value in the shader.
+            /// </summary>
+            public UInt32 ThreadcountY;
+
+            /// <summary>
+            /// The number of threads in the Z dimension. This should match the value in the shader.
+            /// </summary>
+            public UInt32 ThreadcountZ;
+
+            /// <summary>
+            /// A properties ID for extensions. Should be 0 if no extensions are needed.
+            /// </summary>
+            public UInt32 Props;
+        }
     }
-}

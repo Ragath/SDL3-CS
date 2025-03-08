@@ -39,8 +39,8 @@ public static partial class SDL
     /// <seealso cref="SetLogPriority"/>
     [LibraryImport(SDLLibrary, EntryPoint = "SDL_SetLogPriorities"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     public static partial void SetLogPriorities(LogPriority priority);
-    
-    
+
+
     /// <code>extern SDL_DECLSPEC void SDLCALL SDL_SetLogPriority(int category, SDL_LogPriority priority);</code>
     /// <summary>
     /// Set the priority of a particular log category.
@@ -54,8 +54,8 @@ public static partial class SDL
     /// <seealso cref="SetLogPriorities"/>
     [LibraryImport(SDLLibrary, EntryPoint = "SDL_SetLogPriority"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     public static partial void SetLogPriority(LogCategory category, LogPriority priority);
-    
-    
+
+
     /// <code>extern SDL_DECLSPEC SDL_LogPriority SDLCALL SDL_GetLogPriority(int category);</code>
     /// <summary>
     /// Get the priority of a particular log category.
@@ -67,8 +67,8 @@ public static partial class SDL
     /// <seealso cref="SetLogPriority"/>
     [LibraryImport(SDLLibrary, EntryPoint = "SDL_GetLogPriority"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     public static partial LogPriority GetLogPriority(LogCategory category);
-    
-    
+
+
     /// <code>extern SDL_DECLSPEC void SDLCALL SDL_ResetLogPriorities(void);</code>
     /// <summary>
     /// Reset all priorities to default.
@@ -80,8 +80,8 @@ public static partial class SDL
     /// <seealso cref="SetLogPriority"/>
     [LibraryImport(SDLLibrary, EntryPoint = "SDL_ResetLogPriorities"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     public static partial void ResetLogPriorities();
-    
-    
+
+
     /// <code>extern SDL_DECLSPEC bool SDLCALL SDL_SetLogPriorityPrefix(SDL_LogPriority priority, const char *prefix);</code>
     /// <summary>
     /// <para>Set the text prepended to log messages of a given priority.</para>
@@ -102,7 +102,7 @@ public static partial class SDL
     [return: MarshalAs(UnmanagedType.I1)]
     public static partial bool SetLogPriorityPrefix(LogPriority priority, [MarshalAs(UnmanagedType.LPUTF8Str)] string? prefix);
 
-    
+
     /// <code>extern SDL_DECLSPEC void SDLCALL SDL_Log(SDL_PRINTF_FORMAT_STRING const char *fmt, ...) SDL_PRINTF_VARARG_FUNC(1);</code>
     /// <summary>
     /// Log a message with <see cref="LogCategory.Application"/> and <see cref="LogPriority.Info"/>.
@@ -121,8 +121,8 @@ public static partial class SDL
     /// <seealso cref="LogWarn"/>
     [LibraryImport(SDLLibrary, EntryPoint = "SDL_Log"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     public static partial void Log([MarshalAs(UnmanagedType.LPUTF8Str)] string fmt);
-    
-    
+
+
     /// <code>extern SDL_DECLSPEC void SDLCALL SDL_LogTrace(int category, SDL_PRINTF_FORMAT_STRING const char *fmt, ...) SDL_PRINTF_VARARG_FUNC(2);</code>
     /// <summary>
     /// Log a message with <see cref="LogPriority.Trace"/>.
@@ -143,8 +143,8 @@ public static partial class SDL
     /// <seealso cref="LogWarn"/>
     [LibraryImport(SDLLibrary, EntryPoint = "SDL_LogTrace"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     public static partial void LogTrace(LogCategory category, [MarshalAs(UnmanagedType.LPUTF8Str)] string fmt);
-    
-    
+
+
     /// <code>extern SDL_DECLSPEC void SDLCALL SDL_LogVerbose(int category, SDL_PRINTF_FORMAT_STRING const char *fmt, ...) SDL_PRINTF_VARARG_FUNC(2);</code>
     /// <summary>
     /// Log a message with <see cref="LogPriority.Verbose"/>,
@@ -163,8 +163,8 @@ public static partial class SDL
     /// <seealso cref="LogWarn"/>
     [LibraryImport(SDLLibrary, EntryPoint = "SDL_LogVerbose"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     public static partial void LogVerbose(LogCategory category, [MarshalAs(UnmanagedType.LPUTF8Str)] string fmt);
-    
-    
+
+
     /// <code>extern SDL_DECLSPEC void SDLCALL SDL_LogDebug(int category, SDL_PRINTF_FORMAT_STRING const char *fmt, ...) SDL_PRINTF_VARARG_FUNC(2);</code>
     /// <summary>
     /// Log a message with <see cref="LogPriority.Debug"/>.
@@ -184,8 +184,8 @@ public static partial class SDL
     /// <seealso cref="LogWarn"/>
     [LibraryImport(SDLLibrary, EntryPoint = "SDL_LogDebug"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     public static partial void LogDebug(LogCategory category, [MarshalAs(UnmanagedType.LPUTF8Str)] string message);
-    
-    
+
+
     /// <code>extern SDL_DECLSPEC void SDLCALL SDL_LogInfo(int category, SDL_PRINTF_FORMAT_STRING const char *fmt, ...) SDL_PRINTF_VARARG_FUNC(2);</code>
     /// <summary>
     /// Log a message with <see cref="LogPriority.Info"/>.
@@ -205,8 +205,8 @@ public static partial class SDL
     /// <seealso cref="LogWarn"/>
     [LibraryImport(SDLLibrary, EntryPoint = "SDL_LogInfo"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     public static partial void LogInfo(LogCategory category, [MarshalAs(UnmanagedType.LPUTF8Str)] string fmt);
-    
-    
+
+
     /// <code>extern SDL_DECLSPEC void SDLCALL SDL_LogWarn(int category, SDL_PRINTF_FORMAT_STRING const char *fmt, ...) SDL_PRINTF_VARARG_FUNC(2);</code>
     /// <summary>
     /// Log a message with <see cref="LogPriority.Warn"/>.
@@ -227,7 +227,7 @@ public static partial class SDL
     [LibraryImport(SDLLibrary, EntryPoint = "SDL_LogWarn"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     public static partial void LogWarn(LogCategory category, [MarshalAs(UnmanagedType.LPUTF8Str)] string fmt);
 
-    
+
     /// <code>extern SDL_DECLSPEC void SDLCALL SDL_LogError(int category, SDL_PRINTF_FORMAT_STRING const char *fmt, ...) SDL_PRINTF_VARARG_FUNC(2);</code>
     /// <summary>
     /// Log a message with <see cref="LogPriority.Error"/>.
@@ -247,8 +247,8 @@ public static partial class SDL
     /// <seealso cref="LogWarn"/>
     [LibraryImport(SDLLibrary, EntryPoint = "SDL_LogError"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     public static partial void LogError(LogCategory category, [MarshalAs(UnmanagedType.LPUTF8Str)] string fmt);
-    
-    
+
+
     /// <code>extern SDL_DECLSPEC void SDLCALL SDL_LogCritical(int category, SDL_PRINTF_FORMAT_STRING const char *fmt, ...) SDL_PRINTF_VARARG_FUNC(2);</code>
     /// <summary>
     /// Log a message with <see cref="LogPriority.Critical"/>.
@@ -267,8 +267,8 @@ public static partial class SDL
     /// <seealso cref="LogWarn"/>
     [LibraryImport(SDLLibrary, EntryPoint = "SDL_LogCritical"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     public static partial void LogCritical(LogCategory category, [MarshalAs(UnmanagedType.LPUTF8Str)] string fmt);
-    
-    
+
+
     /// <code>extern SDL_DECLSPEC void SDLCALL SDL_LogMessage(int category, SDL_LogPriority priority, SDL_PRINTF_FORMAT_STRING const char *fmt, ...) SDL_PRINTF_VARARG_FUNC(3);</code>
     /// <summary>
     /// Log a message with the specified category and priority.
@@ -289,8 +289,8 @@ public static partial class SDL
     /// <seealso cref="LogWarn"/>
     [LibraryImport(SDLLibrary, EntryPoint = "SDL_LogMessage"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     public static partial void LogMessage(LogCategory category, LogPriority priority, [MarshalAs(UnmanagedType.LPUTF8Str)] string fmt);
-    
-    
+
+
     /// <code>extern SDL_DECLSPEC void SDLCALL SDL_LogMessageV(int category, SDL_LogPriority priority, SDL_PRINTF_FORMAT_STRING const char *fmt, va_list ap) SDL_PRINTF_VARARG_FUNCV(3);</code>
     /// <summary>
     /// Log a message with the specified category and priority.
@@ -312,8 +312,8 @@ public static partial class SDL
     /// <seealso cref="LogWarn"/>
     [LibraryImport(SDLLibrary, EntryPoint = "SDL_LogMessageV"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     public static partial void LogMessageV(LogCategory category, LogPriority priority, [MarshalAs(UnmanagedType.LPUTF8Str)] string fmt, [MarshalAs(UnmanagedType.LPArray, ArraySubType = UnmanagedType.LPUTF8Str)] string[] ap);
-    
-    
+
+
     /// <code>extern SDL_DECLSPEC SDL_LogOutputFunction SDLCALL SDL_GetDefaultLogOutputFunction(void);</code>
     /// <summary>
     /// Get the default log output function.
@@ -325,8 +325,8 @@ public static partial class SDL
     /// <seealso cref="GetLogOutputFunction"/>
     [LibraryImport(SDLLibrary, EntryPoint = "SDL_LogOutputFunction"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     public static partial LogOutputFunction GetDefaultLogOutputFunction();
-    
-    
+
+
     /// <code>extern SDL_DECLSPEC void SDLCALL SDL_GetLogOutputFunction(SDL_LogOutputFunction *callback, void **userdata);</code>
     /// <summary>
     /// <para>Get the current log output function.</para>
@@ -341,8 +341,8 @@ public static partial class SDL
     /// <seealso cref="SetLogOutputFunction"/>
     [LibraryImport(SDLLibrary, EntryPoint = "SDL_GetLogOutputFunction"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     public static partial void GetLogOutputFunction(out LogOutputFunction callback, out IntPtr userdata);
-    
-    
+
+
     /// <code>extern SDL_DECLSPEC void SDLCALL SDL_SetLogOutputFunction(SDL_LogOutputFunction callback, void *userdata);</code>
     /// <summary>
     /// Replace the default log output function with one of your own.

@@ -44,8 +44,8 @@ public partial class SDL
     /// <since>This datatype is available since SDL 3.2.0</since>
     [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
     public delegate AppResult AppInitFunc(IntPtr appstate, int argc, string[] argv);
-    
-    
+
+
     /// <code>typedef SDL_AppResult (SDLCALL *SDL_AppIterate_func)(void *appstate);</code>
     /// <summary>
     /// <para>Function pointer typedef for <see cref="AppIterate"/>.</para>
@@ -59,8 +59,8 @@ public partial class SDL
     /// <since>This datatype is available since SDL 3.2.0</since>
     [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
     public delegate AppResult AppIterateFunc(IntPtr appstate);
-    
-    
+
+
     /// <code>typedef SDL_AppResult (SDLCALL *SDL_AppEvent_func)(void *appstate, SDL_Event *event);</code>
     /// <summary>
     /// <para>Function pointer typedef for <see cref="AppEvent"/>.</para>
@@ -75,8 +75,8 @@ public partial class SDL
     /// <since>This datatype is available since SDL 3.2.0</since>
     [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
     public delegate AppResult AppEventFunc(IntPtr appstate, ref Event @event);
-    
-    
+
+
     /// <code>typedef void (SDLCALL *SDL_AppQuit_func)(void *appstate, SDL_AppResult result);</code>
     /// <summary>
     /// <para>Function pointer typedef for <see cref="AppQuit"/>.</para>
@@ -89,8 +89,8 @@ public partial class SDL
     /// <since>This datatype is available since SDL 3.2.0</since>
     [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
     public delegate void AppQuitFunc(IntPtr appstate, AppResult result);
-    
-    
+
+
     /// <code>typedef void (SDLCALL *SDL_MainThreadCallback)(void *userdata);</code>
     /// <summary>
     /// Callback run on the main thread.

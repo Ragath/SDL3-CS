@@ -36,7 +36,7 @@ public static partial class SDL
         /// Marks the default button when return is hit
         /// </summary>
         ReturnkeyDefault = 0x00000001u,
-        
+
         /// <summary>
         /// Marks the default button when escape is hit
         /// </summary>

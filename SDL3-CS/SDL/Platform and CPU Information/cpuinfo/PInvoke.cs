@@ -39,8 +39,8 @@ public static partial class SDL
     /// <since>This function is available since SDL 3.2.0</since>
     [LibraryImport(SDLLibrary, EntryPoint = "SDL_GetNumLogicalCPUCores"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     public static partial int GetNumLogicalCPUCores();
-    
-    
+
+
     /// <code>extern SDL_DECLSPEC int SDLCALL SDL_GetCPUCacheLineSize(void);</code>
     /// <summary>
     /// <para>Determine the L1 cache line size of the CPU.</para>
@@ -52,8 +52,8 @@ public static partial class SDL
     /// <since>This function is available since SDL 3.2.0</since>
     [LibraryImport(SDLLibrary, EntryPoint = "SDL_GetCPUCacheLineSize"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     public static partial int GetCPUCacheLineSize();
-    
-    
+
+
     /// <code>extern SDL_DECLSPEC bool SDLCALL SDL_HasAltiVec(void);</code>
     /// <summary>
     /// <para>Determine whether the CPU has AltiVec features.</para>
@@ -66,8 +66,8 @@ public static partial class SDL
     [LibraryImport(SDLLibrary, EntryPoint = "SDL_HasAltiVec"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     [return: MarshalAs(UnmanagedType.I1)]
     public static partial bool HasAltiVec();
-    
-    
+
+
     /// <code>extern SDL_DECLSPEC bool SDLCALL SDL_HasMMX(void);</code>
     /// <summary>
     /// <para>Determine whether the CPU has MMX features.</para>
@@ -79,8 +79,8 @@ public static partial class SDL
     [LibraryImport(SDLLibrary, EntryPoint = "SDL_HasMMX"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     [return: MarshalAs(UnmanagedType.I1)]
     public static partial bool HasMMX();
-    
-    
+
+
     /// <code>extern SDL_DECLSPEC bool SDLCALL SDL_HasSSE(void);</code>
     /// <summary>
     /// <para>Determine whether the CPU has SSE features.</para>
@@ -96,8 +96,8 @@ public static partial class SDL
     [LibraryImport(SDLLibrary, EntryPoint = "SDL_HasSSE"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     [return: MarshalAs(UnmanagedType.I1)]
     public static partial bool HasSSE();
-    
-    
+
+
     /// <code>extern SDL_DECLSPEC bool SDLCALL SDL_HasSSE2(void);</code>
     /// <summary>
     /// <para>Determine whether the CPU has SSE2 features.</para>
@@ -113,8 +113,8 @@ public static partial class SDL
     [LibraryImport(SDLLibrary, EntryPoint = "SDL_HasSSE2"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     [return: MarshalAs(UnmanagedType.I1)]
     public static partial bool HasSSE2();
-    
-    
+
+
     /// <code>extern SDL_DECLSPEC bool SDLCALL SDL_HasSSE3(void);</code>
     /// <summary>
     /// <para>Determine whether the CPU has SSE3 features.</para>
@@ -147,8 +147,8 @@ public static partial class SDL
     [LibraryImport(SDLLibrary, EntryPoint = "SDL_HasSSE41"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     [return: MarshalAs(UnmanagedType.I1)]
     public static partial bool HasSSE41();
-    
-    
+
+
     /// <code>extern SDL_DECLSPEC bool SDLCALL SDL_HasSSE42(void);</code>
     /// <summary>
     /// <para>Determine whether the CPU has SSE4.2 features.</para>
@@ -164,8 +164,8 @@ public static partial class SDL
     [LibraryImport(SDLLibrary, EntryPoint = "SDL_HasSSE42"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     [return: MarshalAs(UnmanagedType.I1)]
     public static partial bool HasSSE42();
-    
-    
+
+
     /// <code>extern SDL_DECLSPEC bool SDLCALL SDL_HasAVX(void);</code>
     /// <summary>
     /// <para>Determine whether the CPU has AVX features.</para>
@@ -179,8 +179,8 @@ public static partial class SDL
     [LibraryImport(SDLLibrary, EntryPoint = "SDL_HasAVX"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     [return: MarshalAs(UnmanagedType.I1)]
     public static partial bool HasAVX();
-    
-    
+
+
     /// <code>extern SDL_DECLSPEC bool SDLCALL SDL_HasAVX2(void);</code>
     /// <summary>
     /// <para>Determine whether the CPU has AVX2 features.</para>
@@ -194,8 +194,8 @@ public static partial class SDL
     [LibraryImport(SDLLibrary, EntryPoint = "SDL_HasAVX2"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     [return: MarshalAs(UnmanagedType.I1)]
     public static partial bool HasAVX2();
-    
-    
+
+
     /// <code>extern SDL_DECLSPEC bool SDLCALL SDL_HasAVX512F(void);</code>
     /// <summary>
     /// <para>Determine whether the CPU has AVX-512F (foundation) features.</para>
@@ -209,8 +209,8 @@ public static partial class SDL
     [LibraryImport(SDLLibrary, EntryPoint = "SDL_HasAVX512F"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     [return: MarshalAs(UnmanagedType.I1)]
     public static partial bool HasAVX512F();
-    
-    
+
+
     /// <code>extern SDL_DECLSPEC bool SDLCALL SDL_HasARMSIMD(void);</code>
     /// <summary>
     /// <para>Determine whether the CPU has ARM SIMD (ARMv6) features.</para>
@@ -224,8 +224,8 @@ public static partial class SDL
     [LibraryImport(SDLLibrary, EntryPoint = "SDL_HasARMSIMD"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     [return: MarshalAs(UnmanagedType.I1)]
     public static partial bool HasARMSIMD();
-    
-    
+
+
     /// <code>extern SDL_DECLSPEC bool SDLCALL SDL_HasNEON(void);</code>
     /// <summary>
     /// <para>Determine whether the CPU has NEON (ARM SIMD) features.</para>
@@ -237,8 +237,8 @@ public static partial class SDL
     [LibraryImport(SDLLibrary, EntryPoint = "SDL_HasNEON"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     [return: MarshalAs(UnmanagedType.I1)]
     public static partial bool HasNEON();
-    
-    
+
+
     /// <code>extern SDL_DECLSPEC bool SDLCALL SDL_HasLSX(void);</code>
     /// <summary>
     /// <para>Determine whether the CPU has LSX (LOONGARCH SIMD) features.</para>
@@ -251,8 +251,8 @@ public static partial class SDL
     [LibraryImport(SDLLibrary, EntryPoint = "SDL_HasLSX"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     [return: MarshalAs(UnmanagedType.I1)]
     public static partial bool HasLSX();
-    
-    
+
+
     /// <code>extern SDL_DECLSPEC bool SDLCALL SDL_HasLASX(void);</code>
     /// <summary>
     /// <para>Determine whether the CPU has LASX (LOONGARCH SIMD) features.</para>
@@ -265,8 +265,8 @@ public static partial class SDL
     [LibraryImport(SDLLibrary, EntryPoint = "SDL_HasLASX"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     [return: MarshalAs(UnmanagedType.I1)]
     public static partial bool HasLASX();
-    
-    
+
+
     /// <code>extern SDL_DECLSPEC int SDLCALL SDL_GetSystemRAM(void);</code>
     /// <summary>
     /// Get the amount of RAM configured in the system.
@@ -276,8 +276,8 @@ public static partial class SDL
     /// <since>This function is available since SDL 3.2.0</since>
     [LibraryImport(SDLLibrary, EntryPoint = "SDL_GetSystemRAM"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     public static partial int GetSystemRAM();
-    
-    
+
+
     /// <code>extern SDL_DECLSPEC size_t SDLCALL SDL_GetSIMDAlignment(void);</code>
     /// <summary>
     /// <para>Report the alignment this system needs for SIMD allocations.</para>

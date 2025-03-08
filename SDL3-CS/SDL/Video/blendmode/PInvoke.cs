@@ -110,10 +110,10 @@ public static partial class SDL
     /// <seealso cref="SetTextureBlendMode"/>
     /// <seealso cref="GetTextureBlendMode"/>
     [LibraryImport(SDLLibrary, EntryPoint = "SDL_ComposeCustomBlendMode"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
-    public static partial BlendMode ComposeCustomBlendMode(BlendFactor srcColorFactor, 
+    public static partial BlendMode ComposeCustomBlendMode(BlendFactor srcColorFactor,
         BlendFactor dstColorFactor,
-        BlendOperation colorOperation, 
-        BlendFactor srcAlphaFactor, 
+        BlendOperation colorOperation,
+        BlendFactor srcAlphaFactor,
         BlendFactor dstAlphaFactor,
         BlendOperation alphaOperation);
 }

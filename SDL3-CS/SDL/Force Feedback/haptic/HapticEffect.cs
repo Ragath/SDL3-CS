@@ -99,27 +99,27 @@ public static partial class SDL
         /// Constant effect.
         /// </summary>
         public HapticConstant Constant;
-        
+
         /// <summary>
         /// Periodic effect.
         /// </summary>
         public HapticPeriodic Periodic;
-        
+
         /// <summary>
         /// Condition effect.
         /// </summary>
         public HapticCondition Condition;
-        
+
         /// <summary>
         /// Ramp effect.
         /// </summary>
         public HapticRamp Ramp;
-        
+
         /// <summary>
         /// Left/Right effect.
         /// </summary>
         public HapticLeftRight Leftright;
-        
+
         /// <summary>
         /// Custom effect.
         /// </summary>

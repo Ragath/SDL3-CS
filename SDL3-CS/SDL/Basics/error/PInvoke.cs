@@ -49,8 +49,8 @@ public static partial class SDL
     [LibraryImport(SDLLibrary, EntryPoint = "SDL_SetError"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     [return: MarshalAs(UnmanagedType.I1)]
     public static partial bool SetError([MarshalAs(UnmanagedType.LPUTF8Str)] string message);
-    
-    
+
+
     /// <code>extern SDL_DECLSPEC bool SDLCALL SDL_SetErrorV(SDL_PRINTF_FORMAT_STRING const char *fmt, va_list ap) SDL_PRINTF_VARARG_FUNCV(1);</code>
     /// <summary>
     /// <para>Set the SDL error message for the current thread.</para>
@@ -67,7 +67,7 @@ public static partial class SDL
     [LibraryImport(SDLLibrary, EntryPoint = "SDL_SetErrorV"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     [return: MarshalAs(UnmanagedType.U1)]
     public static partial bool SetErrorV([MarshalAs(UnmanagedType.LPUTF8Str)] string fmt, [MarshalAs(UnmanagedType.LPArray, ArraySubType = UnmanagedType.LPUTF8Str)] string[] ap);
-    
+
 
     /// <code>extern SDL_DECLSPEC bool SDLCALL SDL_OutOfMemory(void);</code>
     /// <summary>
@@ -80,8 +80,8 @@ public static partial class SDL
     [LibraryImport(SDLLibrary, EntryPoint = "SDL_OutOfMemory"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     [return: MarshalAs(UnmanagedType.U1)]
     public static partial bool OutOfMemory();
-    
-    
+
+
     [LibraryImport(SDLLibrary, EntryPoint = "SDL_GetError"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial IntPtr SDL_GetError();
     /// <code>extern SDL_DECLSPEC const char * SDLCALL SDL_GetError(void);</code>
@@ -114,11 +114,11 @@ public static partial class SDL
     /// <seealso cref="SetError"/>
     public static string GetError()
     {
-        var value = SDL_GetError(); 
+        var value = SDL_GetError();
         return value == IntPtr.Zero ? "" : Marshal.PtrToStringUTF8(value)!;
     }
-    
-    
+
+
     /// <code>extern SDL_DECLSPEC bool SDLCALL SDL_ClearError(void);</code>
     /// <summary>
     /// Clear any previous error message for this thread.

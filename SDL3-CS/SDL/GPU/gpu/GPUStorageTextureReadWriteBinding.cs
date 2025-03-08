@@ -26,40 +26,40 @@ using System.Runtime.InteropServices;
 namespace SDL3;
 
 public static partial class SDL
-{
-    /// <summary>
-    /// A structure specifying parameters related to binding textures in a compute
-    /// pass.
-    /// </summary>
-    /// <since>This struct is available since SDL 3.2.0</since>
-    /// <seealso cref="BeginGPUComputePass"/>
-    [StructLayout(LayoutKind.Sequential)]
-    public struct GPUStorageTextureReadWriteBinding
     {
         /// <summary>
-        /// The texture to bind. Must have been created with <see cref="GPUTextureUsageFlags.ComputeStorageWrite"/> or <see cref="GPUTextureUsageFlags.ComputeStorageSimultaneousReadWrite"/>.
+        /// A structure specifying parameters related to binding textures in a compute
+        /// pass.
         /// </summary>
-        public IntPtr Texture;
-        
-        /// <summary>
-        /// The mip level index to bind.
-        /// </summary>
-        public UInt32 MipLevel;
-        
-        /// <summary>
-        /// The layer index to bind.
-        /// </summary>
-        public UInt32 Layer;
-        
-        /// <summary>
-        /// true cycles the texture if it is already bound.
-        /// </summary>
-        public Byte Cycle;
-        
-        private Byte _padding1;
-        
-        private Byte _padding2;
-        
-        private Byte _padding3;
+        /// <since>This struct is available since SDL 3.2.0</since>
+        /// <seealso cref="BeginGPUComputePass"/>
+        [StructLayout(LayoutKind.Sequential)]
+        public struct GPUStorageTextureReadWriteBinding
+        {
+            /// <summary>
+            /// The texture to bind. Must have been created with <see cref="GPUTextureUsageFlags.ComputeStorageWrite"/> or <see cref="GPUTextureUsageFlags.ComputeStorageSimultaneousReadWrite"/>.
+            /// </summary>
+            public IntPtr Texture;
+
+            /// <summary>
+            /// The mip level index to bind.
+            /// </summary>
+            public UInt32 MipLevel;
+
+            /// <summary>
+            /// The layer index to bind.
+            /// </summary>
+            public UInt32 Layer;
+
+            /// <summary>
+            /// true cycles the texture if it is already bound.
+            /// </summary>
+            public Byte Cycle;
+
+            private Byte _padding1;
+
+            private Byte _padding2;
+
+            private Byte _padding3;
+        }
     }
-}

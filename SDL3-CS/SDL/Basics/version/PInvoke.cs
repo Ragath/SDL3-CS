@@ -42,8 +42,8 @@ public static partial class SDL
     /// <seealso cref="GetRevision"/>
     [LibraryImport(SDLLibrary, EntryPoint = "SDL_GetVersion"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     public static partial int GetVersion();
-    
-    
+
+
     [LibraryImport(SDLLibrary, EntryPoint = "SDL_GetRevision"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial IntPtr SDL_GetRevision();
     /// <code>extern SDL_DECLSPEC const char * SDLCALL SDL_GetRevision(void);</code>
@@ -66,7 +66,7 @@ public static partial class SDL
     /// <seealso cref="GetVersion"/>
     public static string GetRevision()
     {
-        var value = SDL_GetRevision(); 
+        var value = SDL_GetRevision();
         return value == IntPtr.Zero ? "" : Marshal.PtrToStringUTF8(value)!;
     }
 }

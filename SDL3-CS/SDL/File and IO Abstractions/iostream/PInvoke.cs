@@ -104,8 +104,8 @@ public static partial class SDL
     /// <seealso cref="WriteIO"/>
     [LibraryImport(SDLLibrary, EntryPoint = "SDL_IOFromFile"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     public static partial IntPtr IOFromFile([MarshalAs(UnmanagedType.LPUTF8Str)] string file, [MarshalAs(UnmanagedType.LPUTF8Str)] string mode);
-    
-    
+
+
     /// <code>extern SDL_DECLSPEC SDL_IOStream * SDLCALL SDL_IOFromMem(void *mem, size_t size);</code>
     /// <summary>
     /// <para>Use this function to prepare a read-write memory buffer for use with
@@ -140,8 +140,8 @@ public static partial class SDL
     /// <seealso cref="WriteIO"/>
     [LibraryImport(SDLLibrary, EntryPoint = "SDL_IOFromMem"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     public static partial IntPtr IOFromMem(IntPtr mem, ulong size);
-    
-    
+
+
     /// <code>extern SDL_DECLSPEC SDL_IOStream * SDLCALL SDL_IOFromConstMem(const void *mem, size_t size);</code>
     /// <summary>
     /// <para>Use this function to prepare a read-only memory buffer for use with
@@ -175,8 +175,8 @@ public static partial class SDL
     /// <seealso cref="TellIO"/>
     [LibraryImport(SDLLibrary, EntryPoint = "SDL_IOFromConstMem"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     public static partial IntPtr IOFromConstMem(IntPtr mem, ulong size);
-    
-    
+
+
     /// <code>extern SDL_DECLSPEC SDL_IOStream * SDLCALL SDL_IOFromDynamicMem(void);</code>
     /// <summary>
     /// <para>Use this function to create an SDL_IOStream that is backed by dynamically
@@ -203,8 +203,8 @@ public static partial class SDL
     /// <seealso cref="WriteIO"/>
     [LibraryImport(SDLLibrary, EntryPoint = "SDL_IOFromDynamicMem"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     public static partial IntPtr IOFromDynamicMem();
-    
-    
+
+
     /// <code>extern SDL_DECLSPEC SDL_IOStream * SDLCALL SDL_OpenIO(const SDL_IOStreamInterface *iface, void *userdata);</code>
     /// <summary>
     /// <para>Create a custom SDL_IOStream.</para>
@@ -228,8 +228,8 @@ public static partial class SDL
     /// <seealso cref="IOFromMem"/>
     [DllImport(SDLLibrary, EntryPoint = "SDL_OpenIO"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     public static extern IntPtr OpenIO(in IOStreamInterface iface, IntPtr userdata);
-    
-    
+
+
     /// <code>extern SDL_DECLSPEC bool SDLCALL SDL_CloseIO(SDL_IOStream *context);</code>
     /// <summary>
     /// <para>Close and free an allocated SDL_IOStream structure.</para>
@@ -256,8 +256,8 @@ public static partial class SDL
     [LibraryImport(SDLLibrary, EntryPoint = "SDL_CloseIO"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     [return: MarshalAs(UnmanagedType.I1)]
     public static partial bool CloseIO(IntPtr context);
-    
-    
+
+
     /// <code>extern SDL_DECLSPEC SDL_PropertiesID SDLCALL SDL_GetIOProperties(SDL_IOStream *context);</code>
     /// <summary>
     /// <para>Get the properties associated with an SDL_IOStream.</para>
@@ -268,8 +268,8 @@ public static partial class SDL
     /// <since>This function is available since SDL 3.2.0</since>
     [LibraryImport(SDLLibrary, EntryPoint = "SDL_GetIOProperties"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     public static partial uint GetIOProperties(IntPtr context);
-    
-    
+
+
     /// <code>extern SDL_DECLSPEC SDL_IOStatus SDLCALL SDL_GetIOStatus(SDL_IOStream *context);</code>
     /// <summary>
     /// <para>Query the stream status of an SDL_IOStream.</para>
@@ -287,8 +287,8 @@ public static partial class SDL
     /// <since>This function is available since SDL 3.2.0</since>
     [LibraryImport(SDLLibrary, EntryPoint = "SDL_GetIOStatus"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     public static partial IOStatus GetIOStatus(IntPtr context);
-    
-    
+
+
     /// <code>extern SDL_DECLSPEC Sint64 SDLCALL SDL_GetIOSize(SDL_IOStream *context);</code>
     /// <summary>
     /// <para>Use this function to get the size of the data stream in an SDL_IOStream.</para>
@@ -300,8 +300,8 @@ public static partial class SDL
     /// <since>This function is available since SDL 3.2.0</since>
     [LibraryImport(SDLLibrary, EntryPoint = "SDL_GetIOSize"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     public static partial long GetIOSize(IntPtr context);
-    
-    
+
+
     /// <code>extern SDL_DECLSPEC Sint64 SDLCALL SDL_SeekIO(SDL_IOStream *context, Sint64 offset, SDL_IOWhence whence);</code>
     /// <summary>
     /// <para>Seek within an SDL_IOStream data stream.</para>
@@ -325,8 +325,8 @@ public static partial class SDL
     /// <seealso cref="TellIO"/>
     [LibraryImport(SDLLibrary, EntryPoint = "SDL_SeekIO"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     public static partial long SeekIO(IntPtr context, long offset, IOWhence whence);
-    
-    
+
+
     /// <code>extern SDL_DECLSPEC Sint64 SDLCALL SDL_TellIO(SDL_IOStream *context);</code>
     /// <summary>
     /// <para>Determine the current read/write offset in an SDL_IOStream data stream.</para>
@@ -342,8 +342,8 @@ public static partial class SDL
     /// <seealso cref="SeekIO"/>
     [LibraryImport(SDLLibrary, EntryPoint = "SDL_TellIO"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     public static partial long TellIO(IntPtr context);
-    
-    
+
+
     /// <code>extern SDL_DECLSPEC size_t SDLCALL SDL_ReadIO(SDL_IOStream *context, void *ptr, size_t size);</code>
     /// <summary>
     /// <para>Read from a data source.</para>
@@ -364,8 +364,8 @@ public static partial class SDL
     /// <seealso cref="GetIOStatus"/>
     [LibraryImport(SDLLibrary, EntryPoint = "SDL_ReadIO"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     public static partial ulong ReadIO(IntPtr context, IntPtr ptr, ulong size);
-    
-    
+
+
     /// <code>extern SDL_DECLSPEC size_t SDLCALL SDL_WriteIO(SDL_IOStream *context, const void *ptr, size_t size);</code>
     /// <summary>
     /// <para>Write to an SDL_IOStream data stream.</para>
@@ -391,8 +391,8 @@ public static partial class SDL
     /// <seealso cref="GetIOStatus"/>
     [LibraryImport(SDLLibrary, EntryPoint = "SDL_WriteIO"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     public static partial ulong WriteIO(IntPtr context, IntPtr ptr, ulong size);
-    
-    
+
+
     /// <code>extern SDL_DECLSPEC size_t SDLCALL SDL_IOprintf(SDL_IOStream *context, SDL_PRINTF_FORMAT_STRING const char *fmt, ...)  SDL_PRINTF_VARARG_FUNC(2);</code>
     /// <summary>
     /// <para>Print to an SDL_IOStream data stream.</para>
@@ -408,8 +408,8 @@ public static partial class SDL
     [LibraryImport(SDLLibrary, EntryPoint = "SDL_IOprintf"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     // ReSharper disable once InconsistentNaming
     public static partial ulong IOprintf(IntPtr context, [MarshalAs(UnmanagedType.LPUTF8Str)] string fmt);
-    
-    
+
+
     /// <code>extern SDL_DECLSPEC size_t SDLCALL SDL_IOvprintf(SDL_IOStream *context, SDL_PRINTF_FORMAT_STRING const char *fmt, va_list ap) SDL_PRINTF_VARARG_FUNCV(2);</code>
     /// <summary>
     /// <para>Print to an SDL_IOStream data stream.</para>
@@ -426,8 +426,8 @@ public static partial class SDL
     [LibraryImport(SDLLibrary, EntryPoint = "SDL_IOvprintf"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     // ReSharper disable once InconsistentNaming
     public static partial ulong IOvprintf(IntPtr context, [MarshalAs(UnmanagedType.LPUTF8Str)] string fmt, [MarshalAs(UnmanagedType.LPArray, ArraySubType = UnmanagedType.LPUTF8Str)] string[] ap);
-    
-    
+
+
     /// <code>extern SDL_DECLSPEC bool SDLCALL SDL_FlushIO(SDL_IOStream *context);</code>
     /// <summary>
     /// <para>Flush any buffered data in the stream.</para>
@@ -444,8 +444,8 @@ public static partial class SDL
     [LibraryImport(SDLLibrary, EntryPoint = "SDL_FlushIO"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     [return: MarshalAs(UnmanagedType.I1)]
     public static partial bool FlushIO(IntPtr context);
-    
-    
+
+
     /// <code>extern SDL_DECLSPEC void * SDLCALL SDL_LoadFile_IO(SDL_IOStream *src, size_t *datasize, bool closeio);</code>
     /// <summary>
     /// <para>Load all the data from an SDL data stream.</para>
@@ -466,8 +466,8 @@ public static partial class SDL
     /// <seealso cref="SaveFileIO"/>
     [LibraryImport(SDLLibrary, EntryPoint = "SDL_LoadFile_IO"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     public static partial IntPtr LoadFileIO(IntPtr src, ulong datasize, [MarshalAs(UnmanagedType.I1)] bool closeio);
-    
-    
+
+
     /// <code>extern SDL_DECLSPEC void * SDLCALL SDL_LoadFile(const char *file, size_t *datasize);</code>
     /// <summary>
     /// <para>Load all the data from a file path.</para>
@@ -485,8 +485,8 @@ public static partial class SDL
     /// <seealso cref="SaveFile"/>
     [LibraryImport(SDLLibrary, EntryPoint = "SDL_LoadFile"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     public static partial IntPtr LoadFile([MarshalAs(UnmanagedType.LPUTF8Str)] string file, ulong datasize);
-    
-    
+
+
     /// <code>extern SDL_DECLSPEC bool SDLCALL SDL_SaveFile_IO(SDL_IOStream *src, const void *data, size_t datasize, bool closeio);</code>
     /// <summary>
     /// Save all the data into an SDL data stream.
@@ -505,8 +505,8 @@ public static partial class SDL
     [LibraryImport(SDLLibrary, EntryPoint = "SDL_SaveFile_IO"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     [return: MarshalAs(UnmanagedType.I1)]
     public static partial bool SaveFileIO(IntPtr src, IntPtr data, ulong datasize, [MarshalAs(UnmanagedType.I1)] bool closeio);
-    
-    
+
+
     /// <code>extern SDL_DECLSPEC bool SDLCALL SDL_SaveFile(const char *file, const void *data, size_t datasize);</code>
     /// <summary>
     /// Save all the data into a file path.
@@ -523,8 +523,8 @@ public static partial class SDL
     [LibraryImport(SDLLibrary, EntryPoint = "SDL_SaveFile"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     [return: MarshalAs(UnmanagedType.I1)]
     public static partial bool SaveFile([MarshalAs(UnmanagedType.LPUTF8Str)] string file, IntPtr data, ulong datasize);
-    
-    
+
+
     /// <code>extern SDL_DECLSPEC bool SDLCALL SDL_ReadU8(SDL_IOStream *src, Uint8 *value);</code>
     /// <summary>
     /// <para>Use this function to read a byte from an SDL_IOStream.</para>
@@ -541,8 +541,8 @@ public static partial class SDL
     [LibraryImport(SDLLibrary, EntryPoint = "SDL_ReadU8"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     [return: MarshalAs(UnmanagedType.I1)]
     public static partial bool ReadU8(IntPtr src, out byte value);
-    
-    
+
+
     /// <code>extern SDL_DECLSPEC bool SDLCALL SDL_ReadS8(SDL_IOStream *src, Sint8 *value);</code>
     /// <summary>
     /// <para>Use this function to read a signed byte from an SDL_IOStream.</para>
@@ -559,8 +559,8 @@ public static partial class SDL
     [LibraryImport(SDLLibrary, EntryPoint = "SDL_ReadS8"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     [return: MarshalAs(UnmanagedType.I1)]
     public static partial bool ReadS8(IntPtr src, out sbyte value);
-    
-    
+
+
     /// <code>extern SDL_DECLSPEC bool SDLCALL SDL_ReadU16LE(SDL_IOStream *src, Uint16 *value);</code>
     /// <summary>
     /// <para>Use this function to read 16 bits of little-endian data from an
@@ -580,8 +580,8 @@ public static partial class SDL
     [LibraryImport(SDLLibrary, EntryPoint = "SDL_ReadU16LE"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     [return: MarshalAs(UnmanagedType.I1)]
     public static partial bool ReadU16LE(IntPtr src, out ushort value);
-    
-    
+
+
     /// <code>extern SDL_DECLSPEC bool SDLCALL SDL_ReadS16LE(SDL_IOStream *src, Sint16 *value);</code>
     /// <summary>
     /// <para>Use this function to read 16 bits of little-endian data from an
@@ -601,8 +601,8 @@ public static partial class SDL
     [LibraryImport(SDLLibrary, EntryPoint = "SDL_ReadS16LE"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     [return: MarshalAs(UnmanagedType.I1)]
     public static partial bool ReadS16LE(IntPtr src, out short value);
-    
-    
+
+
     /// <code>extern SDL_DECLSPEC bool SDLCALL SDL_ReadU16BE(SDL_IOStream *src, Uint16 *value);</code>
     /// <summary>
     /// <para>Use this function to read 16 bits of big-endian data from an SDL_IOStream
@@ -622,8 +622,8 @@ public static partial class SDL
     [LibraryImport(SDLLibrary, EntryPoint = "SDL_ReadU16BE"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     [return: MarshalAs(UnmanagedType.I1)]
     public static partial bool ReadU16BE(IntPtr src, out ushort value);
-    
-    
+
+
     /// <code>extern SDL_DECLSPEC bool SDLCALL SDL_ReadS16BE(SDL_IOStream *src, Sint16 *value);</code>
     /// <summary>
     /// <para>Use this function to read 16 bits of big-endian data from an SDL_IOStream
@@ -643,8 +643,8 @@ public static partial class SDL
     [LibraryImport(SDLLibrary, EntryPoint = "SDL_ReadS16BE"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     [return: MarshalAs(UnmanagedType.I1)]
     public static partial bool ReadS16BE(IntPtr src, out short value);
-    
-    
+
+
     /// <code>extern SDL_DECLSPEC bool SDLCALL SDL_ReadU32LE(SDL_IOStream *src, Uint32 *value);</code>
     /// <summary>
     /// <para>Use this function to read 32 bits of little-endian data from an
@@ -664,8 +664,8 @@ public static partial class SDL
     [LibraryImport(SDLLibrary, EntryPoint = "SDL_ReadU32LE"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     [return: MarshalAs(UnmanagedType.I1)]
     public static partial bool ReadU32LE(IntPtr src, out uint value);
-    
-    
+
+
     /// <code>extern SDL_DECLSPEC bool SDLCALL SDL_ReadS32LE(SDL_IOStream *src, Sint32 *value);</code>
     /// <summary>
     /// <para>Use this function to read 32 bits of little-endian data from an
@@ -685,8 +685,8 @@ public static partial class SDL
     [LibraryImport(SDLLibrary, EntryPoint = "SDL_ReadS32LE"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     [return: MarshalAs(UnmanagedType.I1)]
     public static partial bool ReadS32LE(IntPtr src, out int value);
-    
-    
+
+
     /// <code>extern SDL_DECLSPEC bool SDLCALL SDL_ReadU32BE(SDL_IOStream *src, Uint32 *value);</code>
     /// <summary>
     /// <para>Use this function to read 32 bits of big-endian data from an SDL_IOStream
@@ -706,8 +706,8 @@ public static partial class SDL
     [LibraryImport(SDLLibrary, EntryPoint = "SDL_ReadU32BE"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     [return: MarshalAs(UnmanagedType.I1)]
     public static partial bool ReadU32BE(IntPtr src, out uint value);
-    
-    
+
+
     /// <code>extern SDL_DECLSPEC bool SDLCALL SDL_ReadS32BE(SDL_IOStream *src, Sint32 *value);</code>
     /// <summary>
     /// <para>Use this function to read 32 bits of big-endian data from an SDL_IOStream
@@ -727,8 +727,8 @@ public static partial class SDL
     [LibraryImport(SDLLibrary, EntryPoint = "SDL_ReadS32BE"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     [return: MarshalAs(UnmanagedType.I1)]
     public static partial bool ReadS32BE(IntPtr src, out int value);
-    
-    
+
+
     /// <code>extern SDL_DECLSPEC bool SDLCALL SDL_ReadU64LE(SDL_IOStream *src, Uint64 *value);</code>
     /// <summary>
     /// <para>Use this function to read 64 bits of little-endian data from an
@@ -748,8 +748,8 @@ public static partial class SDL
     [LibraryImport(SDLLibrary, EntryPoint = "SDL_ReadU64LE"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     [return: MarshalAs(UnmanagedType.I1)]
     public static partial bool ReadU64LE(IntPtr src, out ulong value);
-    
-    
+
+
     /// <code>extern SDL_DECLSPEC bool SDLCALL SDL_ReadS64LE(SDL_IOStream *src, Sint64 *value);</code>
     /// <summary>
     /// <para>Use this function to read 64 bits of little-endian data from an
@@ -769,8 +769,8 @@ public static partial class SDL
     [LibraryImport(SDLLibrary, EntryPoint = "SDL_ReadS64LE"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     [return: MarshalAs(UnmanagedType.I1)]
     public static partial bool ReadS64LE(IntPtr src, out long value);
-    
-    
+
+
     /// <code>extern SDL_DECLSPEC bool SDLCALL SDL_ReadU64BE(SDL_IOStream *src, Uint64 *value);</code>
     /// <summary>
     /// <para>Use this function to read 64 bits of big-endian data from an SDL_IOStream
@@ -790,8 +790,8 @@ public static partial class SDL
     [LibraryImport(SDLLibrary, EntryPoint = "SDL_ReadU64BE"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     [return: MarshalAs(UnmanagedType.I1)]
     public static partial bool ReadU64BE(IntPtr src, out ulong value);
-    
-    
+
+
     /// <code>extern SDL_DECLSPEC bool SDLCALL SDL_ReadS64BE(SDL_IOStream *src, Sint64 *value);</code>
     /// <summary>
     /// <para>Use this function to read 64 bits of big-endian data from an SDL_IOStream
@@ -811,8 +811,8 @@ public static partial class SDL
     [LibraryImport(SDLLibrary, EntryPoint = "SDL_ReadS64BE"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     [return: MarshalAs(UnmanagedType.I1)]
     public static partial bool ReadS64BE(IntPtr src, out long value);
-    
-    
+
+
     /// <code>extern SDL_DECLSPEC bool SDLCALL SDL_WriteU8(SDL_IOStream *dst, Uint8 value);</code>
     /// <summary>
     /// Use this function to write a byte to an SDL_IOStream.
@@ -825,8 +825,8 @@ public static partial class SDL
     [LibraryImport(SDLLibrary, EntryPoint = "SDL_WriteU8"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     [return: MarshalAs(UnmanagedType.I1)]
     public static partial bool WriteU8(IntPtr dst, byte value);
-    
-    
+
+
     /// <code>extern SDL_DECLSPEC bool SDLCALL SDL_WriteS8(SDL_IOStream *dst, Sint8 value);</code>
     /// <summary>
     /// Use this function to write a signed byte to an SDL_IOStream.
@@ -839,8 +839,8 @@ public static partial class SDL
     [LibraryImport(SDLLibrary, EntryPoint = "SDL_WriteS8"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     [return: MarshalAs(UnmanagedType.I1)]
     public static partial bool WriteS8(IntPtr dst, sbyte value);
-    
-    
+
+
     /// <code>extern SDL_DECLSPEC bool SDLCALL SDL_WriteU16LE(SDL_IOStream *dst, Uint16 value);</code>
     /// <summary>
     /// <para>Use this function to write 16 bits in native format to an SDL_IOStream as
@@ -857,8 +857,8 @@ public static partial class SDL
     [LibraryImport(SDLLibrary, EntryPoint = "SDL_WriteU16LE"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     [return: MarshalAs(UnmanagedType.I1)]
     public static partial bool WriteU16LE(IntPtr dst, ushort value);
-    
-    
+
+
     /// <code>extern SDL_DECLSPEC bool SDLCALL SDL_WriteS16LE(SDL_IOStream *dst, Sint16 value);</code>
     /// <summary>
     /// <para>Use this function to write 16 bits in native format to an SDL_IOStream as
@@ -875,8 +875,8 @@ public static partial class SDL
     [LibraryImport(SDLLibrary, EntryPoint = "SDL_WriteS16LE"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     [return: MarshalAs(UnmanagedType.I1)]
     public static partial bool WriteS16LE(IntPtr dst, short value);
-    
-    
+
+
     /// <code>extern SDL_DECLSPEC bool SDLCALL SDL_WriteU16BE(SDL_IOStream *dst, Uint16 value);</code>
     /// <summary>
     /// <para>Use this function to write 16 bits in native format to an SDL_IOStream as
@@ -892,8 +892,8 @@ public static partial class SDL
     [LibraryImport(SDLLibrary, EntryPoint = "SDL_WriteU16BE"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     [return: MarshalAs(UnmanagedType.I1)]
     public static partial bool WriteU16BE(IntPtr dst, ushort value);
-    
-    
+
+
     /// <code>extern SDL_DECLSPEC bool SDLCALL SDL_WriteS16BE(SDL_IOStream *dst, Sint16 value);</code>
     /// <summary>
     /// <para>Use this function to write 16 bits in native format to an SDL_IOStream as
@@ -909,8 +909,8 @@ public static partial class SDL
     [LibraryImport(SDLLibrary, EntryPoint = "SDL_WriteS16BE"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     [return: MarshalAs(UnmanagedType.I1)]
     public static partial bool WriteS16BE(IntPtr dst, short value);
-    
-    
+
+
     /// <code>extern SDL_DECLSPEC bool SDLCALL SDL_WriteU32LE(SDL_IOStream *dst, Uint32 value);</code>
     /// <summary>
     /// <para>Use this function to write 32 bits in native format to an SDL_IOStream as
@@ -927,8 +927,8 @@ public static partial class SDL
     [LibraryImport(SDLLibrary, EntryPoint = "SDL_WriteU32LE"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     [return: MarshalAs(UnmanagedType.I1)]
     public static partial bool WriteU32LE(IntPtr dst, uint value);
-    
-    
+
+
     /// <code>extern SDL_DECLSPEC bool SDLCALL SDL_WriteS32LE(SDL_IOStream *dst, Sint32 value);</code>
     /// <summary>
     /// <para>Use this function to write 32 bits in native format to an SDL_IOStream as
@@ -945,8 +945,8 @@ public static partial class SDL
     [LibraryImport(SDLLibrary, EntryPoint = "SDL_WriteS32LE"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     [return: MarshalAs(UnmanagedType.I1)]
     public static partial bool WriteS32LE(IntPtr dst, int value);
-    
-    
+
+
     /// <code>extern SDL_DECLSPEC bool SDLCALL SDL_WriteU32BE(SDL_IOStream *dst, Uint32 value);</code>
     /// <summary>
     /// <para>Use this function to write 32 bits in native format to an SDL_IOStream as
@@ -962,8 +962,8 @@ public static partial class SDL
     [LibraryImport(SDLLibrary, EntryPoint = "SDL_WriteU32BE"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     [return: MarshalAs(UnmanagedType.I1)]
     public static partial bool WriteU32BE(IntPtr dst, uint value);
-    
-    
+
+
     /// <code>extern SDL_DECLSPEC bool SDLCALL SDL_WriteS32BE(SDL_IOStream *dst, Sint32 value);</code>
     /// <summary>
     /// <para>Use this function to write 32 bits in native format to an SDL_IOStream as
@@ -979,8 +979,8 @@ public static partial class SDL
     [LibraryImport(SDLLibrary, EntryPoint = "SDL_WriteS32BE"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     [return: MarshalAs(UnmanagedType.I1)]
     public static partial bool WriteS32BE(IntPtr dst, int value);
-    
-    
+
+
     /// <code>extern SDL_DECLSPEC bool SDLCALL SDL_WriteU64LE(SDL_IOStream *dst, Uint64 value);</code>
     /// <summary>
     /// <para>Use this function to write 64 bits in native format to an SDL_IOStream as
@@ -997,8 +997,8 @@ public static partial class SDL
     [LibraryImport(SDLLibrary, EntryPoint = "SDL_WriteU64LE"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     [return: MarshalAs(UnmanagedType.I1)]
     public static partial bool WriteU64LE(IntPtr dst, ulong value);
-    
-    
+
+
     /// <code>extern SDL_DECLSPEC bool SDLCALL SDL_WriteS64LE(SDL_IOStream *dst, Sint64 value);</code>
     /// <summary>
     /// <para>Use this function to write 64 bits in native format to an SDL_IOStream as
@@ -1015,8 +1015,8 @@ public static partial class SDL
     [LibraryImport(SDLLibrary, EntryPoint = "SDL_WriteS64LE"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     [return: MarshalAs(UnmanagedType.I1)]
     public static partial bool WriteS64LE(IntPtr dst, long value);
-    
-    
+
+
     /// <code>extern SDL_DECLSPEC bool SDLCALL SDL_WriteU64BE(SDL_IOStream *dst, Uint64 value);</code>
     /// <summary>
     /// <para>Use this function to write 64 bits in native format to an SDL_IOStream as
@@ -1032,8 +1032,8 @@ public static partial class SDL
     [LibraryImport(SDLLibrary, EntryPoint = "SDL_WriteU64BE"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     [return: MarshalAs(UnmanagedType.I1)]
     public static partial bool WriteU64BE(IntPtr dst, ulong value);
-    
-    
+
+
     /// <code>extern SDL_DECLSPEC bool SDLCALL SDL_WriteS64BE(SDL_IOStream *dst, Sint64 value);</code>
     /// <summary>
     /// <para>Use this function to write 64 bits in native format to an SDL_IOStream as

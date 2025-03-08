@@ -26,28 +26,28 @@ using System.Runtime.InteropServices;
 namespace SDL3;
 
 public static partial class SDL
-{
-    /// <summary>
-    /// <para>A structure specifying the parameters of a transfer buffer.</para>
-    /// </summary>
-    /// <since>This struct is available since SDL 3.2.0</since>
-    /// <seealso cref="CreateGPUTransferBuffer"/>
-    [StructLayout(LayoutKind.Sequential)]
-    public struct GPUTransferBufferCreateInfo
     {
         /// <summary>
-        /// How the transfer buffer is intended to be used by the client.
+        /// <para>A structure specifying the parameters of a transfer buffer.</para>
         /// </summary>
-        public GPUTransferBufferUsage Usage;
-        
-        /// <summary>
-        /// The size in bytes of the transfer buffer.
-        /// </summary>
-        public UInt32 Size;
+        /// <since>This struct is available since SDL 3.2.0</since>
+        /// <seealso cref="CreateGPUTransferBuffer"/>
+        [StructLayout(LayoutKind.Sequential)]
+        public struct GPUTransferBufferCreateInfo
+        {
+            /// <summary>
+            /// How the transfer buffer is intended to be used by the client.
+            /// </summary>
+            public GPUTransferBufferUsage Usage;
 
-        /// <summary>
-        /// A properties ID for extensions. Should be 0 if no extensions are needed.
-        /// </summary>
-        public UInt32 Props;
+            /// <summary>
+            /// The size in bytes of the transfer buffer.
+            /// </summary>
+            public UInt32 Size;
+
+            /// <summary>
+            /// A properties ID for extensions. Should be 0 if no extensions are needed.
+            /// </summary>
+            public UInt32 Props;
+        }
     }
-}
