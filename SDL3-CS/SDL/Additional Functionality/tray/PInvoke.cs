@@ -227,7 +227,7 @@ public partial class SDL
     [LibraryImport(SDLLibrary, EntryPoint = "SDL_InsertTrayEntryAt"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     public static partial IntPtr InsertTrayEntryAt(IntPtr menu, int pos, [MarshalAs(UnmanagedType.LPUTF8Str)] string? label, TrayEntryFlags flags);
 
-
+#if !WASM
     /// <code>extern SDL_DECLSPEC void SDLCALL SDL_SetTrayEntryLabel(SDL_TrayEntry *entry, const char *label);</code>
     /// <summary>
     /// <para>Sets the label of an entry.</para>
@@ -246,7 +246,7 @@ public partial class SDL
     /// <seealso cref="GetTrayEntryLabel"/>
     [LibraryImport(SDLLibrary, EntryPoint = "SDL_InsertTrayEntryAt"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     public static partial void SetTrayEntryLabel(IntPtr entry, [MarshalAs(UnmanagedType.LPUTF8Str)] string label);
-
+#endif
 
     [LibraryImport(SDLLibrary, EntryPoint = "SDL_GetTrayEntryLabel"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial IntPtr SDL_GetTrayEntryLabel(IntPtr entry);

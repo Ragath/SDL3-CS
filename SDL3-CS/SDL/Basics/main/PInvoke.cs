@@ -144,7 +144,7 @@ public partial class SDL
     [LibraryImport(SDLLibrary, EntryPoint = "SDL_AppQuit"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     public static partial void AppQuit(IntPtr appstate, AppResult result);
 
-
+#if !WASM
     /// <code>extern SDLMAIN_DECLSPEC int SDLCALL SDL_main(int argc, char *argv[]);</code>
     /// <summary>
     /// <para>An app-supplied function for program entry.</para>
@@ -170,6 +170,7 @@ public partial class SDL
     /// <since>This function is available since SDL 3.2.0</since>
     [LibraryImport(SDLLibrary, EntryPoint = "SDL_main"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     public static partial int Main(int argc, [MarshalAs(UnmanagedType.LPArray, ArraySubType = UnmanagedType.LPUTF8Str)] string[] argv);
+#endif
 
 
     /// <code>extern SDL_DECLSPEC void SDLCALL SDL_SetMainReady(void);</code>

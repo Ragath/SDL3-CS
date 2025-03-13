@@ -171,7 +171,7 @@ public partial class SDL
     [return: MarshalAs(UnmanagedType.I1)]
     public static partial bool SetMemoryFunctions(MallocFunc mallocFunc, CallocFunc callocFunc, ReallocFunc reallocFunc, FreeFunc freeFunc);
 
-
+#if !WASM
     /// <code>extern SDL_DECLSPEC SDL_MALLOC void * SDLCALL SDL_aligned_alloc(size_t alignment, size_t size);</code>
     /// <summary>
     /// <para>Allocate memory aligned to a specific alignment.</para>
@@ -205,7 +205,7 @@ public partial class SDL
     /// <seealso cref="AlignedFree"/>
     [LibraryImport(SDLLibrary, EntryPoint = "SDL_aligned_alloc"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     public static partial void AlignedFree(IntPtr mem);
-
+#endif
 
     /// <code>extern SDL_DECLSPEC int SDLCALL SDL_GetNumAllocations(void);</code>
     /// <summary>
@@ -394,7 +394,7 @@ public partial class SDL
     [LibraryImport(SDLLibrary, EntryPoint = "SDL_srand"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     public static partial void SRand(ulong seed);
 
-
+#if !WASM
     /// <code>extern SDL_DECLSPEC Sint32 SDLCALL SDL_rand(Sint32 n);</code>
     /// <summary>
     /// <para>Generate a pseudo-random number less than n for positive n</para>
@@ -461,7 +461,7 @@ public partial class SDL
     /// <seealso cref="SRand"/>
     [LibraryImport(SDLLibrary, EntryPoint = "SDL_rand"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     public static partial uint RandBits();
-
+#endif
 
     /// <code>extern SDL_DECLSPEC Sint32 SDLCALL SDL_rand_r(Uint64 *state, Sint32 n);</code>
     /// <summary>

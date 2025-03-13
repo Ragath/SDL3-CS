@@ -58,7 +58,7 @@ public static partial class SDL
 	[LibraryImport(SDLLibrary, EntryPoint = "SDL_CreateThread"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     public static partial IntPtr CreateThread(ThreadFunction fn, [MarshalAs(UnmanagedType.LPUTF8Str)] string name, IntPtr data);
 
-
+#if !WASM
     /// <code>extern SDL_DECLSPEC SDL_Thread * SDLCALL SDL_CreateThreadWithProperties(SDL_PropertiesID props);</code>
     /// <summary>
     /// <para>Create a new thread with with the specified properties.</para>
@@ -115,7 +115,7 @@ public static partial class SDL
     /// <seealso cref="WaitThread"/>
     [LibraryImport(SDLLibrary, EntryPoint = "SDL_CreateThread"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     public static partial IntPtr CreateThreadWithProperties(uint props);
-
+#endif
 
     /// <code>extern SDL_DECLSPEC SDL_Thread * SDLCALL SDL_CreateThreadRuntime(SDL_ThreadFunction fn, const char *name, void *data, SDL_FunctionPointer pfnBeginThread, SDL_FunctionPointer pfnEndThread);</code>
     /// <summary>
