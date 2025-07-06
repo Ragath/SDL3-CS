@@ -2321,6 +2321,55 @@ public static partial class SDL
     [LibraryImport(SDLLibrary, EntryPoint = "SDL_GL_GetProcAddress"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     public static partial FunctionPointer GLGetProcAddress([MarshalAs(UnmanagedType.LPUTF8Str)] string proc);
 
+    /// <code>extern SDL_DECLSPEC SDL_FunctionPointer SDLCALL SDL_GL_GetProcAddress(const char *proc);</code>
+    /// <summary>
+    /// <para>Get an OpenGL function by name.</para>
+    /// <para>If the GL library is loaded at runtime with <see cref="GLLoadLibrary"/>, then all
+    /// GL functions must be retrieved this way. Usually this is used to retrieve
+    /// function pointers to OpenGL extensions.</para>
+    /// <list type="bullet">
+    /// <item>On Windows, function pointers are specific to the current GL context;
+    /// this means you need to have created a GL context and made it current
+    /// before calling <see cref="GLGetProcAddressPointer"/>. If you recreate your context or
+    /// create a second context, you should assume that any existing function
+    /// pointers aren't valid to use with it. This is (currently) a
+    /// Windows-specific limitation, and in practice lots of drivers don't suffer
+    /// this limitation, but it is still the way the wgl API is documented to
+    /// work and you should expect crashes if you don't respect it. Store a copy
+    /// of the function pointers that comes and goes with context lifespan.</item>
+    /// <item>On X11, function pointers returned by this function are valid for any
+    /// context, and can even be looked up before a context is created at all.
+    /// This means that, for at least some common OpenGL implementations, if you
+    /// look up a function that doesn't exist, you'll get a non-NULL result that
+    /// is _NOT_ safe to call. You must always make sure the function is actually
+    /// available for a given GL context before calling it, by checking for the
+    /// existence of the appropriate extension with <see cref="GLExtensionSupported"/>,
+    /// or verifying that the version of OpenGL you're using offers the function
+    /// as core functionality.</item>
+    /// <item>Some OpenGL drivers, on all platforms, <b>will</b> return <c>null</c>if a function
+    /// isn't supported, but you can't count on this behavior. Check for
+    /// extensions you use, and if you get a <c>null</c> anyway, act as if that
+    /// extension wasn't available. This is probably a bug in the driver, but you
+    /// can code defensively for this scenario anyhow.</item>
+    /// <item>Just because you're on Linux/Unix, don't assume you'll be using X11.
+    /// Next-gen display servers are waiting to replace it, and may or may not
+    /// make the same promises about function pointers.</item>
+    /// <item>OpenGL function pointers must be declared <c>APIENTRY</c> as in the example
+    /// code. This will ensure the proper calling convention is followed on
+    /// platforms where this matters (Win32) thereby avoiding stack corruption.</item>
+    /// </list>
+    /// </summary>
+    /// <param name="proc">the name of an OpenGL function.</param>
+    /// <returns>a pointer to the named OpenGL function. The returned pointer
+    /// should be cast to the appropriate function signature.</returns>
+    /// <threadsafety>This function should only be called on the main thread.</threadsafety>
+    /// <since>This function is available since SDL 3.2.0</since>
+    /// <see cref="GLExtensionSupported"/>
+    /// <see cref="GLLoadLibrary"/>
+    /// <see cref="GLUnloadLibrary"/>
+    [LibraryImport(SDLLibrary, EntryPoint = "SDL_GL_GetProcAddress"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
+    public static partial nint GLGetProcAddressPointer([MarshalAs(UnmanagedType.LPUTF8Str)] string proc);
+
 
     /// <code>extern SDL_DECLSPEC SDL_FunctionPointer SDLCALL SDL_EGL_GetProcAddress(const char *proc);</code>
     /// <summary>
