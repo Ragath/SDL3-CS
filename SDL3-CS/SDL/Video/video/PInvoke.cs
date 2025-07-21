@@ -2387,6 +2387,22 @@ public static partial class SDL
     [LibraryImport(SDLLibrary, EntryPoint = "SDL_EGL_GetProcAddress"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     public static partial FunctionPointer EGLGetProcAddress([MarshalAs(UnmanagedType.LPUTF8Str)] string proc);
 
+    /// <code>extern SDL_DECLSPEC SDL_FunctionPointer SDLCALL SDL_EGL_GetProcAddress(const char *proc);</code>
+    /// <summary>
+    /// <para>Get an EGL library function by name.</para>
+    /// <para>If an EGL library is loaded, this function allows applications to get entry
+    /// points for EGL functions. This is useful to provide to an EGL API and
+    /// extension loader.</para>
+    /// </summary>
+    /// <param name="proc">the name of an EGL function.</param>
+    /// <returns>a pointer to the named EGL function. The returned pointer should
+    /// be cast to the appropriate function signature.</returns>
+    /// <threadsafety>This function should only be called on the main thread.</threadsafety>
+    /// <since>This function is available since SDL 3.2.0</since>
+    /// <seealso cref="EGLGetCurrentDisplay"/>
+    [LibraryImport(SDLLibrary, EntryPoint = "SDL_EGL_GetProcAddress"), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
+    public static partial nint EGLGetProcAddressPointer([MarshalAs(UnmanagedType.LPUTF8Str)] string proc);
+
 
     /// <code>extern SDL_DECLSPEC void SDLCALL SDL_GL_UnloadLibrary(void);</code>
     /// <summary>
